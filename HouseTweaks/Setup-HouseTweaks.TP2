@@ -54,6 +54,13 @@ REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 EXTEND_TOP ~udsac.bcs~ ~%MOD_FOLDER%/scripts/udsac.baf~
 COMPILE ~%MOD_FOLDER%/dialog/bg2/dialog.d~
+// SILVER PANTALOONS GOOD REWARD
+
+COPY_EXISTING ~elgea.dlg~ ~override~
+  DECOMPILE_DLG_TO_D
+    REPLACE_TEXTUALLY ~AddexperienceParty(16750)~ ~AddexperienceParty(16750) SetGlobalTimer("C0ElgeaRewardTimer","GLOBAL",THREE_DAYS)~
+  COMPILE_D_TO_DLG
+  BUT_ONLY_IF_IT_CHANGES  
 
 BEGIN ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~
 REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
