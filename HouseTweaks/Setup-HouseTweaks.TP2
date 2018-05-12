@@ -1,0 +1,67 @@
+BACKUP ~HouseTweaks/backup~
+AUTHOR ~Artemius_I~
+VERSION ~1.0~
+ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
+  INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+  INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+END
+AUTO_TRA ~%MOD_FOLDER%/tra/%s~
+
+BEGIN ~House Tweaks: Vanguard Fighter Kit~
+INCLUDE ~%MOD_FOLDER%/lib/vanguard.tpa~
+
+BEGIN ~House Tweaks: Adventurer Thief Kit~
+INCLUDE ~%MOD_FOLDER%/lib/adventurer.tpa~
+
+BEGIN ~House Tweaks: Increased Constitution Bonuses~
+COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
+
+BEGIN ~House Tweaks: Warrior HLAs~
+COPY ~%MOD_FOLDER%/hlas/fighter~ ~override~
+COPY ~%MOD_FOLDER%/hlas/fighter/spcl904.spl~ ~override~
+SAY NAME1 ~Resist Magic~
+SAY UNIDENTIFIED_DESC ~Resist Magic
+This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 5 rounds, the warrior gains a +10 bonus to all saves. In addition, the warrior absorbs the next 20 spell level's worth of spells cast upon <PRO_HIMHER>. The saving throw bonus always persists for the full duration.~
+COPY ~%MOD_FOLDER%/hlas/fighter/spcl905.spl~ ~override~
+SAY NAME1 ~Critical Strike~
+SAY UNIDENTIFIED_DESC ~Critical Strike
+A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to, once per day, concentrate <PRO_HISHER> next attack to strike a vital area. With this ability, the warrior's next attack is a natural 20, a critical hit that deals 4x damage (2x against enemies immune to critical hits).
+
+Requires: Power Attack~
+COPY ~%MOD_FOLDER%/hlas/fighter/spcl908.spl~ ~override~
+SAY NAME1 ~War Cry~
+SAY UNIDENTIFIED_DESC ~War Cry
+With a War Cry, the warrior lets out an invigorating roar, healing <PRO_HISHER> hit points to full in addition to removing fatigue and restoring drained levels.~
+
+BEGIN ~House Tweaks: Improved Dialogues (BG:EE)~
+REQUIRE_PREDICATE (GAME_IS ~bgee~) ~This component must be installed on BG:EE.~
+COMPILE	~%MOD_FOLDER%/Dialog/bg1/dialog.d~
+COPY_EXISTING ~flam5.cre~ ~override/c0zelas.cre~
+WRITE_ASCII 0x248 ~c0zelas~  #8  // override
+WRITE_ASCII 0x2cc ~c0zelas~ #8  // dialogue
+WRITE_ASCII 0x280 ~c0zelas~ #32 // death variable
+WRITE_ASCII 0X34  ~c0zelas~  #8
+SAY NAME1 ~Officer Zelas~
+SAY NAME2 ~Officer Zelas~
+
+BEGIN ~House Tweaks: Not-So-Indestructible Rats~
+REQUIRE_PREDICATE (GAME_IS ~bgee~) ~This component must be installed on BG:EE.~
+COPY ~%MOD_FOLDER%/creatures/rat2.cre~ ~override~
+
+BEGIN ~House Tweaks: Good-Aligned Roleplay Rewards (BG2:EE)~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
+EXTEND_TOP ~udsac.bcs~ ~%MOD_FOLDER%/scripts/udsac.baf~
+COMPILE ~%MOD_FOLDER%/dialog/bg2/dialog.d~
+
+BEGIN ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+EXTEND_TOP ~hexxat.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
+EXTEND_TOP ~hexxa25.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
+COPY ~%MOD_FOLDER%/items/ohhcloak.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/ohhcloak.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/ohhcloa2.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/ohhkork.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/ohhkork.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/ohhkork2.spl~ ~override~

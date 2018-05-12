@@ -1,0 +1,19 @@
+// SILVER PANTALOONS
+
+IF
+	OR(7)
+	AreaCheck("AR0300")
+	AreaCheck("AR0400")
+	AreaCheck("AR0500")
+	AreaCheck("AR0700")
+	AreaCheck("AR0800")
+	AreaCheck("AR0900")
+	AreaCheck("AR1000")
+	Global("C0ElgeaReward","GLOBAL",0)
+	GlobalTimerExpired("C0ElgeaRewardTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	SetGlobal("C0ElgeaReward","GLOBAL",1)
+	CreateCreatureObjectOffset("welther",Player1,[100.100])
+	ActionOverride("welther",Dialogue(Player1)
+END

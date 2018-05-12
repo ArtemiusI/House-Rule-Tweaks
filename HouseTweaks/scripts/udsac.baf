@@ -1,0 +1,9 @@
+IF
+  IsOverMe([PC])
+  Global("spawnKnights","AR2402",0)
+THEN
+  RESPONSE #100
+	Wait(1)
+	ActionOverride(LastTrigger,StartDialogOverride("C0DMALTR",Myself))
+	Wait(10)
+END
