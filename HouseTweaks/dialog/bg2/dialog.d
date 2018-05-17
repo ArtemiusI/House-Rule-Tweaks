@@ -1,3 +1,8 @@
+REPLACE_ACTION_TEXT elgea
+~SetGlobal("ElgeaFree","GLOBAL",1)~
+~SetGlobal("ElgeaFree","GLOBAL",1)
+SetGlobalTimer("C0ElgeaRewardTimer","GLOBAL",THREE_DAYS)~
+
 CHAIN IF WEIGHT #-1 ~Global("C0ElgeaReward","GLOBAL",1)~ THEN WELTHER a1
 ~Greetings, friend. Might I have a moment of your time?~
 END

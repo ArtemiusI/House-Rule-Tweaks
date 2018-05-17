@@ -1,0 +1,34 @@
+OUTER_SET human = RESOLVE_STR_REF (~Human~)
+OUTER_SET humandesc = RESOLVE_STR_REF (~Human
+Humans are the predominant race in Faerun. Humans rule most of the significant empires and kingdoms in the Forgotten Realms. They are the most social and tolerant of races, excepting perhaps the halflings.~)
+APPEND haterace.2da ~HUMAN %human% 1 %humandesc%~
+
+OUTER_SET elf = RESOLVE_STR_REF (~Elf~)
+OUTER_SET elfdesc = RESOLVE_STR_REF (~Elf
+Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).~)
+APPEND haterace.2da ~ELF %elf% 2 %elfdesc%~
+
+OUTER_SET halfelf = RESOLVE_STR_REF (~Half-Elf~)
+OUTER_SET halfelfdesc = RESOLVE_STR_REF (~Half-Elf
+Half-elves are a mix of human and elven blood. They are handsome folk, with good features from each of their parent races. A half-elf has the curiosity, inventiveness, and ambition of their human ancestors and the refined senses, love of nature, and artistic tastes of their elven ancestors.~)
+APPEND haterace.2da ~HALFELF %halfelf% 3 %halfelfdesc%~
+
+OUTER_SET dwarf = RESOLVE_STR_REF (~Dwarf~)
+OUTER_SET dwarfdesc = RESOLVE_STR_REF (~Dwarf
+Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.~)
+APPEND haterace.2da ~DWARF %dwarf% 4 %dwarfdesc%~
+
+OUTER_SET halfling = RESOLVE_STR_REF (~Halfling~)
+OUTER_SET halflingdesc = RESOLVE_STR_REF (~Halfling
+Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.~)
+APPEND haterace.2da ~HALFLING %halfling% 5 %halflingdesc%~
+
+OUTER_SET gnome = RESOLVE_STR_REF (~Gnome~)
+OUTER_SET gnomedesc = RESOLVE_STR_REF (~Gnome
+Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).~)
+APPEND haterace.2da ~GNOME %gnome% 6 %gnomedesc%~
+
+OUTER_SET halforc = RESOLVE_STR_REF (~Half-Orc~)
+OUTER_SET halforcdesc = RESOLVE_STR_REF (~Half-Orc
+Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the lands of Amn, half-orcs are tolerated, as unlike in the north the people of Amn haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.~)
+APPEND haterace.2da ~HUMAN %halforc% 7 %halforcdesc%~
