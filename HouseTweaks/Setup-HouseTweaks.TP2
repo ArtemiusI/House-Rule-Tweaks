@@ -20,6 +20,9 @@ INCLUDE ~%MOD_FOLDER%/lib/divinechampion.tpa~
 BEGIN ~House Tweaks: Expanded Racial Enemies~
 INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
 
+BEGIN ~House Tweaks: Expanded Shapeshifting~
+INCLUDE ~%MOD_FOLDER%/lib/wildshape.tpa~
+
 BEGIN ~House Tweaks: Increased Constitution Bonuses~
 COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
 
@@ -53,7 +56,11 @@ SAY NAME2 ~Officer Zelas~
 
 BEGIN ~House Tweaks: Not-So-Indestructible Rats~
 REQUIRE_PREDICATE (GAME_IS ~bgee~) ~This component must be installed on BG:EE.~
-COPY ~%MOD_FOLDER%/creatures/rat2.cre~ ~override~
+COPY_EXISTING ~rat2.cre~ ~override~
+WRITE_SHORT 0x60 0
+WRITE_SHORT 0x61 0
+WRITE_SHORT 0x62 0
+WRITE_SHORT 0x63 0
 
 BEGIN ~House Tweaks: Good-Aligned Roleplay Rewards (BG2:EE)~
 REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~

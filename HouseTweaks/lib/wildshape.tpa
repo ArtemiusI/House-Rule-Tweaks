@@ -1,0 +1,371 @@
+//////////////////////////////////////
+///////////////ANIMATIONS/////////////
+//////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/animations/wildshape~ ~override~
+
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~DRUID~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
+
+CLASS FEATURES:
+
+– May only wear non-metallic armor.
+– May only equip bucklers and non-metallic shields.
+– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in any fighting style.
+– May cast druidic spells.
+– 7th level: May use Wild Shape three times per day. From 14th level onwards, the druid is able to cast spells while shapeshifted.
+– 14th level: May use Elemental Shape once per day. 
+– 15th level: Becomes immune to poison.
+– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
+– Alignment restricted to true neutral.
+– Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom, Charisma~)
+	  END
+	END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~DRUID~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
+
+CLASS FEATURES:
+
+– May only wear non-metallic armor.
+– May only equip bucklers and non-metallic shields.
+– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in any fighting style.
+– May cast druidic spells.
+– 7th level: May use Wild Shape three times per day. From 14th level onwards, the druid is able to cast spells while shapeshifted.
+– 14th level: May use Elemental Shape once per day.
+– 15th level: Becomes immune to poison.
+– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
+– Alignment restricted to true neutral.
+– Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom, Charisma~)
+	  END
+	END
+	END
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~AVENGER~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
+
+Advantages:
+– May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
+– 19th level: Gains three additional uses of Wild Shape.
+– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
+  1st level: Chromatic Orb.
+  2nd level: Web.
+  3rd level: Lightning Bolt.
+  4th level: Improved Invisibility.
+  5th level: Chaos.
+  6th level: Chain Lightning.
+
+Disadvantages:
+– May not wear heavier armor than leather.
+– Incurs a -2 penalty to Strength and Constitution.~)
+	  END
+	END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~AVENGER~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
+
+Advantages:
+– May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
+– 19th level: Gains three additional uses of Wild Shape.
+– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
+  1st level: Chromatic Orb.
+  2nd level: Web.
+  3rd level: Lightning Bolt.
+  4th level: Improved Invisibility.
+  5th level: Chaos.
+  6th level: Chain Lightning.
+
+Disadvantages:
+– May not wear heavier armor than leather.
+– Incurs a -2 penalty to Strength and Constitution.~)
+	  END
+	END
+	END
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BEAST_FRIEND~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
+
+Advantages:
+– May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
+– 19th level: Gains three additional uses of Wild Shape.
+– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
+  1st level: Chromatic Orb.
+  2nd level: Web.
+  3rd level: Lightning Bolt.
+  4th level: Improved Invisibility.
+  5th level: Chaos.
+  6th level: Chain Lightning.
+
+Disadvantages:
+– May not wear heavier armor than leather.
+– Incurs a -2 penalty to Strength and Constitution.~)
+	  END
+	END
+	END
+
+//////////////////////////////////////
+/////////////////BAMS/////////////////
+//////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/spells/c0boarb.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrwwol.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrwwol.vvc~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0pantb.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wshapb.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wsha3b.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wwolfb.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrwate.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrair1.bam~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrair2.bam~ ~override~
+
+//////////////////////////////////////
+/////////////////EFFS/////////////////
+//////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/spells/c0bleed.eff~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrpan2.eff~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrwolf.eff~ ~override~
+
+//////////////////////////////////////
+////////////////SPELLS////////////////
+//////////////////////////////////////
+
+// REMOVE ORIGINAL SHAPESHIFTING SPELLS FROM DRUIDS
+
+COPY_EXISTING ~CLABDR04.2DA~ ~OVERRIDE~
+  REPLACE_TEXTUALLY ~GA_SPCL611~ ~GA_C0WSHA2~
+  REPLACE_TEXTUALLY ~GA_SPCL612~ ~GA_C0WSHA2~
+  REPLACE_TEXTUALLY ~GA_SPCL613~ ~GA_C0WSHA2~
+  REPLACE_TEXTUALLY ~GA_SPCL632~ ~****      ~
+  REPLACE_TEXTUALLY ~GA_SPCL633~ ~****      ~
+  REPLACE_TEXTUALLY ~GA_SPCL634~ ~****      ~
+
+COPY_EXISTING_REGEXP ~LUDR.*\.2DA~ ~OVERRIDE~
+  REPLACE_TEXTUALLY ~GA_SPPR731~ ~*~
+  REPLACE_TEXTUALLY ~GA_SPPR732~ ~*~
+
+COPY_EXISTING_REGEXP GLOB ~.*\.2da~ ~override~
+  REPLACE_TEXTUALLY ~GA_SPCL611~ ~GA_C0WSHAP~
+  REPLACE_TEXTUALLY ~GA_SPCL612~ ~GA_C0WSHAP~
+  REPLACE_TEXTUALLY ~GA_SPCL613~ ~GA_C0WSHAP~
+  REPLACE_TEXTUALLY ~GA_SPCL632~ ~****      ~
+  REPLACE_TEXTUALLY ~GA_SPCL633~ ~****      ~
+  REPLACE_TEXTUALLY ~GA_SPCL634~ ~****      ~
+  
+APPEND ~clabdr01.2da~ ~POLYELEM ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    GA_C0WSHA3~
+APPEND ~clabdr04.2da~ ~POLYELEM ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    GA_C0WSHA3~
+
+COPY ~%MOD_FOLDER%/spells/c0hrboa2.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+	  match_parameter1 = 0
+	  parameter1 = RESOLVE_STR_REF (~Stunned~)
+ END
+COPY ~%MOD_FOLDER%/spells/c0hrboar.spl~ ~override~
+SAY NAME1 ~Shapeshift: Boar~
+COPY ~%MOD_FOLDER%/spells/c0hrpan2.spl~ ~override~
+  LPF ALTER_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      match_opcode = 139 // display string
+	  match_parameter1 = 0
+	  parameter1 = RESOLVE_STR_REF (~Bleeding~) 
+ END
+ 
+COPY ~%MOD_FOLDER%/spells/c0hrpant.spl~ ~override~
+SAY NAME1 ~Shapeshift: Panther~
+COPY ~%MOD_FOLDER%/spells/c0hrsala.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrwolf.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrwyvv.spl~ ~override~
+
+COPY ~%MOD_FOLDER%/2da/c0wshap2.2da~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wsha2.spl~ ~override~
+SAY NAME1 ~Enhanced Wild Shape~
+SAY UNIDENTIFIED_DESC ~Enhanced Wild Shape
+Using this ability, an avenger may take on the shape of a chosen animal at will. As the avenger advances in level, <PRO_HESHE> gains additional uses of Wild Shape and <PRO_HISHER> animal forms increase in power. From 14th level onwards, the avenger is able to cast spells while shapeshifted.
+
+Avengers are able to shapeshift into three additional forms: red salamander, wyvern, and winter wolf.
+
+BROWN BEAR: 18/00 STR, 9 DEX, base AC 6, 1.5 attacks per round, +30% bonus hit points, +25% physical resistance. Attacks deal 1d12 piercing or slashing damage (whichever is better) and have a 15% chance to deal an additional 2d6 crushing damage.
+
+WOLF: 18 STR, 17 DEX, base AC 4, 2 attacks per round, +10% bonus hit points, +10% physical resistance. Attacks deal 1d4 piercing or slashing damage (whichever is better) and have a 15% chance to knock down targets for one round on a failed save vs. death.
+
+SPIDER: 17 STR, 17 DEX, base AC 6, 4 attacks per round. Attacks deal 1d2 piercing damage and inflict 12 points of poison damage over six rounds.
+
+BOAR: 18/50 STR, 9 DEX, base AC 5, 1 attack per round, +50% bonus hit points, +40% physical resistance. Attacks deal 1d8 crushing damage and have a 15% chance to deal an additional 2d4 crushing damage and stun for 2 rounds on a failed save vs. death.
+
+PANTHER: 18/75 STR, 18 DEX, base AC 2, 3 attacks per round, +20% bonus hit points, +25% physical resistance, increased movement rate. Attacks deal 1d8 slashing damage and have a 15% chance to bleed targets for one point of slashing damage per second for six seconds.
+
+RED SALAMANDER: 17 STR, 18 DEX, base AC 4, 2 attacks per round, +25% bonus hit points, +25% physical resistance, fire resistance set to 125%, cold resistance set to -50%. Attacks deal 1d8 piercing damage plus 1d6+1 fire damage, increasing by one point per level gained. An opponent that hits the avenger with any weapons or spells within melee range suffers the same amount of fire damage.
+
+WYVERN: 18/00 STR, 9 DEX, base AC 4, 1 attack per round, +25% bonus hit points, +15% physical resistance, immunity to poison. Attacks deal 1d10 piercing damage and have a 50% chance to poison targets for 20% of their maximum hit points (save vs. death for half)
+
+WINTER WOLF: 17 STR, 17 DEX, base AC 4, 1 attack per round, +10% bonus hit points, +10% physical resistance, cold resistance set to 125%. Attacks with a cone projectile which deals 4d4+2 cold damage, increasing by two points per level gained, and slows for two rounds. Save vs. Breath to avoid slow and half damage.~
+
+COPY ~%MOD_FOLDER%/2da/c0wshape.2da~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wshap.spl~ ~override~
+SAY NAME1 ~Wild Shape~
+SAY UNIDENTIFIED_DESC ~Wild Shape
+Using this ability, a druid may take on the shape of a chosen animal at will. As the druid advances in level, <PRO_HESHE> gains additional uses of Wild Shape and <PRO_HISHER> animal forms increase in power. From 14th level onwards, the druid is able to cast spells while shapeshifted.
+
+BROWN BEAR: 18/00 STR, 9 DEX, base AC 6, 1.5 attacks per round, +30% bonus hit points, +25% physical resistance. Attacks deal 1d12 piercing or slashing damage (whichever is better) and have a 15% chance to deal an additional 2d6 crushing damage.
+
+WOLF: 18 STR, 17 DEX, base AC 4, 2 attacks per round, +10% bonus hit points, +10% physical resistance. Attacks deal 1d4 piercing or slashing damage (whichever is better) and have a 15% chance to knock down targets for one round on a failed save vs. death.
+
+SPIDER: 17 STR, 17 DEX, base AC 6, 4 attacks per round. Attacks deal 1d2 piercing damage and inflict 12 points of poison damage over six rounds.
+
+BOAR: 18/50 STR, 9 DEX, base AC 5, 1 attack per round, +50% bonus hit points, +40% physical resistance. Attacks deal 1d8 crushing damage and have a 15% chance to deal an additional 2d4 crushing damage and stun for 2 rounds on a failed save vs. death.
+
+PANTHER: 18/75 STR, 18 DEX, base AC 2, 3 attacks per round, +20% bonus hit points, +25% physical resistance, increased movement rate. Attacks deal 1d8 slashing damage and have a 15% chance to bleed targets for one point of slashing damage per second for six seconds.~
+COPY ~%MOD_FOLDER%/spells/c0wwolf.spl~ ~override~
+SAY NAME1 ~Shapeshift: Winter Wolf~
+COPY ~%MOD_FOLDER%/spells/c0wwolf2.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/spcl632.spl~ ~override~
+SAY NAME1 ~Shapeshift: Spider~
+
+COPY ~%MOD_FOLDER%/2da/c0wshap3.2da~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0wsha3.spl~ ~override~
+SAY NAME1 ~Elemental Shape~
+SAY UNIDENTIFIED_DESC ~Elemental Shape
+Using this ability, a druid may take on the shape of a chosen elemental form at will. While in elemental form, the druid gains immunity to normal weapons and statistics corresponding to their chosen elemental, but is unable to cast spells. Additionally, when the druid returns to natural form, <PRO_HESHE> is also healed 3d10 Hit Points.
+
+Upon reaching level 15, elemental forms are enhanced.
+
+FIRE ELEMENTAL: 18/75 STR, 18 DEX, base AC 2, 3 attacks per round, +25% bonus hit points, +20% physical resistance, fire resistance set to 125%, cold resistance set to -50%. Attacks deal 2d10 damage (half fire, half slashing). Enemies who strike the druid within melee range suffer fire damage in retaliation.
+LEVEL 15: Strength and Dexterity increased to 20. Attacks per round increased to 4.
+
+EARTH ELEMENTAL: 22 STR, 14 DEX, base AC 2, 1 attack per round, +25% bonus hit points, +50% physical resistance. Attacks deal 2d12 crushing damage.
+LEVEL 15: Hit point bonus increased to +100%. Physical resistance increased to 75%.
+
+AIR ELEMENTAL: 18/75 STR, 22 DEX, base AC 0, 2 attacks per round, +25% bonus hit points, +20% physical resistance, +100% missile resistance, +100% electrical resistance, increased movement rate. Ranged attacks deal 4d6 damage (half magic, half crushing) and knock all enemies in a 10' radius unconscious on targets who fail a save vs. breath weapons at -2.
+LEVEL 15: Base AC increased to -6. Dexterity increased to 24. Attacks deal 8d6 damage and knock enemies unconscious on a failed save vs. breath weapons at -4.
+
+WATER ELEMENTAL: 19 STR, 18 DEX, base AC 2, 2 attacks per round, +50% bonus hit points, +30% physical resistance, fire and cold resistance set to 80%, regenerates 1 hit point/round. Attacks deal 2d10 damage (half cold, half crushing).
+LEVEL 15: Strength increased to 21. Regeneration rate increased to 3 hit points/round.~
+COPY ~%MOD_FOLDER%/spells/c0hrfire.spl~ ~override~
+SAY NAME1 ~Shapeshift: Fire Elemental~
+COPY ~%MOD_FOLDER%/spells/c0hrair.spl~ ~override~
+SAY NAME1 ~Shapeshift: Air Elemental~
+COPY ~%MOD_FOLDER%/spells/c0hreart.spl~ ~override~
+SAY NAME1 ~Shapeshift: Earth Elemental~
+COPY ~%MOD_FOLDER%/spells/c0hrwate.spl~ ~override~
+SAY NAME1 ~Shapeshift: Water Elemental~
+
+//////////////////////////////////////
+////////////////ITEMS/////////////////
+//////////////////////////////////////
+
+COPY ~%MOD_FOLDER%/spells/BRBRP.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Bear)~
+SAY NAME2 ~Natural Weapon (Bear)~
+
+COPY ~%MOD_FOLDER%/spells/C0HRBOAR.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Boar)~
+SAY NAME2 ~Natural Weapon (Boar)~
+
+COPY ~%MOD_FOLDER%/spells/C0HRPANT.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Panther)~
+SAY NAME2 ~Natural Weapon (Panther)~
+
+COPY ~%MOD_FOLDER%/spells/C0HRSPID.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Spider)~
+SAY NAME2 ~Natural Weapon (Spider)~
+
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0hrwwol.pro~ ~Winter Wolf Breath~
+
+COPY ~%MOD_FOLDER%/spells/C0WWOLF.ITM~ ~override~
+SAY NAME1 ~Breath Weapon (Winter Wolf)~
+SAY NAME2 ~Breath Weapon (Winter Wolf)~
+WRITE_SHORT 0x9C ~%c0hrwwol%~
+
+COPY ~%MOD_FOLDER%/spells/PLYSALA.ITM~ ~override~
+SAY NAME1 ~Flaming Spear~
+SAY NAME2 ~Flaming Spear~
+
+COPY ~%MOD_FOLDER%/spells/PLYWYVRN.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Wyvern)~
+SAY NAME2 ~Natural Weapon (Wyvern)~
+
+COPY ~%MOD_FOLDER%/spells/WOLFM.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Wolf)~
+SAY NAME2 ~Natural Weapon (Wolf)~
+
+COPY ~%MOD_FOLDER%/spells/C0HRFIRE.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Fire Elemental)~
+SAY NAME2 ~Natural Weapon (Fire Elemental)~
+
+COPY ~%MOD_FOLDER%/spells/C0HRAIR2.SPL~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0HRAIR.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Air Elemental)~
+SAY NAME2 ~Natural Weapon (Air Elemental)~
+
+COPY ~%MOD_FOLDER%/spells/C0HREART.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Earth Elemental)~
+SAY NAME2 ~Natural Weapon (Earth Elemental)~
+
+COPY ~%MOD_FOLDER%/spells/C0HRWATE.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Water Elemental)~
+SAY NAME2 ~Natural Weapon (Water Elemental)~
+
+COPY_EXISTING ~spin124.spl~ ~override~
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      opcode = 112 // display string
+	  target = 1
+	  timing = 0
+	STR_VAR
+	  resource = brbrp
+  END
+  LPF ADD_SPELL_EFFECT
+    INT_VAR
+      check_globals = 1
+      check_headers = 1
+      opcode = 112 // display string
+	  target = 1
+	  timing = 0
+	STR_VAR
+	  resource = wolfm
+  END
