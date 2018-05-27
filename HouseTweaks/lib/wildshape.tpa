@@ -192,6 +192,9 @@ COPY_EXISTING_REGEXP GLOB ~.*\.2da~ ~override~
 APPEND ~clabdr01.2da~ ~POLYELEM ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    GA_C0WSHA3~
 APPEND ~clabdr04.2da~ ~POLYELEM ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****    GA_C0WSHA3~
 
+COPY ~%MOD_FOLDER%/spells/c0hrhp01.eff~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrhp02.eff~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrboa2.spl~ ~override~
 COPY ~%MOD_FOLDER%/spells/c0hrboa2.spl~ ~override~
   LPF ALTER_EFFECT
     INT_VAR
@@ -275,7 +278,7 @@ Upon reaching level 15, elemental forms are enhanced.
 FIRE ELEMENTAL: 18/75 STR, 18 DEX, base AC 2, 3 attacks per round, +25% bonus hit points, +20% physical resistance, fire resistance set to 125%, cold resistance set to -50%. Attacks deal 2d10 damage (half fire, half slashing). Enemies who strike the druid within melee range suffer fire damage in retaliation.
 LEVEL 15: Strength and Dexterity increased to 20. Attacks per round increased to 4.
 
-EARTH ELEMENTAL: 22 STR, 14 DEX, base AC 2, 1 attack per round, +25% bonus hit points, +50% physical resistance. Attacks deal 2d12 crushing damage.
+EARTH ELEMENTAL: 22 STR, 14 DEX, base AC 2, 1 attack per round, +50% bonus hit points, +50% physical resistance. Attacks deal 2d12 crushing damage.
 LEVEL 15: Hit point bonus increased to +100%. Physical resistance increased to 75%.
 
 AIR ELEMENTAL: 18/75 STR, 22 DEX, base AC 0, 2 attacks per round, +25% bonus hit points, +20% physical resistance, +100% missile resistance, +100% electrical resistance, increased movement rate. Ranged attacks deal 4d6 damage (half magic, half crushing) and knock all enemies in a 10' radius unconscious on targets who fail a save vs. breath weapons at -2.
