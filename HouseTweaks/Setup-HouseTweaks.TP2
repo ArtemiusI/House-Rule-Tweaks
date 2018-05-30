@@ -23,6 +23,9 @@ INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
 BEGIN ~House Tweaks: Expanded Shapeshifting~
 INCLUDE ~%MOD_FOLDER%/lib/wildshape.tpa~
 
+BEGIN ~House Tweaks: Monk Can Use Quarterstaves~
+INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
+
 BEGIN ~House Tweaks: Increased Constitution Bonuses~
 COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
 
