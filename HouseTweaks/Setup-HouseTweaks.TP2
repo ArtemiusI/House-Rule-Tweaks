@@ -53,7 +53,7 @@ SAY UNIDENTIFIED_DESC ~War Cry
 With a War Cry, the warrior lets out an invigorating roar, healing <PRO_HISHER> hit points to full in addition to removing fatigue and restoring drained levels.~
 
 BEGIN ~House Tweaks: Improved Dialogues (BG:EE)~
-REQUIRE_PREDICATE (GAME_IS ~bgee~) ~This component must be installed on BG:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
 COMPILE	~%MOD_FOLDER%/Dialog/bg1/dialog.d~
 COPY_EXISTING ~flam5.cre~ ~override/c0zelas.cre~
 WRITE_ASCII 0x248 ~c0zelas~  #8  // override
@@ -64,7 +64,7 @@ SAY NAME1 ~Officer Zelas~
 SAY NAME2 ~Officer Zelas~
 
 BEGIN ~House Tweaks: Not-So-Indestructible Rats~
-REQUIRE_PREDICATE (GAME_IS ~bgee~) ~This component must be installed on BG:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
 COPY_EXISTING ~rat2.cre~ ~override~
 WRITE_SHORT 0x60 0
 WRITE_SHORT 0x61 0
@@ -72,13 +72,13 @@ WRITE_SHORT 0x62 0
 WRITE_SHORT 0x63 0
 
 BEGIN ~House Tweaks: Good-Aligned Roleplay Rewards (BG2:EE)~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 EXTEND_TOP ~udsac.bcs~ ~%MOD_FOLDER%/scripts/udsac.baf~
 COMPILE ~%MOD_FOLDER%/dialog/bg2/dialog.d~
 
 BEGIN ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 EXTEND_TOP ~hexxat.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
 EXTEND_TOP ~hexxa25.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
 COPY ~%MOD_FOLDER%/items/ohhcloak.itm~ ~override~
