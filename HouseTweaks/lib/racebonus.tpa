@@ -1,0 +1,75 @@
+STRING_SET ~ELVES: Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).
+
+Elves have the following traits:
+– 90% resistance against charm and sleep magics.
+– Infravision.
+– +1 THAC0 bonus with bows, short swords, and long swords.
+– -5% Open Locks, +5% Pick Pockets, +5% Move Silently, +10% Hide in Shadows.
+– +1 Dexterity, -1 Constitution.~ ~ELVES: Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).
+
+Elves have the following traits:
+– 90% resistance against charm and sleep magics.
+– Infravision.
+– +2 THAC0 bonus with bows, short swords, and long swords.
+– -5% Open Locks, +5% Pick Pockets, +5% Move Silently, +10% Hide in Shadows.
+– +1 Dexterity, -1 Constitution.~
+
+STRING_SET ~DWARVES: Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.
+
+Dwarves have the following traits:
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell, with additional bonuses based on Constitution.
+– Infravision.
+– +10% Open Locks, +15% Find Traps, +5% Detect Illusion, +10% Set Traps.
+– +1 Constitution, -1 Dexterity, -2 Charisma.~ ~DWARVES: Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.
+
+Dwarves have the following traits:
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell, with additional bonuses based on Constitution.
+– Infravision.
+– +2 THAC0 bonus with axes and warhammers.
+– -2 THAC0 penalty with two-handed melee weapons.
+– +10% Open Locks, +15% Find Traps, +5% Detect Illusion, +10% Set Traps.
+– +1 Constitution, -1 Charisma.~
+
+STRING_SET ~GNOMES: Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).
+
+Gnomes have the following traits:
+– +2 bonus to Saving Throws vs. Rod/Staff/Wand and vs. Spell, with additional bonuses based on Constitution.
+– Infravision.
+– +5% Open Locks, +10% Find Traps, +5% Move Silently, +5% Hide in Shadows, +10% Detect Illusion, +5% Set Traps.
+– +1 Intelligence, -1 Wisdom.~ ~GNOMES: Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).
+
+Gnomes have the following traits:
+– +2 bonus to Saving Throws vs. Rod/Staff/Wand and vs. Spell, with additional bonuses based on Constitution.
+– Infravision.
+– -2 THAC0 penalty with two-handed melee weapons.
+– +5% Open Locks, +10% Find Traps, +5% Move Silently, +5% Hide in Shadows, +10% Detect Illusion, +5% Set Traps.
+– +1 Intelligence, -1 Wisdom.~
+
+STRING_SET ~HALFLINGS: Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.
+
+Halflings have the following traits:
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell, with additional bonuses based on Constitution.
+– +1 THAC0 bonus with slings.
+– +5% Open Locks, +5% Find Traps, +5% Pick Pockets, +10% Move Silently, +15% Hide in Shadows.
+– +1 Dexterity, -1 Strength, -1 Wisdom.~ ~HALFLINGS: Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.
+
+Halflings have the following traits:
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell, with additional bonuses based on Constitution.
+– +2 THAC0 bonus with slings, darts and daggers.
+– -2 THAC0 penalty with two-handed melee weapons.
+– +5% Open Locks, +5% Find Traps, +5% Pick Pockets, +10% Move Silently, +15% Hide in Shadows.
+– +1 Dexterity, -1 Strength.~
+
+STRING_SET ~HALF-ORCS: Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the lands of Amn, half-orcs are tolerated, as unlike in the north the people of Amn haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.
+
+Half-orcs have the following traits:
+– Infravision.
+– +1 Strength, +1 Constitution, -2 Intelligence.~ ~HALF-ORCS: Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the lands of Amn, half-orcs are tolerated, as unlike in the north the people of Amn haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.
+
+Half-orcs have the following traits:
+– Infravision.
+– +2 THAC0 bonus with two-handed melee weapons.
+– +1 Strength, +1 Constitution, -2 Charisma.~
+
+COPY ~%MOD_FOLDER%/2DA/ABRACEAD.2DA~ ~OVERRIDE~
+COPY ~%MOD_FOLDER%/2DA/RACETHAC.2DA~ ~OVERRIDE~

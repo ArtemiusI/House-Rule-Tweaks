@@ -26,6 +26,9 @@ INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
 BEGIN ~House Tweaks: Expanded Shapeshifting~
 INCLUDE ~%MOD_FOLDER%/lib/wildshape.tpa~
 
+BEGIN ~House Tweaks: Expanded Racial Bonuses~
+INCLUDE ~%MOD_FOLDER%/lib/racebonus.tpa~
+
 BEGIN ~House Tweaks: Monk Can Use Quarterstaves~
 INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
 
