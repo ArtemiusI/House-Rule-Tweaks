@@ -69,7 +69,7 @@ ADVANTAGES:
 – May achieve mastery in any melee weapon.
 – May use the Berserker Rage ability once per day. Gains one additional use every 5 levels.
 
-BERSERKER RAGE: The Rashemi berserker becomes enraged for 2 turns. While enraged, he gains a +2 bonus to his Strength and becomes immune to charm, confusion, fear, feeblemind, hold, level drain, maze, stun, and sleep. The Rashemi berserker also gains 15 temporary Hit Points, which are taken away at the end of the berserk spree, possibly knocking him unconscious. However, his armor class is penalized by 4 points while enraged. Additionally, the berserker is unable to perform any action aside from movement and attacking, such as spellcasting, using items, stealth or talking until the rage has ended. Bonuses to Strength increase to +4 at 12th level and +6 at 20th level.
+BERSERKER RAGE: The Rashemi berserker becomes enraged for 2 turns. While enraged, he gains a +2 bonus to his Strength, one bonus attack per round, and becomes immune to charm, confusion, fear, feeblemind, hold, level drain, maze, stun, and sleep. The Rashemi berserker also gains 15 temporary Hit Points, which are taken away at the end of the berserk spree, possibly knocking him unconscious. However, his armor class is penalized by 4 points while enraged. Additionally, the berserker is unable to perform any action aside from movement and attacking, such as spellcasting, using items, stealth or talking until the rage has ended. Bonuses to Strength increase to +4 at 12th level and +6 at 20th level.
 
 Once the duration has ended, the Rashemi berserker becomes winded, reducing his THAC0, armor class and damage by four points, and he is unable to go berserk again for one turn.
 
@@ -322,4 +322,9 @@ Requires:
  6 Strength
 
 Weight: 40~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~shop03.sto~ THEN BEGIN
+COPY_EXISTING ~shop03.sto~ ~override~
+ADD_STORE_ITEM ~c0mleat~ LAST #0 #0 #0 ~IDENTIFIED~ #1
 END
