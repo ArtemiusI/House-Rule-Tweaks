@@ -1,24 +1,12 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.0~
+VERSION ~1.5.1~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
 END
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~
-
-BEGIN ~House Tweaks: Vanguard Fighter Kit~
-INCLUDE ~%MOD_FOLDER%/lib/vanguard.tpa~
-
-BEGIN ~House Tweaks: Adventurer Thief Kit~
-INCLUDE ~%MOD_FOLDER%/lib/adventurer.tpa~
-
-BEGIN ~House Tweaks: Divine Champion Paladin Kit~
-INCLUDE ~%MOD_FOLDER%/lib/divinechampion.tpa~
-
-BEGIN ~House Tweaks: Rashemi Berserker Ranger Kit for Minsc~
-INCLUDE ~%MOD_FOLDER%/lib/berserkerminsc.tpa~
 
 BEGIN ~House Tweaks: Expanded Racial Enemies~
 INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
