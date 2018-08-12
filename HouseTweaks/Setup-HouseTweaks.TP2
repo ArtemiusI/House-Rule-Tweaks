@@ -1,6 +1,6 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.6.1~
+VERSION ~1.6~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -59,32 +59,6 @@ WRITE_SHORT 0x61 0
 WRITE_SHORT 0x62 0
 WRITE_SHORT 0x63 0
 
-BEGIN ~House Tweaks: Fix BG2 Soundset Battle Cry Subtitles~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
-COPY_EXISTING ~charsnd.2da~ ~override~
-	SET_2DA_ENTRY 18 1 10 RESOLVE_STR_REF (~I shall not yield to you!~)
-	SET_2DA_ENTRY 19 1 11 RESOLVE_STR_REF (~By my honor, you shall not see another day!~)
-	SET_2DA_ENTRY 18 2 10 RESOLVE_STR_REF (~Death shall take you!~)
-	SET_2DA_ENTRY 19 2 11 RESOLVE_STR_REF (~Retreat, or fall before me!~)
-	SET_2DA_ENTRY 18 3 10 RESOLVE_STR_REF (~You will regret facing me!~)
-	SET_2DA_ENTRY 19 3 11 RESOLVE_STR_REF (~No escape!~)
-	SET_2DA_ENTRY 18 4 10 RESOLVE_STR_REF (~You wouldn't hurt a lady, would you?~)
-	SET_2DA_ENTRY 19 4 11 RESOLVE_STR_REF (~Oh, this should be fun!~)
-	SET_2DA_ENTRY 18 5 10 RESOLVE_STR_REF (~Aww, not scared of little ol' me, are ya? Mwahaha!~)
-	SET_2DA_ENTRY 19 5 11 RESOLVE_STR_REF (~You asked for it, ya know!~)
-	SET_2DA_ENTRY 18 6 10 RESOLVE_STR_REF (~Death shall take you!~)
-	SET_2DA_ENTRY 19 6 11 RESOLVE_STR_REF (~Retreat, or fall before me!~)
-	SET_2DA_ENTRY 18 7 10 RESOLVE_STR_REF (~Fight well, for now you will die!~)
-	SET_2DA_ENTRY 19 7 11 RESOLVE_STR_REF (~Mine is the fist of death!~)
-	SET_2DA_ENTRY 18 8 10 RESOLVE_STR_REF (~Time is up for you, my friend!~)
-	SET_2DA_ENTRY 19 8 11 RESOLVE_STR_REF (~Scream! Scream for mercy!~)
-	SET_2DA_ENTRY 18 9 10 RESOLVE_STR_REF (~You are no match for my skill!~)
-	SET_2DA_ENTRY 19 9 11 RESOLVE_STR_REF (~May the best among us prevail!~)
-	SET_2DA_ENTRY 18 10 10 RESOLVE_STR_REF (~I shall not yield to you!~)
-	SET_2DA_ENTRY 19 10 11 RESOLVE_STR_REF (~By my honor, you shall not see another day!~)
-	SET_2DA_ENTRY 18 11 10 RESOLVE_STR_REF (~I shall not yield to you!~)
-	SET_2DA_ENTRY 19 11 11 RESOLVE_STR_REF (~By my honor, you shall not see another day!~)
-	
 BEGIN ~House Tweaks: Good-Aligned Roleplay Rewards (BG2:EE)~
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
