@@ -21,6 +21,36 @@ CHAIN WELTHER a1.2
 DO ~GiveItem("MISC5O",Player1)
 EscapeArea()~ EXIT
 
+EXTEND_TOP GORCAMB 54
+++ ~Wait. Would you be willing to part with the Deck of Many Things?~ EXTERN GORCAMB AES-DECK
+++ ~Farewell.~ DO ~AddXP2DA("PLOT2B")
+ClearAllActions()
+StartCutSceneMode()
+StartCutSceneEx("cut203a",FALSE)~ EXIT
+END
+
+CHAIN GORCAMB AES-DECK
+~You desire the Deck, hmm? I cannot say I blame you. It is a most wondrous thing. Dangerous, of course, but that only makes the draw more exciting.~
+= ~I suppose I could be persuaded to bargain for it. After all, it would only be a matter of time before it takes my life. Such is the risk of the game, and it can only amuse me for so long.~
+= ~Here is my offer, prime. I will give you the deck, in exchange for one of your prior wagers– your experience, or your vitality. Such a trade is not unreasonable, I assure you. Though the deck bears many dangers, it also grants great rewards to the daring. What do you say?~
+END
+++ ~I accept. Take a portion of my experience.~ DO ~ReallyForceSpell(LastTalkedToBy,DECK_XP_DRAIN)~ EXTERN GORCAMB AES-DECK-ACCEPTED
+++ ~I accept. Take a portion of my vitality.~ DO ~ReallyForceSpell(LastTalkedToBy,DECK_VITALITY_DRAIN)~ EXTERN GORCAMB AES-DECK-ACCEPTED
+++ ~Never mind. The cost is a little too steep.~ EXTERN GORCAMB AES-DECK-REFUSED
+++ ~I think I'll just kill you for the deck instead.~ EXTERN GORCAMB 55
+
+CHAIN GORCAMB AES-DECK-ACCEPTED
+~As you wish. The deck is yours, prime. Use it well, and may you live to bestow it upon another some day.~
+DO ~GiveItem("deck",LastTalkedToBy)~
+= ~Now you must excuse my rudeness, but I really should be going. The planes await!~
+COPY_TRANS GORCAMB 54
+
+CHAIN GORCAMB AES-DECK-REFUSED
+~The wiser choice, perhaps. Well then, long life to you, prime.~
+DO ~GiveItem("deck",LastTalkedToBy)~
+= ~Now you must excuse my rudeness, but I really should be going. The planes await!~
+COPY_TRANS GORCAMB 54
+
 BEGIN C0DMALTR
 
 CHAIN IF WEIGHT #-1 ~True()~ THEN C0DMALTR a1

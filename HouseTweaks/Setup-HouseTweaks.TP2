@@ -1,6 +1,6 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.6~
+VERSION ~1.6.1~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~

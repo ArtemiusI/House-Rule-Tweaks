@@ -10,7 +10,7 @@ EXTEND_TOP BRAGE 4
 GiveItem("SW2H03",LastTalkedToBy)
 GiveItem("POTN12",LastTalkedToBy)
 AddexperienceParty(1000)
-SetGlobal("DMWWRepBoost","GLOBAL",1)
+ReputationInc(1)
 ClearAllActions()
 StartCutSceneMode()
 StartCutSceneEx("Bragecut",FALSE)~ EXIT
@@ -29,7 +29,7 @@ END
 GiveItem("SW2H03",LastTalkedToBy)
 GiveItem("POTN12",LastTalkedToBy)
 AddexperienceParty(1000)
-SetGlobal("DMWWRepBoost","GLOBAL",1)
+ReputationInc(1)
 SetGlobal("c0bragewait","GLOBAL",2)
 ClearAllActions()
 StartCutSceneMode()
