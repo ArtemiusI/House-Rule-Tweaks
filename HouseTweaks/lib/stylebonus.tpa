@@ -1,14 +1,7 @@
 COPY ~%MOD_FOLDER%/2da/stylbonu.2da~ ~override~
 
-STRING_SET ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
-
-Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 (instead of just 20) when using a two-handed weapon.
-
-Specialized (2 slots): The wielder gets a further -2 bonus to Speed Factor.
-
-NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
-
-~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
+STRING_SET 25044 ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
 
 Non-proficient (0 slots): The wielder incurs a -1 penalty to Armor Class.
 
@@ -18,15 +11,7 @@ Specialized (2 slots): The wielder gets a further +2 bonus to damage and -2 to S
 
 NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
 
-STRING_SET ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
-
-Proficient (1 slot): The wielder gets a -2 bonus to AC against missile weapons.
-
-Specialized (2 slots): The wielder gets a -4 bonus to AC against missile weapons.
-
-NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
-
-~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+STRING_SET 25045 ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
 
 Non-proficient (0 slots): The wielder incurs a -1 penalty to THAC0.
 
@@ -36,30 +21,53 @@ Specialized (2 slots): The wielder gets a -2 bonus to Armor Class and an additio
 
 NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
 
-STRING_SET ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
-
-Proficient (1 slot): The wielder gets a -1 bonus to AC and inflicts critical damage on an attack roll of 19 or 20.
-
-Specialized (2 slots): The wielder gets a -2 bonus to AC and inflicts critical damage on an attack roll of 19 or 20.~
-
-~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+STRING_SET 25046 ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
 
 Proficient (1 slot): The wielder gets a -1 bonus to AC, +1 to THAC0 and inflicts critical damage on an attack roll of 19-20.
 
 Specialized (2 slots): The wielder gets a -2 bonus to AC, +2 to THAC0 and inflicts critical damage on an attack roll of 18-20.~
 
-STRING_SET ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon. 
-
-Proficient (1 slot): The wielder's penalties are reduced to -2 with the main weapon and -6 with the off-hand weapon.
-
-Specialized (2 slots): The wielder's penalties are reduced to 0 with the main weapon and -4 with the off-hand weapon.
-
-Master (3 slots): The wielder's penalties are reduced to 0 with the main weapon and -2 with the off-hand weapon.~
-
-~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon. 
+STRING_SET 24999 ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon. 
 
 Proficient (1 slot): The wielder's penalties are reduced to -2 with the main weapon and -4 with the off-hand weapon.
 
 Specialized (2 slots): The wielder's penalties are reduced to -2 with the main weapon and -2 with the off-hand weapon.
 
 Master (3 slots): The wielder's penalties are reduced to 0 with the main weapon and -2 with the off-hand weapon. Additionally, the wielder gets a -2 bonus to Armor Class.~
+END
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+STRING_SET 34171 ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+
+Non-proficient (0 slots): The wielder incurs a -1 penalty to Armor Class.
+
+Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 (instead of just 20) when using a two-handed weapon.
+
+Specialized (2 slots): The wielder gets a further +2 bonus to damage and -2 to Speed Factor.
+
+NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
+
+STRING_SET 34173 ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+
+Non-proficient (0 slots): The wielder incurs a -1 penalty to THAC0.
+
+Proficient (1 slot): The wielder gets a -1 bonus to Armor Class and an additional -1 against missile weapons.
+
+Specialized (2 slots): The wielder gets a -2 bonus to Armor Class and an additional -2 against missile weapons.
+
+NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
+
+STRING_SET 34174 ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+
+Proficient (1 slot): The wielder gets a -1 bonus to AC, +1 to THAC0 and inflicts critical damage on an attack roll of 19-20.
+
+Specialized (2 slots): The wielder gets a -2 bonus to AC, +2 to THAC0 and inflicts critical damage on an attack roll of 18-20.~
+
+STRING_SET 34176 ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon. 
+
+Proficient (1 slot): The wielder's penalties are reduced to -2 with the main weapon and -4 with the off-hand weapon.
+
+Specialized (2 slots): The wielder's penalties are reduced to -2 with the main weapon and -2 with the off-hand weapon.
+
+Master (3 slots): The wielder's penalties are reduced to 0 with the main weapon and -2 with the off-hand weapon. Additionally, the wielder gets a -2 bonus to Armor Class.~
+END
