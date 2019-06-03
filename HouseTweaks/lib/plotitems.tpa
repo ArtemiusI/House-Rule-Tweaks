@@ -1,0 +1,41 @@
+ACTION_IF FILE_EXISTS ~misc6p.itm~ THEN BEGIN  
+COPY ~%MOD_FOLDER%/PlotItems/Items/misc6p.itm~ ~override/misc6p.itm~
+SAY DESC ~This wardstone is a virtual area of darkness and seems to suck the very light from space around it. The shape of the stone is hard to discern, cloaked in shadow as it is. When raised overhead, it floats around the cranium of the user and distorts their image, making them more difficult to target.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +4 vs. missile attacks
+- Save vs. Death: +2
+- Save vs. Breath: +2
+- Save vs. Wand: +2
+
+Weight: 1~
+END
+
+ACTION_IF FILE_EXISTS ~key23.itm~ THEN BEGIN  
+COPY ~%MOD_FOLDER%/PlotItems/Items/key23.itm~ ~override/key23.itm~
+SAY DESC ~The three holy symbols connected to form this disc, the Symbol of Amaunator. Remnants of the lost god's power is held within it, and it may be used to call upon a sunray once per day.
+
+STATISTICS:
+
+Charge abilities:
+- Sunray once per day
+
+Weight: 1~
+END
+
+ACTION_IF FILE_EXISTS ~key20.itm~ THEN BEGIN  
+COPY ~%MOD_FOLDER%/PlotItems/Items/key20.itm~ ~override/key20.itm~
+SAY DESC ~This is the reconstructed mask of King Strohm the Third. When you place it on your face, the entire world becomes tinted with odd colors. Though disorienting at first, wearing the mask may allow the wearer to discern the truth of all things once per day.
+
+STATISTICS:
+
+Charge abilities:
+- True Sight once per day
+
+Equipped abilities:
+- Armor Class: +1
+
+Weight: 1~
+END

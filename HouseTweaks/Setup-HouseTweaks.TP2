@@ -1,6 +1,6 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.6.1~
+VERSION ~1.7~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -16,6 +16,9 @@ INCLUDE ~%MOD_FOLDER%/lib/wildshape.tpa~
 
 BEGIN ~House Tweaks: Expanded Racial Bonuses~
 INCLUDE ~%MOD_FOLDER%/lib/racebonus.tpa~
+
+BEGIN ~House Tweaks: Rebalanced Weapon Styles~
+COPY ~%MOD_FOLDER%/2da/stylbonu.2da~ ~override~
 
 BEGIN ~House Tweaks: Monk Can Use Quarterstaves~
 INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
@@ -69,9 +72,19 @@ BEGIN ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 EXTEND_TOP ~hexxat.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
 EXTEND_TOP ~hexxa25.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
-COPY ~%MOD_FOLDER%/items/ohhcloak.itm~ ~override~
-COPY ~%MOD_FOLDER%/items/ohhcloak.spl~ ~override~
-COPY ~%MOD_FOLDER%/items/ohhcloa2.spl~ ~override~
-COPY ~%MOD_FOLDER%/items/ohhkork.itm~ ~override~
-COPY ~%MOD_FOLDER%/items/ohhkork.spl~ ~override~
-COPY ~%MOD_FOLDER%/items/ohhkork2.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat/ohhcloak.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat/ohhcloak.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat/ohhcloa2.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat/ohhkork2.spl~ ~override~
+
+BEGIN ~House Tweaks: Give Stat Bonuses to EENPCs in BG2 (except Hexxat)~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+INCLUDE ~%MOD_FOLDER%/lib/eenpcs.tpa~
+
+BEGIN ~House Tweaks: Useful Plot Items~
+INCLUDE ~%MOD_FOLDER%/lib/plotitems.tpa~
+
+BEGIN ~House Tweaks: Faster Troll Unconsciousness~
+INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~

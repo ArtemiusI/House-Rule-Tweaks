@@ -1,0 +1,48 @@
+PRINT ~Give Stat Bonuses to Rasaad? (+1 STR, DEX, CON)
+1) Yes
+2) No~
+
+OUTER_SPRINT ~rasaad~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~rasaad~) OR (~rasaad~ > 0x2) OR (~rasaad~ < 0x1)) BEGIN
+  ACTION_READLN ~rasaad~
+END
+      ACTION_IF ("rasaad" = 1) THEN BEGIN
+		COPY_EXISTING_REGEXP ~rasaad.*.cre~ ~override~
+		WRITE_BYTE 0x238 17 // strength
+		WRITE_BYTE 0x23c 17 // dexterity
+		WRITE_BYTE 0x23d 15 // constitution
+      END
+      ACTION_IF ("rasaad" = 2) THEN BEGIN
+      END
+
+PRINT ~Give Stat Bonuses to Dorn? (+1 DEX, +2 CHA)
+1) Yes
+2) No~
+
+OUTER_SPRINT ~dorn~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~dorn~) OR (~dorn~ > 0x2) OR (~dorn~ < 0x1)) BEGIN
+  ACTION_READLN ~dorn~
+END
+      ACTION_IF ("dorn" = 1) THEN BEGIN
+		COPY_EXISTING_REGEXP ~dorn.*.cre~ ~override~
+		WRITE_BYTE 0x23c 17 // dexterity
+		WRITE_BYTE 0x23e 18 // charisma
+      END
+      ACTION_IF ("dorn" = 2) THEN BEGIN
+      END
+
+PRINT ~Give Stat Bonuses to Neera? (+2 CON, +1 INT)
+1) Yes
+2) No~
+
+OUTER_SPRINT ~neera~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~neera~) OR (~neera~ > 0x2) OR (~neera~ < 0x1)) BEGIN
+  ACTION_READLN ~neera~
+END
+      ACTION_IF ("neera" = 1) THEN BEGIN
+		COPY_EXISTING_REGEXP ~neera.*.cre~ ~override~
+		WRITE_BYTE 0x23d 16 // constitution
+		WRITE_BYTE 0x23a 18 // intelligence
+      END
+      ACTION_IF ("neera" = 2) THEN BEGIN
+      END
