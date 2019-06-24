@@ -95,5 +95,8 @@ REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.
 COPY ~%MOD_FOLDER%/Reputation/REPUP.WAV~ ~OVERRIDE~
 STRING_SET 19686 ~The Party's Reputation Has Increased~ [REPUP]
 
+BEGIN ~House Tweaks: Race Text Patch~
+INCLUDE ~%MOD_FOLDER%/lib/racetext.tpa~
+
 BEGIN ~House Tweaks: Hoodless Thief Avatars~
 INCLUDE ~%MOD_FOLDER%/lib/hoodless.tpa~
