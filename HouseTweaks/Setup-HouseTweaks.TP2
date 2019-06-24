@@ -1,6 +1,6 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.7~
+VERSION ~1.8~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -9,6 +9,7 @@ END
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~
 
 BEGIN ~House Tweaks: Expanded Racial Enemies~
+COPY ~%MOD_FOLDER%/2da/haterace.2da~ ~override~
 INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
 
 BEGIN ~House Tweaks: Expanded Shapeshifting~
@@ -88,3 +89,11 @@ INCLUDE ~%MOD_FOLDER%/lib/plotitems.tpa~
 
 BEGIN ~House Tweaks: Faster Troll Unconsciousness~
 INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~
+
+BEGIN ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+COPY ~%MOD_FOLDER%/Reputation/REPUP.WAV~ ~OVERRIDE~
+STRING_SET 19686 ~The Party's Reputation Has Increased~ [REPUP]
+
+BEGIN ~House Tweaks: Hoodless Thief Avatars~
+INCLUDE ~%MOD_FOLDER%/lib/hoodless.tpa~
