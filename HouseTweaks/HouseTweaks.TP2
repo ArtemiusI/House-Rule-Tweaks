@@ -1,10 +1,11 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.8~
+VERSION ~1.9~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
 END
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~
 
@@ -85,9 +86,11 @@ REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.
 INCLUDE ~%MOD_FOLDER%/lib/eenpcs.tpa~
 
 BEGIN ~House Tweaks: Useful Plot Items~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/plotitems.tpa~
 
 BEGIN ~House Tweaks: Faster Troll Unconsciousness~
+REQUIRE_PREDICATE (GAME_IS ~BGEE BG2EE EET~) ~This component must be installed on IWD:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~
 
 BEGIN ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~
@@ -100,3 +103,7 @@ INCLUDE ~%MOD_FOLDER%/lib/racetext.tpa~
 
 BEGIN ~House Tweaks: Hoodless Thief Avatars~
 INCLUDE ~%MOD_FOLDER%/lib/hoodless.tpa~
+
+BEGIN ~House Tweaks: NPC Soundsets for Icewind Dale~
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+INCLUDE ~%MOD_FOLDER%/lib/iwdsounds.tpa~
