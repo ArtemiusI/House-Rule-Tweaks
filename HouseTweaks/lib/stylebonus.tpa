@@ -3,8 +3,6 @@ COPY ~%MOD_FOLDER%/2da/stylbonu.2da~ ~override~
 ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
 STRING_SET 25044 ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
 
-Non-proficient (0 slots): The wielder incurs a -1 penalty to Armor Class.
-
 Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 (instead of just 20) when using a two-handed weapon.
 
 Specialized (2 slots): The wielder gets a further +2 bonus to damage and -2 to Speed Factor.

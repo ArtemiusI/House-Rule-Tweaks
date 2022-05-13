@@ -15,7 +15,7 @@ END
       ACTION_IF ("rasaad" = 2) THEN BEGIN
       END
 
-PRINT ~Give Stat Bonuses to Dorn? (+1 DEX, +2 CHA)
+PRINT ~Give Stat Bonuses to Dorn? (+1 DEX, +2 CON)
 1) Yes
 2) No~
 
@@ -26,7 +26,7 @@ END
       ACTION_IF ("dorn" = 1) THEN BEGIN
 		COPY_EXISTING_REGEXP ~dorn.*.cre~ ~override~
 		WRITE_BYTE 0x23c 17 // dexterity
-		WRITE_BYTE 0x23e 18 // charisma
+		WRITE_BYTE 0x23d 16 // charisma
       END
       ACTION_IF ("dorn" = 2) THEN BEGIN
       END

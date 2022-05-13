@@ -28,6 +28,9 @@ INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
 BEGIN ~House Tweaks: Increased Constitution Bonuses~
 COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
 
+BEGIN ~House Tweaks: INT/WIS/CHA-based Bonus Spell Slots~
+INCLUDE ~%MOD_FOLDER%/lib/spellslots.tpa~
+
 BEGIN ~House Tweaks: Warrior HLAs~
 COPY ~%MOD_FOLDER%/hlas/fighter~ ~override~
 COPY ~%MOD_FOLDER%/hlas/fighter/spcl904.spl~ ~override~
@@ -106,3 +109,9 @@ INCLUDE ~%MOD_FOLDER%/lib/hoodless.tpa~
 BEGIN ~House Tweaks: NPC Soundsets for Icewind Dale~
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/iwdsounds.tpa~
+
+BEGIN ~House Tweaks: Reputation Bonuses for Icewind Dale~
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+COMPILE	~%MOD_FOLDER%/Dialog/iwd/iwdrep.d~
+EXTEND_TOP ~BALDUR.BCS~	~%MOD_FOLDER%/scripts/iwdrep.baf~
+

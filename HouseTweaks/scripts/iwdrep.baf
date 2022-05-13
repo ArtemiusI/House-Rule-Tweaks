@@ -1,0 +1,35 @@
+// REPUTATION FOR KILLING YXUNOMEI
+
+IF
+	Dead("Yxunomei")
+	Global("C0_Yxunomei_Rep","GLOBAL",0)
+THEN
+  RESPONSE #100
+	ReputationInc(2)
+	DisplayStringNoNameDlg(Myself,~Your name will be remembered and honored for eliminating the threat of the demon Yxunomei.~)
+	SetGlobal("C0_Yxunomei_Rep","GLOBAL",1)
+END
+
+// REPUTATION FOR KILLING ICASARACHT
+
+IF
+	Global("HOW_COMPLETED","GLOBAL",1)
+	Global("C0_Icasaracht_Rep","GLOBAL",0)
+THEN
+  RESPONSE #100
+	ReputationInc(3)
+	DisplayStringNoNameDlg(Myself,~Your name will be remembered and honored for your victory over Icasaracht.~)
+	SetGlobal("C0_Icasaracht_Rep","GLOBAL",1)
+END
+
+// REPUTATION FOR COMPLETING TRIALS
+
+IF
+	Global("Master_Quest","GLOBAL",7)
+	Global("C0_Luremaster_Rep","GLOBAL",0)
+THEN
+  RESPONSE #100
+	ReputationInc(3)
+	DisplayStringNoNameDlg(Myself,~Your name will be remembered and honored for your skill and wit in conquering the Trials of the Luremaster.~)
+	SetGlobal("C0_Luremaster_Rep","GLOBAL",1)
+END
