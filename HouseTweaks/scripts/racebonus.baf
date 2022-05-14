@@ -3,4 +3,5 @@ IF
 THEN
   RESPONSE #100
 	ApplySpellRES("c0raceef",Player1)
+	Continue()
 END
