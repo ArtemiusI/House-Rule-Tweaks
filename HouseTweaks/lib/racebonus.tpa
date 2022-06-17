@@ -5,6 +5,18 @@ Humans have the following traits:
 – Quick To Master: Humans gain a +5% bonus to experience gained from all sources.
 – Skilled: Humans receive a +5% bonus to all thieving skills and +2 bonus to minimum rolls to all ability scores.~)
 
+ACTION_IF MOD_IS_INSTALLED ~ArtisansKitpack.tp2~ ~0002~ THEN BEGIN
+COPY_EXISTING ~RACETEXT.2DA~ OVERRIDE
+READ_2DA_ENTRY 1 3 5 human_racetext 
+OUTER_SPRINT old ~Humans may not multi-class.~ // text to be removed
+ACTION_GET_STRREF %human_racetext% text // human description
+OUTER_INNER_PATCH_SAVE text ~%text%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~~ // delete text if found
+END
+STRING_SET_EVALUATE human_racetext ~%text%~
+END
+
+
 OUTER_SET elf_desc = RESOLVE_STR_REF(~ELVES: Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).
 
 Elves have the following traits:
@@ -53,13 +65,13 @@ Half-orcs have the following traits:
 – +1 Strength, +1 Constitution, -1 Intelligence, -1 Charisma.~)
 
 COPY_EXISTING ~RACETEXT.2da~ OVERRIDE
-SET_2DA_ENTRY 1 3 5 %human_desc%
-SET_2DA_ENTRY 2 3 5 %elf_desc%
-SET_2DA_ENTRY 3 3 5 %halfelf_desc%
-SET_2DA_ENTRY 4 3 5 %dwarf_desc%
-SET_2DA_ENTRY 5 3 5 %halfling_desc%
-SET_2DA_ENTRY 6 3 5 %gnome_desc%
-SET_2DA_ENTRY 7 3 5 %halforc_desc%
+SET_2DA_ENTRY 1 3 5 ~%human_desc%~
+SET_2DA_ENTRY 2 3 5 ~%elf_desc%~
+SET_2DA_ENTRY 3 3 5 ~%halfelf_desc%~
+SET_2DA_ENTRY 4 3 5 ~%dwarf_desc%~
+SET_2DA_ENTRY 5 3 5 ~%halfling_desc%~
+SET_2DA_ENTRY 6 3 5 ~%gnome_desc%~
+SET_2DA_ENTRY 7 3 5 ~%halforc_desc%~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/racebonus.baf~ EVAL
@@ -74,13 +86,15 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~C0TR#03.SPL~ THEN BEGIN
 COPY_EXISTING ~C0TR#03.SPL~ OVERRIDE
 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode = 318 parameter1 = 1 parameter2 = 104 timing = 9 STR_VAR resource = C0TR#03A END
+LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode = 318 parameter1 = 4 parameter2 = 115 timing = 9 STR_VAR resource = C0TR#03B END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 parameter1 = 1 parameter2 = 104 timing = 9 STR_VAR resource = C0RACHUM END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 parameter1 = 1 parameter2 = 4 timing = 9 STR_VAR resource = C0TR#03B END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 1 parameter2 = 4 timing = 9 STR_VAR resource = C0TR#03B END
 END
 
 COPY ~%MOD_FOLDER%/racebonus~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/ABRACEAD.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/ABRACERQ.2DA~ ~OVERRIDE~
+COPY ~%MOD_FOLDER%/2DA/SKILLRAC.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/SAVECNDH.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/SAVECNG.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/RACETHAC.2DA~ ~OVERRIDE~

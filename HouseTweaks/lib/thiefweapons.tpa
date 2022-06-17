@@ -1,0 +1,22 @@
+// THIEFWEAPONS
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x20 thief //reads the byte containing the thief usability flag
+    PATCH_IF ((thief BAND 0b01000000) = 0b01000000) BEGIN // if it is not usable by thieves
+      READ_SHORT    0x1C type //reads the byte containing item type
+      PATCH_IF ((type = 16) OR (type = 17) OR (type = 19) OR (type = 20) OR (type = 21) OR (type = 22) OR (type = 23) OR (type = 25) OR (type = 26) OR (type = 29) OR (type = 30)) BEGIN // if it is a weapon
+        WRITE_BYTE    0x20 (thief BAND 0b10111111)  // makes usable by thieves
+		LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+				silent = 1
+				opcode = 319
+				target = 1
+				parameter1 = 4
+				parameter2 = 5
+				timing = 2
+				special = RESOLVE_STR_REF (~Thief~)
+		END
+      END
+    END
+  END
+BUT_ONLY

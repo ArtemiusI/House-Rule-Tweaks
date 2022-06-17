@@ -1,0 +1,152 @@
+COPY ~%MOD_FOLDER%/2DA/PROFS.2DA~ OVERRIDE
+
+COPY_EXISTING ~clswpbon.2da~ ~override~
+  COUNT_2DA_COLS numCols
+  COUNT_2DA_ROWS numCols numRows
+  FOR (row = 0; row < numRows; row += 1) BEGIN
+    SET_2DA_ENTRY row 1 numCols ~1~
+  END
+  
+// HEAVY CROSSBOWS
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x1F fighter //reads the byte containing the fighter usability flag
+    PATCH_IF ((fighter BAND 0b00001000) = 0b00000000) BEGIN // if it is usable by fighters
+      READ_BYTE    0x1E cleric //reads the byte containing monks usability flag
+      READ_SHORT    0x1C type //reads the byte containing item type
+      PATCH_IF (type = 27) BEGIN // if it is a crossbow
+        WRITE_BYTE    0x1F (fighter BAND 0b00111000)  // makes usable by clerics
+        WRITE_BYTE    0x1E (cleric BAND 0b01111111)  // makes usable by clerics
+      END
+    END
+  END
+BUT_ONLY
+
+// LIGHT CROSSBOWS
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x1F fighter //reads the byte containing the fighter usability flag
+    READ_BYTE    0x20 thief //reads the byte containing the thief usability flag
+    PATCH_IF ((fighter BAND 0b00001000) = 0b00000000) BEGIN // if it is usable by fighters
+    PATCH_IF ((thief BAND 0b01000000) = 0b00000000) BEGIN // if it is usable by thieves
+      READ_SHORT    0x1C type //reads the byte containing item type
+      PATCH_IF (type = 27) BEGIN // if it is a crossbow
+        WRITE_BYTE    0x20 (thief BAND 0b11111011)  // makes usable by mages
+      END
+    END
+  END
+  END
+BUT_ONLY
+
+// BOLTS
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x1F fighter //reads the byte containing the fighter usability flag
+    READ_BYTE    0x20 thief //reads the byte containing the thief usability flag
+    PATCH_IF ((fighter BAND 0b00001000) = 0b00000000) BEGIN // if it is usable by fighters
+    PATCH_IF ((thief BAND 0b01000000) = 0b00000000) BEGIN // if it is usable by thieves
+      READ_SHORT    0x1C type //reads the byte containing item type
+      PATCH_IF (type = 31) BEGIN // if it is a crossbow
+        WRITE_BYTE    0x20 (thief BAND 0b11111011)  // makes usable by mages
+      END
+    END
+  END
+  END
+BUT_ONLY
+
+// CLUBS
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x20 thief //reads the byte containing the fighter usability flag
+    PATCH_IF ((thief BAND 0b01000000) = 0b00000000) BEGIN // if it is usable by thieves
+      READ_SHORT    0x1C type //reads the byte containing item type
+      PATCH_IF (type = 17) BEGIN // if it is a club
+        WRITE_BYTE    0x20 (thief BAND 0b11111011)  // makes usable by mages
+      END
+    END
+  END
+BUT_ONLY
+
+// CLERICS
+ACTION_CLEAR_ARRAY weapprof_cols
+ACTION_DEFINE_ASSOCIATIVE_ARRAY weapprof_cols BEGIN 6 => 6 13 => 13 17 => 17 18 => 18 20 => 20 21 => 21 END // bogstandard fighter
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 8 9 class
+    PATCH_IF ((IS_AN_INT class) AND ((class = 3) OR (class = 8) OR (class = 14) OR (class = 15) OR (class = 17) OR (class = 18))) BEGIN
+      READ_2DA_ENTRY row 1 9 kitname
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_kitnames BEGIN ~%kitname%~ => ~%kitname%~ END
+    END
+  END
+  BUT_ONLY   
+      
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  COUNT_2DA_COLS col_count
+  PATCH_PHP_EACH weapprof_cols_kitnames AS match_name => foo BEGIN
+    FOR (column = 0; column < col_check; ++column) BEGIN
+      READ_2DA_ENTRY 0 column col_check name
+      PATCH_IF ("%name%" STRING_COMPARE_CASE "%match_name%" = 0) BEGIN
+        SET column += 1 // row with names has an empty entry for the first column
+        DEFINE_ASSOCIATIVE_ARRAY weapprof_cols BEGIN ~%column%~ => ~%column%~ END
+        SET column = col_count // kill loop
+      END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols AS column => foo BEGIN
+    FOR (row = 2; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars = 0) BEGIN
+        SET_2DA_ENTRY 23 column col_count 1
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// MAGES
+ACTION_CLEAR_ARRAY weapprof_cols
+ACTION_DEFINE_ASSOCIATIVE_ARRAY weapprof_cols BEGIN 4 => 4 END // bogstandard fighter
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 8 9 class
+    PATCH_IF ((IS_AN_INT class) AND (class = 1)) BEGIN
+      READ_2DA_ENTRY row 1 9 kitname
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_kitnames BEGIN ~%kitname%~ => ~%kitname%~ END
+    END
+  END
+  BUT_ONLY   
+      
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  COUNT_2DA_COLS col_count
+  PATCH_PHP_EACH weapprof_cols_kitnames AS match_name => foo BEGIN
+    FOR (column = 0; column < col_check; ++column) BEGIN
+      READ_2DA_ENTRY 0 column col_check name
+      PATCH_IF ("%name%" STRING_COMPARE_CASE "%match_name%" = 0) BEGIN
+        SET column += 1 // row with names has an empty entry for the first column
+        DEFINE_ASSOCIATIVE_ARRAY weapprof_cols BEGIN ~%column%~ => ~%column%~ END
+        SET column = col_count // kill loop
+      END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols AS column => foo BEGIN
+    FOR (row = 2; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars = 0) BEGIN
+        SET_2DA_ENTRY 17 column col_count 1
+        SET_2DA_ENTRY 23 column col_count 1
+        SET_2DA_ENTRY 28 column col_count 1
+        SET_2DA_ENTRY 30 column col_count 1
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  

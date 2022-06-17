@@ -1,71 +1,335 @@
 COPY ~%MOD_FOLDER%/2da/stylbonu.2da~ ~override~
 
-ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
-STRING_SET 25044 ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+// FIGHTERS
+ACTION_CLEAR_ARRAY weapprof_cols_fighter
+ACTION_DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_fighter BEGIN 5 => 5 END // bogstandard fighter
 
-Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 (instead of just 20) when using a two-handed weapon.
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 8 9 class
+    PATCH_IF ((IS_AN_INT class) AND (class = 2)) BEGIN
+      READ_2DA_ENTRY row 1 9 kitname
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_fighter_kitnames BEGIN ~%kitname%~ => ~%kitname%~ END
+    END
+  END
+  BUT_ONLY   
+      
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  COUNT_2DA_COLS col_count
+  PATCH_PHP_EACH weapprof_cols_fighter_kitnames AS match_name => foo BEGIN
+    FOR (column = 0; column < col_check; ++column) BEGIN
+      READ_2DA_ENTRY 0 column col_check name
+      PATCH_IF ("%name%" STRING_COMPARE_CASE "%match_name%" = 0) BEGIN
+        SET column += 1 // row with names has an empty entry for the first column
+        DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_fighter BEGIN ~%column%~ => ~%column%~ END
+        SET column = col_count // kill loop
+      END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_fighter AS column => foo BEGIN
+    FOR (row = 28; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars > 1) BEGIN
+        SET_2DA_ENTRY row column col_count 5
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// DWARVEN DEFENDER - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_dwarvendefender
+        
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  FOR (column = 0; column < col_check; ++column) BEGIN
+    READ_2DA_ENTRY 0 column col_check name
+    PATCH_IF (("DWARVEN_DEFENDER" STRING_COMPARE_CASE "%name%" = 0)) BEGIN
+      SET column += 1 // row with names has an empty entry for the first column
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_dwarvendefender BEGIN ~%column%~ => ~%column%~ END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_dwarvendefender AS column => foo BEGIN
+    FOR (row = 8; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 5) BEGIN
+        SET_2DA_ENTRY 29 column col_count 2
+        SET_2DA_ENTRY 30 column col_count 2
+        SET_2DA_ENTRY 31 column col_count 2
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// RANGERS
+ACTION_CLEAR_ARRAY weapprof_cols_ranger
+ACTION_DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_ranger BEGIN 11 => 11 END // bogstandard fighter
 
-Specialized (2 slots): The wielder gets a further +2 bonus to damage and -2 to Speed Factor.
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 8 9 class
+    PATCH_IF ((IS_AN_INT class) AND (class = 12)) BEGIN
+      READ_2DA_ENTRY row 1 9 kitname
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_ranger_kitnames BEGIN ~%kitname%~ => ~%kitname%~ END
+    END
+  END
+  BUT_ONLY   
+      
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  COUNT_2DA_COLS col_count
+  PATCH_PHP_EACH weapprof_cols_ranger_kitnames AS match_name => foo BEGIN
+    FOR (column = 0; column < col_check; ++column) BEGIN
+      READ_2DA_ENTRY 0 column col_check name
+      PATCH_IF ("%name%" STRING_COMPARE_CASE "%match_name%" = 0) BEGIN
+        SET column += 1 // row with names has an empty entry for the first column
+        DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_ranger BEGIN ~%column%~ => ~%column%~ END
+        SET column = col_count // kill loop
+      END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_ranger AS column => foo BEGIN
+    FOR (row = 28; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars > 2) BEGIN
+        SET_2DA_ENTRY 31 column col_count 5
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// ARCHER - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_archer
+        
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  FOR (column = 0; column < col_check; ++column) BEGIN
+    READ_2DA_ENTRY 0 column col_check name
+    PATCH_IF (("FERALAN" STRING_COMPARE_CASE "%name%" = 0)) BEGIN
+      SET column += 1 // row with names has an empty entry for the first column
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_archer BEGIN ~%column%~ => ~%column%~ END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_archer AS column => foo BEGIN
+    FOR (row = 8; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 5) BEGIN
+        SET_2DA_ENTRY 31 column col_count 3
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// THIEVES - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_thief
+ACTION_DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_thief BEGIN 7 => 7 14 => 14 15 => 15 16 => 16 18 => 18 END // bogstandard fighter
 
-NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 8 9 class
+    PATCH_IF ((IS_AN_INT class) AND ((class = 4) OR (class = 9) OR (class = 10) OR (class = 13) OR (class = 15))) BEGIN
+      READ_2DA_ENTRY row 1 9 kitname
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_thief_kitnames BEGIN ~%kitname%~ => ~%kitname%~ END
+    END
+  END
+  BUT_ONLY   
+      
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  COUNT_2DA_COLS col_count
+  PATCH_PHP_EACH weapprof_cols_thief_kitnames AS match_name => foo BEGIN
+    FOR (column = 0; column < col_check; ++column) BEGIN
+      READ_2DA_ENTRY 0 column col_check name
+      PATCH_IF ("%name%" STRING_COMPARE_CASE "%match_name%" = 0) BEGIN
+        SET column += 1 // row with names has an empty entry for the first column
+        DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_thief BEGIN ~%column%~ => ~%column%~ END
+        SET column = col_count // kill loop
+      END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_thief AS column => foo BEGIN
+    FOR (row = 2; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 3) BEGIN
+        SET_2DA_ENTRY 31 column col_count 3
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// SWASHBUCKLERS - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_swashbuckler
+        
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  FOR (column = 0; column < col_check; ++column) BEGIN
+    READ_2DA_ENTRY 0 column col_check name
+    PATCH_IF (("SWASHBUCKLER" STRING_COMPARE_CASE "%name%" = 0)) BEGIN
+      SET column += 1 // row with names has an empty entry for the first column
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_swashbuckler BEGIN ~%column%~ => ~%column%~ END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_swashbuckler AS column => foo BEGIN
+    FOR (row = 8; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 5) BEGIN
+        SET_2DA_ENTRY 31 column col_count 5
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// BARDS - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_bard
+ACTION_DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_bard BEGIN 8 => 8 END // bogstandard fighter
 
-STRING_SET 25045 ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS 9 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 8 9 class
+    PATCH_IF ((IS_AN_INT class) AND (class = 5)) BEGIN
+      READ_2DA_ENTRY row 1 9 kitname
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_bard_kitnames BEGIN ~%kitname%~ => ~%kitname%~ END
+    END
+  END
+  BUT_ONLY   
+      
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  COUNT_2DA_COLS col_count
+  PATCH_PHP_EACH weapprof_cols_bard_kitnames AS match_name => foo BEGIN
+    FOR (column = 0; column < col_check; ++column) BEGIN
+      READ_2DA_ENTRY 0 column col_check name
+      PATCH_IF ("%name%" STRING_COMPARE_CASE "%match_name%" = 0) BEGIN
+        SET column += 1 // row with names has an empty entry for the first column
+        DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_bard BEGIN ~%column%~ => ~%column%~ END
+        SET column = col_count // kill loop
+      END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_bard AS column => foo BEGIN
+    FOR (row = 2; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 3) BEGIN
+        SET_2DA_ENTRY 31 column col_count 3
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+// BLADES - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_blade
+        
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  FOR (column = 0; column < col_check; ++column) BEGIN
+    READ_2DA_ENTRY 0 column col_check name
+    PATCH_IF (("BLADE" STRING_COMPARE_CASE "%name%" = 0)) BEGIN
+      SET column += 1 // row with names has an empty entry for the first column
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_blade BEGIN ~%column%~ => ~%column%~ END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_blade AS column => foo BEGIN
+    FOR (row = 8; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 5) BEGIN
+        SET_2DA_ENTRY 31 column col_count 5
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  
+ACTION_IF (FILE_EXISTS_IN_GAME ~weapprof.2da~) BEGIN
+  COPY_EXISTING ~weapprof.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~2HANDED~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 3 cols RESOLVE_STR_REF (~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
 
-Non-proficient (0 slots): The wielder incurs a -1 penalty to THAC0.
+Non-proficient (0 slots): The wielder incurs a penalty of 2 to Speed Factor.
 
-Proficient (1 slot): The wielder gets a -1 bonus to Armor Class and an additional -1 against missile weapons.
+Proficient (1 slot): The wielder is no longer penalized and gains a +1 bonus to damage rolls.
 
-Specialized (2 slots): The wielder gets a -2 bonus to Armor Class and an additional -2 against missile weapons.
+Specialized (2 slots): The wielder gains a further +1 to damage rolls and a -1 bonus to Speed Factor.
 
-NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
+Master (3 slots): The wielder gains a critical hit threat range of 19-20.
 
-STRING_SET 25046 ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+High Master (4 slots): The wielder gains a further +1 to damage rolls and -1 to Speed Factor.
 
-Proficient (1 slot): The wielder gets a -1 bonus to AC, +1 to THAC0 and inflicts critical damage on an attack roll of 19-20.
+Grand Master (5 slots): The wielder gains a further +1 to damage rolls, -1 to Speed Factor and a critical hit threat range of 18-20.~)
+	  END
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~SWORDANDSHIELD~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 3 cols RESOLVE_STR_REF (~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
 
-Specialized (2 slots): The wielder gets a -2 bonus to AC, +2 to THAC0 and inflicts critical damage on an attack roll of 18-20.~
+Non-proficient (0 slots): The wielder incurs a penalty of 1 to THAC0 and Speed Factor.
 
-STRING_SET 24999 ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon. 
+Proficient (1 slot): The wielder gains a -1 bonus to Armor Class and an additional -1 against missile weapons.
 
-Proficient (1 slot): The wielder's penalties are reduced to -2 with the main weapon and -4 with the off-hand weapon.
+Specialized (2 slots): The wielder is no longer penalized and gains a -2 bonus to Armor Class and an additional -2 against missile weapons.
 
-Specialized (2 slots): The wielder's penalties are reduced to -2 with the main weapon and -2 with the off-hand weapon.
+Master (3 slots): The wielder gains a further -1 bonus to Armor Class and an additional -1 against missile weapons.
 
-Master (3 slots): The wielder's penalties are reduced to 0 with the main weapon and -2 with the off-hand weapon. Additionally, the wielder gets a -2 bonus to Armor Class.~
-END
+High Master (4 slots): The wielder gains a further -1 bonus to Armor Class and an additional -1 against missile weapons.
 
-ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
-STRING_SET 34171 ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+Grand Master (5 slots): The wielder gains a further -2 bonus to Armor Class and an additional -1 against missile weapons.
 
-Non-proficient (0 slots): The wielder incurs a -1 penalty to Armor Class.
+NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~)
+	  END
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~SINGLEWEAPON~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 3 cols RESOLVE_STR_REF (~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
 
-Proficient (1 slot): The wielder gets a +1 bonus to damage rolls, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 (instead of just 20) when using a two-handed weapon.
+Non-proficient (0 slots): The wielder receives no bonus nor penalty.
 
-Specialized (2 slots): The wielder gets a further +2 bonus to damage and -2 to Speed Factor.
+Proficient (1 slot): The wielder gains a -1 bonus to Armor Class vs. melee attacks, -1 bonus to Speed Factor, and a critical hit threat range of 19-20.
 
-NOTE: Magical two-handed weapons are more powerful than their single-handed counterparts. This counterbalances the fact that you can't use a second weapon or shield when using a two-handed weapon. The Holy Avenger and Vorpal Sword are examples of weapons that are two-handed.~
+Specialized (2 slots): The wielder gains a +1 bonus to THAC0 and damage rolls, a further -1 bonus to Armor Class vs. melee attacks, Speed Factor, and a critical hit threat range of 18-20.
 
-STRING_SET 34173 ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+Master (3 slots): The wielder gains a further +1 bonus to THAC0, Speed Factor, and a critical hit threat range of 17-20.
 
-Non-proficient (0 slots): The wielder incurs a -1 penalty to THAC0.
+High Master (4 slots): The wielder gains a further +1 bonus to THAC0, damage rolls and Speed Factor.
 
-Proficient (1 slot): The wielder gets a -1 bonus to Armor Class and an additional -1 against missile weapons.
+Grand Master (5 slots): The wielder gains a further +1 bonus to THAC0, dmaage rolls, Armor Class vs. melee weapons, Speed Factor and a critical hit threat range of 15-20.~)
+	  END
+	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~2WEAPON~ BEGIN
+	    SET patch_row = %row%
+		SET_2DA_ENTRY (%patch_row%) 3 cols RESOLVE_STR_REF (~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. Those who master the technique of dual-wielding even receive exclusive bonuses according to their degree of mastery.
 
-Specialized (2 slots): The wielder gets a -2 bonus to Armor Class and an additional -2 against missile weapons.
+Non-proficient (0 slots): The wielder incurs a THAC0 penalty of 4 to the main hand weapon, 8 to the off-hand weapon, and a penalty of 2 to Armor Class vs. melee weapons.
 
-NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
+Proficient (1 slot): The wielder's penalties are reduced to 4 to the main hand weapon, 4 to the off-hand weapon, and a penalty of 1 to Armor Class vs. melee weapons.
 
-STRING_SET 34174 ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+Specialized (2 slots): The wielder's penalties are reduced to 2 to the main hand weapon, 4 to the off-hand weapon, and they no longer suffer a penalty to Armor Class.
 
-Proficient (1 slot): The wielder gets a -1 bonus to AC, +1 to THAC0 and inflicts critical damage on an attack roll of 19-20.
+Master (3 slots): The wielder's penalties are reduced to 0 to the main hand weapon and 2 to the off-hand weapon.
 
-Specialized (2 slots): The wielder gets a -2 bonus to AC, +2 to THAC0 and inflicts critical damage on an attack roll of 18-20.~
+High Master (4 slots): The wielder gains a -2 bonus to Speed Factor and Armor Class vs. melee weapons.
 
-STRING_SET 34176 ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon. 
-
-Proficient (1 slot): The wielder's penalties are reduced to -2 with the main weapon and -4 with the off-hand weapon.
-
-Specialized (2 slots): The wielder's penalties are reduced to -2 with the main weapon and -2 with the off-hand weapon.
-
-Master (3 slots): The wielder's penalties are reduced to 0 with the main weapon and -2 with the off-hand weapon. Additionally, the wielder gets a -2 bonus to Armor Class.~
-END
+Grand Master (5 slots): The wielder no longer suffers a THAC0 penalty to the off-hand weapon, and they gain a +2 bonus to damage rolls to the off-hand weapon, a -2 bonus to Speed Factor, and a critical hit threat range of 19-20.~)
+	  END
+	END
+  BUT_ONLY
+	END

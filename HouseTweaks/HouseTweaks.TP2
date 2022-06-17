@@ -19,14 +19,29 @@ INCLUDE ~%MOD_FOLDER%/lib/wildshape.tpa~
 BEGIN ~House Tweaks: Expanded Racial Bonuses~
 INCLUDE ~%MOD_FOLDER%/lib/racebonus.tpa~
 
+BEGIN ~House Tweaks: Rebalanced Proficiencies~
+INCLUDE ~%MOD_FOLDER%/lib/proficiency.tpa~
+
 BEGIN ~House Tweaks: Rebalanced Weapon Styles~
 INCLUDE ~%MOD_FOLDER%/lib/stylebonus.tpa~
 
 BEGIN ~House Tweaks: Monk Can Use Quarterstaves~
 INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
 
-BEGIN ~House Tweaks: Increased Constitution Bonuses~
+BEGIN ~House Tweaks: Backstab With Any Melee Weapon~
+INCLUDE ~%MOD_FOLDER%/lib/thiefweapons.tpa~
+
+BEGIN ~Constitution Bonuses for All Classes + Regeneration Changes~
+SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
 COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
+
+BEGIN ~Regeneration Changes Only~
+SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
+COPY ~%MOD_FOLDER%/2da/hpconbon_regen.2da~ ~override/hpconbon.2da~
+
+BEGIN ~Constitution Bonuses for All Classes Only~
+SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
+COPY ~%MOD_FOLDER%/2da/hpconbon_hp.2da~ ~override/hpconbon.2da~
 
 BEGIN ~House Tweaks: INT/WIS/CHA-based Bonus Spell Slots~
 INCLUDE ~%MOD_FOLDER%/lib/spellslots.tpa~
@@ -98,7 +113,21 @@ INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~
 BEGIN ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~
 REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
 COPY ~%MOD_FOLDER%/Reputation/REPUP.WAV~ ~OVERRIDE~
-STRING_SET 19686 ~The Party's Reputation Has Increased~ [REPUP]
+
+OUTER_SET rep_up_snd = RESOLVE_STR_REF (~The Party's Reputation Has Increased~ [REPUP])
+
+COPY_EXISTING ~enginest.2da~ ~override~
+  COUNT_2DA_ROWS 2 rows
+  FOR (row = 0 ; row < rows ; ++row) BEGIN
+    READ_2DA_ENTRY row 0 2 entry
+    PATCH_IF ("%entry%" STRING_COMPARE_CASE "STRREF_FEEDBACK_GAINEDREPUTATION"      = 0) BEGIN
+      FOR (col = 1; col < 2 ; ++col) BEGIN
+        SET_2DA_ENTRY row col 2 rep_up_snd
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
 
 BEGIN ~House Tweaks: Race Text Patch~
 INCLUDE ~%MOD_FOLDER%/lib/racetext.tpa~
@@ -114,4 +143,3 @@ BEGIN ~House Tweaks: Reputation Bonuses for Icewind Dale~
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
 COMPILE	~%MOD_FOLDER%/Dialog/iwd/iwdrep.d~
 EXTEND_TOP ~BALDUR.BCS~	~%MOD_FOLDER%/scripts/iwdrep.baf~
-
