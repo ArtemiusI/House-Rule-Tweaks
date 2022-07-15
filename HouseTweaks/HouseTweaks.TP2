@@ -100,18 +100,18 @@ COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.spl~ ~override~
 COPY ~%MOD_FOLDER%/items/hexxat/ohhkork2.spl~ ~override~
 
 BEGIN ~House Tweaks: Give Stat Bonuses to EENPCs in BG2 (except Hexxat)~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/eenpcs.tpa~
 
 BEGIN ~House Tweaks: Useful Plot Items~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/plotitems.tpa~
 
 BEGIN ~House Tweaks: Faster Troll Unconsciousness~
 INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~
 
 BEGIN ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 COPY ~%MOD_FOLDER%/Reputation/REPUP.WAV~ ~OVERRIDE~
 
 OUTER_SET rep_up_snd = RESOLVE_STR_REF (~The Party's Reputation Has Increased~ [REPUP])
