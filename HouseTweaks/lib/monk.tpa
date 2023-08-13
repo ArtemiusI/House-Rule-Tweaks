@@ -197,98 +197,35 @@ END
 
 LAF mod_monk_profs END
 //__________________________________________________________________________________
+///////////////////////////////////////////////////////////////////////////
+// Update Kit Descriptions                                               //
+///////////////////////////////////////////////////////////////////////////
 
-  COPY_EXISTING ~clastext.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~MONK~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~MONK: Monks are warriors who pursue perfection through contemplation as well as action. They are versatile fighters, especially skilled in combat without weapons or armor. Though Monks cannot cast spells, they have a unique magic of their own: they channel a subtle energy, called ki, which allows them to perform amazing feats. The Monk's best known feat is their ability to stun an opponent with an unarmed blow.
-
-CLASS FEATURES:
-
-– May not wear any armor.
-– May only use weapons available to the Thief class (except bows and crossbows).
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in Single-Weapon Style and may not put slots into any other style.
-– Moves 2 points faster than other characters. Movement rate further improves by 1 every 5 levels.
-– May make 1 unarmed attack per round. An additional 1/2 attack per round is gained every 3 levels. Damage dealt by unarmed attacks increases with level as follows:
-  Level 1-2: 1d6
-  Level 3-5: 1d8
-  Level 6-8: 1d10
-  Level 9-14: 1d12
-  Level 15+: 1d20
-– At level 9, unarmed attacks are treated as a +1 magical weapon and gain a +1 bonus to hit and damage rolls. This enchantment improves to +2 at level 12, +3 at level 15, and +4 at level 25. 
-– Receives a +2 bonus to Saving Throws vs. Spell.
-– Deflect Missiles: +1 bonus to AC vs. missile attacks every 3 levels.
-– Starts with an Armor Class of 9 at 1st level and gains an additional +1 bonus every 2 levels.
-– May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
-
-STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Spell or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
-
-– 5th level: Becomes immune to all diseases and cannot be slowed or hasted.
-– 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.
-– 8th level: Gains a -1 bonus to Speed Factor.
-– 9th level: Gains a +1 bonus to all Saving Throws and becomes immune to charm.
-– 11th level: Becomes immune to poison.
-– 12th level: Gains another -1 bonus to Speed Factor.
-– 13th level: May use the Quivering Palm ability once per day.
-
-QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell or die. This special ability automatically modifies normal attacks; no targeting needs to be done.
-
-– 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).
-– 20th level: Becomes immune to non-magical weapons.
-– Alignment restricted to lawful.
-– Hit Die: d8~)
-	  END
-	END
-ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
-  COPY_EXISTING ~sodcltxt.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~MONK~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~MONK: Monks are warriors who pursue perfection through contemplation as well as action. They are versatile fighters, especially skilled in combat without weapons or armor. Though Monks cannot cast spells, they have a unique magic of their own: they channel a subtle energy, called ki, which allows them to perform amazing feats. The Monk's best known feat is their ability to stun an opponent with an unarmed blow.
-
-CLASS FEATURES:
-
-– May not wear any armor.
-– May only use weapons available to the Thief class (except bows and crossbows).
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in Single-Weapon Style and may not put slots into any other style.
-– Moves 2 points faster than other characters. Movement rate further improves by 1 every 5 levels.
-– May make 1 unarmed attack per round. An additional 1/2 attack per round is gained every 3 levels. Damage dealt by unarmed attacks increases with level as follows:
-  Level 1-2: 1d6
-  Level 3-5: 1d8
-  Level 6-8: 1d10
-  Level 9-14: 1d12
-  Level 15+: 1d20
-– At level 9, unarmed attacks are treated as a +1 magical weapon and gain a +1 bonus to hit and damage rolls. This enchantment improves to +2 at level 12, +3 at level 15, and +4 at level 25. 
-– Receives a +2 bonus to Saving Throws vs. Spell.
-– Deflect Missiles: +1 bonus to AC vs. missile attacks every 3 levels.
-– Starts with an Armor Class of 9 at 1st level and gains an additional +1 bonus every 2 levels.
-– May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
-
-STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Spell or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
-
-– 5th level: Becomes immune to all diseases and cannot be slowed or hasted.
-– 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.
-– 8th level: Gains a -1 bonus to Speed Factor.
-– 9th level: Gains a +1 bonus to all Saving Throws and becomes immune to charm.
-– 11th level: Becomes immune to poison.
-– 12th level: Gains another -1 bonus to Speed Factor.
-– 13th level: May use the Quivering Palm ability once per day.
-
-QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell or die. This special ability automatically modifies normal attacks; no targeting needs to be done.
-
-– 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).
-– 20th level: Becomes immune to non-magical weapons.
-– Alignment restricted to lawful.
-– Hit Die: d8~)
-	  END
-	END
-	END
+ACTION_FOR_EACH description IN 
+    clastext
+	sodcltxt
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+//MONK
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "MONK" BEGIN
+          READ_2DA_ENTRY index 4 col_count monk_desc
+          SPRINT old_monk ~– May only use weapons available to the Thief class (except two-handed).~
+          SPRINT new_monk ~– May only use weapons available to the Thief class (except bows and crossbows).~
+          GET_STRREF %monk_desc% monk_text
+          INNER_PATCH_SAVE monk_text ~%monk_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_monk%~ ~%new_monk%~
+          END
+          INNER_ACTION BEGIN
+            STRING_SET_EVALUATE ~%monk_desc%~ ~%monk_text%~
+          END
+		END
+      END
+      BUT_ONLY
+    END
+  END
+  

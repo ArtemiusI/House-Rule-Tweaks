@@ -1,10 +1,9 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~1.91~
+VERSION ~2.0~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
-  INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
 END
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~
@@ -25,11 +24,11 @@ INCLUDE ~%MOD_FOLDER%/lib/proficiency.tpa~
 BEGIN ~House Tweaks: Rebalanced Weapon Styles~
 INCLUDE ~%MOD_FOLDER%/lib/stylebonus.tpa~
 
+BEGIN ~House Tweaks: Rebalanced Attacks Per Round Progression~
+INCLUDE ~%MOD_FOLDER%/lib/bonusapr.tpa~
+
 BEGIN ~House Tweaks: Monk Can Use Quarterstaves~
 INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
-
-BEGIN ~House Tweaks: Backstab With Any Melee Weapon~
-INCLUDE ~%MOD_FOLDER%/lib/thiefweapons.tpa~
 
 BEGIN ~Constitution Bonuses for All Classes + Regeneration Changes~
 SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
@@ -100,34 +99,20 @@ COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.spl~ ~override~
 COPY ~%MOD_FOLDER%/items/hexxat/ohhkork2.spl~ ~override~
 
 BEGIN ~House Tweaks: Give Stat Bonuses to EENPCs in BG2 (except Hexxat)~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/eenpcs.tpa~
 
 BEGIN ~House Tweaks: Useful Plot Items~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
 INCLUDE ~%MOD_FOLDER%/lib/plotitems.tpa~
 
 BEGIN ~House Tweaks: Faster Troll Unconsciousness~
 INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~
 
 BEGIN ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
 COPY ~%MOD_FOLDER%/Reputation/REPUP.WAV~ ~OVERRIDE~
-
-OUTER_SET rep_up_snd = RESOLVE_STR_REF (~The Party's Reputation Has Increased~ [REPUP])
-
-COPY_EXISTING ~enginest.2da~ ~override~
-  COUNT_2DA_ROWS 2 rows
-  FOR (row = 0 ; row < rows ; ++row) BEGIN
-    READ_2DA_ENTRY row 0 2 entry
-    PATCH_IF ("%entry%" STRING_COMPARE_CASE "STRREF_FEEDBACK_GAINEDREPUTATION"      = 0) BEGIN
-      FOR (col = 1; col < 2 ; ++col) BEGIN
-        SET_2DA_ENTRY row col 2 rep_up_snd
-      END
-    END
-  END
-  PRETTY_PRINT_2DA
-  BUT_ONLY
+STRING_SET 19686 ~The Party's Reputation Has Increased~ [REPUP]
 
 BEGIN ~House Tweaks: Race Text Patch~
 INCLUDE ~%MOD_FOLDER%/lib/racetext.tpa~
@@ -143,3 +128,266 @@ BEGIN ~House Tweaks: Reputation Bonuses for Icewind Dale~
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
 COMPILE	~%MOD_FOLDER%/Dialog/iwd/iwdrep.d~
 EXTEND_TOP ~BALDUR.BCS~	~%MOD_FOLDER%/scripts/iwdrep.baf~
+
+BEGIN ~House Tweaks: Change Anomen's Soundset in SoA after his Trial (BG2:EE)~
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+ACTION_IF FILE_EXISTS_IN_GAME ~ANOMEN.BCS~ THEN BEGIN
+COPY_EXISTING ~ANOM25.BCS~ ~OVERRIDE~
+ DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~SetPlayerSound(Myself,70848,SELECT_ACTION5)~ ~SetPlayerSound(Myself,70848,SELECT_RARE2)~
+    REPLACE_TEXTUALLY ~SetPlayerSound(Myself,70847,SELECT_ACTION3)~ ~SetPlayerSound(Myself,70847,SELECT_ACTION6)~
+ END
+ BUT_ONLY
+COPY_EXISTING ~ANOMEN.BCS~ ~OVERRIDE~
+ DECOMPILE_AND_PATCH BEGIN
+    REPLACE_TEXTUALLY ~SetPlayerSound(Myself,70848,SELECT_ACTION5)~ ~SetPlayerSound(Myself,70848,SELECT_RARE2)~
+    REPLACE_TEXTUALLY ~SetPlayerSound(Myself,70847,SELECT_ACTION3)~ ~SetPlayerSound(Myself,70847,SELECT_ACTION6)~
+ END
+ BUT_ONLY
+EXTEND_TOP ~ANOMEN.BCS~	~%MOD_FOLDER%/scripts/ANOMEN.baf~
+EXTEND_TOP ~ANOM25.BCS~	~%MOD_FOLDER%/scripts/ANOM25.baf~
+  END
+
+BEGIN ~House Tweaks: Experience Books~
+INCLUDE ~%MOD_FOLDER%/lib/xpbooks.tpa~
+
+BEGIN ~Bastard Sword~
+SUBCOMPONENT ~House Tweaks: Restored Blade of Aihonen Tweak~
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+COPY_EXISTING ~JHOSWD2.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x26 11 // strength
+WRITE_SHORT 0x31 89 // proficiency
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 4 END
+SAY DESC ~This once-shattered blade lay in the breast of Icasaracht, the last of the white dragon matriarchs that ruled the Spine of the World. It was wielded by Aihonen, a distant ancestor of Jhonen the fisherman in Easthaven—the sword has lain at the bottom of the lake for almost a century, waiting to be returned to one of its wielder's bloodline. How it has been restored to its original state is unknown, but whatever the reason, it looks like a powerful weapon that can help you free Easthaven from Brother Poquelin. 
+
+The blade seems to draw its strength from Lac Dinneshere itself. As long as the wielder is within a dragon's flight distance of the lake, the blade is a fearsome weapon. 
+
+STATISTICS:
+
+Equipped abilities:
+– Maximum Hit Points: +5 within a dragon's flight distance of Lac Dinneshere
+– Fire Resistance: +25%
+– Cold Resistance: +25%
+
+THAC0: +1, +5 within a dragon's flight distance of Lac Dinneshere
+Damage: 2d4+1, +5 within a dragon's flight distance of Lac Dinneshere
+Damage Type: Slashing
+Speed Factor: 2
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 3~
+COPY_EXISTING ~JHOSWD3.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x26 11 // strength
+WRITE_SHORT 0x31 89 // proficiency
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 4 END
+SAY DESC ~This once-shattered blade lay in the breast of Icasaracht, the last of the white dragon matriarchs that ruled the Spine of the World. It was wielded by Aihonen, a distant ancestor of Jhonen the fisherman in Easthaven—the sword has lain at the bottom of the lake for almost a century, waiting to be returned to one of its wielder's bloodline. The blade seems to draw its strength from Lac Dinneshere itself. As long as the wielder is within a dragon's flight of the lake (a considerable distance by most race's standards), the blade is a fearsome weapon. 
+
+The dwarven smith Tiernon has "soothed" this blade—apparently, he was the one who forged it in the first place. His skills have awoken some of the blade's original powers that had been drained when it was used to slay Icasaracht.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +30%
+– Cold Resistance: +30%
+– Maximum Hit Points: +10 within a dragon's flight of Lac Dinneshere
+
+Charge abilities:
+– Cure Critical Wounds three times per day
+  Heals 27 Hit Points
+  Range: Touch
+
+– Strength +3 once per day
+  Area of Effect: The wielder
+
+THAC0: +1, +5 within a dragon's flight of Lac Dinneshere
+Damage: 2d4+1, +5 within a dragon's flight of Lac Dinneshere
+Damage Type: Slashing
+Speed Factor: 2
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 3~
+
+BEGIN ~Two-Handed Sword~
+SUBCOMPONENT ~House Tweaks: Restored Blade of Aihonen Tweak~
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+COPY_EXISTING ~JHOSWD2.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x18 47 // two-handed
+WRITE_SHORT 0x26 14 // strength
+WRITE_SHORT 0x22 12883 //animation
+WRITE_SHORT 0x31 93 // proficiency
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 1 dicesize = 10 END
+SAY DESC ~This once-shattered blade lay in the breast of Icasaracht, the last of the white dragon matriarchs that ruled the Spine of the World. It was wielded by Aihonen, a distant ancestor of Jhonen the fisherman in Easthaven—the sword has lain at the bottom of the lake for almost a century, waiting to be returned to one of its wielder's bloodline. How it has been restored to its original state is unknown, but whatever the reason, it looks like a powerful weapon that can help you free Easthaven from Brother Poquelin. 
+
+The blade seems to draw its strength from Lac Dinneshere itself. As long as the wielder is within a dragon's flight distance of the lake, the blade is a fearsome weapon. 
+
+STATISTICS:
+
+Equipped abilities:
+– Maximum Hit Points: +5 within a dragon's flight distance of Lac Dinneshere
+– Fire Resistance: +25%
+– Cold Resistance: +25%
+
+THAC0: +1, +5 within a dragon's flight distance of Lac Dinneshere
+Damage: 1d10+1, +5 within a dragon's flight distance of Lac Dinneshere
+Damage Type: Slashing
+Speed Factor: 2
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 3~
+COPY_EXISTING ~JHOSWD3.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x18 47 // two-handed
+WRITE_SHORT 0x26 11 // strength
+WRITE_SHORT 0x22 12883 //animation
+WRITE_SHORT 0x31 93 // proficiency
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 1 dicesize = 10 END
+SAY DESC ~This once-shattered blade lay in the breast of Icasaracht, the last of the white dragon matriarchs that ruled the Spine of the World. It was wielded by Aihonen, a distant ancestor of Jhonen the fisherman in Easthaven—the sword has lain at the bottom of the lake for almost a century, waiting to be returned to one of its wielder's bloodline. The blade seems to draw its strength from Lac Dinneshere itself. As long as the wielder is within a dragon's flight of the lake (a considerable distance by most race's standards), the blade is a fearsome weapon. 
+
+The dwarven smith Tiernon has "soothed" this blade—apparently, he was the one who forged it in the first place. His skills have awoken some of the blade's original powers that had been drained when it was used to slay Icasaracht.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +30%
+– Cold Resistance: +30%
+– Maximum Hit Points: +10 within a dragon's flight of Lac Dinneshere
+
+Charge abilities:
+– Cure Critical Wounds three times per day
+  Heals 27 Hit Points
+  Range: Touch
+
+– Strength +3 once per day
+  Area of Effect: The wielder
+
+THAC0: +1, +5 within a dragon's flight of Lac Dinneshere
+Damage: 1d10+1, +5 within a dragon's flight of Lac Dinneshere
+Damage Type: Slashing
+Speed Factor: 2
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 3~
+
+BEGIN ~Bastard Sword~
+SUBCOMPONENT ~House Tweaks: Sword of Myrloch Vale Tweak~
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+COPY_EXISTING ~MYRLOCH.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x26 11 // strength
+WRITE_SHORT 0x31 89 // proficiency
+WRITE_SHORT 0x4c 8 // weight
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 4 END
+SAY DESC ~It is believed that fae creatures helped create this beautiful sword, and legends say that it was forged in the cool depths of Myrloch, the large lake at the center of Gwynneth in the Moonshaes. The weapon has an unearthly look to it, and it is believed to be quite old. The only individual known to have carried the weapon was a half-elven bard named Daen Winterbrush. It is said by some that after he found the sword, quite by accident, he was blessed with exceptional creativity and powerful sensitivity to the world around him. He traveled for forty years and is known for some of the most unique, haunting melodies in Faerûn. It is believed that Daen eventually became too melancholy at the sights of misery and oppression that he encountered in his travels, and that the fae smiths of the Moonshae Isles welcomed him into the breast of Myrloch.
+
+STATISTICS:
+
+Equipped abilities:
+– Lore: +20
+
+THAC0: +3
+Damage: 2d4+3 (slashing)
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 8~
+COPY ~%MOD_FOLDER%/myrloch~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x26 11 // strength
+WRITE_SHORT 0x31 89 // proficiency
+WRITE_SHORT 0x4c 8 // weight
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 4 END
+SAY DESC ~It is believed that fae creatures helped create this beautiful sword, and legends say that it was forged in the cool depths of Myrloch, the large lake at the center of Gwynneth in the Moonshaes. The weapon has an unearthly look to it, and it is believed to be quite old. The only individual known to have carried the weapon was a half-elven bard named Daen Winterbrush. It is said by some that after he found the sword, quite by accident, he was blessed with exceptional creativity and powerful sensitivity to the world around him. He traveled for forty years and is known for some of the most unique, haunting melodies in Faerûn. It is believed that Daen eventually became too melancholy at the sights of misery and oppression that he encountered in his travels, and that the fae smiths of the Moonshae Isles welcomed him into the breast of Myrloch.
+
+By singing the ballad of Daen Winterbrush and speaking with his spirit, more abilities of the blade have been awakened.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: +1
+– Blessing of Myrloch: Bards wielding this weapon gain an additional +2 to Armor Class and Saving Throws and one bonus attack per round.
+– Lore: +30
+
+THAC0: +3
+Damage: 2d4+3 (slashing)
+Speed Factor: 4
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 8~
+
+BEGIN ~Two-Handed Sword~
+SUBCOMPONENT ~House Tweaks: Sword of Myrloch Vale Tweak~
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+COPY_EXISTING ~MYRLOCH.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x18 47 // two-handed
+WRITE_SHORT 0x26 14 // strength
+WRITE_SHORT 0x22 12883 //animation
+WRITE_SHORT 0x31 93 // proficiency
+WRITE_SHORT 0x4c 12 // weight
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 1 dicesize = 10 END
+SAY DESC ~It is believed that fae creatures helped create this beautiful sword, and legends say that it was forged in the cool depths of Myrloch, the large lake at the center of Gwynneth in the Moonshaes. The weapon has an unearthly look to it, and it is believed to be quite old. The only individual known to have carried the weapon was a half-elven bard named Daen Winterbrush. It is said by some that after he found the sword, quite by accident, he was blessed with exceptional creativity and powerful sensitivity to the world around him. He traveled for forty years and is known for some of the most unique, haunting melodies in Faerûn. It is believed that Daen eventually became too melancholy at the sights of misery and oppression that he encountered in his travels, and that the fae smiths of the Moonshae Isles welcomed him into the breast of Myrloch.
+
+STATISTICS:
+
+Equipped abilities:
+– Lore: +20
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 12~
+COPY ~%MOD_FOLDER%/myrloch~ OVERRIDE
+COPY_EXISTING ~CDMYR.ITM~ OVERRIDE
+WRITE_SHORT 0x1e 1611454336 // unusable
+WRITE_SHORT 0x18 47 // two-handed
+WRITE_SHORT 0x26 14 // strength
+WRITE_SHORT 0x22 12883 //animation
+WRITE_SHORT 0x31 93 // proficiency
+WRITE_SHORT 0x4c 12 // weight
+LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 1 dicesize = 10 END
+SAY DESC ~It is believed that fae creatures helped create this beautiful sword, and legends say that it was forged in the cool depths of Myrloch, the large lake at the center of Gwynneth in the Moonshaes. The weapon has an unearthly look to it, and it is believed to be quite old. The only individual known to have carried the weapon was a half-elven bard named Daen Winterbrush. It is said by some that after he found the sword, quite by accident, he was blessed with exceptional creativity and powerful sensitivity to the world around him. He traveled for forty years and is known for some of the most unique, haunting melodies in Faerûn. It is believed that Daen eventually became too melancholy at the sights of misery and oppression that he encountered in his travels, and that the fae smiths of the Moonshae Isles welcomed him into the breast of Myrloch.
+
+By singing the ballad of Daen Winterbrush and speaking with his spirit, more abilities of the blade have been awakened.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: +1
+– Blessing of Myrloch: Bards wielding this weapon gain an additional +2 to Armor Class and Saving Throws and one bonus attack per round.
+– Lore: +30
+
+THAC0: +3
+Damage: 1d10+3 (slashing)
+Speed Factor: 4
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 12~
