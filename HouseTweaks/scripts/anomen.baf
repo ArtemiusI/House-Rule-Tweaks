@@ -1,0 +1,32 @@
+
+IF
+	Alignment(Myself,CHAOTIC_NEUTRAL)
+	Global("NewSounds","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetPlayerSound(Myself,70837,UNHAPPY_SERIOUS)  // *sigh* Mayhap it is time I thought of leaving. I can almost endure no more of your actions!
+		SetPlayerSound(Myself,70838,LEADER)  // Are you sure? I had enough of leadership in the Order. Oh, very well. *sigh* But it's a week vacation for everyone. *chuckle*
+		SetPlayerSound(Myself,70839,TIRED)  // A bottle of wine, a blanket, a little music as we rest... are these things too much to ask?
+		SetPlayerSound(Myself,70840,BORED)  // *chuckle* Hurry up and wait, hurry up and wait. Hm. Sounds like my days in the Order.
+		SetPlayerSound(Myself,70841,BATTLE_CRY1)  // Helm's fury upon you all!
+		SetPlayerSound(Myself,70842,BATTLE_CRY2)  // By skill and might, we shall prevail!
+		SetPlayerSound(Myself,70843,AREA_CITY)  // Hmm. I don't think I have ever looked upon the bustle of the city without keeping a watchful eye out for evil. It seems... quieter.
+		SetPlayerSound(Myself,70844,SELECT_COMMON1)  // I am ready to act.
+		SetPlayerSound(Myself,70845,SELECT_COMMON4)  // Yes?
+		SetPlayerSound(Myself,70846,SELECT_ACTION1)  // Of course.
+		SetPlayerSound(Myself,70847,SELECT_ACTION6)  // Not a problem.
+		SetPlayerSound(Myself,70848,SELECT_RARE2)  // *chuckle* So long as I never have to breathe the same stuffy air as those rusted suits of armor in the Order... well, I'm with you.
+		SetGlobal("NewSounds","LOCALS",1)
+END
+
+IF
+	Alignment(Myself,MASK_GOOD)
+	Global("NiceSounds","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetPlayerSound(Myself,70844,SELECT_COMMON1)  // I am ready to act.
+		SetPlayerSound(Myself,70845,SELECT_COMMON4)  // Yes?
+		SetPlayerSound(Myself,70846,SELECT_ACTION1)  // Of course.
+		SetPlayerSound(Myself,70847,SELECT_ACTION6)  // Not a problem.
+		SetGlobal("NiceSounds","LOCALS",1)
+END

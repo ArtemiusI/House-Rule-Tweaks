@@ -143,12 +143,27 @@ COPY_EXISTING ~C0SLSHAM.SPL~ OVERRIDE
 COPY_EXISTING ~C0SLMAGE.SPL~ OVERRIDE
 	LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_special = 1 parameter2 = C0HTINT silent = 1 END
 
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~C0PSEFCK.ITM~ THEN BEGIN
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/SPELLSLOTS.baf~ EVAL
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/passive_effects.baf~ EVAL
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
-EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/SPELLSLOTS.baf~ EVAL
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/passive_effects.baf~ EVAL
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
-EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/SPELLSLOTS.baf~ EVAL
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/passive_effects.baf~ EVAL
 END
+COPY_EXISTING ~SW1H01.ITM~ ~OVERRIDE/C0PSEFCK.ITM~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~C0PASSEF.SPL~ THEN BEGIN
+COPY ~%MOD_FOLDER%/spells/passive~ ~OVERRIDE~
+END
+
+COPY_EXISTING ~C0PASSEF.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SORCERER~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLSORC END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~MAGE_ALL~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLMAGE END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~BARD~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLBARD END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~PALADIN~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLDIVI END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~RANGER~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLDIVI END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SHAMAN~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLSHAM END
