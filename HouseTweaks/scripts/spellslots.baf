@@ -1,0 +1,8 @@
+IF
+	Global("C0SpellSlotsMod","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("C0SpellSlotsMod","GLOBAL",1)
+	ApplySpellRES("c0spels2",Player1)
+	Continue()
+END

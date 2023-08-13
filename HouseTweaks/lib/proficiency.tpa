@@ -1,5 +1,12 @@
 COPY ~%MOD_FOLDER%/2DA/PROFS.2DA~ OVERRIDE
 
+COPY_EXISTING ~clswpbon.2da~ ~override~
+  COUNT_2DA_COLS numCols
+  COUNT_2DA_ROWS numCols numRows
+  FOR (row = 0; row < numRows; row += 1) BEGIN
+    SET_2DA_ENTRY row 1 numCols ~1~
+  END
+  
 // HEAVY CROSSBOWS
 COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
@@ -44,20 +51,6 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
       END
     END
   END
-  END
-BUT_ONLY
-
-COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
-    READ_BYTE    0x1F fighter //reads the byte containing the fighter usability flag
-    PATCH_IF ((fighter BAND 0b00001000) = 0b00000000) BEGIN // if it is usable by fighters
-      READ_BYTE    0x1E cleric //reads the byte containing monks usability flag
-      READ_SHORT    0x1C type //reads the byte containing item type
-      PATCH_IF (type = 31) BEGIN // if it is a crossbow
-        WRITE_BYTE    0x1F (fighter BAND 0b00111000)  // makes usable by clerics
-        WRITE_BYTE    0x1E (cleric BAND 0b01111111)  // makes usable by clerics
-      END
-    END
   END
 BUT_ONLY
 
