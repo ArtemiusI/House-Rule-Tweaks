@@ -101,13 +101,13 @@ COPY ~%MOD_FOLDER%/spells/passive~ ~OVERRIDE~
 END
 
 COPY_EXISTING ~C0PASSEF.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HUMAN~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACHUM END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACELF END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALF_ELF~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACHEL END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~GNOME~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACGNO END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~DWARF~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACDWA END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACHFL END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFORC~)) parameter2 = 104 target = 4 timing = 1 STR_VAR resource = C0RACHOR END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HUMAN~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACHUM END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACELF END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALF_ELF~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACHEL END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~GNOME~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACGNO END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~DWARF~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACDWA END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACHFL END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFORC~)) parameter2 = 104 target = 3 timing = 1 STR_VAR resource = C0RACHOR END
 
 COPY ~%MOD_FOLDER%/2DA/ABRACEAD.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/ABRACERQ.2DA~ ~OVERRIDE~
@@ -115,3 +115,53 @@ COPY ~%MOD_FOLDER%/2DA/SKILLRAC.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/SAVECNDH.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/SAVECNG.2DA~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/2DA/RACETHAC.2DA~ ~OVERRIDE~
+
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 1) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHUM END
+	END
+      BUT_ONLY
+	  
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 2) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACELF END
+	END
+      BUT_ONLY
+	  
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 3) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHEL END
+	END
+      BUT_ONLY
+	  
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 6) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACGNO END
+	END
+      BUT_ONLY
+	  
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 4) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACDWA END
+	END
+      BUT_ONLY
+	  
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 5) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHFL END
+	END
+      BUT_ONLY
+	  
+   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 7) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHOR END
+	END
+      BUT_ONLY
+	  

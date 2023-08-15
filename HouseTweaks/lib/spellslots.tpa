@@ -161,9 +161,9 @@ COPY ~%MOD_FOLDER%/spells/passive~ ~OVERRIDE~
 END
 
 COPY_EXISTING ~C0PASSEF.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SORCERER~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLSORC END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~MAGE_ALL~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLMAGE END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~BARD~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLBARD END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~PALADIN~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLDIVI END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~RANGER~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLDIVI END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SHAMAN~)) parameter2 = 105 target = 4 timing = 1 STR_VAR resource = C0SLSHAM END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SORCERER~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLSORC END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~MAGE_ALL~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLMAGE END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~BARD~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLBARD END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~PALADIN~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLDIVI END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~RANGER~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLDIVI END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SHAMAN~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLSHAM END
