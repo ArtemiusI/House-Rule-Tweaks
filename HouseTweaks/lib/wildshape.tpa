@@ -4,141 +4,52 @@
 
 COPY ~%MOD_FOLDER%/animations/wildshape~ ~override~
 
-  COPY_EXISTING ~clastext.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~DRUID~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
+//__________________________________________________________________________________
+///////////////////////////////////////////////////////////////////////////
+// Update Kit Descriptions                                               //
+///////////////////////////////////////////////////////////////////////////
 
-CLASS FEATURES:
-
-– May only wear non-metallic armor.
-– May only equip bucklers and non-metallic shields.
-– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in any fighting style.
-– May cast druidic spells.
-– 7th level: May use Wild Shape three times per day. From 14th level onwards, the druid is able to cast spells while shapeshifted.
-– 14th level: May use Elemental Shape once per day. 
-– 15th level: Becomes immune to poison.
-– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
-– Alignment restricted to true neutral.
-– Hit Die: d8
-
-Prime Requisites For Dual-Classing: Wisdom, Charisma~)
-	  END
-	END
-ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
-  COPY_EXISTING ~sodcltxt.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~DRUID~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
-
-CLASS FEATURES:
-
-– May only wear non-metallic armor.
-– May only equip bucklers and non-metallic shields.
-– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
-– May only become Proficient (one slot) in any weapon class.
-– May only become Proficient (one slot) in any fighting style.
-– May cast druidic spells.
-– 7th level: May use Wild Shape three times per day. From 14th level onwards, the druid is able to cast spells while shapeshifted.
-– 14th level: May use Elemental Shape once per day.
-– 15th level: Becomes immune to poison.
-– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
-– Alignment restricted to true neutral.
-– Hit Die: d8
-
-Prime Requisites For Dual-Classing: Wisdom, Charisma~)
-	  END
-	END
-	END
-  COPY_EXISTING ~clastext.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~AVENGER~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
-
-Advantages:
-– May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
-– 19th level: Gains three additional uses of Wild Shape.
-– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
-  1st level: Chromatic Orb.
-  2nd level: Web.
-  3rd level: Lightning Bolt.
-  4th level: Improved Invisibility.
-  5th level: Chaos.
-  6th level: Chain Lightning.
-
-Disadvantages:
-– May not wear heavier armor than leather.
-– Incurs a -2 penalty to Strength and Constitution.~)
-	  END
-	END
-ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
-  COPY_EXISTING ~sodcltxt.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 0 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~AVENGER~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
-
-Advantages:
-– May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
-– 19th level: Gains three additional uses of Wild Shape.
-– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
-  1st level: Chromatic Orb.
-  2nd level: Web.
-  3rd level: Lightning Bolt.
-  4th level: Improved Invisibility.
-  5th level: Chaos.
-  6th level: Chain Lightning.
-
-Disadvantages:
-– May not wear heavier armor than leather.
-– Incurs a -2 penalty to Strength and Constitution.~)
-	  END
-	END
-	END
-ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
-  COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_COLS cols // amount of columns
-	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-	  READ_2DA_ENTRY_FORMER rows row 1 ~text~ // read column value
-	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~BEAST_FRIEND~ BEGIN
-	    SET patch_row = %row%
-		SET_2DA_ENTRY (%patch_row%) 4 cols RESOLVE_STR_REF (~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
-
-Advantages:
-– May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
-– 19th level: Gains three additional uses of Wild Shape.
-– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
-  1st level: Chromatic Orb.
-  2nd level: Web.
-  3rd level: Lightning Bolt.
-  4th level: Improved Invisibility.
-  5th level: Chaos.
-  6th level: Chain Lightning.
-
-Disadvantages:
-– May not wear heavier armor than leather.
-– Incurs a -2 penalty to Strength and Constitution.~)
-	  END
-	END
-	END
+ACTION_FOR_EACH description IN 
+    clastext
+	sodcltxt
+  BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%description%.2da~ BEGIN
+      COPY_EXISTING ~%description%.2DA~ ~override~
+      COUNT_2DA_COLS col_count
+      COUNT_2DA_ROWS col_count rows
+      FOR (index = 0; index < rows; ++index) BEGIN
+        READ_2DA_ENTRY index 0 col_count row_name
+//druid
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "DRUID" BEGIN
+          READ_2DA_ENTRY index 4 col_count druid_desc
+          SPRINT old_druid ~May Shapeshift into a wolf, black bear, or brown bear once per day.~
+          SPRINT new_druid ~May use Wild Shape three times per day. From 14th level onwards, the druid is able to cast spells while shapeshifted.~
+          GET_STRREF %druid_desc% druid_text
+          INNER_PATCH_SAVE druid_text ~%druid_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_druid%~ ~%new_druid%~
+          END
+          INNER_ACTION BEGIN
+            STRING_SET_EVALUATE ~%druid_desc%~ ~%druid_text%~
+          END
+		END
+//AVENGER
+        PATCH_IF "%row_name%" STRING_EQUAL_CASE "AVENGER" BEGIN
+          READ_2DA_ENTRY index 4 col_count avenger_desc
+          SPRINT old_avenger ~May Shapeshift into the form of a sword spider, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.~
+          SPRINT new_avenger ~May Wild Shape into the form of a winter wolf, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.~
+          GET_STRREF %avenger_desc% avenger_text
+          INNER_PATCH_SAVE avenger_text ~%avenger_text%~ BEGIN
+            REPLACE_TEXTUALLY ~%old_avenger%~ ~%new_avenger%~
+          END
+          INNER_ACTION BEGIN
+            STRING_SET_EVALUATE ~%avenger_desc%~ ~%avenger_text%~
+          END
+		END
+      END
+      BUT_ONLY
+    END
+  END
+  
 
 //////////////////////////////////////
 /////////////////BAMS/////////////////

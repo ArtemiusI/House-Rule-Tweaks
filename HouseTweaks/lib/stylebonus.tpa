@@ -57,7 +57,7 @@ COPY_EXISTING ~weapprof.2da~  ~override~
     FOR (row = 8; row < 32; ++row) BEGIN
       READ_2DA_ENTRY row column col_count stars
       PATCH_IF (stars < 5) BEGIN
-        SET_2DA_ENTRY 29 column col_count 2
+        SET_2DA_ENTRY 28 column col_count 2
         SET_2DA_ENTRY 30 column col_count 2
         SET_2DA_ENTRY 31 column col_count 2
       END
@@ -270,15 +270,15 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~weapprof.2da~) BEGIN
 
 Non-proficient (0 slots): The wielder incurs a penalty of 2 to Speed Factor.
 
-Proficient (1 slot): The wielder is no longer penalized and gains a +1 bonus to damage rolls.
+Proficient (1 slot): The wielder is no longer penalized and gains a +2 bonus to damage rolls.
 
-Specialized (2 slots): The wielder gains a further +1 to damage rolls and a -1 bonus to Speed Factor.
+Specialized (2 slots): The wielder gains a further +2 to damage rolls and a -1 bonus to Speed Factor.
 
-Master (3 slots): The wielder gains a critical hit threat range of 19-20.
+Master (3 slots): The wielder gains gains a further +2 to damage rolls a critical hit threat range of 19-20.
 
-High Master (4 slots): The wielder gains a further +1 to damage rolls and -1 to Speed Factor.
+High Master (4 slots): The wielder gains a further +2 to damage rolls and -1 to Speed Factor.
 
-Grand Master (5 slots): The wielder gains a further +1 to damage rolls, -1 to Speed Factor and a critical hit threat range of 18-20.~)
+Grand Master (5 slots): The wielder gains a further +2 to damage rolls, -1 to Speed Factor and a critical hit threat range of 18-20.~)
 	  END
 	  PATCH_IF ~%text%~ STRING_EQUAL_CASE ~SWORDANDSHIELD~ BEGIN
 	    SET patch_row = %row%
