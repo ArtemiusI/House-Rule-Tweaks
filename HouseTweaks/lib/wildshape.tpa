@@ -172,10 +172,14 @@ SPIDER: 17 STR, 17 DEX, base AC 6, 4 attacks per round. Attacks deal 1d2 piercin
 BOAR: 18/50 STR, 9 DEX, base AC 5, 1 attack per round, +50% bonus hit points, +40% physical resistance. Attacks deal 1d8 crushing damage and have a 15% chance to deal an additional 2d4 crushing damage and stun for 2 rounds on a failed save vs. death.
 
 PANTHER: 18/75 STR, 18 DEX, base AC 2, 3 attacks per round, +20% bonus hit points, +25% physical resistance, increased movement rate. Attacks deal 1d8 slashing damage and have a 15% chance to bleed targets for one point of slashing damage per second for six seconds.~
+COPY ~%MOD_FOLDER%/spells/c0hrbear.spl~ ~override~
+SAY NAME1 ~Shapeshift: Bear~
+COPY ~%MOD_FOLDER%/spells/c0hrwolf.spl~ ~override~
+SAY NAME1 ~Shapeshift: Wolf~
 COPY ~%MOD_FOLDER%/spells/c0wwolf.spl~ ~override~
 SAY NAME1 ~Shapeshift: Winter Wolf~
 COPY ~%MOD_FOLDER%/spells/c0wwolf2.spl~ ~override~
-COPY ~%MOD_FOLDER%/spells/spcl632.spl~ ~override~
+COPY ~%MOD_FOLDER%/spells/c0hrspid.spl~ ~override~
 SAY NAME1 ~Shapeshift: Spider~
 
 COPY ~%MOD_FOLDER%/2da/c0wshap3.2da~ ~override~
@@ -210,7 +214,7 @@ SAY NAME1 ~Shapeshift: Water Elemental~
 ////////////////ITEMS/////////////////
 //////////////////////////////////////
 
-COPY ~%MOD_FOLDER%/spells/BRBRP.ITM~ ~override~
+COPY ~%MOD_FOLDER%/spells/C0HRBEAR.ITM~ ~override~
 SAY NAME1 ~Natural Weapon (Bear)~
 SAY NAME2 ~Natural Weapon (Bear)~
 
@@ -226,6 +230,10 @@ COPY ~%MOD_FOLDER%/spells/C0HRSPID.ITM~ ~override~
 SAY NAME1 ~Natural Weapon (Spider)~
 SAY NAME2 ~Natural Weapon (Spider)~
 
+COPY ~%MOD_FOLDER%/spells/C0HRWOLF.ITM~ ~override~
+SAY NAME1 ~Natural Weapon (Wolf)~
+SAY NAME2 ~Natural Weapon (Wolf)~
+
 ADD_PROJECTILE ~%MOD_FOLDER%/spells/c0hrwwol.pro~ ~Winter Wolf Breath~
 
 COPY ~%MOD_FOLDER%/spells/C0WWOLF.ITM~ ~override~
@@ -240,10 +248,6 @@ SAY NAME2 ~Flaming Spear~
 COPY ~%MOD_FOLDER%/spells/PLYWYVRN.ITM~ ~override~
 SAY NAME1 ~Natural Weapon (Wyvern)~
 SAY NAME2 ~Natural Weapon (Wyvern)~
-
-COPY ~%MOD_FOLDER%/spells/WOLFM.ITM~ ~override~
-SAY NAME1 ~Natural Weapon (Wolf)~
-SAY NAME2 ~Natural Weapon (Wolf)~
 
 COPY ~%MOD_FOLDER%/spells/C0HRFIRE.ITM~ ~override~
 SAY NAME1 ~Natural Weapon (Fire Elemental)~
