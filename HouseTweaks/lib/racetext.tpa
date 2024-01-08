@@ -76,7 +76,7 @@ APPEND ~racetext.2da~ ~DEMONIC   121        %fiend_lcase%       -1         %fien
 
 OUTER_SET lycanthrope_lcase = RESOLVE_STR_REF(~lycanthrope~)
 OUTER_SET lycanthrope_ucase = RESOLVE_STR_REF(~Lycanthrope~)
-APPEND ~racetext.2da~ ~LYCANTHROPE   122        %lycanthrope_lcase%       -1         %lycanthropes_ucase%          -1~ UNLESS ~LYCANTHROPE~
+APPEND ~racetext.2da~ ~LYCANTHROPE   122        %lycanthrope_lcase%       -1         %lycanthrope_ucase%          -1~ UNLESS ~LYCANTHROPE~
 
 OUTER_SET beholder_lcase = RESOLVE_STR_REF(~beholder~)
 OUTER_SET beholder_ucase = RESOLVE_STR_REF(~Beholder~)
