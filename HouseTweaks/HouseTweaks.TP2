@@ -1,6 +1,6 @@
 BACKUP ~HouseTweaks/backup~
 AUTHOR ~Artemius_I~
-VERSION ~2.5~
+VERSION ~2.6~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -391,3 +391,21 @@ Requires:
  14 Strength
 
 Weight: 12~
+
+BEGIN ~2% chance per 5 points in Detect Traps, check once per round~
+SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+
+OUTER_SET trap_detection_probability = 2
+INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
+
+BEGIN ~5% chance per 5 points in Detect Traps, check once per round~
+SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+
+OUTER_SET trap_detection_probability = 5
+INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
+
+BEGIN ~100% chance of trap detection, check once per round~
+SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+
+OUTER_SET trap_detection_probability = 100
+INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~

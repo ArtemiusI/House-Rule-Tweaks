@@ -167,3 +167,8 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBO
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~PALADIN~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLDIVI END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~RANGER~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLDIVI END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~CLASS~ ~SHAMAN~)) parameter2 = 105 target = 3 timing = 1 STR_VAR resource = C0SLSHAM END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~C0AURACL.2DA~ THEN BEGIN
+COPY_EXISTING ~C0PASSEF.SPL~ ~OVERRIDE~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~KIT~ ~C0AURA~)) parameter2 = 109 target = 3 timing = 1 STR_VAR resource = C0SLMAGE END
+END

@@ -1,0 +1,178 @@
+COPY ~%MOD_FOLDER%/trap_detection~ ~override~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABTH01.2DA~ BEGIN
+COPY_EXISTING ~CLABTH01.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+      BUT_ONLY
+  END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABMO01.2DA~ BEGIN
+COPY_EXISTING ~CLABTH01.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+      BUT_ONLY
+  END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~C0AURACL.2DA~ BEGIN
+COPY_EXISTING ~C0AURACL.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+      BUT_ONLY
+  END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABRN01.2DA~ AND FILE_EXISTS_IN_GAME ~m_c0ran1.lua~ BEGIN
+COPY_EXISTING ~CLABRN01.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+      BUT_ONLY
+  END
+
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~thief_kitlist~ 10
+  FOR (row = 1; row < thief_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~thief_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~thief_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~thief_kitlist~ row 8 kit_class
+  
+  PATCH_IF ((%kit_class% = 4) OR (%kit_class% = 20)) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
+  END
+  END
+  
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~ranger_kitlist~ 10
+  FOR (row = 1; row < ranger_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 8 kit_class
+  
+  PATCH_IF (%kit_class% = 12) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
+  END
+  END
+
+
+DEFINE_ACTION_FUNCTION ADD_SPLPROT_CONDITION
+	STR_VAR
+		splprot_stat=~*~
+		splprot_value=~*~
+		splprot_relation=~*~
+	RET
+		splprot_slot
+BEGIN
+	COPY_EXISTING ~splprot.2da~ ~override~
+		COUNT_2DA_ROWS 4 numrows
+		INSERT_2DA_ROW numrows 4 ~%numrows%        %splprot_stat%         %splprot_value%        %splprot_relation%~
+		splprot_slot=numrows
+END
+
+LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~28~ splprot_value=~-1~ splprot_relation=~4~ RET splprot_findtrapsgt=splprot_slot END
+
+////
+
+ACTION_IF ("trap_detection_probability" = 2) THEN BEGIN	
+	
+COPY_EXISTING ~c0d_det2.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = splprot_findtrapsgt END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 10 probability1 = 97 probability2 = 96 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 15 probability1 = 95 probability2 = 94 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 20 probability1 = 93 probability2 = 92 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 25 probability1 = 91 probability2 = 90 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 30 probability1 = 89 probability2 = 88 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 35 probability1 = 87 probability2 = 86 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 40 probability1 = 85 probability2 = 84 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 45 probability1 = 83 probability2 = 82 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 50 probability1 = 81 probability2 = 80 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 55 probability1 = 79 probability2 = 78 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 60 probability1 = 77 probability2 = 76 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 65 probability1 = 75 probability2 = 74 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 70 probability1 = 73 probability2 = 72 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 75 probability1 = 71 probability2 = 70 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 80 probability1 = 69 probability2 = 68 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 85 probability1 = 67 probability2 = 66 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 90 probability1 = 65 probability2 = 64 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 95 probability1 = 63 probability2 = 62 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 100 probability1 = 61 probability2 = 60 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 105 probability1 = 59 probability2 = 58 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 110 probability1 = 57 probability2 = 56 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 115 probability1 = 55 probability2 = 54 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 120 probability1 = 53 probability2 = 52 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 125 probability1 = 51 probability2 = 50 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 130 probability1 = 49 probability2 = 48 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 135 probability1 = 47 probability2 = 46 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 140 probability1 = 45 probability2 = 44 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 150 probability1 = 43 probability2 = 42 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 155 probability1 = 41 probability2 = 40 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 160 probability1 = 39 probability2 = 38 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 165 probability1 = 37 probability2 = 36 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 170 probability1 = 35 probability2 = 34 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 175 probability1 = 33 probability2 = 32 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 180 probability1 = 31 probability2 = 30 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 185 probability1 = 29 probability2 = 28 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 190 probability1 = 27 probability2 = 26 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 195 probability1 = 25 probability2 = 24 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 200 probability1 = 23 probability2 = 22 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 205 probability1 = 21 probability2 = 20 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 210 probability1 = 19 probability2 = 18 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 215 probability1 = 17 probability2 = 16 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 220 probability1 = 15 probability2 = 14 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 225 probability1 = 13 probability2 = 12 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 230 probability1 = 11 probability2 = 10 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 235 probability1 = 9 probability2 = 8 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 240 probability1 = 7 probability2 = 6 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 245 probability1 = 5 probability2 = 4 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 250 probability1 = 3 probability2 = 2 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 255 probability1 = 1 probability2 = 0 STR_VAR insert = first END
+
+END
+
+////
+
+ACTION_IF ("trap_detection_probability" = 5) THEN BEGIN	
+	
+COPY_EXISTING ~c0d_det2.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = splprot_findtrapsgt probability2 = 95 END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 10 probability1 = 94 probability2 = 90 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 15 probability1 = 89 probability2 = 85 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 20 probability1 = 84 probability2 = 80 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 25 probability1 = 79 probability2 = 75 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 30 probability1 = 74 probability2 = 70 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 35 probability1 = 69 probability2 = 65 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 40 probability1 = 64 probability2 = 60 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 45 probability1 = 59 probability2 = 55 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 50 probability1 = 54 probability2 = 50 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 55 probability1 = 49 probability2 = 45 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 60 probability1 = 44 probability2 = 40 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 65 probability1 = 39 probability2 = 35 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 70 probability1 = 34 probability2 = 30 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 75 probability1 = 29 probability2 = 25 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 80 probability1 = 24 probability2 = 20 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 85 probability1 = 19 probability2 = 15 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 90 probability1 = 14 probability2 = 10 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 95 probability1 = 9 probability2 = 5 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 100 probability1 = 4 probability2 = 0 STR_VAR insert = first END
+
+END
+
+////
+
+ACTION_IF ("trap_detection_probability" = 100) THEN BEGIN	
+	
+COPY_EXISTING ~c0d_det2.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 probability2 = 0 END
+
+END
+
+////

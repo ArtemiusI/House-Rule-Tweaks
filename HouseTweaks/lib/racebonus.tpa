@@ -61,6 +61,7 @@ OUTER_SET halforc_desc = RESOLVE_STR_REF(~HALF-ORCS: Half-orcs are born from the
 
 Half-orcs have the following traits:
 – Infravision.
+– Great Fortitude: Half-orcs gain a +2 bonus to Saving Throws vs. Paralysis/Poison/Death.
 – Orcish Proficiency: Half-orcs gain a +2 bonus to hit with two-handed melee weapons.
 – +1 Strength, +1 Constitution, -1 Intelligence, -1 Charisma.~)
 
