@@ -114,15 +114,25 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   END
   
   PATCH_IF (%kit_class% = 4) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+    PATCH_IF (FILE_EXISTS_IN_GAME ~%kit_clab%.2da~) BEGIN
       INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
+      COPY_EXISTING ~%kit_clab%.2DA~ CRE_script_override
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
         PRETTY_PRINT_2DA
       BUT_ONLY
       END
     END
   END
+  
+  PATCH_IF FILE_EXISTS_IN_GAME ~C0AURACL.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~C0AURACL.2DA~ override
+      REPLACE_TEXTUALLY ~AP_C0APR14~ ~****     ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
   
   PATCH_IF (%kit_class% = 5) BEGIN
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
@@ -134,7 +144,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
   END
-  
+
   PATCH_IF (%kit_class% = 11) BEGIN
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
@@ -176,7 +186,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
    READ_BYTE	0x52 thac0
    READ_BYTE	0x273 class
    PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 15) BEGIN
+	PATCH_IF ((thac0 < 15) AND (thac0 > 9)) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
 	END
    END
@@ -187,26 +197,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
    READ_BYTE	0x273 class
    PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
 	PATCH_IF (thac0 < 9) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR08 END
-	END
-   END
-      BUT_ONLY
-
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
-   READ_BYTE	0x273 class
-   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 15) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
-	END
-   END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
-   READ_BYTE	0x273 class
-   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 9) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR08 END
 	END
    END
@@ -274,6 +265,16 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
   END
+  
+  PATCH_IF FILE_EXISTS_IN_GAME ~C0AURACL.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~C0AURACL.2DA~ override
+      REPLACE_TEXTUALLY ~AP_C0APR08~ ~****     ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 37 f_MaxLevel = 37 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
   
   PATCH_IF (%kit_class% = 5) BEGIN
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN

@@ -129,7 +129,7 @@ REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.
 COMPILE	~%MOD_FOLDER%/Dialog/iwd/iwdrep.d~
 EXTEND_TOP ~BALDUR.BCS~	~%MOD_FOLDER%/scripts/iwdrep.baf~
 
-BEGIN ~House Tweaks: Change Anomen's Soundset in SoA after his Trial (BG2:EE)~
+BEGIN ~House Tweaks: Soundset Tweaks for Anomen and Sarevok (BG2:EE)~
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 ACTION_IF FILE_EXISTS_IN_GAME ~ANOMEN.BCS~ THEN BEGIN
 COPY_EXISTING ~ANOM25.BCS~ ~OVERRIDE~
@@ -147,6 +147,14 @@ COPY_EXISTING ~ANOMEN.BCS~ ~OVERRIDE~
 EXTEND_TOP ~ANOMEN.BCS~	~%MOD_FOLDER%/scripts/ANOMEN.baf~
 EXTEND_TOP ~ANOM25.BCS~	~%MOD_FOLDER%/scripts/ANOM25.baf~
   END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SAREVOK.CRE~ THEN BEGIN
+COPY_EXISTING ~SAREVOK.CRE~ ~OVERRIDE~
+  SAY SELECT_ACTION4 #70818
+  SAY SELECT_ACTION5 #70819
+  SAY SELECT_ACTION6 #70820
+  SAY SELECT_ACTION7 #70821
+END
 
 BEGIN ~House Tweaks: Experience Books~
 INCLUDE ~%MOD_FOLDER%/lib/xpbooks.tpa~

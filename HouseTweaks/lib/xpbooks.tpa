@@ -64,7 +64,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 15000
+WRITE_LONG 0x34 7500
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK2A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 50000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK2B END
@@ -88,7 +88,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 25000
+WRITE_LONG 0x34 12000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK3A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 100000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK3B END
@@ -112,7 +112,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 40000
+WRITE_LONG 0x34 18000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK4A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 250000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK4B END
@@ -136,7 +136,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 60000
+WRITE_LONG 0x34 25000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK5A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 500000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK5B END
@@ -147,28 +147,28 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 112 STR_VAR resource = C0XPBK05 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 104 parameter1 = 500000 END
 
 COPY_EXISTING ~C0XPBK01.itm~ ~override/C0XPBK06.itm~
-LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1000000 parameter2 = C0_HT_EXPERIENCE_4 match_special = 1 STR_VAR match_resource = C0XPBK1A resource = C0XPBK6A END
-LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1000000 parameter2 = C0_HT_EXPERIENCE_2 match_special = 2 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1500000 parameter2 = C0_HT_EXPERIENCE_4 match_special = 1 STR_VAR match_resource = C0XPBK1A resource = C0XPBK6A END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1500000 parameter2 = C0_HT_EXPERIENCE_2 match_special = 2 END
 SAY NAME1 ~Book~
 SAY NAME2 ~Book of Knowledge VI~
 SAY DESC ~This book is a magical manual used within adventuring parties, in order to efficiently bestow experience from veteran adventurers to newcomers to a group.
 
 STATISTICS:
 
-Experience: Set a chosen party member's experience to 1,000,000 if their level is lower. The user must have 1,000,000 experience to use this book.
+Experience: Set a chosen party member's experience to 1,500,000 if their level is lower. The user must have 1,500,000 experience to use this book.
 Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 85000
+WRITE_LONG 0x34 36000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK6A.SPL~
-LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1000000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK6B END
-LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1000000 parameter2 = C0_HT_EXPERIENCE_4 STR_VAR match_resource = C0XPBK1D END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1500000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK6B END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1500000 parameter2 = C0_HT_EXPERIENCE_4 STR_VAR match_resource = C0XPBK1D END
 
 COPY_EXISTING ~C0XPBK1B.SPL~ ~override/C0XPBK6B.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 112 STR_VAR resource = C0XPBK06 END
-LPF ALTER_EFFECT INT_VAR match_opcode = 104 parameter1 = 1000000 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 104 parameter1 = 1500000 END
 
 COPY_EXISTING ~C0XPBK01.itm~ ~override/C0XPBK07.itm~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2500000 parameter2 = C0_HT_EXPERIENCE_4 match_special = 1 STR_VAR match_resource = C0XPBK1A resource = C0XPBK7A END
@@ -184,7 +184,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 110000
+WRITE_LONG 0x34 45000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK7A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2500000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK7B END
@@ -193,6 +193,30 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2500000 parameter2 = C0
 COPY_EXISTING ~C0XPBK1B.SPL~ ~override/C0XPBK7B.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 112 STR_VAR resource = C0XPBK07 END
 LPF ALTER_EFFECT INT_VAR match_opcode = 104 parameter1 = 2500000 END
+
+COPY_EXISTING ~C0XPBK01.itm~ ~override/C0XPBK08.itm~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5000000 parameter2 = C0_HT_EXPERIENCE_4 match_special = 1 STR_VAR match_resource = C0XPBK1A resource = C0XPBK8A END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5000000 parameter2 = C0_HT_EXPERIENCE_2 match_special = 2 END
+SAY NAME1 ~Book~
+SAY NAME2 ~Book of Knowledge VIII~
+SAY DESC ~This book is a magical manual used within adventuring parties, in order to efficiently bestow experience from veteran adventurers to newcomers to a group.
+
+STATISTICS:
+
+Experience: Set a chosen party member's experience to 5,000,000 if their level is lower. The user must have 5,000,000 experience to use this book.
+Special: The book is consumed upon successful use
+Usage: Place into quick item slot
+
+Weight: 25~
+WRITE_LONG 0x34 60000
+
+COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK8A.SPL~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5000000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK8B END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5000000 parameter2 = C0_HT_EXPERIENCE_4 STR_VAR match_resource = C0XPBK1D END
+
+COPY_EXISTING ~C0XPBK1B.SPL~ ~override/C0XPBK8B.SPL~
+LPF ALTER_EFFECT INT_VAR match_opcode = 112 STR_VAR resource = C0XPBK08 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 104 parameter1 = 5000000 END
 
 ACTION_FOR_EACH temples_BGEE IN TEM0002 TEM0131 TEM0132 TEM0149 TEM0609 TEM2304 TEM2601 TEM3402 TEM4003 TEM4802 BEGIN
 ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BGEE%.sto~ THEN BEGIN
@@ -204,39 +228,30 @@ ADD_STORE_ITEM ~C0XPBK04~ #0 #0 #0 ~IDENTIFIED~ #1
 END
 END
 
-ACTION_FOR_EACH temples_BG2EE IN TEMHELM TEMLATH TEMPLE TEMSUP TEMTALOS BHELM GOVWAU01 HELMPR KPCHAP01 PPUMB01 SLILMAT TALMISS WILMAT BEGIN
-ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BGEE%.sto~ THEN BEGIN
-COPY_EXISTING ~%temples_BGEE%.sto~ ~override~
-ADD_STORE_ITEM ~C0XPBK01~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK02~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK03~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK04~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK05~ #0 #0 #0 ~IDENTIFIED~ #1
+ACTION_FOR_EACH temples_BG2EE IN TEMHELM TEMLATH TEMPLE TEMSUP TEMTALOS BHELM GOVWAU01 HELMPR KPCHAP01 SLILMAT TALMISS WILMAT BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BG2EE%.sto~ THEN BEGIN
+COPY_EXISTING ~%temples_BG2EE%.sto~ ~override~
+ADD_STORE_ITEM ~C0XPBK03~ #0 #0 #0 ~IDENTIFIED~ #2
+ADD_STORE_ITEM ~C0XPBK04~ #0 #0 #0 ~IDENTIFIED~ #2
+ADD_STORE_ITEM ~C0XPBK05~ #0 #0 #0 ~IDENTIFIED~ #2
+ADD_STORE_ITEM ~C0XPBK06~ #0 #0 #0 ~IDENTIFIED~ #2
 END
 END
 
-ACTION_FOR_EACH temples_BG2EE_LATE IN SAHPR SUELF10 BEGIN
-ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BGEE%.sto~ THEN BEGIN
-COPY_EXISTING ~%temples_BGEE%.sto~ ~override~
-ADD_STORE_ITEM ~C0XPBK01~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK02~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK03~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK04~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK05~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK06~ #0 #0 #0 ~IDENTIFIED~ #1
+ACTION_FOR_EACH temples_BG2EE_LATE IN PPUMB01 SAHPR SUELF10 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BG2EE_LATE%.sto~ THEN BEGIN
+COPY_EXISTING ~%temples_BG2EE_LATE%.sto~ ~override~
+ADD_STORE_ITEM ~C0XPBK05~ #0 #0 #0 ~IDENTIFIED~ #2
+ADD_STORE_ITEM ~C0XPBK06~ #0 #0 #0 ~IDENTIFIED~ #2
+ADD_STORE_ITEM ~C0XPBK07~ #0 #0 #0 ~IDENTIFIED~ #2
 END
 END
 
 ACTION_FOR_EACH temples_BG2EE_TOB IN AMCLER02 GARLENA SARTEM01 BEGIN
-ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BGEE%.sto~ THEN BEGIN
-COPY_EXISTING ~%temples_BGEE%.sto~ ~override~
-ADD_STORE_ITEM ~C0XPBK01~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK02~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK03~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK04~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK05~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK06~ #0 #0 #0 ~IDENTIFIED~ #1
-ADD_STORE_ITEM ~C0XPBK07~ #0 #0 #0 ~IDENTIFIED~ #1
+ACTION_IF FILE_EXISTS_IN_GAME ~%temples_BG2EE_TOB%.sto~ THEN BEGIN
+COPY_EXISTING ~%temples_BG2EE_TOB%.sto~ ~override~
+ADD_STORE_ITEM ~C0XPBK07~ #0 #0 #0 ~IDENTIFIED~ #3
+ADD_STORE_ITEM ~C0XPBK08~ #0 #0 #0 ~IDENTIFIED~ #3
 END
 END
 
