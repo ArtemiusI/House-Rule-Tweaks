@@ -1,0 +1,90 @@
+COPY ~%MOD_FOLDER%/RACEPROF~ OVERRIDE
+
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SW1H13.ITM~ THEN BEGIN
+COPY_EXISTING ~SW1H13.ITM~ ~OVERRIDE~
+SAY DESC ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+– Xan gains an additional proficiency point in Long Swords while wielding this weapon
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+WRITE_BYTE 0x1C 20
+WRITE_BYTE 0x31 90
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = C0PRF#XA END
+END
+
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x1F fighter //reads the byte containing the fighter usability flag
+    PATCH_IF ((fighter BAND 0b00001000) = 0b00000000) BEGIN 
+      READ_BYTE    0x1E row1
+      READ_BYTE    0x1F row2
+      READ_BYTE    0x20 row3
+      READ_BYTE    0x21 row4
+      READ_SHORT    0x31 proficiency 
+      PATCH_IF ((proficiency = 92) OR (proficiency = 89) OR (proficiency = 115) OR (proficiency = 103) OR (proficiency = 96) OR (proficiency = 106) OR (proficiency = 100) OR (proficiency = 99) OR (proficiency = 94) OR (proficiency = 104) OR (proficiency = 90) OR (proficiency = 101) OR (proficiency = 102) OR (proficiency = 95) OR (proficiency = 105) OR (proficiency = 91) OR (proficiency = 93) OR (proficiency = 97) OR (proficiency = 98)) BEGIN
+        WRITE_BYTE    0x1E (row1 BAND 0b00111111) 
+        WRITE_BYTE    0x1F (row2 BAND 0b00000000)
+        WRITE_BYTE    0x20 (row3 BAND 0b10000000)
+        WRITE_BYTE    0x21 (row4 BAND 0b10111111)
+      END
+      PATCH_IF (proficiency = 90) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#LS END
+      END
+      PATCH_IF (proficiency = 91) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#SS END
+      END
+      PATCH_IF (proficiency = 92) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 4 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#AX END
+      END
+      PATCH_IF (proficiency = 96) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#DG END
+      END
+      PATCH_IF (proficiency = 97) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 4 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#HM END
+      END
+      PATCH_IF (proficiency = 104) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#LB END
+      END
+      PATCH_IF (proficiency = 105) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#SB END
+      END
+      PATCH_IF (proficiency = 106) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#DT END
+      END
+      PATCH_IF (proficiency = 107) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#SL END
+      END
+    END
+  END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x1F fighter //reads the byte containing the fighter usability flag
+    PATCH_IF ((fighter BAND 0b00001000) = 0b00000000) BEGIN 
+      READ_BYTE    0x1E row1
+      READ_BYTE    0x1F row2
+      READ_BYTE    0x20 row3
+      READ_BYTE    0x21 row4
+      READ_SHORT    0x1C type //reads the byte containing item type
+      PATCH_IF ((type = 5) OR (type = 31)) BEGIN // if it is arrows
+        WRITE_BYTE    0x1E (row1 BAND 0b00111111) 
+        WRITE_BYTE    0x1F (row2 BAND 0b00000000)
+        WRITE_BYTE    0x20 (row3 BAND 0b10000000)
+        WRITE_BYTE    0x21 (row4 BAND 0b10111111)
+      END
+    END
+  END
+BUT_ONLY_IF_IT_CHANGES
