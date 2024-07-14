@@ -1,6 +1,5 @@
 COPY ~%MOD_FOLDER%/RACEPROF~ OVERRIDE
 
-
 ACTION_IF FILE_EXISTS_IN_GAME ~SW1H13.ITM~ THEN BEGIN
 COPY_EXISTING ~SW1H13.ITM~ ~OVERRIDE~
 SAY DESC ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
@@ -56,8 +55,8 @@ STATISTICS:
 Equipped abilities:
 – Armor Class: +1
 – Fire Resistance: +50%
-- Invisibility
-- Vocalize
+– Invisibility
+– Vocalize
 – Xan gains an additional proficiency point in Long Swords while wielding this weapon
 
 THAC0: +4
@@ -67,6 +66,56 @@ Proficiency Type: Long Sword
 Type:  1-handed
 
 Weight: 4~
+WRITE_BYTE 0x1C 20
+WRITE_BYTE 0x31 90
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = C0PRF#XA END
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~O#XANIMS.ITM~ THEN BEGIN
+COPY_EXISTING ~O#XANIMS.ITM~ ~OVERRIDE~
+SAY DESC ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A Moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade, anyone else who tries will find themselves unable to lift the sword. This particular Moonblade gives resistance to fire and gives its user a bonus to his armor class. It now also protects its wielder from silence, and grants him an extra edge in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+– Vocalize
+– Xan gains an additional proficiency point in Long Swords while wielding this weapon
+
+Combat abilities:
+– 1 extra attack per round
+
+THAC0: +4
+Damage:  1d8+4 (slashing)
+Speed Factor: 0
+Proficiency Type: Long Sword
+Type:  1-handed
+
+Weight: 4~
+WRITE_BYTE 0x1C 20
+WRITE_BYTE 0x31 90
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = C0PRF#XA END
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~O#XANMS.ITM~ THEN BEGIN
+COPY_EXISTING ~O#XANMS.ITM~ ~OVERRIDE~
+SAY DESC ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+– Xan gains an additional proficiency point in Long Swords while wielding this weapon
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
 WRITE_BYTE 0x1C 20
 WRITE_BYTE 0x31 90
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 0 parameter2 = 2 timing = 2 STR_VAR resource = C0PRF#XA END
