@@ -24,6 +24,12 @@ COPY_EXISTING ~CLABRN01.2DA~ OVERRIDE
       BUT_ONLY
   END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~C0CLABWL.2DA~ AND FILE_EXISTS_IN_GAME ~m_c0wlk1.lua~ BEGIN
+COPY_EXISTING ~C0CLABWL.2DA~ OVERRIDE
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 STR_VAR f_Entry = AP_C0D_DET1 END
+      BUT_ONLY
+  END
+
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRIES_NOW ~thief_kitlist~ 10
