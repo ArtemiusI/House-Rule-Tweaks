@@ -5,10 +5,11 @@ SAY DESC ~This wardstone is a virtual area of darkness and seems to suck the ver
 STATISTICS:
 
 Equipped abilities:
-- Armor Class: +4 vs. missile attacks
+- Armor Class: +2, +4 vs. missile attacks
 - Save vs. Death: +2
 - Save vs. Breath: +2
 - Save vs. Wand: +2
+- Protects against critical hits
 
 Weight: 1~
 END

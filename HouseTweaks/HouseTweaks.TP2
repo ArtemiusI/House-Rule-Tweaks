@@ -1,10 +1,11 @@
-BACKUP ~HouseTweaks/backup~
+BACKUP ~weidu_external/backup/HouseTweaks~
 AUTHOR ~Artemius_I~
-VERSION ~2.6~
+VERSION ~2.8~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
   INCLUDE ~%MOD_FOLDER%/lib/alter_script.tpa~
+  INCLUDE ~%MOD_FOLDER%/lib/replace_multiline.tpa~
 END
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~
 
@@ -420,3 +421,32 @@ SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
 
 OUTER_SET trap_detection_probability = 100
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
+
+BEGIN ~House Tweaks: Remove all 'Hide in Shadows' Voice Cues~ DESIGNATED 0035
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+    SAY HIDDEN_IN_SHADOWS #-1 
+      BUT_ONLY
+	  
+BEGIN ~House Tweaks: Remove all 'Set Traps' Voice Cues~ DESIGNATED 0036
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+    SAY SET_A_TRAP #-1 
+      BUT_ONLY
+	  
+BEGIN ~House Tweaks: Make Helmets Invisible on Mage Avatars~ DESIGNATED 0037
+
+ACTION_FOR_EACH mage_avatar IN 6200 6201 6202 6204 6205 6210 6211 6212 6214 6215 BEGIN
+COPY_EXISTING ~%mage_avatar%.ini~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+///////////////////////////////////////////////////////////////////////////
+// Update lua file                                                       //
+///////////////////////////////////////////////////////////////////////////
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~equip_helmet=1~~~~~
+    string = EVAL ~~~~~equip_helmet=0~~~~~ //"
+  END
+END
