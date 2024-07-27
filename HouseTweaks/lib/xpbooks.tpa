@@ -64,7 +64,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 7500
+WRITE_LONG 0x34 5000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK2A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 50000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK2B END
@@ -88,7 +88,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 12000
+WRITE_LONG 0x34 8000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK3A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 100000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK3B END
@@ -112,7 +112,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 18000
+WRITE_LONG 0x34 12000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK4A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 250000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK4B END
@@ -136,7 +136,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 25000
+WRITE_LONG 0x34 15000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK5A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 500000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK5B END
@@ -160,7 +160,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 36000
+WRITE_LONG 0x34 18000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK6A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1500000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK6B END
@@ -184,7 +184,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 45000
+WRITE_LONG 0x34 22000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK7A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2500000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK7B END
@@ -208,7 +208,7 @@ Special: The book is consumed upon successful use
 Usage: Place into quick item slot
 
 Weight: 25~
-WRITE_LONG 0x34 60000
+WRITE_LONG 0x34 25000
 
 COPY_EXISTING ~C0XPBK1A.SPL~ ~override/C0XPBK8A.SPL~
 LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5000000 parameter2 = C0_HT_EXPERIENCE_2 STR_VAR match_resource = C0XPBK1B resource = C0XPBK8B END

@@ -91,8 +91,8 @@ ACTION_IF FILE_EXISTS_IN_GAME ~C0TR#03.SPL~ THEN BEGIN
 COPY_EXISTING ~C0TR#03.SPL~ OVERRIDE
 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode = 318 parameter1 = 1 parameter2 = 104 timing = 9 STR_VAR resource = C0TR#03A END
 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode = 318 parameter1 = 4 parameter2 = 115 timing = 9 STR_VAR resource = C0TR#03B END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 parameter1 = 1 parameter2 = 104 timing = 9 STR_VAR resource = C0RACHUM END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 1 parameter2 = 4 timing = 9 STR_VAR resource = C0TR#03B END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 177 target = 2 parameter1 = 4 parameter2 = 5 timing = 9 STR_VAR resource = C0TR#03D END
 END
 
 COPY ~%MOD_FOLDER%/racebonus~ ~OVERRIDE~
