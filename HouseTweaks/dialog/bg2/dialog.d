@@ -1,8 +1,3 @@
-REPLACE_ACTION_TEXT elgea
-~SetGlobal("ElgeaFree","GLOBAL",1)~
-~SetGlobal("ElgeaFree","GLOBAL",1)
-SetGlobalTimer("C0ElgeaRewardTimer","GLOBAL",THREE_DAYS)~
-
 CHAIN IF WEIGHT #-1 ~Global("C0ElgeaReward","GLOBAL",1)~ THEN WELTHER a1
 ~Greetings, friend. Might I have a moment of your time?~
 END
@@ -32,7 +27,7 @@ END
 CHAIN GORCAMB AES-DECK
 ~You desire the Deck, hmm? I cannot say I blame you. It is a most wondrous thing. Dangerous, of course, but that only makes the draw more exciting.~
 = ~I suppose I could be persuaded to bargain for it. After all, it would only be a matter of time before it takes my life. Such is the risk of the game, and it can only amuse me for so long.~
-= ~Here is my offer, prime. I will give you the deck, in exchange for one of your prior wagers– your experience, or your vitality. Such a trade is not unreasonable, I assure you. Though the deck bears many dangers, it also grants great rewards to the daring. What do you say?~
+= ~Here is my offer, prime. I will give you the deck, in exchange for one of your prior wagersï¿½ your experience, or your vitality. Such a trade is not unreasonable, I assure you. Though the deck bears many dangers, it also grants great rewards to the daring. What do you say?~
 END
 ++ ~I accept. Take a portion of my experience.~ DO ~ReallyForceSpell(LastTalkedToBy,DECK_XP_DRAIN)~ EXTERN GORCAMB AES-DECK-ACCEPTED
 ++ ~I accept. Take a portion of my vitality.~ DO ~ReallyForceSpell(LastTalkedToBy,DECK_VITALITY_DRAIN)~ EXTERN GORCAMB AES-DECK-ACCEPTED

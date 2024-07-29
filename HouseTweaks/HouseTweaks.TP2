@@ -91,6 +91,9 @@ EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 EXTEND_TOP ~udsac.bcs~ ~%MOD_FOLDER%/scripts/udsac.baf~
 COMPILE ~%MOD_FOLDER%/dialog/bg2/dialog.d~
 
+COPY_EXISTING ~WELTHER.CRE~ ~OVERRIDE/C0WELTHR.CRE~
+WRITE_ASCII SCRIPT_RACE ~~ #8
+
 BEGIN ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~ DESIGNATED 0017
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
 EXTEND_TOP ~hexxat.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~

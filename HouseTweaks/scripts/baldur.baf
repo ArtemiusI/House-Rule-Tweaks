@@ -1,6 +1,18 @@
 // SILVER PANTALOONS
 
 IF
+	Global("ElgeaFree","GLOBAL",1)
+	Global("C0SpawnWelther","GLOBAL",0)
+	GlobalTimerExpired("C0ElgeaRewardTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	SetGlobal("C0SpawnWelther","GLOBAL",1)
+	SetGlobalTimer("C0ElgeaRewardTimer","GLOBAL",THREE_DAYS)
+END
+
+
+
+IF
 	OR(7)
 	AreaCheck("AR0300")
 	AreaCheck("AR0400")
@@ -14,6 +26,6 @@ IF
 THEN
   RESPONSE #100
 	SetGlobal("C0ElgeaReward","GLOBAL",1)
-	CreateCreatureObjectOffset("welther",Player1,[100.100])
+	CreateCreatureObjectOffset("c0welthr",Player1,[100.100])
 	ActionOverride("welther",Dialogue(Player1)
 END
