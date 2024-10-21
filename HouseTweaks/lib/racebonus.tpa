@@ -122,45 +122,21 @@ COPY ~%MOD_FOLDER%/2DA/RACETHAC.2DA~ ~OVERRIDE~
 	PATCH_IF (race = 1) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHUM END
 	END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x272 race
 	PATCH_IF (race = 2) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACELF END
 	END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x272 race
 	PATCH_IF (race = 3) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHEL END
 	END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x272 race
-	PATCH_IF (race = 6) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACGNO END
-	END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x272 race
 	PATCH_IF (race = 4) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACDWA END
 	END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x272 race
 	PATCH_IF (race = 5) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHFL END
 	END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x272 race
+	PATCH_IF (race = 6) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACGNO END
+	END
 	PATCH_IF (race = 7) BEGIN
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0RACHOR END
 	END

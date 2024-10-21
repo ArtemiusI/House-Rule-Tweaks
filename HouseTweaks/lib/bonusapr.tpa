@@ -182,27 +182,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   
   END
   
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
-   READ_BYTE	0x273 class
-   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF ((thac0 < 15) AND (thac0 > 9)) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
-	END
-   END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
-   READ_BYTE	0x273 class
-   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 9) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR08 END
-	END
-   END
-      BUT_ONLY
-
 ACTION_IF MOD_IS_INSTALLED ~CDTWEAKS/SETUP-CDTWEAKS.TP2~ ~2240~ THEN BEGIN //Unnerfed THAC0 Table
 
 ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA01.2DA~ BEGIN
@@ -303,26 +282,6 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
 END
 
 
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
-   READ_BYTE	0x273 class
-   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 15) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
-	END
-   END
-      BUT_ONLY
-	  
-   COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
-   READ_BYTE	0x273 class
-   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 9) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR08 END
-	END
-   END
-      BUT_ONLY
-
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA02.2DA~ BEGIN
 COPY_EXISTING ~CLABMA01.2DA~ ~OVERRIDE/CLABMA02.2DA~
 END
@@ -354,3 +313,17 @@ END
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA09.2DA~ BEGIN
 COPY_EXISTING ~CLABMA01.2DA~ ~OVERRIDE/CLABMA09.2DA~
 END
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x52 thac0
+   READ_BYTE	0x273 class
+   PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
+	PATCH_IF (thac0 < 15) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
+	END
+	PATCH_IF (thac0 < 9) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR08 END
+	END
+   END
+      BUT_ONLY
+	  

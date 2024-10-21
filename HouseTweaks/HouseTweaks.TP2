@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/HouseTweaks~
 AUTHOR ~Artemius_I~
-VERSION ~2.8~
+VERSION ~2.9~
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -453,3 +453,24 @@ COPY_EXISTING ~%mage_avatar%.ini~   ~override~ // Lua file read by EEex, provide
     string = EVAL ~~~~~equip_helmet=0~~~~~ //"
   END
 END
+
+BEGIN ~House Tweaks: Backstab With Any Weapon~ DESIGNATED 0038
+INCLUDE ~%MOD_FOLDER%/lib/thiefweapons.tpa~
+
+BEGIN ~House Tweaks: Ankheg and Dragonscale Armor Count as Medium Armor~ DESIGNATED 0039
+
+ACTION_FOR_EACH nonmetalarmors IN ~L#XZEANA~ ~AC#WPTBD~ ~C0DPLAT~ ~L#AFPLA~ ~plat06~ ~plat18~ ~plat20~ ~ohdarmor~ ~king~ ~swanarm~ ~umhulk~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%nonmetalarmors%.itm~ THEN BEGIN
+COPY_EXISTING ~%nonmetalarmors%.itm~ ~override~ //copies all item files
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
+    READ_BYTE    0x1E usability1 //reads the byte containing the fighter usability flag
+    READ_BYTE    0x1F usability2 //reads the byte containing the fighter usability flag
+    READ_BYTE    0x29 barbarian //reads the byte containing monks usability flag
+    PATCH_IF ((usability2 BAND 0b00001000) = 0b00000000) BEGIN // if it is usable by fighters
+        WRITE_BYTE    0x1E (usability1 BAND 0b10111111)  // makes usable by bards
+        WRITE_BYTE    0x29 (barbarian BAND 0b10111111)  // makes usable by barbarians
+      END
+    END
+BUT_ONLY_IF_IT_CHANGES
+  END
+  END
