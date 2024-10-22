@@ -3,7 +3,7 @@ OUTER_SET human_desc = RESOLVE_STR_REF(~HUMANS: Humans are the predominant race 
 
 Humans have the following traits:
 – Quick To Master: Humans gain a +5% bonus to experience gained from all sources.
-– Skilled: Humans receive a +5% bonus to all thieving skills and +2 bonus to minimum rolls to all ability scores.~)
+– Skilled: Humans receive an additional +5% bonus to all thieving skills and +2 bonus to minimum rolls to all ability scores.~)
 
 ACTION_IF MOD_IS_INSTALLED ~ArtisansKitpack.tp2~ ~0002~ THEN BEGIN
 COPY_EXISTING ~RACETEXT.2DA~ OVERRIDE
@@ -30,7 +30,8 @@ OUTER_SET halfelf_desc = RESOLVE_STR_REF(~HALF-ELVES: Half-elves are a mix of hu
 Half-elves have the following traits:
 – Minor Hardiness vs. Enchantments: Half-elves gain a +1 bonus to Saving Throws vs. Enchantment spells and a 30% resistance against charm and sleep magics.
 – Infravision.
-– Thieving Skills: Half-elves gain a +10% bonus to Pick Pockets and Hide In Shadows and a +5% bonus to Find Traps.~)
+– Thieving Skills: Half-elves gain a +10% bonus to Pick Pockets and Hide In Shadows and a +5% bonus to Find Traps.
+– Skilled: Half-elves receive an additional +5% bonus to all thieving skills and +2 bonus to minimum rolls to all ability scores.~)
 OUTER_SET dwarf_desc = RESOLVE_STR_REF(~DWARVES: Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.
 
 Dwarves have the following traits:

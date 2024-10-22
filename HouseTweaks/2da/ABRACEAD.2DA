@@ -5,6 +5,6 @@ HUMAN    2        2        2        2        2        2
 DWARF    0        -1       1        0        0        -1
 ELF      0        1        -1       0        0        0
 GNOME    0        0        0        1        -1       0
-HALF_ELF 0        0        0        0        0        0
+HALF_ELF 2        2        2        2        2        2
 HALFLING -1       1        0        0        0        0
 HALFORC  1        0        1       -1        0        -1
