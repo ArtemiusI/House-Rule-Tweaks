@@ -380,7 +380,7 @@ Weight: 12~
 COPY ~%MOD_FOLDER%/myrloch~ OVERRIDE
 COPY_EXISTING ~CDMYR.ITM~ OVERRIDE
 WRITE_SHORT 0x1e 1611454336 // unusable
-WRITE_SHORT 0x18 47 // two-handed
+WRITE_SHORT 0x18 111 // two-handed
 WRITE_SHORT 0x26 14 // strength
 WRITE_SHORT 0x22 12883 //animation
 WRITE_SHORT 0x31 93 // proficiency
@@ -474,3 +474,6 @@ COPY_EXISTING ~%nonmetalarmors%.itm~ ~override~ //copies all item files
 BUT_ONLY_IF_IT_CHANGES
   END
   END
+
+BEGIN ~House Tweaks: Charisma Bonus to Turn Undead Levels~ DESIGNATED 0040
+INCLUDE ~%MOD_FOLDER%/lib/turnundead.tpa~

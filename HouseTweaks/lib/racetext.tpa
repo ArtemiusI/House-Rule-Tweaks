@@ -1,3 +1,13 @@
+ACTION_IF GAME_IS ~IWDEE~ THEN BEGIN
+LAF ADD_IDS_ENTRY INT_VAR minValue = 1 maxValue = 255 preferredValue = 185 STR_VAR idsFile = "race.ids" identifier = "AASIMAR" RET value END
+
+OUTER_SET aasimar_lcase = RESOLVE_STR_REF(~aasimar~)
+OUTER_SET aasimar_ucase = RESOLVE_STR_REF(~Aasimar~)
+APPEND ~racetext.2da~ ~AASIMAR   185        %aasimar_lcase%       -1         %aasimar_ucase%          -1~ UNLESS ~AASIMAR~
+APPEND ~racefeat.2da~ ~AASIMAR   1~ UNLESS ~AASIMAR~
+
+END
+
 OUTER_SET ankheg_lcase = RESOLVE_STR_REF(~ankheg~)
 OUTER_SET ankheg_ucase = RESOLVE_STR_REF(~Ankheg~)
 APPEND ~racetext.2da~ ~ANKHEG   101        %ankheg_lcase%       -1         %ankheg_ucase%          -1~ UNLESS ~ANKHEG~
