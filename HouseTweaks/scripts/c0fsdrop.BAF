@@ -1,0 +1,10 @@
+IF
+    OR(2)
+    StateCheck(LastSummonerOf(Myself),STATE_FROZEN_DEATH)
+    StateCheck(LastSummonerOf(Myself),STATE_STONE_DEATH)
+THEN
+    RESPONSE #100
+        ActionOverride(LastSummonerOf(Myself),DropInventory())
+        DestroySelf()
+END
+

@@ -1,0 +1,5 @@
+COPY ~%MOD_FOLDER%/spells/c0diseff.eff~ ~override~
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~ 
+   LPF ALTER_EFFECT INT_VAR match_opcode = 238 opcode = 326 parameter1 = 0 parameter2 = 0 silent = 1 STR_VAR resource = #DISINT END
+      BUT_ONLY

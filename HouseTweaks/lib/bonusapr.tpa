@@ -116,7 +116,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
   PATCH_IF (%kit_class% = 4) BEGIN
     PATCH_IF (FILE_EXISTS_IN_GAME ~%kit_clab%.2da~) BEGIN
       INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ CRE_script_override
+      COPY_EXISTING ~%kit_clab%.2DA~ override
         LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
         PRETTY_PRINT_2DA
       BUT_ONLY

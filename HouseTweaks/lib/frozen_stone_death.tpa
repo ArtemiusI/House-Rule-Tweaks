@@ -1,0 +1,12 @@
+
+COPY ~%MOD_FOLDER%/frozen_stone_death~ ~override~
+
+COMPILE ~%MOD_FOLDER%/scripts/c0fsdrop.baf~
+
+COPY_EXISTING ~C0FSDROP.CRE~ ~override~ 
+  WRITE_ASCII 0x248 ~C0FSDROP~ #8  //override script
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 272 target = 0 parameter1 = 1 parameter2 = 3 timing = 9 STR_VAR resource = C0FSDROP END
+      BUT_ONLY
+	  

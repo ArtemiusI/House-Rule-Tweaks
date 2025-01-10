@@ -136,6 +136,12 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
         WRITE_BYTE    0x20 (row3 BAND 0b10000000)
         WRITE_BYTE    0x21 (row4 BAND 0b10111111)
       END
+		LPF DELETE_EFFECT
+			INT_VAR
+				match_opcode = 319
+				match_parameter1 = 11
+				match_parameter2 = 5
+		END
     END
   END
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
