@@ -219,12 +219,21 @@ Additionally, this component also restores four of Sarevok's unused action lines
 *Adds experience books to help weaker or late-recruited party members keep up.*
 
 Many players like to switch party members in and out for more interactions or to change their playstyle. However, as experience is not shared to out-of-party members, this often leads to companions falling behind and large imbalances in strength. This component adds ‘experience books’ to various temples. These books allow a character at a certain experience threshold to set an underleveled ally to that level. For example, a companion with over 50,000 experience may set an ally with lower experience to 50,000. However, these books are limited in supply and highly expensive to try and prevent abuse, so use them wisely!
-## Restored Blade of Aihonen/Sword of Myrloch Vale Tweak
-*Change the Blade of Aihonen or Sword of Myrloch Vale's weapon types.*
+## Restored Blade of Aihonen Tweak
+*Change the Blade of Aihonen's weapon type.*
 
 The Blade of Aihonen is an iconic weapon in the game with a tie to the plot. However, not all protagonists or parties may choose to be proficient in longswords. This component can change the blade into either a bastard sword or two-handed sword.
 
-This same tweak can be applied to the Sword of Myrloch Vale, another interesting weapon with a backstory. Additionally, it has been given a few buffs to make it more appealing to bards, granting a +1 bonus to Charisma and a bard-exclusive buff, Blessing of Myrloch, which grants the wielder a +2 bonus to Armor Class and Saving Throws, and one additional attack per round.
+## Frozen and Petrified Creatures Drop Items on Death
+*Allows you to loot petrified and frozen enemies.*
+
+This tweak makes all creatures in the game drop their inventory on frozen or petrified death, to try and provide a workaround for losing valuable loot. This method may not be 100% foolproof due to a brief delay between a target being affected by status and the background effect forcing them to drop their inventory, so be wary of destroying petrified bodies too quickly.
+
+## IWD-style Disintegrate
+*Uses the IWD mechanics for disintegration effects.*
+
+This tweak alters all disintegration effects in Baldur's Gate to use the same mechanic as in Icewind Dale, which does not destroy equipment.
+
 ## Passive Trap Detection
 *Search for traps passively at a percentage chance while the detection mode is off.*
 
@@ -241,3 +250,18 @@ Same as above, but for setting traps instead.
 *Removes the helmet model on all mage avatars.*
 
 Some mods add helmets that are usable by mages. These can clip with the hoods on the highest tier robes and look rather weird, and some simply dislike the look of metallic helmets on their unarmored spellcasters in general. This component makes helmets invisible when worn with a mage avatar.
+
+## Backstab With Any Weapon
+*Allows any weapon to backstab.*
+
+This component allows any character with a backstab multiplier to backstab with any weapon they can wield, as opposed to the original restriction of only allowing weapons equippable by thieves.
+
+## Ankheg and Dragonscale Armor Count as Medium Armor
+*Changes class restrictions of certain armors.*
+
+This component makes certain armors created from monster parts usable by classes restricted to 'medium' armor such as barbarians.
+
+## Charisma Bonus to Turn Undead Levels
+*Gives Turn Undead an increased modifier based on Charisma.*
+
+This component grants classes with Turn Undead a bonus to their modifier based off their charisma, increasing at values 17, 19, 21, 23 and 25.
