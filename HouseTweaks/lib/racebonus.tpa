@@ -30,7 +30,7 @@ OUTER_SET halfelf_desc = RESOLVE_STR_REF(~HALF-ELVES: Half-elves are a mix of hu
 Half-elves have the following traits:
 – Minor Hardiness vs. Enchantments: Half-elves gain a +1 bonus to Saving Throws vs. Enchantment spells and a 30% resistance against charm and sleep magics.
 – Infravision.
-– Thieving Skills: Half-elves gain a +10% bonus to Pick Pockets and Hide In Shadows and a +5% bonus to Find Traps.
+– Thieving Skills: Half-elves gain a +15% bonus to Pick Pockets, a +10% bonus to Hide In Shadows and a +5% bonus to Find Traps.
 – Amiable: Half-elves gain a +4 bonus to minimum Charisma rolls.~)
 OUTER_SET dwarf_desc = RESOLVE_STR_REF(~DWARVES: Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.
 
