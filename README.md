@@ -267,3 +267,11 @@ This component makes certain armors created from monster parts usable by classes
 *Gives Turn Undead an increased modifier based on Charisma.*
 
 This component grants classes with Turn Undead a bonus to their modifier based off their charisma, increasing at values 17, 19, 21, 23 and 25.
+
+## Trap Activation Tweaks
+*Modifies traps to no longer trigger if character fulfills certain conditions.*
+
+This component all traps in the game to not activate if the target fulfills certain conditions:
+1. Target is a bounty hunter
+2. Target is incorporeal (spectre, wraith or shadow race, accounting for certain mod NPCs)
+3. Target has 150 or more points in either Find Traps or Set Traps
