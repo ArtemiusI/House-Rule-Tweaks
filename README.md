@@ -41,7 +41,7 @@ Half-elves:
 >
 >– Infravision.
 >
->– Thieving Skills: Half-elves gain a +10% bonus to Pick Pockets and Hide In Shadows and a +5% bonus to Find Traps.
+>– Thieving Skills: Half-elves gain a +15% bonus to Pick Pockets, a +10% bonus to Hide In Shadows and a +5% bonus to Find Traps.
 >
 >– Amiable: Half-elves gain a +4 bonus to minimum Charisma rolls.
 
