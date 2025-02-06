@@ -1,0 +1,10 @@
+IF
+  IsOverMe([ANYONE])
+  OR(3)
+  Kit([ANYONE],BOUNTYHUNTER)
+  CheckStatGT([ANYONE],149,TRAPS)
+  CheckStatGT([ANYONE],149,SETTRAPS)
+THEN
+  RESPONSE #100
+	DisplayStringHead(Myself,~There are signs of a trap set here.~)
+END

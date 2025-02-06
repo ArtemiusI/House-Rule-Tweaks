@@ -298,3 +298,6 @@ BUT_ONLY_IF_IT_CHANGES
 
 BEGIN ~House Tweaks: Charisma Bonus to Turn Undead Levels~ DESIGNATED 0040
 INCLUDE ~%MOD_FOLDER%/lib/turnundead.tpa~
+
+BEGIN ~House Tweaks: Trap Activation Tweaks~ DESIGNATED 0041
+INCLUDE ~%MOD_FOLDER%/lib/trap_activation.tpa~

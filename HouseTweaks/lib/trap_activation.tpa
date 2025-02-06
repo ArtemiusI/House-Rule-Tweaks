@@ -1,0 +1,147 @@
+ACTION_DEFINE_ASSOCIATIVE_ARRAY blacklist BEGIN
+    // SoD
+    ~BD5100DR~  => 1
+    ~BD5300KR~  => 1
+    ~BDBRANCH~  => 1
+    ~BDSDD251~  => 1
+    ~BDSHSARS~  => 1
+    // BG2
+    ~IMPCHES3~  => 1
+  END
+
+  // Map of conditions and their script actions to remove
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.are$~ ~override~
+    READ_ASCII 0x04 ver (4)
+    SET off = (~%ver%~ STR_EQ ~V9.1~) ? 0x10 : 0x00 // outside of this, patch works for v1.0 and v9.1 areas
+
+    GET_OFFSET_ARRAY trig (0x5c + off) 4 (0x5a + off) 2 0 0 0xc4
+    GET_OFFSET_ARRAY cont (0x70 + off) 4 (0x74 + off) 2 0 0 0xc0
+    GET_OFFSET_ARRAY door (0xa8 + off) 4 (0xa4 + off) 4 0 0 0xc8
+
+    PHP_EACH trig AS _ => trig_off BEGIN  // cycle through triggers
+      READ_SHORT (trig_off + 0x6a) trap_diff
+      PATCH_IF ((trap_diff > 0) AND (1 OR (no_trap_limit AND trap_diff != 100) OR (trap_diff < 100))) BEGIN
+        PATCH_IF (1) BEGIN
+          READ_ASCII (trig_off + 0x7c) script_resref (8) NULL  // script
+          PATCH_IF (NOT ~%script_resref%~ STR_EQ ~~ && FILE_EXISTS_IN_GAME ~%script_resref%.BCS~) BEGIN
+            // marking script for patching
+            TO_UPPER ~script_resref~
+            SET $trap_scripts(~%script_resref%~) = 1
+          END
+        END ELSE BEGIN
+          WRITE_SHORT (trig_off + 0x6c) 0 // is not a trap
+        END
+      END
+    END
+
+    PHP_EACH cont AS _ => cont_off BEGIN  // cycle through containers
+      READ_ASCII (cont_off + 0x78) key (8) NULL // key
+      PATCH_IF (("%key%" STR_EQ "") OR ("%key%" STR_EQ "None")) BEGIN
+        READ_SHORT (cont_off + 0x26) lock_diff // lock difficulty
+        PATCH_IF ((lock_diff != 0) AND (lock_diff != 100)) BEGIN
+          WRITE_SHORT (cont_off + 0x26) 0 // lock difficulty
+        END
+      END
+      READ_SHORT (cont_off + 0x2c) trap_diff // trap difficulty
+      PATCH_IF ((trap_diff != 0) AND (1 OR (trap_diff != 100))) BEGIN
+        PATCH_IF (1) BEGIN
+          READ_ASCII (cont_off + 0x48) script_resref (8) NULL // script
+          PATCH_IF (NOT ~%script_resref%~ STR_EQ ~~ && FILE_EXISTS_IN_GAME ~%script_resref%.BCS~) BEGIN
+            // marking script for patching
+            TO_UPPER ~script_resref~
+            SET $trap_scripts(~%script_resref%~) = 1
+          END
+        END ELSE BEGIN
+          WRITE_SHORT (cont_off + 0x30) 0 // is not a trap
+        END
+      END
+    END
+
+    PHP_EACH door AS _ => door_off BEGIN  // cycle through doors
+      READ_LONG (door_off + 0x28) flags // door flags
+      PATCH_IF ((flags & BIT8) = BIT8) BEGIN  // if flagged as secret door
+        WRITE_LONG (door_off + 0x88) 0  // detect diff (secret doors)
+        WRITE_LONG (door_off + 0x28) (THIS BAND BNOT BIT8) // remove secret flag
+      END
+      READ_SHORT (door_off + 0x6e) trap_diff // detect diff
+      PATCH_IF ((trap_diff != 0) AND (1 OR (trap_diff != 100))) BEGIN
+        PATCH_IF (1) BEGIN
+          READ_ASCII (door_off + 0x80) script_resref (8) NULL // script
+          PATCH_IF (NOT ~%script_resref%~ STR_EQ ~~ && FILE_EXISTS_IN_GAME ~%script_resref%.BCS~) BEGIN
+            // marking script for patching
+            TO_UPPER ~script_resref~
+            SET $trap_scripts(~%script_resref%~) = 1
+          END
+        END ELSE BEGIN
+          WRITE_SHORT (door_off + 0x70) 0 // is not a trap
+        END
+      END
+      READ_ASCII (door_off + 0x78) key (8) NULL // key 
+      PATCH_IF (("%key%" STR_EQ "") OR ("%key%" STR_EQ "None")) BEGIN
+        READ_LONG (door_off + 0x8c) lock_diff // lock diff
+        PATCH_IF ((lock_diff != 0) AND (lock_diff != 100)) BEGIN
+          WRITE_LONG (door_off + 0x8c) 0 // lock diff
+        END
+      END
+    END
+  BUT_ONLY
+
+  ACTION_IF (1) BEGIN
+    // Patching marked trap scripts
+    ACTION_PHP_EACH trap_scripts AS script_resref => _ BEGIN
+      ACTION_IF (NOT VARIABLE_IS_SET $blacklist(~%script_resref%~)) BEGIN
+          LAF ALTER_SCRIPT_BLOCK
+            STR_VAR
+              script = EVAL ~%script_resref%~
+              match1 = ~Opened(~
+              match2 = ~ForceSpell(~
+              swap_out = ~IF~
+              swap_in = ~IF !Race([ANYONE],SPECTRE)!Race([ANYONE],WRAITH)!Race([ANYONE],SHADOW)!CheckStatGT([ANYONE],149,TRAPS)!CheckStatGT([ANYONE],149,SETTRAPS)!Kit([ANYONE],BOUNTYHUNTER)~
+              END
+          LAF INSERT_SCRIPT_BLOCK
+            INT_VAR
+              insert_above=1
+            STR_VAR
+              script = EVAL ~%script_resref%~
+              match1 = ~Opened(~
+              match2 = ~ForceSpell(~
+              insert ="%MOD_FOLDER%/scripts/trap_activation_open.baf"
+              END
+          LAF ALTER_SCRIPT_BLOCK
+            STR_VAR
+              script = EVAL ~%script_resref%~
+              match1 = ~Entered(~
+              match2 = ~ForceSpell(~
+              swap_out = ~IF~
+              swap_in = ~IF !Race([ANYONE],SPECTRE)!Race([ANYONE],WRAITH)!Race([ANYONE],SHADOW)!CheckStatGT([ANYONE],149,TRAPS)!CheckStatGT([ANYONE],149,SETTRAPS)!Kit([ANYONE],BOUNTYHUNTER)~
+              END
+          LAF INSERT_SCRIPT_BLOCK
+            INT_VAR
+              insert_above=1
+            STR_VAR
+              script = EVAL ~%script_resref%~
+              match1 = ~Entered(~
+              match2 = ~ForceSpell(~
+              insert ="%MOD_FOLDER%/scripts/trap_activation_enter.baf"
+              END
+          LAF ALTER_SCRIPT_BLOCK
+            STR_VAR
+              script = EVAL ~%script_resref%~
+              match1 = ~IsOverMe(~
+              match2 = ~ForceSpell(~
+              swap_out = ~IF~
+              swap_in = ~IF !Race([ANYONE],SPECTRE)!Race([ANYONE],WRAITH)!Race([ANYONE],SHADOW)!CheckStatGT([ANYONE],149,TRAPS)!CheckStatGT([ANYONE],149,SETTRAPS)!Kit([ANYONE],BOUNTYHUNTER)~
+              END
+          LAF INSERT_SCRIPT_BLOCK
+            INT_VAR
+              insert_above=1
+            STR_VAR
+              script = EVAL ~%script_resref%~
+              match1 = ~IsOverMe(~
+              match2 = ~ForceSpell(~
+              insert ="%MOD_FOLDER%/scripts/trap_activation_isover.baf"
+              END
+      END
+    END
+  END
