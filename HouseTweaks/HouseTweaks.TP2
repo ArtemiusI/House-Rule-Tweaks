@@ -208,18 +208,21 @@ BEGIN ~2% chance per 5 points in Detect Traps, check once per round~ DESIGNATED 
 SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
 
 OUTER_SET trap_detection_probability = 2
+OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
 BEGIN ~5% chance per 5 points in Detect Traps, check once per round~ DESIGNATED 0033
 SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
 
 OUTER_SET trap_detection_probability = 5
+OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
 BEGIN ~100% chance of trap detection, check once per round~ DESIGNATED 0034
 SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
 
 OUTER_SET trap_detection_probability = 100
+OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
 BEGIN ~2% chance per 5 points in Detect Traps, constant check while moving (experimental)~ DESIGNATED 0035
