@@ -1,8 +1,6 @@
-PRINT ~Give Stat Bonuses to Rasaad? (+1 STR, DEX, CON)
-1) Yes
-2) No~
+PRINT @65
 
-OUTER_SPRINT ~rasaad~ ~placeholder_value~
+OUTER_SPRINT ~rasaad~ @66
 OUTER_WHILE (!(IS_AN_INT ~rasaad~) OR (~rasaad~ > 0x2) OR (~rasaad~ < 0x1)) BEGIN
   ACTION_READLN ~rasaad~
 END
@@ -15,11 +13,9 @@ END
       ACTION_IF ("rasaad" = 2) THEN BEGIN
       END
 
-PRINT ~Give Stat Bonuses to Dorn? (+1 DEX, +2 CON)
-1) Yes
-2) No~
+PRINT @67
 
-OUTER_SPRINT ~dorn~ ~placeholder_value~
+OUTER_SPRINT ~dorn~ @66
 OUTER_WHILE (!(IS_AN_INT ~dorn~) OR (~dorn~ > 0x2) OR (~dorn~ < 0x1)) BEGIN
   ACTION_READLN ~dorn~
 END
@@ -31,11 +27,9 @@ END
       ACTION_IF ("dorn" = 2) THEN BEGIN
       END
 
-PRINT ~Give Stat Bonuses to Neera? (+2 CON, +1 INT)
-1) Yes
-2) No~
+PRINT @68
 
-OUTER_SPRINT ~neera~ ~placeholder_value~
+OUTER_SPRINT ~neera~ @66
 OUTER_WHILE (!(IS_AN_INT ~neera~) OR (~neera~ > 0x2) OR (~neera~ < 0x1)) BEGIN
   ACTION_READLN ~neera~
 END

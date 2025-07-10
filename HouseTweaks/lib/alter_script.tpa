@@ -16,7 +16,7 @@ BEGIN
    COPY - "%insert%" override EVALUATE_BUFFER
        READ_ASCII 0x0 internal_insert_data (BUFFER_LENGTH)
        PATCH_TRY COMPILE_BAF_TO_BCS WITH DEFAULT
-          PATCH_PRINT ~"%insert%" is not a legal BAF file, INSERT_SCRIPT_BLOCK will fail~
+          PATCH_PRINT @60
           PATCH_RERAISE
        END
    BUT_ONLY
@@ -48,7 +48,7 @@ BEGIN
    COPY - "%insert%" override EVALUATE_BUFFER
        READ_ASCII 0x0 internal_insert_data (BUFFER_LENGTH)
        PATCH_TRY COMPILE_BAF_TO_BCS WITH DEFAULT
-          PATCH_PRINT ~"%insert%" is not a legal BAF file, INSERT_SCRIPT_BLOCK will fail~
+          PATCH_PRINT @60
           PATCH_RERAISE
        END
    BUT_ONLY
@@ -294,11 +294,11 @@ COPY_EXISTING "%script%.bcs" "override"
                     WRITE_ASCIIE insert_point "%internal_insert_data%"
                  END
                  DEFAULT
-                    PATCH_FAIL "internal error in ALTER_SCRIPT suite"
+                    PATCH_FAIL @63
                  END
              END
           END
-          SPRINT new_script "%new_script%%data%"
+          SPRINT new_script @64
           SET start=INDEX_BUFFER("CR")
      END
      DELETE_BYTES 0x0 BUFFER_LENGTH

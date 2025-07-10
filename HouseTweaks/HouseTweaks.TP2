@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/HouseTweaks~
 AUTHOR ~Artemius_I~
-VERSION ~2.9~
+VERSION @0
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -8,85 +8,84 @@ ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/replace_multiline.tpa~
 END
 AUTO_TRA ~%MOD_FOLDER%/tra/%s~
+LANGUAGE 
+  ~English~ 
+  ~english~
+  ~%MOD_FOLDER%/tra/english/setup.tra~
 
-BEGIN ~House Tweaks: Expanded Racial Enemies~ DESIGNATED 0001
+BEGIN @1 DESIGNATED 0001
 COPY ~%MOD_FOLDER%/2da/haterace.2da~ ~override~
 INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
 
-BEGIN ~House Tweaks: Expanded Shapeshifting~ DESIGNATED 0002
+BEGIN @2 DESIGNATED 0002
 INCLUDE ~%MOD_FOLDER%/lib/wildshape.tpa~
 
-BEGIN ~House Tweaks: Expanded Racial Bonuses~ DESIGNATED 0003
+BEGIN @3 DESIGNATED 0003
 INCLUDE ~%MOD_FOLDER%/lib/racebonus.tpa~
 
-BEGIN ~House Tweaks: Rebalanced Proficiencies~ DESIGNATED 0004
+BEGIN @4 DESIGNATED 0004
 INCLUDE ~%MOD_FOLDER%/lib/proficiency.tpa~
 
-BEGIN ~House Tweaks: Rebalanced Weapon Styles~ DESIGNATED 0005
+BEGIN @5 DESIGNATED 0005
 INCLUDE ~%MOD_FOLDER%/lib/stylebonus.tpa~
 
-BEGIN ~House Tweaks: Racial Weapon Proficiency~ DESIGNATED 0006
+BEGIN @6 DESIGNATED 0006
 INCLUDE ~%MOD_FOLDER%/lib/raceprof.tpa~
 
-BEGIN ~House Tweaks: Rebalanced Attacks Per Round Progression~ DESIGNATED 0007
+BEGIN @7 DESIGNATED 0007
 INCLUDE ~%MOD_FOLDER%/lib/bonusapr.tpa~
 
-BEGIN ~House Tweaks: Monk Can Use Quarterstaves~ DESIGNATED 0008
+BEGIN @8 DESIGNATED 0008
 INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
 
-BEGIN ~Constitution Bonuses for All Classes + Regeneration Changes~ DESIGNATED 0009
-SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
+BEGIN @9 DESIGNATED 0009
+SUBCOMPONENT @10
 COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
 
-BEGIN ~Regeneration Changes Only~ DESIGNATED 0010
-SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
+BEGIN @11 DESIGNATED 0010
+SUBCOMPONENT @10
 COPY ~%MOD_FOLDER%/2da/hpconbon_regen.2da~ ~override/hpconbon.2da~
 
-BEGIN ~Constitution Bonuses for All Classes Only~ DESIGNATED 0011
-SUBCOMPONENT ~House Tweaks: Increased Constitution Bonuses~
+BEGIN @12 DESIGNATED 0011
+SUBCOMPONENT @10
 COPY ~%MOD_FOLDER%/2da/hpconbon_hp.2da~ ~override/hpconbon.2da~
 
-BEGIN ~House Tweaks: INT/WIS/CHA-based Bonus Spell Slots~ DESIGNATED 0012
+BEGIN @13 DESIGNATED 0012
 INCLUDE ~%MOD_FOLDER%/lib/spellslots.tpa~
 
-BEGIN ~House Tweaks: Warrior HLAs~ DESIGNATED 0013
+BEGIN @14 DESIGNATED 0013
 COPY ~%MOD_FOLDER%/hlas/fighter~ ~override~
 COPY ~%MOD_FOLDER%/hlas/fighter/spcl904.spl~ ~override~
-SAY NAME1 ~Resist Magic~
-SAY UNIDENTIFIED_DESC ~Resist Magic
-This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 5 rounds, the warrior gains a +10 bonus to all saves. In addition, the warrior absorbs the next 20 spell level's worth of spells cast upon <PRO_HIMHER>. The saving throw bonus always persists for the full duration.~
+SAY NAME1 @15
+SAY UNIDENTIFIED_DESC @16
 COPY ~%MOD_FOLDER%/hlas/fighter/spcl905.spl~ ~override~
-SAY NAME1 ~Critical Strike~
-SAY UNIDENTIFIED_DESC ~Critical Strike
-A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to, once per day, concentrate <PRO_HISHER> next attack to strike a vital area. With this ability, the warrior's next attack is a natural 20, a critical hit that deals 4x damage (2x against enemies immune to critical hits).
-
-Requires: Power Attack~
+SAY NAME1 @17
+SAY UNIDENTIFIED_DESC @18
 COPY ~%MOD_FOLDER%/hlas/fighter/spcl908.spl~ ~override~
-SAY NAME1 ~War Cry~
-SAY UNIDENTIFIED_DESC ~War Cry
-With a War Cry, the warrior lets out an invigorating roar, healing <PRO_HISHER> hit points to full in addition to removing fatigue and restoring drained levels.~
+SAY NAME1 @19
+SAY UNIDENTIFIED_DESC @20
 
-BEGIN ~House Tweaks: Improved Dialogues (BG:EE)~ DESIGNATED 0014
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
+BEGIN @21 DESIGNATED 0014
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @22
 COMPILE	~%MOD_FOLDER%/Dialog/bg1/dialog.d~
 COPY_EXISTING ~flam5.cre~ ~override/c0zelas.cre~
 WRITE_ASCII 0x248 ~c0zelas~  #8  // override
 WRITE_ASCII 0x2cc ~c0zelas~ #8  // dialogue
 WRITE_ASCII 0x280 ~c0zelas~ #32 // death variable
 WRITE_ASCII 0X34  ~c0zelas~  #8
-SAY NAME1 ~Officer Zelas~
-SAY NAME2 ~Officer Zelas~
+SAY NAME1 @23
+SAY NAME2 @23
 
-BEGIN ~House Tweaks: Not-So-Indestructible Rats~ DESIGNATED 0015
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) ~This component must be installed on BG:EE.~
+BEGIN @24 DESIGNATED 0015
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @22
 COPY_EXISTING ~rat2.cre~ ~override~
 WRITE_SHORT 0x60 0
 WRITE_SHORT 0x61 0
 WRITE_SHORT 0x62 0
 WRITE_SHORT 0x63 0
 
-BEGIN ~House Tweaks: Good-Aligned Roleplay Rewards (BG2:EE)~ DESIGNATED 0016
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+BEGIN @25 DESIGNATED 0016
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @26
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/baldur.baf~
 EXTEND_TOP ~udsac.bcs~ ~%MOD_FOLDER%/scripts/udsac.baf~
 COMPILE ~%MOD_FOLDER%/dialog/bg2/dialog.d~
@@ -94,8 +93,8 @@ COMPILE ~%MOD_FOLDER%/dialog/bg2/dialog.d~
 COPY_EXISTING ~WELTHER.CRE~ ~OVERRIDE/C0WELTHR.CRE~
 WRITE_ASCII SCRIPT_RACE ~~ #8
 
-BEGIN ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~ DESIGNATED 0017
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+BEGIN @27 DESIGNATED 0017
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @26
 EXTEND_TOP ~hexxat.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
 EXTEND_TOP ~hexxa25.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
 COPY ~%MOD_FOLDER%/items/hexxat/ohhcloak.itm~ ~override~
@@ -105,39 +104,39 @@ COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.spl~ ~override~
 COPY ~%MOD_FOLDER%/items/hexxat/ohhkork2.spl~ ~override~
 
-BEGIN ~House Tweaks: Give Stat Bonuses to EENPCs in BG2 (except Hexxat)~ DESIGNATED 0018
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+BEGIN @28 DESIGNATED 0018
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) @26
 INCLUDE ~%MOD_FOLDER%/lib/eenpcs.tpa~
 
-BEGIN ~House Tweaks: Useful Plot Items~ DESIGNATED 0019
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+BEGIN @29 DESIGNATED 0019
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) @26
 INCLUDE ~%MOD_FOLDER%/lib/plotitems.tpa~
 
-BEGIN ~House Tweaks: Faster Troll Unconsciousness~ DESIGNATED 0020
+BEGIN @30 DESIGNATED 0020
 INCLUDE ~%MOD_FOLDER%/lib/trolls.tpa~
 
-BEGIN ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~ DESIGNATED 0021
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) ~This component must be installed on BG2:EE.~
+BEGIN @31 DESIGNATED 0021
+REQUIRE_PREDICATE (GAME_IS ~bg2ee~) @26
 COPY ~%MOD_FOLDER%/Reputation/REPUP.WAV~ ~OVERRIDE~
-STRING_SET 19686 ~The Party's Reputation Has Increased~ [REPUP]
+STRING_SET 19686 @32
 
-BEGIN ~House Tweaks: Race Text Patch~ DESIGNATED 0022
+BEGIN @33 DESIGNATED 0022
 INCLUDE ~%MOD_FOLDER%/lib/racetext.tpa~
 
-BEGIN ~House Tweaks: Hoodless Thief Avatars~ DESIGNATED 0023
+BEGIN @34 DESIGNATED 0023
 INCLUDE ~%MOD_FOLDER%/lib/hoodless.tpa~
 
-BEGIN ~House Tweaks: NPC Soundsets for Icewind Dale~ DESIGNATED 0024
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+BEGIN @35 DESIGNATED 0024
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @36
 INCLUDE ~%MOD_FOLDER%/lib/iwdsounds.tpa~
 
-BEGIN ~House Tweaks: Reputation Bonuses for Icewind Dale~ DESIGNATED 0025
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+BEGIN @37 DESIGNATED 0025
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @36
 COMPILE	~%MOD_FOLDER%/Dialog/iwd/iwdrep.d~
 EXTEND_TOP ~BALDUR.BCS~	~%MOD_FOLDER%/scripts/iwdrep.baf~
 
-BEGIN ~House Tweaks: Soundset Tweaks for Anomen and Sarevok (BG2:EE)~ DESIGNATED 0026
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
+BEGIN @38 DESIGNATED 0026
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @26
 ACTION_IF FILE_EXISTS_IN_GAME ~ANOMEN.BCS~ THEN BEGIN
 COPY_EXISTING ~ANOM25.BCS~ ~OVERRIDE~
  DECOMPILE_AND_PATCH BEGIN
@@ -163,12 +162,12 @@ COPY_EXISTING ~SAREVOK.CRE~ ~OVERRIDE~
   SAY SELECT_ACTION7 #70821
 END
 
-BEGIN ~House Tweaks: Experience Books~ DESIGNATED 0027
+BEGIN @39 DESIGNATED 0027
 INCLUDE ~%MOD_FOLDER%/lib/xpbooks.tpa~
 
-BEGIN ~Bastard Sword~ DESIGNATED 0028
-SUBCOMPONENT ~House Tweaks: Restored Blade of Aihonen Tweak~
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+BEGIN @40 DESIGNATED 0028
+SUBCOMPONENT @41
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @36
 COPY_EXISTING ~JHOSWD2.ITM~ OVERRIDE
 WRITE_SHORT 0x1e 1611454336 // unusable
 WRITE_SHORT 0x26 11 // strength
@@ -180,9 +179,9 @@ WRITE_SHORT 0x26 11 // strength
 WRITE_SHORT 0x31 89 // proficiency
 LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 4 END
 
-BEGIN ~Two-Handed Sword~ DESIGNATED 0029
-SUBCOMPONENT ~House Tweaks: Restored Blade of Aihonen Tweak~
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) ~This component must be installed on IWD:EE.~
+BEGIN @42 DESIGNATED 0029
+SUBCOMPONENT @41
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @36
 COPY_EXISTING ~JHOSWD2.ITM~ OVERRIDE
 WRITE_SHORT 0x1e 1611454336 // unusable
 WRITE_SHORT 0x18 47 // two-handed
@@ -197,71 +196,71 @@ WRITE_SHORT 0x22 12883 //animation
 WRITE_SHORT 0x31 93 // proficiency
 LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 1 dicesize = 10 END
 
-BEGIN ~House Tweaks: Frozen and Petrified Creatures Drop Items on Death~ DESIGNATED 0030
+BEGIN @43 DESIGNATED 0030
 INCLUDE ~%MOD_FOLDER%/lib/frozen_stone_death.tpa~
 
-BEGIN ~House Tweaks: IWD-style Disintegrate~ DESIGNATED 0031
-REQUIRE_PREDICATE (!GAME_IS ~iwdee~) ~This component is redundant on IWD:EE.~
+BEGIN @44 DESIGNATED 0031
+REQUIRE_PREDICATE (!GAME_IS ~iwdee~) @45
 INCLUDE ~%MOD_FOLDER%/lib/disintegrate.tpa~
 
-BEGIN ~2% chance per 5 points in Detect Traps, check once per round~ DESIGNATED 0032
-SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+BEGIN @46 DESIGNATED 0032
+SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 2
 OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN ~5% chance per 5 points in Detect Traps, check once per round~ DESIGNATED 0033
-SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+BEGIN @48 DESIGNATED 0033
+SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 5
 OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN ~100% chance of trap detection, check once per round~ DESIGNATED 0034
-SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+BEGIN @49 DESIGNATED 0034
+SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 100
 OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN ~2% chance per 5 points in Detect Traps, constant check while moving (experimental)~ DESIGNATED 0035
-SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+BEGIN @50 DESIGNATED 0035
+SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 2
 OUTER_SET trap_detection_movement = 1
 
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN ~5% chance per 5 points in Detect Traps, constant check while moving (experimental)~ DESIGNATED 0036
-SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+BEGIN @51 DESIGNATED 0036
+SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 5
 OUTER_SET trap_detection_movement = 1
 
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN ~100% chance of trap detection, constant check while moving (experimental)~ DESIGNATED 0037
-SUBCOMPONENT ~House Tweaks: Passive Trap Detection~
+BEGIN @52 DESIGNATED 0037
+SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 100
 OUTER_SET trap_detection_movement = 1
 
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN ~House Tweaks: Remove all 'Hide in Shadows' Voice Cues~ DESIGNATED 0035
+BEGIN @53 DESIGNATED 0035
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
     SAY HIDDEN_IN_SHADOWS #-1 
       BUT_ONLY
 	  
-BEGIN ~House Tweaks: Remove all 'Set Traps' Voice Cues~ DESIGNATED 0036
+BEGIN @54 DESIGNATED 0036
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
     SAY SET_A_TRAP #-1 
       BUT_ONLY
 	  
-BEGIN ~House Tweaks: Make Helmets Invisible on Mage Avatars~ DESIGNATED 0037
+BEGIN @55 DESIGNATED 0037
 
 ACTION_FOR_EACH mage_avatar IN 6200 6201 6202 6204 6205 6210 6211 6212 6214 6215 BEGIN
 COPY_EXISTING ~%mage_avatar%.ini~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
@@ -278,10 +277,10 @@ COPY_EXISTING ~%mage_avatar%.ini~   ~override~ // Lua file read by EEex, provide
   END
 END
 
-BEGIN ~House Tweaks: Backstab With Any Weapon~ DESIGNATED 0038
+BEGIN @56 DESIGNATED 0038
 INCLUDE ~%MOD_FOLDER%/lib/thiefweapons.tpa~
 
-BEGIN ~House Tweaks: Ankheg and Dragonscale Armor Count as Medium Armor~ DESIGNATED 0039
+BEGIN @57 DESIGNATED 0039
 
 ACTION_FOR_EACH nonmetalarmors IN ~L#XZEANA~ ~AC#WPTBD~ ~C0DPLAT~ ~L#AFPLA~ ~plat06~ ~plat18~ ~plat20~ ~ohdarmor~ ~king~ ~swanarm~ ~umhulk~ BEGIN
 ACTION_IF FILE_EXISTS_IN_GAME ~%nonmetalarmors%.itm~ THEN BEGIN
@@ -299,8 +298,8 @@ BUT_ONLY_IF_IT_CHANGES
   END
   END
 
-BEGIN ~House Tweaks: Charisma Bonus to Turn Undead Levels~ DESIGNATED 0040
+BEGIN @58 DESIGNATED 0040
 INCLUDE ~%MOD_FOLDER%/lib/turnundead.tpa~
 
-BEGIN ~House Tweaks: Trap Activation Tweaks~ DESIGNATED 0041
+BEGIN @59 DESIGNATED 0041
 INCLUDE ~%MOD_FOLDER%/lib/trap_activation.tpa~

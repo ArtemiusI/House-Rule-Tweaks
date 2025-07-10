@@ -40,18 +40,18 @@ DEFINE_PATCH_FUNCTION REPLACE_MULTILINE
 		PATCH_IF num_matches != num BEGIN
 			PATCH_IF num_matches = 0 BEGIN
 				PATCH_IF warn = 1 BEGIN
-					PATCH_WARN ~WARNING %SOURCE_FILESPEC% - pattern not found:%LNL%%pattern%~
+					PATCH_WARN @689
 				END
 				SET warned = 1
 			END ELSE PATCH_IF num >= 0 AND (num_matches > num OR num_matches < num) BEGIN
 				PATCH_IF warn = 1 BEGIN
-					PATCH_WARN ~WARNING %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s) instead of %num%:%LNL%%pattern%~
+					PATCH_WARN @690
 				END
 				SET warned = 1
 			END
 		END
 		PATCH_IF verbose = 1 AND warned = 0 BEGIN
-			PATCH_PRINT ~Patching %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s):%LNL%%pattern% => %string%~
+			PATCH_PRINT @691
 		END
 	END ELSE BEGIN
 		COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches

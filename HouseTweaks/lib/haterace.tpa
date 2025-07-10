@@ -1,266 +1,177 @@
-OUTER_SET ankheg = RESOLVE_STR_REF (~Ankheg~)
-OUTER_SET ankheg_desc = RESOLVE_STR_REF (~Ankheg
-Ankhegs are massive, insectoid monsters that burrow beneath the earth. While not actively malicious and valued for to their ability to aerate soil with their tunnelling, ankhegs are dangerous monsters due to their tough chitinous shells (which can be treated by skilled armorers to create plate mail), sharp claws, and projectile acidic spittle.~)
+OUTER_SET ankheg = RESOLVE_STR_REF (@73)
+OUTER_SET ankheg_desc = RESOLVE_STR_REF (@74)
 
-OUTER_SET basilisk = RESOLVE_STR_REF (~Basilisk~)
-OUTER_SET basilisk_desc = RESOLVE_STR_REF (~Basilisk
-Basilisks are massive, eight-legged reptilian creatures. While their bite is highly poisonous, their truly fearsome feature comes from their ability to instantly petrify any living being with their gaze. Areas where basilisks run rampant are easily recognized due to their tendency to leave their stone victims in their trail.~)
+OUTER_SET basilisk = RESOLVE_STR_REF (@75)
+OUTER_SET basilisk_desc = RESOLVE_STR_REF (@76)
 
-OUTER_SET beholder = RESOLVE_STR_REF (~Beholder~)
-OUTER_SET beholder_desc = RESOLVE_STR_REF (~Beholder
-A large floating orb with a central eye, large mouth, and many smaller eyes sprouting from stalks atop its hideous form. Truly alien, beholder-kin come in many variations, though all should be avoided. Beholders are most commonly found underground, and are one of the dominant species of the Underdark.~)
+OUTER_SET beholder = RESOLVE_STR_REF (@77)
+OUTER_SET beholder_desc = RESOLVE_STR_REF (@78)
 
-OUTER_SET bear = RESOLVE_STR_REF (~Bear~)
-OUTER_SET bear_desc = RESOLVE_STR_REF (~Bear
-Bears are omnivorous, predatorial mammals most commonly found in forests and caves. Incredibly strong and fast for their size, bears hibernate throughout the winter and forage for food during the summer, and will attack hapless travellers who are foolish enough to stray too close to them.~)
+OUTER_SET bear = RESOLVE_STR_REF (@79)
+OUTER_SET bear_desc = RESOLVE_STR_REF (@80)
 
-OUTER_SET carrioncrawler = RESOLVE_STR_REF (~Carrion Crawler~)
-OUTER_SET carrioncrawler_desc = RESOLVE_STR_REF (~Carrion crawler
-The carrion crawler is a scavenger of subterranean areas, feeding primarily upon carrion. However, when such food becomes scarce or when it is threatened, it will attack and kill living creatures.
+OUTER_SET carrioncrawler = RESOLVE_STR_REF (@81)
+OUTER_SET carrioncrawler_desc = RESOLVE_STR_REF (@82)
 
-The carrion crawler looks like a cross between a giant green cutworm and a cephalopod. Like so many other hybrid monsters, the carrion crawler may well be the result of genetic experimentation by a mad, evil wizard. 
+OUTER_SET demonic = RESOLVE_STR_REF (@83)
+OUTER_SET demonic_desc = RESOLVE_STR_REF (@84)
 
-The monster's head is covered with a tough hide, but the body is not well protected. The monster is accompanied by a rank, fetid odor which often gives warning of its approach.~)
+OUTER_SET doppleganger = RESOLVE_STR_REF (@85)
+OUTER_SET doppleganger_desc = RESOLVE_STR_REF (@86)
 
-OUTER_SET demonic = RESOLVE_STR_REF (~Fiend~)
-OUTER_SET demonic_desc = RESOLVE_STR_REF (~Fiend
-Fiends are dangerous outsiders from the Lower Planes. Born from pure evil and malevolence, their power, intellect and supernatural charm makes them a formidable foe for any being. The baatezu, tanar'ri and yugoloths are all creatures that fall under the fiend categorization.~)
+OUTER_SET dragon = RESOLVE_STR_REF (@87)
+OUTER_SET dragon_desc = RESOLVE_STR_REF (@88)
 
-OUTER_SET doppleganger = RESOLVE_STR_REF (~Doppleganger~)
-OUTER_SET doppleganger_desc = RESOLVE_STR_REF (~Doppleganger
-Dopplegangers are humanoid creatures with the ability to shapeshift. They are cunning in nature, being capable of near-perfectly imitating a chosen target after observing them for a sufficient amount of time. When exposed, their tough hides and sharp claws give them a means of self-defense in their natural form.~)
+OUTER_SET drider = RESOLVE_STR_REF (@89)
+OUTER_SET drider_desc = RESOLVE_STR_REF (@90)
 
-OUTER_SET dragon = RESOLVE_STR_REF (~Dragon~)
-OUTER_SET dragon_desc = RESOLVE_STR_REF (~Dragon
-Dragons are an ancient, winged reptilian race. They are known and feared for their size, physical prowess, and magical abilities. The oldest dragons are among the most powerful creatures in the world. Chromatic dragons are generally evil in nature, while metallic dragons tend towards good. ~)
+OUTER_SET dwarf = RESOLVE_STR_REF (@91)
+OUTER_SET dwarf_desc = RESOLVE_STR_REF (@92)
 
-OUTER_SET drider = RESOLVE_STR_REF (~Drider~)
-OUTER_SET drider_desc = RESOLVE_STR_REF (~Drider
-Driders were once drow - transformed permanently into an aberrant form composed from the upper torso of a drow elf and the lower body of a spider. This transformation is most often a punishment - driders exist in a perpetual state of agony, driving them insane. They are bloodthirsty and vicious creatures.~)
+OUTER_SET elemental = RESOLVE_STR_REF (@93)
+OUTER_SET elemental_desc = RESOLVE_STR_REF (@94)
 
-OUTER_SET dwarf = RESOLVE_STR_REF (~Dwarf~)
-OUTER_SET dwarf_desc = RESOLVE_STR_REF (~Dwarf
-Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.~)
+OUTER_SET elf = RESOLVE_STR_REF (@95)
+OUTER_SET elf_desc = RESOLVE_STR_REF (@96)
 
-OUTER_SET elemental = RESOLVE_STR_REF (~Elemental~)
-OUTER_SET elemental_desc = RESOLVE_STR_REF (~Elemental
-Elementals are sentient beings that can possess bodies made of one of the four basic elements that make up the Prime Material Plane: air, earth, fire, and water.~)
+OUTER_SET ettercap = RESOLVE_STR_REF (@97)
+OUTER_SET ettercap_desc = RESOLVE_STR_REF (@98)
 
-OUTER_SET elf = RESOLVE_STR_REF (~Elf~)
-OUTER_SET elf_desc = RESOLVE_STR_REF (~Elf
-Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).~)
+OUTER_SET ettin = RESOLVE_STR_REF (@99)
+OUTER_SET ettin_desc = RESOLVE_STR_REF (@100)
 
-OUTER_SET ettercap = RESOLVE_STR_REF (~Ettercap~)
-OUTER_SET ettercap_desc = RESOLVE_STR_REF (~Ettercap
-Ettercaps are ugly bipedal creatures that get along very well with all types of giant spiders. These creatures of low intelligence are exceedingly cruel, very cunning, and are skilled in setting traps—very deadly traps—much like the spiders that often live around them.
+OUTER_SET fairy = RESOLVE_STR_REF (@101)
+OUTER_SET fairy_desc = RESOLVE_STR_REF (@102)
 
-Ettercaps stand around six feet tall, even with their stooping gait and hunched shoulders. The creatures have short, spindly legs, long arms that reach nearly to their ankles, and large pot-bellies. The hands of ettercaps have a thumb and three long fingers that end in razor sharp claws. Their bodies are covered by tufts of thick, wiry, black hair, and their skin is dark and thick. Ettercaps' heads are almost equine in shape, but they have large reptilian eyes, usually blood-red in color, and large fangs, one protruding downward from each side of the mouth. The mouth itself is large and lined with very sharp teeth.
+OUTER_SET genie = RESOLVE_STR_REF (@103)
+OUTER_SET genie_desc = RESOLVE_STR_REF (@104)
 
-Ettercaps do not have a formal language. They express themselves through a combination of high-pitched chittering noises, shrieks and violent actions.~)
+OUTER_SET ghoul = RESOLVE_STR_REF (@105)
+OUTER_SET ghoul_desc = RESOLVE_STR_REF (@106)
 
-OUTER_SET ettin = RESOLVE_STR_REF (~Ettin~)
-OUTER_SET ettin_desc = RESOLVE_STR_REF (~Ettin
-Ettins are two-headed giants. Their heads are eapable of independent thought and control one arm each. The runt of giant-kin, ettins make their homes in dark caverns and underground tunnels, and are looked down upon by their single-headed cousins.~)
+OUTER_SET giant = RESOLVE_STR_REF (@107)
+OUTER_SET giant_desc = RESOLVE_STR_REF (@108)
 
-OUTER_SET fairy = RESOLVE_STR_REF (~Fairie~)
-OUTER_SET fairy_desc = RESOLVE_STR_REF (~Faerie
-"Faerie-folk" include many kinds of small, generally benevolent creatures. The image most associated with the term is that of a small, winged, mischievous creature, though their dispositions can vary as much as any other race. ~)
+OUTER_SET gibberling = RESOLVE_STR_REF (@109)
+OUTER_SET gibberling_desc = RESOLVE_STR_REF (@110)
 
-OUTER_SET genie = RESOLVE_STR_REF (~Genie~)
-OUTER_SET genie_desc = RESOLVE_STR_REF (~Genie
-Genies come from the elemental planes, but are sometimes encountered on the Prime Material Plane and are occasionally summoned to perform a service for a powerful wizard or priest. The reaction of the genie towards such an indignity can vary from type to type.~)
+OUTER_SET githyanki = RESOLVE_STR_REF (@111)
+OUTER_SET githyanki_desc = RESOLVE_STR_REF (@112)
 
-OUTER_SET ghoul = RESOLVE_STR_REF (~Ghoul~)
-OUTER_SET ghoul_desc = RESOLVE_STR_REF (~Ghoul
-Ghouls are undead creatures, once human, who now feed on the flesh of corpses. Although the change from human to ghoul has deranged and destroyed their minds, ghouls have a terrible cunning which enables them to hunt their prey most effectively.
+OUTER_SET gnoll = RESOLVE_STR_REF (@113)
+OUTER_SET gnoll_desc = RESOLVE_STR_REF (@114)
 
-Ghouls are vaguely recognizable as once having been human, but have become horribly disfigured by their change to ghouls. The tongue becomes long and tough for licking marrow from cracked bones, the teeth become sharp and elongated, and the nails grow strong and sharp like claws.~)
+OUTER_SET gnome = RESOLVE_STR_REF (@115)
+OUTER_SET gnome_desc = RESOLVE_STR_REF (@116)
 
-OUTER_SET giant = RESOLVE_STR_REF (~Giant~)
-OUTER_SET giant_desc = RESOLVE_STR_REF (~Giant
-Giants are massive humanoid creatures with tremendous strength. Varieties of giant-kin include hill, cloud, fire, frost, stone and storm giants. Most breeds of giant are as intelligent as other humanoids, and can be of either good or evil alignment.~)
+OUTER_SET goblin = RESOLVE_STR_REF (@117)
+OUTER_SET goblin_desc = RESOLVE_STR_REF (@118)
 
-OUTER_SET gibberling = RESOLVE_STR_REF (~Gibberling~)
-OUTER_SET gibberling_desc = RESOLVE_STR_REF (~Gibberling 
-They come screaming, jabbering, and howling out of the night. Dozens, maybe hundreds, of hunchbacked, naked humanoids swarm unceasingly forward. They have no thought of safety, subtlety, or strategy, leaving others with no hope of stopping their mass assault. Then, having come and killed, the gibberlings move on, seemingly randomly, back into the night.
-
-The first impression of gibberlings is of a writhing mass of fur and flesh in the distant moonlit darkness. The pandemonium is actually a mass of pale, hunchbacked humanoids, with pointed canine ears and black manes surrounding their hideous, grinning faces. Their black eyes shine with a maniacal gleam.~)
-
-OUTER_SET githyanki = RESOLVE_STR_REF (~Githyanki~)
-OUTER_SET githyanki_desc = RESOLVE_STR_REF (~Githyanki
-The "followers of Gith" were once-human beings that reside in the Astral Plane. They are tall and wiry, with yellow skin and sunken faces. Githyanki are aggressive and militaristic, and are capable with both weapons and magic. Due to their history of enslavement by mind-flayers, githyanki possess psionic abilities. Silver swords are the sacred weapon of the githyanki, who reserve them for the strongest of their order and, should one fall into the hands of a non-githyanki, will mercilessly hunt them down and eliminate them.~)
-
-OUTER_SET gnoll = RESOLVE_STR_REF (~Gnoll~)
-OUTER_SET gnoll_desc = RESOLVE_STR_REF (~Gnoll
-Gnolls are large, evil, hyena-like humanoids that roam about in loosely organized bands.
-
-While the body of a gnoll is shaped like that of a large human, the details are those of a hyena. They stand erect on two legs and have hands that can manipulate as well as those of any human. They have greenish-gray skin, darker near the muzzle, with a short reddish-gray to dull yellow mane.~)
-
-OUTER_SET gnome = RESOLVE_STR_REF (~Gnome~)
-OUTER_SET gnome_desc = RESOLVE_STR_REF (~Gnome
-Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).~)
-
-OUTER_SET goblin = RESOLVE_STR_REF (~Goblin~)
-OUTER_SET goblin_desc = RESOLVE_STR_REF (~Goblin
-Goblins are small creatures that fall under the goblinoid race, with flat faces, broad noses, pointed ears, and sharp fangs. Despite being individually weak, goblins can be a threat due to their rapid breeding rate and tendency to band together in tribes. Due to their small size, they are sneaky, elusive creatures and can be surprisingly cunning.~)
-
-OUTER_SET golem = RESOLVE_STR_REF (~Golem~)
+OUTER_SET golem = RESOLVE_STR_REF (@119)
 OUTER_SET golem_desc = RESOLVE_STR_REF (~Golem
-"Golem" is a broad term that covers many types of magical constructs. Most are humanoid, though they can be of inhuman size, and most require magical means to destroy them.~)
+@119 is a broad term that covers many types of magical constructs. Most are humanoid, though they can be of inhuman size, and most require magical means to destroy them.~)
 
-OUTER_SET hobgoblin = RESOLVE_STR_REF (~Hobgoblin~)
-OUTER_SET hobgoblin_desc = RESOLVE_STR_REF (~Hobgoblin
-Hobgoblins are a fierce humanoid race that wage perpetual war with the other humanoid races. They are intelligent, organized, and aggressive. 
+OUTER_SET hobgoblin = RESOLVE_STR_REF (@121)
+OUTER_SET hobgoblin_desc = RESOLVE_STR_REF (@122)
 
-The typical hobgoblin is a burly humanoid standing at least six feet tall. Their hairy hides range from dark reddish-brown to dark gray. Their faces show dark red or red-orange skin. Large males have blue or red noses. Hobgoblin eyes are either yellowish or dark brown while their teeth are yellow. Their garments tend to be brightly colored, often bold, blood red. Any leather is always tinted black. Hobgoblin weaponry is kept polished and repaired.
+OUTER_SET human = RESOLVE_STR_REF (@123)
+OUTER_SET human_desc = RESOLVE_STR_REF (@124)
 
-Hobgoblins have their own language and often speak with orcs, goblins, and carnivorous apes.~)
+OUTER_SET halfelf = RESOLVE_STR_REF (@125)
+OUTER_SET halfelf_desc = RESOLVE_STR_REF (@126)
 
-OUTER_SET human = RESOLVE_STR_REF (~Human~)
-OUTER_SET human_desc = RESOLVE_STR_REF (~Human
-Humans are the predominant race in Faerun. Humans rule most of the significant empires and kingdoms in the Forgotten Realms. They are the most social and tolerant of races, excepting perhaps the halflings.~)
+OUTER_SET halfling = RESOLVE_STR_REF (@127)
+OUTER_SET halfling_desc = RESOLVE_STR_REF (@128)
 
-OUTER_SET halfelf = RESOLVE_STR_REF (~Half-Elf~)
-OUTER_SET halfelf_desc = RESOLVE_STR_REF (~Half-Elf
-Half-elves are a mix of human and elven blood. They are handsome folk, with good features from each of their parent races. A half-elf has the curiosity, inventiveness, and ambition of their human ancestors and the refined senses, love of nature, and artistic tastes of their elven ancestors.~)
+OUTER_SET halforc = RESOLVE_STR_REF (@129)
+OUTER_SET halforc_desc = RESOLVE_STR_REF (@130)
 
-OUTER_SET halfling = RESOLVE_STR_REF (~Halfling~)
-OUTER_SET halfling_desc = RESOLVE_STR_REF (~Halfling
-Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.~)
+OUTER_SET imp = RESOLVE_STR_REF (@131)
+OUTER_SET imp_desc = RESOLVE_STR_REF (@132)
 
-OUTER_SET halforc = RESOLVE_STR_REF (~Half-Orc~)
-OUTER_SET halforc_desc = RESOLVE_STR_REF (~Half-Orc
-Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the lands of Amn, half-orcs are tolerated, as unlike in the north the people of Amn haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.~)
+OUTER_SET kobold = RESOLVE_STR_REF (@133)
+OUTER_SET kobold_desc = RESOLVE_STR_REF (@134)
 
-OUTER_SET imp = RESOLVE_STR_REF (~Imp~)
-OUTER_SET imp_desc = RESOLVE_STR_REF (~Imp
-Imps are diminutive creatures of an evil nature that roam the world and occasionally act as familiars for evil wizards and priests. Only magical or silver weapons harm them, and they also regenerate. ~)
+OUTER_SET kuotoa = RESOLVE_STR_REF (@135)
+OUTER_SET kuotoa_desc = RESOLVE_STR_REF (@136)
 
-OUTER_SET kobold = RESOLVE_STR_REF (~Kobold~)
-OUTER_SET kobold_desc = RESOLVE_STR_REF (~Kobold 
-Kobolds are a cowardly, sadistic race of short humanoids that vigorously contest the human and demihuman races for living space and food. They especially dislike gnomes and attack them on sight.
+OUTER_SET lich = RESOLVE_STR_REF (@137)
+OUTER_SET lich_desc = RESOLVE_STR_REF (@138)
 
-Barely clearing three feet in height, kobolds have scaly hides that range from dark, rusty brown to a rusty black. They smell of damp dogs and stagnant water. Their eyes glow like a pair of bright red sparks, and they have two small horns ranging from tan to white. Because of the kobold fondness for wearing raggedy garb of red and orange, their non-prehensile rat-like tails, and their language (which sounds like small dogs yapping), these fell creatures are often not taken seriously. This is often a fatal mistake, for what they lack in size and strength they make up in ferocity and tenacity.~)
+OUTER_SET lizardfolk = RESOLVE_STR_REF (@139)
+OUTER_SET lizardfolk_desc = RESOLVE_STR_REF (@140)
 
-OUTER_SET kuotoa = RESOLVE_STR_REF (~Kuo-toa~)
-OUTER_SET kuotoa_desc = RESOLVE_STR_REF (~Kuo-toa
-Kuo-toa are an ancient race of fish-men that dwell underground and harbor a deep hatred for surface-dwellers and sunlight. Insanity is common among the species.~)
+OUTER_SET lycanthrope = RESOLVE_STR_REF (@141)
+OUTER_SET lycanthrope_desc = RESOLVE_STR_REF (@142)
 
-OUTER_SET lich = RESOLVE_STR_REF (~Lich~)
-OUTER_SET lich_desc = RESOLVE_STR_REF (~Lich
-The lich is potentially the most powerful form of undead known to exist, and they are difficult, if not impossible, to destroy. Besides having the power of an undead wizard at their command, they store their life force in a secure location separate from their physical form. Destruction of their body is meaningless unless the container is found as well. ~)
+OUTER_SET mephit = RESOLVE_STR_REF (@143)
+OUTER_SET mephit_desc = RESOLVE_STR_REF (@144)
 
-OUTER_SET lizardfolk = RESOLVE_STR_REF (~Lizardfolk~)
-OUTER_SET lizardfolk_desc = RESOLVE_STR_REF (~Lizardfolk
-Lizardfolk are aquatic creatures that combine reptilian and humanoid features. They have scaly, colorful skin and powerful builds. While territorial and savage, lizardfolk are intelligent creatures, and not inherently evil. Lizardfolk are excellent swimmers and dwell in marshes, swamps and jungles in loose tribes.~)
+OUTER_SET mindflayer = RESOLVE_STR_REF (@145)
+OUTER_SET mindflayer_desc = RESOLVE_STR_REF (@146)
 
-OUTER_SET lycanthrope = RESOLVE_STR_REF (~Lycanthrope~)
-OUTER_SET lycanthrope_desc = RESOLVE_STR_REF (~Lycanthrope
-The werewolf is the classic lycanthrope, a person that changes into an animal, though the term can also refer to animals that change into people. Lycanthropy can be a curse or an inherited condition.~)
+OUTER_SET minotaur = RESOLVE_STR_REF (@147)
+OUTER_SET minotaur_desc = RESOLVE_STR_REF (@148)
 
-OUTER_SET mephit = RESOLVE_STR_REF (~Mephit~)
-OUTER_SET mephit_desc = RESOLVE_STR_REF (~Mephit
-Mephits are nasty little messengers created by powerful lower planes creatures, and are evil and malicious by nature. Six types of mephits are known: fire, ice, lava, mist, smoke, and steam.~)
+OUTER_SET myconid = RESOLVE_STR_REF (@149)
+OUTER_SET myconid_desc = RESOLVE_STR_REF (@150)
 
-OUTER_SET mindflayer = RESOLVE_STR_REF (~Mind Flayer~)
-OUTER_SET mindflayer_desc = RESOLVE_STR_REF (~Mind Flayer
-Also called illithids, the brain-devouring mind flayers are hideously alien creatures of the Underdark. Evil beyond redemption, they will consider you a slave or simply food, if they consider you at all. ~)
+OUTER_SET ogre = RESOLVE_STR_REF (@151)
+OUTER_SET ogre_desc = RESOLVE_STR_REF (@152)
 
-OUTER_SET minotaur = RESOLVE_STR_REF (~Minotaur~)
-OUTER_SET minotaur_desc = RESOLVE_STR_REF (~Minotaur
-Minotaurs are large, monstrous humanoids with muscular bodies and the head of a bull. They are not particularly intelligent, but have strong senses and cunning, preferring to prey on travelers who get lost in their maze-like homes. Rarely, minotaurs of higher intelligence become capable adventurers and mercenaries, although their intimidating appearance tends to keep civilized folk at bay.~)
+OUTER_SET orc = RESOLVE_STR_REF (@153)
+OUTER_SET orc_desc = RESOLVE_STR_REF (@154)
 
-OUTER_SET myconid = RESOLVE_STR_REF (~Myconid~)
-OUTER_SET myconid_desc = RESOLVE_STR_REF (~Myconid
-Myconids are fungal creatures that live underground. They communicate telepathically through the use of spores that they produce within their bodies, which are also capable of confusing enemies. Despite their appearances, they are not violent creatures unless provoked.~)
+OUTER_SET otyugh = RESOLVE_STR_REF (@155)
+OUTER_SET otyugh_desc = RESOLVE_STR_REF (@156)
 
-OUTER_SET ogre = RESOLVE_STR_REF (~Ogre~)
-OUTER_SET ogre_desc = RESOLVE_STR_REF (~Ogre
-Ogres are big, ugly, greedy humanoids that live by ambushes, raids, and theft. Ill-tempered and nasty, these monsters are often found serving as mercenaries in the ranks of orc tribes, evil clerics, or gnolls. They mingle freely with giants and trolls.
+OUTER_SET rakshasa = RESOLVE_STR_REF (@157)
+OUTER_SET rakshasa_desc = RESOLVE_STR_REF (@158)
 
-Adult ogres stand nine to ten feet tall and weigh 300 to 350 pounds. Their skin colors range from a dead yellow to a dull black-brown, and (rarely) a sickly violet. Their warty bumps are often of a different color—or at least darker than their hides. Their eyes are purple with white pupils. Teeth and talons are orange or black. Ogres have long, greasy hair of blackish blue to dull dark green. Their odor is repellent, reminiscent of curdled milk. Dressing in poorly cured furs and animal hides, they care for their weapons and armor only reasonably well.
+OUTER_SET sahuagin = RESOLVE_STR_REF (@159)
+OUTER_SET sahuagin_desc = RESOLVE_STR_REF (@160)
 
-It is common for ogres to speak orc, troll, stone giant, and gnoll, as well as their own guttural language. A typical ogre's life span is 90 years.~)
+OUTER_SET salamander = RESOLVE_STR_REF (@161)
+OUTER_SET salamander_desc = RESOLVE_STR_REF (@162)
 
-OUTER_SET orc = RESOLVE_STR_REF (~Orc~)
-OUTER_SET orc_desc = RESOLVE_STR_REF (~Orc
-Orcs are the hereditary enemies of goblins and hobgoblins, with whom they often compete for resources. Reasonably intelligent carnivores, orcs are constantly waging war against other races to maintain their tribes. These wars thin the weak predators from their tribes and gather resources for the next generation. Orcs have a reputation for being extremely powerful warriors. Wizards have tried to create orcish variants to take advantage of the race's natural ferocity and strength.~)
+OUTER_SET shadow = RESOLVE_STR_REF (@163)
+OUTER_SET shadow_desc = RESOLVE_STR_REF (@164)
 
-OUTER_SET otyugh = RESOLVE_STR_REF (~Otyugh~)
-OUTER_SET otyugh_desc = RESOLVE_STR_REF (~Otyugh
-Huge disease-ridden creatures, Otyughs feed on the filth and refuse that other dungeon-dwelling beasts shed or cast aside. This can include adventurers if you are not careful.~)
+OUTER_SET shamblingmound = RESOLVE_STR_REF (@165)
+OUTER_SET shamblingmound_desc = RESOLVE_STR_REF (@166)
 
-OUTER_SET rakshasa = RESOLVE_STR_REF (~Rakshasa~)
-OUTER_SET rakshasa_desc = RESOLVE_STR_REF (~Rakshasa
-Rakshasas are a race of malevolent spirits that hunt and torment humanity. They live for battle, and their illusion talents make them deadly.~)
+OUTER_SET skeleton = RESOLVE_STR_REF (@167)
+OUTER_SET skeleton_desc = RESOLVE_STR_REF (@168)
 
-OUTER_SET sahuagin = RESOLVE_STR_REF (~Sahuagin~)
-OUTER_SET sahuagin_desc = RESOLVE_STR_REF (~Sahuagin
-Sahuagin are a vicious, predatory race of fish-men that live in warm coastal waters. They are highly organized and greatly enjoy raiding shore communities for food and sport.~)
+OUTER_SET slime = RESOLVE_STR_REF (@169)
+OUTER_SET slime_desc = RESOLVE_STR_REF (@170)
 
-OUTER_SET salamander = RESOLVE_STR_REF (~Salamander~)
-OUTER_SET salamander_desc = RESOLVE_STR_REF (~Salamander
-Salamanders are elemental, reptilian creatures with vaguely humanoid bodies. They are intelligent, greedy and cruel, living in organized feudal societies led by 'royalty'. They are accomplished smiths, wielding massive spears often imbued with their own elements. The most common types of salamander are fire and frost.~)
+OUTER_SET spider = RESOLVE_STR_REF (@171)
+OUTER_SET spider_desc = RESOLVE_STR_REF (@172)
 
-OUTER_SET shadow = RESOLVE_STR_REF (~Shadow~)
-OUTER_SET shadow_desc = RESOLVE_STR_REF (~Shadow
-Shadows are malevolent, undead creatures that drain strength from their victims with their chilling touch. Those so afflicted can look forward to becoming a shadow themselves if contact continues. ~)
+OUTER_SET troll = RESOLVE_STR_REF (@173)
+OUTER_SET troll_desc = RESOLVE_STR_REF (@174)
 
-OUTER_SET shamblingmound = RESOLVE_STR_REF (~Shambling Mound~)
-OUTER_SET shamblingmound_desc = RESOLVE_STR_REF (~Shambling Mound
-The shambling mound is an huge mass of animated, vaguely man-shaped plants. They are extremely powerful and commonly summoned by experienced druids to act as defenders of nature. Their bodies, composed of rotting vegetation, are extremely difficult to damage.~)
+OUTER_SET umberhulk = RESOLVE_STR_REF (@175)
+OUTER_SET umberhulk_desc = RESOLVE_STR_REF (@176)
 
-OUTER_SET skeleton = RESOLVE_STR_REF (~Skeleton~)
-OUTER_SET skeleton_desc = RESOLVE_STR_REF (~Skeleton
-All skeletons are magically animated undead monsters, created as guardians or warriors by powerful evil wizards and priests.
+OUTER_SET vampire = RESOLVE_STR_REF (@177)
+OUTER_SET vampire_desc = RESOLVE_STR_REF (@178)
 
-Skeletons appear to have no ligaments or musculature which would allow movement. Instead, the bones are magically joined together during the casting of an Animate Dead spell. Skeletons have no eyes or internal organs.
+OUTER_SET wolf = RESOLVE_STR_REF (@179)
+OUTER_SET wolf_desc = RESOLVE_STR_REF (@180)
 
-Skeletons can be made from the bones of humans and demihumans, animals of human size or smaller, or giant humanoids like bugbears and giants.~)
+OUTER_SET wyvern = RESOLVE_STR_REF (@181)
+OUTER_SET wyvern_desc = RESOLVE_STR_REF (@182)
 
-OUTER_SET slime = RESOLVE_STR_REF (~Slime~)
-OUTER_SET slime_desc = RESOLVE_STR_REF (~Slime
-A beast with no visible support within its gelatinous body. The acid touch of these creatures can vary from type to type, but all are deadly scavengers. ~)
+OUTER_SET yeti = RESOLVE_STR_REF (@183)
+OUTER_SET yeti_desc = RESOLVE_STR_REF (@184)
 
-OUTER_SET spider = RESOLVE_STR_REF (~Spider~)
-OUTER_SET spider_desc = RESOLVE_STR_REF (~Spider
-Spiders are aggressive predators, dwelling both above and below ground. Most are poisonous and bite prey before devouring them because unconscious victims are easier to carry to a lair.
+OUTER_SET yuanti = RESOLVE_STR_REF (@185)
+OUTER_SET yuanti_desc = RESOLVE_STR_REF (@186)
 
-Spiders have eight legs and eight eyes. They usually fit into two categories: web-spinners, which have bulbous abdomens and thin, sleek legs; and hunting spiders, which have smaller bodies, larger heads and fangs, and hairy bodies and legs.
-
-Most giant spiders are simply much bigger versions of the web-spinning large spiders.~)
-
-OUTER_SET troll = RESOLVE_STR_REF (~Troll~)
-OUTER_SET troll_desc = RESOLVE_STR_REF (~Troll
-Trolls are horrid carnivores that are most well known for being hard to kill. All trolls regenerate, and most can only be killed through the use of fire.~)
-
-OUTER_SET umberhulk = RESOLVE_STR_REF (~Umber Hulk~)
-OUTER_SET umberhulk_desc = RESOLVE_STR_REF (~Umber Hulk
-Umber hulks are tremendously strong subterranean creatures that can burrow through solid rock in search of prey. They are physically slow, but can cause confusion in their target with a glance.~)
-
-OUTER_SET vampire = RESOLVE_STR_REF (~Vampire~)
-OUTER_SET vampire_desc = RESOLVE_STR_REF (~Vampire
-The vampire is a powerful undead creature, feeding on the living to further its own twisted goals. Vampirism can infect people of many different species, though the effects are often unpredictable.~)
-
-OUTER_SET wolf = RESOLVE_STR_REF (~Wolf~)
-OUTER_SET wolf_desc = RESOLVE_STR_REF (~Wolf
-Wolves are carnivorous canines that are formidable pack hunters. Strong and fast, wolves are particularly dangerous when working together in a pack, overwhelming their prey with claws and fangs.~)
-
-OUTER_SET wyvern = RESOLVE_STR_REF (~Wyvern~)
-OUTER_SET wyvern_desc = RESOLVE_STR_REF (~Wyvern
-The wyvern is a large, winged lizard. While physically weaker and less intelligent than their dragon cousins, they can be fearsome due to their fast flying skills and stinging tails, which drip with a deadly, fast-acting venom.~)
-
-OUTER_SET yeti = RESOLVE_STR_REF (~Yeti~)
-OUTER_SET yeti_desc = RESOLVE_STR_REF (~Yeti
-Native to the mountainous northern regions, the yeti is a hulking, carnivorous beast with thick, matted fur that camouflages them and keeps them warm in the cold regions where they dwell.~)
-
-OUTER_SET yuanti = RESOLVE_STR_REF (~Yuan-ti~)
-OUTER_SET yuanti_desc = RESOLVE_STR_REF (~Yuan-ti
-The yuan-ti are cunning serpentfolk with varying amounts of humanoid features. Extremely dangerous due to their intelligence and ability to disguise themselves as humans, yuan-ti are ambitious and power-hungry beings, and many are capable with magic.~)
-
-OUTER_SET zombie = RESOLVE_STR_REF (~Zombie~)
-OUTER_SET zombie_desc = RESOLVE_STR_REF (~Zombie
-Among the lowest caliber of undead creatures, zombies are mindless animated corpses that exist in a state of perpetual hunger, shambling towards anything living with single-minded purpose. Despite being slow and weak, they are at their most dangerous when gathering in hordes.~)
+OUTER_SET zombie = RESOLVE_STR_REF (@187)
+OUTER_SET zombie_desc = RESOLVE_STR_REF (@188)
 
 APPEND haterace.2da
 ~ANKHEG					%ankheg%	101		%ankheg_desc%

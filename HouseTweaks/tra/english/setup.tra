@@ -1,0 +1,923 @@
+@0    = ~2.9~
+@1    = ~House Tweaks: Expanded Racial Enemies~
+@2    = ~House Tweaks: Expanded Shapeshifting~
+@3    = ~House Tweaks: Expanded Racial Bonuses~
+@4    = ~House Tweaks: Rebalanced Proficiencies~
+@5    = ~House Tweaks: Rebalanced Weapon Styles~
+@6    = ~House Tweaks: Racial Weapon Proficiency~
+@7    = ~House Tweaks: Rebalanced Attacks Per Round Progression~
+@8    = ~House Tweaks: Monk Can Use Quarterstaves~
+@9    = ~Constitution Bonuses for All Classes + Regeneration Changes~
+@10   = ~House Tweaks: Increased Constitution Bonuses~
+@11   = ~Regeneration Changes Only~
+@12   = ~Constitution Bonuses for All Classes Only~
+@13   = ~House Tweaks: INT/WIS/CHA-based Bonus Spell Slots~
+@14   = ~House Tweaks: Warrior HLAs~
+@15   = ~Resist Magic~
+@16   = ~Resist Magic
+This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 5 rounds, the warrior gains a +10 bonus to all saves. In addition, the warrior absorbs the next 20 spell level's worth of spells cast upon <PRO_HIMHER>. The saving throw bonus always persists for the full duration.~
+@17   = ~Critical Strike~
+@18   = ~Critical Strike
+A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to, once per day, concentrate <PRO_HISHER> next attack to strike a vital area. With this ability, the warrior's next attack is a natural 20, a critical hit that deals 4x damage (2x against enemies immune to critical hits).
+
+Requires: Power Attack~
+@19   = ~War Cry~
+@20   = ~War Cry
+With a War Cry, the warrior lets out an invigorating roar, healing <PRO_HISHER> hit points to full in addition to removing fatigue and restoring drained levels.~
+@21   = ~House Tweaks: Improved Dialogues (BG:EE)~
+@22   = ~This component must be installed on BG:EE.~
+@23   = ~Officer Zelas~
+@24   = ~House Tweaks: Not-So-Indestructible Rats~
+@25   = ~House Tweaks: Good-Aligned Roleplay Rewards (BG2:EE)~
+@26   = ~This component must be installed on BG2:EE.~
+@27   = ~House Tweaks: Cloak of Dragomir only decreases stats in daylight~
+@28   = ~House Tweaks: Give Stat Bonuses to EENPCs in BG2 (except Hexxat)~
+@29   = ~House Tweaks: Useful Plot Items~
+@30   = ~House Tweaks: Faster Troll Unconsciousness~
+@31   = ~House Tweaks: Restore Reputation Increase Sound Effect for BG2~
+@32   = ~The Party's Reputation Has Increased~ [REPUP]
+@33   = ~House Tweaks: Race Text Patch~
+@34   = ~House Tweaks: Hoodless Thief Avatars~
+@35   = ~House Tweaks: NPC Soundsets for Icewind Dale~
+@36   = ~This component must be installed on IWD:EE.~
+@37   = ~House Tweaks: Reputation Bonuses for Icewind Dale~
+@38   = ~House Tweaks: Soundset Tweaks for Anomen and Sarevok (BG2:EE)~
+@39   = ~House Tweaks: Experience Books~
+@40   = ~Bastard Sword~
+@41   = ~House Tweaks: Restored Blade of Aihonen Tweak~
+@42   = ~Two-Handed Sword~
+@43   = ~House Tweaks: Frozen and Petrified Creatures Drop Items on Death~
+@44   = ~House Tweaks: IWD-style Disintegrate~
+@45   = ~This component is redundant on IWD:EE.~
+@46   = ~2% chance per 5 points in Detect Traps, check once per round~
+@47   = ~House Tweaks: Passive Trap Detection~
+@48   = ~5% chance per 5 points in Detect Traps, check once per round~
+@49   = ~100% chance of trap detection, check once per round~
+@50   = ~2% chance per 5 points in Detect Traps, constant check while moving (experimental)~
+@51   = ~5% chance per 5 points in Detect Traps, constant check while moving (experimental)~
+@52   = ~100% chance of trap detection, constant check while moving (experimental)~
+@53   = ~House Tweaks: Remove all 'Hide in Shadows' Voice Cues~
+@54   = ~House Tweaks: Remove all 'Set Traps' Voice Cues~
+@55   = ~House Tweaks: Make Helmets Invisible on Mage Avatars~
+@56   = ~House Tweaks: Backstab With Any Weapon~
+@57   = ~House Tweaks: Ankheg and Dragonscale Armor Count as Medium Armor~
+@58   = ~House Tweaks: Charisma Bonus to Turn Undead Levels~
+@59   = ~House Tweaks: Trap Activation Tweaks~
+@60   = ~"%insert%" is not a legal BAF file, INSERT_SCRIPT_BLOCK will fail~
+@61   = ~%internal_insert_data%%WNL%~
+@63   = ~internal error in ALTER_SCRIPT suite~
+@64   = ~%new_script%%data%~
+@65   = ~Give Stat Bonuses to Rasaad? (+1 STR, DEX, CON)
+1) Yes
+2) No~
+@66   = ~placeholder_value~
+@67   = ~Give Stat Bonuses to Dorn? (+1 DEX, +2 CON)
+1) Yes
+2) No~
+@68   = ~Give Stat Bonuses to Neera? (+2 CON, +1 INT)
+1) Yes
+2) No~
+@69   = ~fl#row%newrow%~
+@71   = ~%newrow% ****~
+@72   = ~%newrow% %f_Entry%~
+@73   = ~Ankheg~
+@74   = ~Ankheg
+Ankhegs are massive, insectoid monsters that burrow beneath the earth. While not actively malicious and valued for to their ability to aerate soil with their tunnelling, ankhegs are dangerous monsters due to their tough chitinous shells (which can be treated by skilled armorers to create plate mail), sharp claws, and projectile acidic spittle.~
+@75   = ~Basilisk~
+@76   = ~Basilisk
+Basilisks are massive, eight-legged reptilian creatures. While their bite is highly poisonous, their truly fearsome feature comes from their ability to instantly petrify any living being with their gaze. Areas where basilisks run rampant are easily recognized due to their tendency to leave their stone victims in their trail.~
+@77   = ~Beholder~
+@78   = ~Beholder
+A large floating orb with a central eye, large mouth, and many smaller eyes sprouting from stalks atop its hideous form. Truly alien, beholder-kin come in many variations, though all should be avoided. Beholders are most commonly found underground, and are one of the dominant species of the Underdark.~
+@79   = ~Bear~
+@80   = ~Bear
+Bears are omnivorous, predatorial mammals most commonly found in forests and caves. Incredibly strong and fast for their size, bears hibernate throughout the winter and forage for food during the summer, and will attack hapless travellers who are foolish enough to stray too close to them.~
+@81   = ~Carrion Crawler~
+@82   = ~Carrion crawler
+The carrion crawler is a scavenger of subterranean areas, feeding primarily upon carrion. However, when such food becomes scarce or when it is threatened, it will attack and kill living creatures.
+
+The carrion crawler looks like a cross between a giant green cutworm and a cephalopod. Like so many other hybrid monsters, the carrion crawler may well be the result of genetic experimentation by a mad, evil wizard. 
+
+The monster's head is covered with a tough hide, but the body is not well protected. The monster is accompanied by a rank, fetid odor which often gives warning of its approach.~
+@83   = ~Fiend~
+@84   = ~Fiend
+Fiends are dangerous outsiders from the Lower Planes. Born from pure evil and malevolence, their power, intellect and supernatural charm makes them a formidable foe for any being. The baatezu, tanar'ri and yugoloths are all creatures that fall under the fiend categorization.~
+@85   = ~Doppleganger~
+@86   = ~Doppleganger
+Dopplegangers are humanoid creatures with the ability to shapeshift. They are cunning in nature, being capable of near-perfectly imitating a chosen target after observing them for a sufficient amount of time. When exposed, their tough hides and sharp claws give them a means of self-defense in their natural form.~
+@87   = ~Dragon~
+@88   = ~Dragon
+Dragons are an ancient, winged reptilian race. They are known and feared for their size, physical prowess, and magical abilities. The oldest dragons are among the most powerful creatures in the world. Chromatic dragons are generally evil in nature, while metallic dragons tend towards good. ~
+@89   = ~Drider~
+@90   = ~Drider
+Driders were once drow - transformed permanently into an aberrant form composed from the upper torso of a drow elf and the lower body of a spider. This transformation is most often a punishment - driders exist in a perpetual state of agony, driving them insane. They are bloodthirsty and vicious creatures.~
+@91   = ~Dwarf~
+@92   = ~Dwarf
+Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.~
+@93   = ~Elemental~
+@94   = ~Elemental
+Elementals are sentient beings that can possess bodies made of one of the four basic elements that make up the Prime Material Plane: air, earth, fire, and water.~
+@95   = ~Elf~
+@96   = ~Elf
+Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).~
+@97   = ~Ettercap~
+@98   = ~Ettercap
+Ettercaps are ugly bipedal creatures that get along very well with all types of giant spiders. These creatures of low intelligence are exceedingly cruel, very cunning, and are skilled in setting traps�very deadly traps�much like the spiders that often live around them.
+
+Ettercaps stand around six feet tall, even with their stooping gait and hunched shoulders. The creatures have short, spindly legs, long arms that reach nearly to their ankles, and large pot-bellies. The hands of ettercaps have a thumb and three long fingers that end in razor sharp claws. Their bodies are covered by tufts of thick, wiry, black hair, and their skin is dark and thick. Ettercaps' heads are almost equine in shape, but they have large reptilian eyes, usually blood-red in color, and large fangs, one protruding downward from each side of the mouth. The mouth itself is large and lined with very sharp teeth.
+
+Ettercaps do not have a formal language. They express themselves through a combination of high-pitched chittering noises, shrieks and violent actions.~
+@99   = ~Ettin~
+@100  = ~Ettin
+Ettins are two-headed giants. Their heads are eapable of independent thought and control one arm each. The runt of giant-kin, ettins make their homes in dark caverns and underground tunnels, and are looked down upon by their single-headed cousins.~
+@101  = ~Fairie~
+@102  = ~Faerie
+"Faerie-folk" include many kinds of small, generally benevolent creatures. The image most associated with the term is that of a small, winged, mischievous creature, though their dispositions can vary as much as any other race. ~
+@103  = ~Genie~
+@104  = ~Genie
+Genies come from the elemental planes, but are sometimes encountered on the Prime Material Plane and are occasionally summoned to perform a service for a powerful wizard or priest. The reaction of the genie towards such an indignity can vary from type to type.~
+@105  = ~Ghoul~
+@106  = ~Ghoul
+Ghouls are undead creatures, once human, who now feed on the flesh of corpses. Although the change from human to ghoul has deranged and destroyed their minds, ghouls have a terrible cunning which enables them to hunt their prey most effectively.
+
+Ghouls are vaguely recognizable as once having been human, but have become horribly disfigured by their change to ghouls. The tongue becomes long and tough for licking marrow from cracked bones, the teeth become sharp and elongated, and the nails grow strong and sharp like claws.~
+@107  = ~Giant~
+@108  = ~Giant
+Giants are massive humanoid creatures with tremendous strength. Varieties of giant-kin include hill, cloud, fire, frost, stone and storm giants. Most breeds of giant are as intelligent as other humanoids, and can be of either good or evil alignment.~
+@109  = ~Gibberling~
+@110  = ~Gibberling 
+They come screaming, jabbering, and howling out of the night. Dozens, maybe hundreds, of hunchbacked, naked humanoids swarm unceasingly forward. They have no thought of safety, subtlety, or strategy, leaving others with no hope of stopping their mass assault. Then, having come and killed, the gibberlings move on, seemingly randomly, back into the night.
+
+The first impression of gibberlings is of a writhing mass of fur and flesh in the distant moonlit darkness. The pandemonium is actually a mass of pale, hunchbacked humanoids, with pointed canine ears and black manes surrounding their hideous, grinning faces. Their black eyes shine with a maniacal gleam.~
+@111  = ~Githyanki~
+@112  = ~Githyanki
+The "followers of Gith" were once-human beings that reside in the Astral Plane. They are tall and wiry, with yellow skin and sunken faces. Githyanki are aggressive and militaristic, and are capable with both weapons and magic. Due to their history of enslavement by mind-flayers, githyanki possess psionic abilities. Silver swords are the sacred weapon of the githyanki, who reserve them for the strongest of their order and, should one fall into the hands of a non-githyanki, will mercilessly hunt them down and eliminate them.~
+@113  = ~Gnoll~
+@114  = ~Gnoll
+Gnolls are large, evil, hyena-like humanoids that roam about in loosely organized bands.
+
+While the body of a gnoll is shaped like that of a large human, the details are those of a hyena. They stand erect on two legs and have hands that can manipulate as well as those of any human. They have greenish-gray skin, darker near the muzzle, with a short reddish-gray to dull yellow mane.~
+@115  = ~Gnome~
+@116  = ~Gnome
+Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).~
+@117  = ~Goblin~
+@118  = ~Goblin
+Goblins are small creatures that fall under the goblinoid race, with flat faces, broad noses, pointed ears, and sharp fangs. Despite being individually weak, goblins can be a threat due to their rapid breeding rate and tendency to band together in tribes. Due to their small size, they are sneaky, elusive creatures and can be surprisingly cunning.~
+@119  = ~Golem~
+@120  = ~Golem
+"Golem" is a broad term that covers many types of magical constructs. Most are humanoid, though they can be of inhuman size, and most require magical means to destroy them.~
+@121  = ~Hobgoblin~
+@122  = ~Hobgoblin
+Hobgoblins are a fierce humanoid race that wage perpetual war with the other humanoid races. They are intelligent, organized, and aggressive. 
+
+The typical hobgoblin is a burly humanoid standing at least six feet tall. Their hairy hides range from dark reddish-brown to dark gray. Their faces show dark red or red-orange skin. Large males have blue or red noses. Hobgoblin eyes are either yellowish or dark brown while their teeth are yellow. Their garments tend to be brightly colored, often bold, blood red. Any leather is always tinted black. Hobgoblin weaponry is kept polished and repaired.
+
+Hobgoblins have their own language and often speak with orcs, goblins, and carnivorous apes.~
+@123  = ~Human~
+@124  = ~Human
+Humans are the predominant race in Faerun. Humans rule most of the significant empires and kingdoms in the Forgotten Realms. They are the most social and tolerant of races, excepting perhaps the halflings.~
+@125  = ~Half-Elf~
+@126  = ~Half-Elf
+Half-elves are a mix of human and elven blood. They are handsome folk, with good features from each of their parent races. A half-elf has the curiosity, inventiveness, and ambition of their human ancestors and the refined senses, love of nature, and artistic tastes of their elven ancestors.~
+@127  = ~Halfling~
+@128  = ~Halfling
+Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.~
+@129  = ~Half-Orc~
+@130  = ~Half-Orc
+Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the lands of Amn, half-orcs are tolerated, as unlike in the north the people of Amn haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.~
+@131  = ~Imp~
+@132  = ~Imp
+Imps are diminutive creatures of an evil nature that roam the world and occasionally act as familiars for evil wizards and priests. Only magical or silver weapons harm them, and they also regenerate. ~
+@133  = ~Kobold~
+@134  = ~Kobold 
+Kobolds are a cowardly, sadistic race of short humanoids that vigorously contest the human and demihuman races for living space and food. They especially dislike gnomes and attack them on sight.
+
+Barely clearing three feet in height, kobolds have scaly hides that range from dark, rusty brown to a rusty black. They smell of damp dogs and stagnant water. Their eyes glow like a pair of bright red sparks, and they have two small horns ranging from tan to white. Because of the kobold fondness for wearing raggedy garb of red and orange, their non-prehensile rat-like tails, and their language (which sounds like small dogs yapping), these fell creatures are often not taken seriously. This is often a fatal mistake, for what they lack in size and strength they make up in ferocity and tenacity.~
+@135  = ~Kuo-toa~
+@136  = ~Kuo-toa
+Kuo-toa are an ancient race of fish-men that dwell underground and harbor a deep hatred for surface-dwellers and sunlight. Insanity is common among the species.~
+@137  = ~Lich~
+@138  = ~Lich
+The lich is potentially the most powerful form of undead known to exist, and they are difficult, if not impossible, to destroy. Besides having the power of an undead wizard at their command, they store their life force in a secure location separate from their physical form. Destruction of their body is meaningless unless the container is found as well. ~
+@139  = ~Lizardfolk~
+@140  = ~Lizardfolk
+Lizardfolk are aquatic creatures that combine reptilian and humanoid features. They have scaly, colorful skin and powerful builds. While territorial and savage, lizardfolk are intelligent creatures, and not inherently evil. Lizardfolk are excellent swimmers and dwell in marshes, swamps and jungles in loose tribes.~
+@141  = ~Lycanthrope~
+@142  = ~Lycanthrope
+The werewolf is the classic lycanthrope, a person that changes into an animal, though the term can also refer to animals that change into people. Lycanthropy can be a curse or an inherited condition.~
+@143  = ~Mephit~
+@144  = ~Mephit
+Mephits are nasty little messengers created by powerful lower planes creatures, and are evil and malicious by nature. Six types of mephits are known: fire, ice, lava, mist, smoke, and steam.~
+@145  = ~Mind Flayer~
+@146  = ~Mind Flayer
+Also called illithids, the brain-devouring mind flayers are hideously alien creatures of the Underdark. Evil beyond redemption, they will consider you a slave or simply food, if they consider you at all. ~
+@147  = ~Minotaur~
+@148  = ~Minotaur
+Minotaurs are large, monstrous humanoids with muscular bodies and the head of a bull. They are not particularly intelligent, but have strong senses and cunning, preferring to prey on travelers who get lost in their maze-like homes. Rarely, minotaurs of higher intelligence become capable adventurers and mercenaries, although their intimidating appearance tends to keep civilized folk at bay.~
+@149  = ~Myconid~
+@150  = ~Myconid
+Myconids are fungal creatures that live underground. They communicate telepathically through the use of spores that they produce within their bodies, which are also capable of confusing enemies. Despite their appearances, they are not violent creatures unless provoked.~
+@151  = ~Ogre~
+@152  = ~Ogre
+Ogres are big, ugly, greedy humanoids that live by ambushes, raids, and theft. Ill-tempered and nasty, these monsters are often found serving as mercenaries in the ranks of orc tribes, evil clerics, or gnolls. They mingle freely with giants and trolls.
+
+Adult ogres stand nine to ten feet tall and weigh 300 to 350 pounds. Their skin colors range from a dead yellow to a dull black-brown, and (rarely) a sickly violet. Their warty bumps are often of a different color�or at least darker than their hides. Their eyes are purple with white pupils. Teeth and talons are orange or black. Ogres have long, greasy hair of blackish blue to dull dark green. Their odor is repellent, reminiscent of curdled milk. Dressing in poorly cured furs and animal hides, they care for their weapons and armor only reasonably well.
+
+It is common for ogres to speak orc, troll, stone giant, and gnoll, as well as their own guttural language. A typical ogre's life span is 90 years.~
+@153  = ~Orc~
+@154  = ~Orc
+Orcs are the hereditary enemies of goblins and hobgoblins, with whom they often compete for resources. Reasonably intelligent carnivores, orcs are constantly waging war against other races to maintain their tribes. These wars thin the weak predators from their tribes and gather resources for the next generation. Orcs have a reputation for being extremely powerful warriors. Wizards have tried to create orcish variants to take advantage of the race's natural ferocity and strength.~
+@155  = ~Otyugh~
+@156  = ~Otyugh
+Huge disease-ridden creatures, Otyughs feed on the filth and refuse that other dungeon-dwelling beasts shed or cast aside. This can include adventurers if you are not careful.~
+@157  = ~Rakshasa~
+@158  = ~Rakshasa
+Rakshasas are a race of malevolent spirits that hunt and torment humanity. They live for battle, and their illusion talents make them deadly.~
+@159  = ~Sahuagin~
+@160  = ~Sahuagin
+Sahuagin are a vicious, predatory race of fish-men that live in warm coastal waters. They are highly organized and greatly enjoy raiding shore communities for food and sport.~
+@161  = ~Salamander~
+@162  = ~Salamander
+Salamanders are elemental, reptilian creatures with vaguely humanoid bodies. They are intelligent, greedy and cruel, living in organized feudal societies led by 'royalty'. They are accomplished smiths, wielding massive spears often imbued with their own elements. The most common types of salamander are fire and frost.~
+@163  = ~Shadow~
+@164  = ~Shadow
+Shadows are malevolent, undead creatures that drain strength from their victims with their chilling touch. Those so afflicted can look forward to becoming a shadow themselves if contact continues. ~
+@165  = ~Shambling Mound~
+@166  = ~Shambling Mound
+The shambling mound is an huge mass of animated, vaguely man-shaped plants. They are extremely powerful and commonly summoned by experienced druids to act as defenders of nature. Their bodies, composed of rotting vegetation, are extremely difficult to damage.~
+@167  = ~Skeleton~
+@168  = ~Skeleton
+All skeletons are magically animated undead monsters, created as guardians or warriors by powerful evil wizards and priests.
+
+Skeletons appear to have no ligaments or musculature which would allow movement. Instead, the bones are magically joined together during the casting of an Animate Dead spell. Skeletons have no eyes or internal organs.
+
+Skeletons can be made from the bones of humans and demihumans, animals of human size or smaller, or giant humanoids like bugbears and giants.~
+@169  = ~Slime~
+@170  = ~Slime
+A beast with no visible support within its gelatinous body. The acid touch of these creatures can vary from type to type, but all are deadly scavengers. ~
+@171  = ~Spider~
+@172  = ~Spider
+Spiders are aggressive predators, dwelling both above and below ground. Most are poisonous and bite prey before devouring them because unconscious victims are easier to carry to a lair.
+
+Spiders have eight legs and eight eyes. They usually fit into two categories: web-spinners, which have bulbous abdomens and thin, sleek legs; and hunting spiders, which have smaller bodies, larger heads and fangs, and hairy bodies and legs.
+
+Most giant spiders are simply much bigger versions of the web-spinning large spiders.~
+@173  = ~Troll~
+@174  = ~Troll
+Trolls are horrid carnivores that are most well known for being hard to kill. All trolls regenerate, and most can only be killed through the use of fire.~
+@175  = ~Umber Hulk~
+@176  = ~Umber Hulk
+Umber hulks are tremendously strong subterranean creatures that can burrow through solid rock in search of prey. They are physically slow, but can cause confusion in their target with a glance.~
+@177  = ~Vampire~
+@178  = ~Vampire
+The vampire is a powerful undead creature, feeding on the living to further its own twisted goals. Vampirism can infect people of many different species, though the effects are often unpredictable.~
+@179  = ~Wolf~
+@180  = ~Wolf
+Wolves are carnivorous canines that are formidable pack hunters. Strong and fast, wolves are particularly dangerous when working together in a pack, overwhelming their prey with claws and fangs.~
+@181  = ~Wyvern~
+@182  = ~Wyvern
+The wyvern is a large, winged lizard. While physically weaker and less intelligent than their dragon cousins, they can be fearsome due to their fast flying skills and stinging tails, which drip with a deadly, fast-acting venom.~
+@183  = ~Yeti~
+@184  = ~Yeti
+Native to the mountainous northern regions, the yeti is a hulking, carnivorous beast with thick, matted fur that camouflages them and keeps them warm in the cold regions where they dwell.~
+@185  = ~Yuan-ti~
+@186  = ~Yuan-ti
+The yuan-ti are cunning serpentfolk with varying amounts of humanoid features. Extremely dangerous due to their intelligence and ability to disguise themselves as humans, yuan-ti are ambitious and power-hungry beings, and many are capable with magic.~
+@187  = ~Zombie~
+@188  = ~Zombie
+Among the lowest caliber of undead creatures, zombies are mindless animated corpses that exist in a state of perpetual hunger, shambling towards anything living with single-minded purpose. Despite being slow and weak, they are at their most dangerous when gathering in hordes.~
+@189  = ~Install Hoodless Avatar for Female Dwarves?
+
+[1] Yes
+[2] No~
+@190  = ~Install Hoodless Avatar for Male Gnomes and Dwarves?
+
+[1] Yes
+[2] No~
+@191  = ~Install Hoodless Avatar for Female Elves and Half-Elves?
+
+[1] Yes
+[2] No~
+@192  = ~Install Hoodless Avatar for Male Elves and Half-Elves?
+
+[1] Yes
+[2] No~
+@193  = ~Install Hoodless Avatar for Female Halflings and Gnomes?
+
+[1] Yes
+[2] No~
+@194  = ~Install Hoodless Avatar for Male Halflings?
+
+[1] Yes
+[2] No~
+@195  = ~Install Hoodless Avatar for Female Humans and Half-Orcs?
+
+[1] Yes
+[2] No~
+@196  = ~Install Hoodless Avatar for Male Humans and Half-Orcs?
+
+[1] Yes
+[2] No~
+@197  = ~You are welcome in my sight.~ [GGFEM01]
+@198  = ~This is your end!~ [GGFEM02]
+@199  = ~You've made a fatal error in judgment!~ [GGFEM03]
+@202  = ~Cast off your old beliefs and be saved!~ [FANATM02]
+@203  = ~Death to the disbeliever!~ [FANATM05]
+@206  = ~No! My... my god will save me!~ [FANATM08]
+@207  = ~Kneel and repent!~ [FANATM01]
+@208  = ~I am one of the few who are chosen.~ [FANATM03]
+@209  = ~Why do you persist with your false gods?~ [FANATM04]
+@210  = ~I've seen just about enough of you.~ [HVILLF03]
+@211  = ~I'll have you dead!~ [HVILLF05]
+@214  = ~There are many ways of dealing with such as you.~ [HVILLF01]
+@215  = ~You won't outlive the day.~ [HVILLF02]
+@216  = ~You'll get what you deserve right quick.~ [HVILLF04]
+@217  = ~May the gods look upon you kindly.~ [GPRIM03]
+@218  = ~Justice shall be swift and final!~ [GPRIM05]
+@221  = ~May the gods protect me!~ [GPRIM08]
+@222  = ~I welcome you with outstretched hand.~ [GPRIM01]
+@223  = ~I trust you are here in good faith.~ [GPRIM02]
+@224  = ~All of the faithful are welcome here.~ [GPRIM04]
+@225  = ~You're rather outlandish folk to be wanderin' 'round here.~ [HALFL02]
+@226  = ~Nasty times are comin', I reckon.~ [HALFL01]
+@229  = ~Queer things have been afoot lately.~ [HALFL03]
+@230  = ~I wish I had my old tobacco pipe.~ [HALFL04]
+@231  = ~Prepare to be eviscerated, fool.~ [HVILLM01]
+@232  = ~Another time, another place!~ [HVILLM08]
+@233  = ~Plant a blade in your innards, I will!~ [HVILLM05]
+@236  = ~Care to dance?~ [HVILLM02]
+@237  = ~This will be a slow and painful process.~ [HVILLM03]
+@238  = ~You will suffer... oh yes.~ [HVILLM04]
+@239  = ~And who might you be?~ [PEASF301]
+@242  = ~What does your kind expect to find here?~ [PEASF305]
+@243  = ~Well, I certainly don't like the look of you.~ [PEASF306]
+@244  = ~*sigh* I am a simple woman.~ [PEASF205]
+@247  = ~*sigh* It's been a tough year, but things are bound to improve.~ [PEASF203]
+@248  = ~I've many things to do before the sun sets, and mouths to feed as well.~ [PEASF204]
+@249  = ~I say, do you have nothin' better t' do?!~ [PEASF206]
+@250  = ~Declare yourself!~ [SOLM01]
+@251  = ~I'll test your mettle with cold steel!~ [SOLM05]
+@254  = ~Do not disturb my duties.~ [SOLM02]
+@255  = ~Be merry, friend!~ [PEASM201]
+@258  = ~Greetings and good business.~ [PEASM202]
+@259  = ~Oh! A vagrant. Yes, we need more of these.~ [NOBFE206]
+@262  = ~I am a lady of refinement, and you shall treat me as such, I am sure.~ [NOBFE201]
+@263  = ~You are a stranger to this place? I do not think I have seen you on the streets ere now.~ [NOBFE202]
+@264  = ~Stand where you're at, peasant.~ [NOBFE203]
+@265  = ~It is practically beneath me to address you. Hmph!~ [NOBFE204]
+@266  = ~Sune's patience, not another one.~ [NOBMA205]
+@269  = ~I trust all is well?~ [NOBMA201]
+@270  = ~You seem worthy enough.~ [NOBMA202]
+@271  = ~I'll heed no churlishness, peasant.~ [NOBMA203]
+@272  = ~I trust you are aware of whom you're dealing with.~ [NOBMA204]
+@273  = ~Ah ha ha ha ha ha!~ [DAVAE04]
+@274  = ~Die, insolent whelps!~ [DAVAE03]
+@275  = ~Your efforts are futile!~ [DAVAE05]
+@276  = ~Tremble before the might of my sorcery!~ [DAVAE06]
+@277  = ~Your feeble skills are no match for my magic!~ [DAVAE07]
+@280  = ~You meddling fools, your victory shall be short lived.~ [DAVAE02]
+@281  = ~You look like a good enough sort.~ [PEASF01]
+@282  = ~Somebody help me!~ [PEASF09]
+@285  = ~I thank the gods every day for the good things in me life.~ [PEASF02]
+@286  = ~Excuse me, I have only me simple business...~ [PEASF03]
+@287  = ~I am no one of importance...~ [PEASF04]
+@288  = ~Good day to you.~ [GNMAL02]
+@289  = ~Justice shall be swift and final!~ [GNMAL03]
+@292  = ~You are welcome here.~ [GNMAL01]
+@293  = ~Mmmm, yes?~ [GNOMEM03]
+@294  = ~Back off! Yer kneecaps are at me mercy!~ [GNOMEM05]
+@297  = ~YAIEE! RUN! RUN!~ [GNOMEM08]
+@298  = ~You... you wouldn't hurt a gnome, would you?~ [GNOMEM02]
+@300  = ~Who're you?~ [CHILM01]
+@301  = ~Don't hurt me!~ [CHILM07]
+@304  = ~You ain't from around here! I knows it!~ [CHILM02]
+@305  = ~Wow, an adventurer!~ [CHILM03]
+@306  = ~I didn't do anything.~ [CHILM04]
+@307  = ~You are more than welcome in my sight.~ [GPRIF01]
+@308  = ~You are an affront to all I believe in!~ [GPRIF05]
+@311  = ~Fiend! Fiend!~ [GPRIF08]
+@312  = ~You have my greetings, faithful one.~ [GPRIF02]
+@313  = ~My god protects me and watches us all.~ [GPRIF03]
+@314  = ~I am here to serve.~ [GPRIF04]
+@315  = ~Oh... hullo.~ [PEASM303]
+@318  = ~I must flee!~ [PEASM309]
+@319  = ~Does I look like I have time for a gab?~ [PEASM304]
+@320  = ~A bloke can't walk five feet these days without someone hitting him up.~ [PEASM305]
+@321  = ~Say yer piece and keep moving.~ [PEASM306]
+@322  = ~You've fine enough garments! Why are ya botherin' me?~ [PEASF06]
+@323  = ~I... I have nothing you wish!~ [PEASM05]
+@326  = ~Aahh! Run!~ [PEASM09]
+@327  = ~I'll trade you a few words, sure enough.~ [PEASM03]
+@328  = ~Hmph! As if I had nothing better to do.~ [PEASM04]
+@329  = ~Nothing's worse than a cheatin' kobold.~ [PEASM06]
+@330  = ~Um... hello.~ [CHILF03]
+@333  = ~Aahh!~ [CHILF07]
+@334  = ~Ye're a stranger!~ [CHILF01]
+@335  = ~I don't knows you at all. You don't live here.~ [CHILF02]
+@336  = ~I'm not supposed to talk to strangers.~ [CHILF04]
+@337  = ~Is this important?~ [PEASM203]
+@339  = ~As long as ye're not the taxman...~ [PEASM204]
+@340  = ~Good business to ye.~ [PEASM01]
+@341  = ~Ahh, it's a fine enough day, isn't it?~ [PEASM02]
+@342  = ~Hmm?~ [GENMG03]
+@344  = ~Yeah?~ [GENFG01]
+@346  = ~You need somethin', stranger?~ [GENMG04]
+@349  = ~ 'Ello, pal!~ [GENMG13]
+@350  = ~Bow down before the gods and beg for mercy!~ [EPRIM03]
+@353  = ~Mercy! Have mercy!~ [EPRIM08]
+@354  = ~Greetings. Your power impresses.~ [EPRIM01]
+@355  = ~What do you want amongst the faithful?~ [EPRIM02]
+@356  = ~The gods are unforgiving, fool!~ [EPRIM04]
+@357  = ~Yes?~ [GENMG01]
+@358  = ~Greetings, adventurers.~ [FELFF01]
+@361  = ~The fair folk will inherit the earth.~ [FELFF02]
+@362  = ~Few of the fair folk concern themselves with the affairs of the state.~ [FELFF03]
+@363  = ~Ha ha ha ha ha! Haa ha ha! *burp* ...eh, sorry�'scuse me!~ [DRUNK01]
+@366  = ~Blaaarrrghghgh... *cough* Corn? When did I eats corn...?~ [DRUNK02]
+@367  = ~W-whoa... Why're the streets so wobbly?~ [DRUNK03]
+@368  = ~I needs some ale. *burp* Eh...~ [DRUNK04]
+@369  = ~I trust that all is well.~ [GDWARF01]
+@370  = ~Beware, or ye'll be soon hangin' from yer tongue!~ [GDWARF03]
+@371  = ~I'll test your mettle with cold steel!~ [GDWARF04]
+@374  = ~I've no time to speak to one such as you.~ [GDWARF02]
+@375  = ~Stay back, or you'll regret it.~ [RUFFIA01]
+@376  = ~All right! You and me! Let's go!~ [RUFFIA05]
+@379  = ~I can break an arm or a leg fer a copper or two.~ [RUFFIA02]
+@380  = ~Ahhh, be off with ya.~ [RUFFIA03]
+@381  = ~Ye're a piece o' iron, you are.~ [RUFFIA04]
+@382  = ~Speak, if you will.~ [STHMA02]
+@383  = ~Beg for death, and I'll make it quick!~ [STHMA05]
+@386  = ~Must... return to the shadows!~ [STHMA09]
+@387  = ~Explain your intent, and make it good!~ [STHMA01]
+@388  = ~Is there something you seek?~ [STHMA03]
+@389  = ~Do not question the matron mothers.~ [DRMEN101]
+@390  = ~The drow rule supreme!~ [DRMEN107]
+@393  = ~The path to supremacy for a male lies either in the bedchamber or the books of the mages.~ [DRMEN102]
+@394  = ~To walk apart from House and Queen is to walk into the grave.~ [DRMEN103]
+@395  = ~At your command!~ [DRMEN104]
+@396  = ~Through destiny and might, we shall rule supreme!~ [DRMEN101]
+@397  = ~In the name of Lolth, we fight!~ [DRSOL107]
+@400  = ~Through destiny and might, we shall rule supreme!~ [DRSOL101]
+@401  = ~At your command!~ [DRSOL102]
+@402  = ~Victory for the Spider Queen!~ [DRSOL103]
+@403  = ~The best surfacer is a dead surfacer!~ [DRSOL104]
+@404  = ~Don't touch me! I might catch something.~ [NOBLE04]
+@407  = ~A man shouldn't speak to his better unless spoken to first.~ [NOBLE01]
+@408  = ~No time to chitchat.~ [NOBLE02]
+@409  = ~Away with you, beggar.~ [NOBLE03]
+@410  = ~Hello there.~ [GENFG12]
+@411  = ~Hullo.~ [GENMG08]
+@412  = ~Hello there.~ [GENMG05]
+@416  = ~Troubled times are upon us.~ [ELFFF02]
+@419  = ~The fair folk rarely have time for small talk.~ [ELFFF01]
+@420  = ~Soon we shall all be together upon Evermeet.~ [ELFFF03]
+@421  = ~Helm sees all. Know that and be judged!~ [HELMP01]
+@424  = ~The Vigilant One knows of all your sins.~ [HELMP02]
+@425  = ~Somethin' on your mind?~ [GENMG11]
+@426  = ~I've a blade with your name on it.~ [GENMT03]
+@427  = ~If you start runnin', you might just make it home alive.~ [GENMT08]
+@428  = ~You said something?~ [GENMG07]
+@429  = ~Hi, friend.~ [GENMG06]
+@430  = ~Something you require?~ [GENFG07]
+@431  = ~A pleasure it is to meet ya.~ [DWRFF01]
+@434  = ~A stout hammer will fix most any bandit.~ [DWRFF02]
+@435  = ~You canna get better than the stability stone walls provide.~ [DWRFF03]
+@436  = ~Never had rats, no sirree.~ [INNKE02]
+@439  = ~You're not mercenaries, are ye? I hate those moneygrubbin' scum.~ [INNKE04]
+@440  = ~I love money! Yes, I do.~ [MERCH04]
+@441  = ~Yeah, mate?~ [GENMG12]
+@442  = ~This is a dark time for us all, but there is hope.~ [DEMIN01]
+@443  = ~For the heart of us all!~ [DEMIN03]
+@446  = ~What can it be now?~ [GGMAL01]
+@447  = ~I'll wipe your filthy lineage right out of the realms!~ [GGMAL03]
+@448  = ~You deserve no less than death... and no more.~ [GGMAL04]
+@451  = ~Let us speak and be done with this!~ [GGMAL02]
+@452  = ~I trust all is well?~ [GNMAL201]
+@453  = ~Back off, you, or face the consequences!~ [GNMAL202]
+@454  = ~Away with you!~ [GNMAL203]
+@457  = ~You are nothing before my god!~ [FANATF01]
+@458  = ~You are dust before the True God!~ [FANATF05]
+@462  = ~Pray and come with us and be found worthy.~ [FANATF02]
+@463  = ~We will be saved in the End.~ [FANATF03]
+@464  = ~I am one with the mighty!~ [FANATF04]
+@465  = ~The Seldarine watch over us... Victory shall be ours this day.~ [ELSOL104]
+@468  = ~Yes, friend?~ [GENFG05]
+@469  = ~This place will be your tomb.~ [UNEARM01]
+@470  = ~I will be pleased to carve out your heart.~ [UNEARM05]
+@473  = ~You should not have come to this place.~ [UNEARM02]
+@474  = ~You'll suffer before you die, I promise.~ [UNEARM03]
+@475  = ~This is your end.~ [UNEARM04]
+@477  = ~An eternity of torture for you, fool!~ [DEMONV05]
+@480  = ~What business have I with a mortal?~ [DEMONV02]
+@481  = ~Come then... yes, let us speak.~ [DEMONV03]
+@482  = ~If you prove useful, you may live.~ [DEMONV04]
+@483  = ~Your life means nothing to me.~ [GENFT06]
+@484  = ~As always, the pleasure is mine.~ [GNFEM01]
+@485  = ~You shall pay for this, and pay dearly.~ [GNFEM03]
+@486  = ~Suffer!~ [GNFEM04]
+@489  = ~Do not anger me.~ [GNFEM02]
+@490  = ~Speak up, speak up!~ [GENMG09]
+@491  = ~I need a swig o' some strong, dwarven ale.~ [DWARF02]
+@492  = ~By Moradin's hammer!~ [DWARF01]
+@493  = ~Me temper's bad enough without ye botherin' me.~ [DWARF03]
+@494  = ~Your chatterin's startin' to wear on me nerves.~ [DWARF04]
+@495  = ~Can I assist you?~ [GENFG06]
+@496  = ~Oh, I'm so tired.~ [MINER01]
+@499  = ~Leave us be... 'tis much work to be done.~ [MINER02]
+@500  = ~*cough* *cough*... *cough* I think I'm coughing up blood.~ [MINER03]
+@501  = ~SO dark down here.~ [MINER04]
+@502  = ~I like the look of you. Welcome!~ [EPRIF01]
+@503  = ~Your death will come slow and painful.~ [EPRIF05]
+@506  = ~Why do you disturb my meditations?~ [EPRIF02]
+@507  = ~Perhaps the gods have need of you.~ [EPRIF03]
+@508  = ~Please the gods or die as a worm!~ [EPRIF04]
+@509  = ~Your death lies here, fool!~ [UNEARF01]
+@510  = ~Now the time has come for you to pay!~ [UNEARF05]
+@511  = ~This is your end, I assure you.~ [UNEARF02]
+@512  = ~Death will only be the beginning for you...~ [UNEARF03]
+@513  = ~I shall enjoy gutting you like the dog you are...~ [UNEARF04]
+@516  = ~Who you are, know not I.~ [GNOME03]
+@519  = ~I am happy not. No, I'm not.~ [GNOME01]
+@520  = ~Speak, manling. Speak quick!~ [HUMAN03]
+@521  = ~RAAAHHHHR! You die! You die!~ [HUMAN05]
+@522  = ~I will crush you, puny one!~ [HUMAN06]
+@525  = ~Uhh? What you want?~ [HUMAN01]
+@526  = ~I watching you!~ [HUMAN02]
+@527  = ~You and my kind not get along!~ [HUMAN04]
+@528  = ~Whatchu want?~ [GENMG10]
+@529  = ~I got some cheap beer for ya.~ [BARTN02]
+@532  = ~Urgh... I gotta stop dippin' into me own ale.~ [BARTN03]
+@533  = ~I got me some nice lookin' waitresses, don't I? Eh he hehehe...~ [BARTN04]
+@534  = ~You want some whiskey?~ [BARTN01]
+@535  = ~No free creature animation slot found.~
+@536  = ~%class%~
+@537  = ~%label%~
+@538  = ~– May only use weapons available to the Thief class (except two-handed).~
+@539  = ~– May only use weapons available to the Thief class (except bows and crossbows).~
+@540  = ~%monk_text%~
+@541  = ~This wardstone is a virtual area of darkness and seems to suck the very light from space around it. The shape of the stone is hard to discern, cloaked in shadow as it is. When raised overhead, it floats around the cranium of the user and distorts their image, making them more difficult to target.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +2, +4 vs. missile attacks
+- Save vs. Death: +2
+- Save vs. Breath: +2
+- Save vs. Wand: +2
+- Protects against critical hits
+
+Weight: 1~
+@542  = ~The three holy symbols connected to form this disc, the Symbol of Amaunator. Remnants of the lost god's power is held within it, and it may be used to call upon a sunray once per day.
+
+STATISTICS:
+
+Charge abilities:
+- Sunray once per day
+
+Weight: 1~
+@543  = ~This is the reconstructed mask of King Strohm the Third. When you place it on your face, the entire world becomes tinted with odd colors. Though disorienting at first, wearing the mask may allow the wearer to discern the truth of all things once per day.
+
+STATISTICS:
+
+Charge abilities:
+- True Sight once per day
+
+Equipped abilities:
+- Armor Class: +1
+
+Weight: 1~
+@544  = ~HUMANS: Humans are the predominant race in Faerûn. Humans rule most of the significant empires and kingdoms in the realms. They are the most social and tolerant of races, excepting perhaps the halflings. Humans are the most adaptable of the common races, and as such may advance as any class and are also the only race that can dual-class. Humans may not multi-class.
+
+Humans have the following traits:
+– Quick To Master: Humans gain a +5% bonus to experience gained from all sources.
+– Skilled: Humans receive an additional +5% bonus to all thieving skills and +2 bonus to minimum rolls to all ability scores.~
+@545  = ~Humans may not multi-class.~
+@546  = ~%text%~
+@547  = ~ELVES: Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).
+
+Elves have the following traits:
+– Hardiness vs. Enchantments: Elves gain a +2 bonus to Saving Throws vs. Enchantment spells and a 90% resistance against charm and sleep magics.
+– Infravision.
+– Elven Proficiency: Elves gain a +2 bonus to hit with bows, short swords, and long swords.
+– Thieving Skills: Elves gain a +15% bonus to Move Silently, a +10% bonus to Find Traps and Hide in Shadows, and a +5% bonus to Pick Pockets and Detect Illusions.
+– +1 Dexterity, -1 Constitution.~
+@548  = ~HALF-ELVES: Half-elves are a mix of human and elven blood. They are handsome folk, with good features from each of their parent races. A half-elf has the curiosity, inventiveness, and ambition of their human ancestors and the refined senses, love of nature, and artistic tastes of their elven ancestors.
+
+Half-elves have the following traits:
+– Minor Hardiness vs. Enchantments: Half-elves gain a +1 bonus to Saving Throws vs. Enchantment spells and a 30% resistance against charm and sleep magics.
+– Infravision.
+– Thieving Skills: Half-elves gain a +15% bonus to Pick Pockets, a +10% bonus to Hide In Shadows and a +5% bonus to Find Traps.
+– Amiable: Half-elves gain a +4 bonus to minimum Charisma rolls.~
+@549  = ~DWARVES: Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.
+
+Dwarves have the following traits:
+– Dwarven Hardiness: Dwarves gain a +1 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell, with additional bonuses based on Constitution.
+– Infravision.
+– Dwarven Proficiency: Dwarves gain a +2 bonus to hit with axes and warhammers.
+– Small Stature: Dwarves gain a +2 bonus to Armor Class and Saving Throws vs. giant creatures, but a -2 penalty to hit with all two-handed melee weapons.
+– Thieving Skills: Dwarves gain a +20% bonus to Find Traps, +10% bonus to Open Locks and Set Traps, and a +5% bonus to Detect Illusions.
+– +1 Constitution, -1 Dexterity, -1 Charisma.~
+@550  = ~HALFLINGS: Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.
+
+Halflings have the following traits:
+– Halfling Hardiness: Halflings gain a +1 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell, with additional bonuses based on Constitution.
+– Halfling Proficiency: Halflings gain a +2 bonus bonus to hit with with slings, darts and daggers.
+– Small Stature: Halflings gain a +2 bonus to Armor Class and Saving Throws vs. giant creatures, but a -2 penalty to hit with all two-handed melee weapons.
+– Thieving Skills: Halflings gain a +15% bonus to Pick Pockets, Open Locks and Hide in Shadows, a +10% bonus to Find Traps and Move Silently, and a +5% bonus to Set Traps.
+– +1 Dexterity, -1 Strength.~
+@551  = ~GNOMES: Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).
+
+Gnomes have the following traits:
+– Gnomish Hardiness: Gnomes gain a +1 bonus to Saving Throws vs. Rod/Staff/Wand and vs. Spell, with additional bonuses based on Constitution.
+– Infravision.
+– Spell Focus (Illusion): Gnome mages will always specialize in the Illusion school, even when multi-classed. They receive an additional +2 bonus to Saving Throws vs. Illusions.
+– Small Stature: Gnomes gain a +2 bonus to Armor Class and Saving Throws vs. giant creatures, but a -2 penalty to hit with all two-handed melee weapons.
+– Thieving Skills: Gnomes receive a +15% bonus to Detect Illusions, a +10% bonus to Open Locks and Find Traps, and a +5% bonus to Hide in Shadows, Move Silently and Set Traps.
+– +1 Intelligence, -1 Wisdom.~
+@552  = ~HALF-ORCS: Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the lands of Amn, half-orcs are tolerated, as unlike in the north the people of Amn haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.
+
+Half-orcs have the following traits:
+– Infravision.
+– Great Fortitude: Half-orcs gain a +2 bonus to Saving Throws vs. Paralysis/Poison/Death.
+– Orcish Proficiency: Half-orcs gain a +2 bonus to hit with two-handed melee weapons.
+– +1 Strength, +1 Constitution, -1 Intelligence, -1 Charisma.~
+@553  = ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+– Xan gains an additional proficiency point in Long Swords while wielding this weapon
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+@554  = ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A Moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade, anyone else who tries will find themselves unable to lift the sword. This particular Moonblade gives resistance to fire and gives its user a bonus to his armor class. It now also protects its wielder from silence, and grants him invisibility.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+– Invisibility
+– Vocalize
+– Xan gains an additional proficiency point in Long Swords while wielding this weapon
+
+THAC0: +4
+Damage:  1d8+4 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type:  1-handed
+
+Weight: 4~
+@555  = ~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A Moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade, anyone else who tries will find themselves unable to lift the sword. This particular Moonblade gives resistance to fire and gives its user a bonus to his armor class. It now also protects its wielder from silence, and grants him an extra edge in battle.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+– Vocalize
+– Xan gains an additional proficiency point in Long Swords while wielding this weapon
+
+Combat abilities:
+– 1 extra attack per round
+
+THAC0: +4
+Damage:  1d8+4 (slashing)
+Speed Factor: 0
+Proficiency Type: Long Sword
+Type:  1-handed
+
+Weight: 4~
+@556  = ~aasimar~
+@557  = ~Aasimar~
+@558  = ~ankheg~
+@559  = ~basilisk~
+@560  = ~carrion crawler~
+@561  = ~dog~
+@562  = ~Dog~
+@563  = ~doppleganger~
+@564  = ~ettercap~
+@565  = ~ghoul~
+@566  = ~gibberling~
+@567  = ~gnoll~
+@568  = ~hobgoblin~
+@569  = ~kobold~
+@570  = ~ogre~
+@571  = ~skeleton~
+@572  = ~spider~
+@573  = ~wolf~
+@574  = ~wyvern~
+@575  = ~slime~
+@576  = ~fairy~
+@577  = ~Fairy~
+@578  = ~fiend~
+@579  = ~lycanthrope~
+@580  = ~beholder~
+@581  = ~mind flayer~
+@582  = ~vampire~
+@583  = ~vampyre~
+@584  = ~Vampyre~
+@585  = ~otyugh~
+@586  = ~rakshasa~
+@587  = ~troll~
+@588  = ~umber hulk~
+@589  = ~sahuagin~
+@590  = ~shadow~
+@591  = ~spectre~
+@592  = ~Spectre~
+@593  = ~wraith~
+@594  = ~Wraith~
+@595  = ~kuo-toa~
+@596  = ~mist~
+@597  = ~Mist~
+@598  = ~cat~
+@599  = ~Cat~
+@600  = ~duergar~
+@601  = ~Duergar~
+@602  = ~mephit~
+@603  = ~mimic~
+@604  = ~Mimic~
+@605  = ~imp~
+@606  = ~giant~
+@607  = ~orc~
+@608  = ~golem~
+@609  = ~elemental~
+@610  = ~dragon~
+@611  = ~genie~
+@612  = ~zombie~
+@613  = ~statue~
+@614  = ~Statue~
+@615  = ~lich~
+@616  = ~rabbit~
+@617  = ~Rabbit~
+@618  = ~githyanki~
+@619  = ~yuan-ti~
+@620  = ~demilich~
+@621  = ~Demilich~
+@622  = ~solar~
+@623  = ~Solar~
+@624  = ~anti-solar~
+@625  = ~Anti-solar~
+@626  = ~planetar~
+@627  = ~Planetar~
+@628  = ~dark planetar~
+@629  = ~Dark Planetar~
+@630  = ~beetle~
+@631  = ~Beetle~
+@632  = ~goblin~
+@633  = ~lizardfolk~
+@634  = ~myconid~
+@635  = ~bugbear~
+@636  = ~Bugbear~
+@637  = ~feyr~
+@638  = ~Feyr~
+@639  = ~hook horror~
+@640  = ~Hook Horror~
+@641  = ~shrieker~
+@642  = ~Shrieker~
+@643  = ~salamander~
+@644  = ~bird~
+@645  = ~Bird~
+@646  = ~minotaur~
+@647  = ~drider~
+@648  = ~simulacrum~
+@649  = ~Simulacrum~
+@650  = ~harpy~
+@651  = ~Harpy~
+@652  = ~spectral undead~
+@653  = ~Spectral Undead~
+@654  = ~shambling mound~
+@655  = ~chimera~
+@656  = ~Chimera~
+@657  = ~half-dragon~
+@658  = ~Half-dragon~
+@659  = ~yeti~
+@660  = ~keg~
+@661  = ~Keg~
+@662  = ~will-o'-wisp~
+@663  = ~Will-o'-Wisp~
+@664  = ~mammal~
+@665  = ~Mammal~
+@666  = ~reptile~
+@667  = ~Reptile~
+@668  = ~treant~
+@669  = ~Treant~
+@670  = ~ettin~
+@671  = ~sword~
+@672  = ~Sword~
+@673  = ~bow~
+@674  = ~Bow~
+@675  = ~crossbow~
+@676  = ~Crossbow~
+@677  = ~staff~
+@678  = ~Staff~
+@679  = ~sling~
+@680  = ~Sling~
+@681  = ~mace~
+@682  = ~Mace~
+@683  = ~dagger~
+@684  = ~Dagger~
+@685  = ~spear~
+@686  = ~Spear~
+@687  = ~fist~
+@688  = ~Fist~
+@689  = ~WARNING %SOURCE_FILESPEC% - pattern not found:%LNL%%pattern%~
+@690  = ~WARNING %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s) instead of %num%:%LNL%%pattern%~
+@691  = ~Patching %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s):%LNL%%pattern% => %string%~
+@692  = ~INTELLIGENCE: Intelligence measures a character's memory, reasoning, and learning ability. It is the prime requisite of the Mage.
+
+Bonus spell slots for Mages:
+
+17: +1 Level 1, 2
+18: +1 Level 1, 2, 3, 4, 5
+19: +1 Level 3, 4, 6
+20: +1 Level 1, 2, 7
+21: +1 Level 3, 4, 5, 6, 8
+22: +1 Level 1, 2, 5, 7, 9
+23: +1 Level 1, 3, 6, 8
+24: +1 Level 2, 3, 4, 5, 6, 7, 9
+25: +1 Level 4, 5, 7, 8, 9
+
+Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of <PRO_HISHER> class.
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+@693  = ~WISDOM: Wisdom measures a character's enlightenment, judgment, and common sense. It is the prime requisite of divine spellcasters.
+
+Bonus spell slots for Clerics and Druids:
+
+13: +1 Level 1
+14: +1 Level 1
+15: +1 Level 2
+16: +1 Level 2
+17: +1 Level 3
+18: +1 Level 4
+19: +1 Level 1, 4
+20: +1 Level 2, 4
+21: +1 Level 3, 5
+22: +1 Level 4, 5
+23: +2 Level 5
+24: +2 Level 6
+25: +1 Level 6, 7
+
+Bonus spell slots for Rangers and Paladins:
+
+14-15: +1 Level 1
+16-17: +1 Level 2
+18: +1 Level 3
+19: +1 Level 1, 4
+20: +1 Level 2
+21: +1 Level 3
+22: +1 Level 4
+23-24: +1 Level 1, 2
+25: +1 Level 3, 4
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+@694  = ~CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability is important to the Bard, Paladin, Sorcerer and Shaman.
+
+Bonus spell slots for Sorcerers:
+
+17: +1 Level 1, 2
+18: +1 Level 1, 2, 3, 4, 5
+19: +1 Level 3, 4, 6
+20: +1 Level 1, 2, 7
+21: +1 Level 3, 4, 5, 6, 8
+22: +1 Level 1, 2, 5, 7, 9
+23: +1 Level 1, 3, 6, 8
+24: +1 Level 2, 3, 4, 5, 6, 7, 9
+25: +1 Level 4, 5, 7, 8, 9
+
+Bonus spell slots for Bards:
+
+17: +1 Level 1, 2
+18: +1 Level 1, 2, 3
+19: +1 Level 4
+20: +1 Level 1, 5
+21: +1 Level 2, 3
+22: +1 Level 3, 4, 6
+23: +1 Level 4, 5
+24: +1 Level 5, 6
+25: +1 Level 6
+
+Bonus spell slots for Shamans:
+
+17: +1 Level 1, 2
+18: +1 Level 1, 2, 3, 4, 5
+19: +1 Level 3, 4, 6
+20: +1 Level 1, 2, 7
+21: +1 Level 3, 4, 5, 6
+22: +1 Level 1, 2, 5, 7
+23: +1 Level 1, 3, 6
+24: +1 Level 2, 3, 4, 5, 6, 7
+25: +1 Level 4, 5, 7
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~

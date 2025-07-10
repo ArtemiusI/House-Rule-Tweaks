@@ -969,7 +969,7 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
   READ_2DA_ENTRIES_NOW r2en num_col
   c = 0
   newrow = r2en + 1
-  SPRINT newrow "fl#row%newrow%"
+  SPRINT newrow @69
   FOR (i=f_MinLevel;i < num_col AND i <= f_MaxLevel;i += f_Increment) BEGIN
     SPRINT cell ""
     FOR (j = 0;!"%cell%" STRING_EQUAL_CASE "****" AND j < r2en;++j) BEGIN
@@ -980,17 +980,17 @@ DEFINE_PATCH_FUNCTION set_clab_2da_entries INT_VAR f_MaxLevel = 50 f_Increment =
     END
     PATCH_IF !"%cell%" STRING_EQUAL_CASE "****" BEGIN
       FOR (j = c;j < i - 1;++j) BEGIN //- 1 because that's where we'd want our entry
-        SPRINT newrow "%newrow% ****"
+        SPRINT newrow @71
         ++c
       END
-      SPRINT newrow "%newrow% %f_Entry%"
+      SPRINT newrow @72
       ++c
     END
   END
   SET_2DA_ENTRIES_NOW s2el num_col
   PATCH_IF c > 0 BEGIN
     FOR (i = c;i < num_col - 1;++i) BEGIN //- 1 because num_col includes the row name
-      SPRINT newrow "%newrow% ****"
+      SPRINT newrow @71
     END
     INSERT_2DA_ROW r2en num_col "%newrow%"
   END

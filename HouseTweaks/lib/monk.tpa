@@ -71,7 +71,7 @@ END
 ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x6000 slotMax = 0x6999 RET slot END
   ACTION_IF (slot <= 0) BEGIN
-    FAIL ~No free creature animation slot found.~ // No free creature animation slot found.
+    FAIL @535 // No free creature animation slot found.
   END
 
   LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
@@ -88,7 +88,7 @@ END
 ACTION_IF (NOT GAME_IS_BGEE) BEGIN
   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x6000 slotMax = 0x6999 RET slot END
   ACTION_IF (slot <= 0) BEGIN
-    FAIL ~No free creature animation slot found.~ // No free creature animation slot found.
+    FAIL @535 // No free creature animation slot found.
   END
 
   LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
@@ -162,7 +162,7 @@ DEFINE_ACTION_FUNCTION mod_monk_profs BEGIN
                   monk
 
 	BEGIN
-		OUTER_SPRINT $monks("%count%") "%class%"
+		OUTER_SPRINT $monks("%count%") @536
 		OUTER_SET ++count
 	END
 
@@ -172,7 +172,7 @@ DEFINE_ACTION_FUNCTION mod_monk_profs BEGIN
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
 			PATCH_IF class = 20 BEGIN // monk
-				SPRINT $monks("%count%") "%label%"
+				SPRINT $monks("%count%") @537
 				++count
 			END
 		END
@@ -214,14 +214,14 @@ ACTION_FOR_EACH description IN
 //MONK
         PATCH_IF "%row_name%" STRING_EQUAL_CASE "MONK" BEGIN
           READ_2DA_ENTRY index 4 col_count monk_desc
-          SPRINT old_monk ~– May only use weapons available to the Thief class (except two-handed).~
-          SPRINT new_monk ~– May only use weapons available to the Thief class (except bows and crossbows).~
+          SPRINT old_monk @538
+          SPRINT new_monk @539
           GET_STRREF %monk_desc% monk_text
-          INNER_PATCH_SAVE monk_text ~%monk_text%~ BEGIN
+          INNER_PATCH_SAVE monk_text @540 BEGIN
             REPLACE_TEXTUALLY ~%old_monk%~ ~%new_monk%~
           END
           INNER_ACTION BEGIN
-            STRING_SET_EVALUATE ~%monk_desc%~ ~%monk_text%~
+            STRING_SET_EVALUATE ~%monk_desc%~ @540
           END
 		END
       END

@@ -1,12 +1,12 @@
 I_C_T VAI 6 c0VAI
-== VAI ~If you still wish to turn in bandit scalps, you may speak with Officer Zelas. He will be assigned to Beregost in my stead.~
+== VAI @0
 DO ~CreateCreature("c0zelas",[685.470],S)
 ActionOverride("c0zelas",MoveToPoint([662.891]))~
 END
 
 EXTEND_TOP BRAGE 4
-++ ~Remain here, Brage. We shall return to Nashkel once I am prepared.~ EXTERN BRAGE brage1
-++ ~Then let's go immediately.~ DO ~DestroyItem("SW2H01")
+++ @1 EXTERN BRAGE brage1
+++ @2 DO ~DestroyItem("SW2H01")
 GiveItem("SW2H03",LastTalkedToBy)
 GiveItem("POTN12",LastTalkedToBy)
 AddexperienceParty(1000)
@@ -17,15 +17,15 @@ StartCutSceneEx("Bragecut",FALSE)~ EXIT
 END
 
 CHAIN BRAGE brage1
-~Tarry not, I beg of you. I can hardly bear the shame of my actions for another moment.~
+@3
 DO ~SetGlobal("c0bragewait","GLOBAL",1)~
 EXIT
 
 CHAIN IF WEIGHT #-1
 ~Global("c0bragewait","GLOBAL",1)~ THEN BRAGE brage2
-~Are we to return to Nashkel? Please, please! I must face justice for my actions with whatever honor I have left, and I can wait no longer!~
+@4
 END
-++ ~Yes, let's go immediately.~ DO ~DestroyItem("SW2H01")
+++ @5 DO ~DestroyItem("SW2H01")
 GiveItem("SW2H03",LastTalkedToBy)
 GiveItem("POTN12",LastTalkedToBy)
 AddexperienceParty(1000)
@@ -34,23 +34,23 @@ SetGlobal("c0bragewait","GLOBAL",2)
 ClearAllActions()
 StartCutSceneMode()
 StartCutSceneEx("Bragecut",FALSE)~ EXIT
-++ ~Not yet.~ EXIT
+++ @6 EXIT
 
 BEGIN C0ZELAS
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN a1
-SAY ~Greetings, <CHARNAME>. Officer Vai has spoken highly of your character, and I am to take over her duties here in Beregost. If you wish to exchange any more bandit scalps in the future, speak to me.~
-+ ~PartyHasItem("MISC86")~ + ~I have bandit scalps to turn in.~ DO ~StartStore("STOVAI2",LastTalkedToBy(Myself))~ EXIT
-++ ~Farewell.~ EXIT
+SAY @7
++ ~PartyHasItem("MISC86")~ + @8 DO ~StartStore("STOVAI2",LastTalkedToBy(Myself))~ EXIT
+++ @9 EXIT
 END
 
 IF ~!NumTimesTalkedTo(0)~ THEN BEGIN a2
-SAY ~Good <DAYNIGHT> to you, <CHARNAME>. Do you need anything?~
-+ ~PartyHasItem("MISC86")~ + ~I have bandit scalps to turn in.~ DO ~StartStore("STOVAI2",LastTalkedToBy(Myself))~ EXIT
-++ ~Not at the moment.~ EXIT
+SAY @10
++ ~PartyHasItem("MISC86")~ + @8 DO ~StartStore("STOVAI2",LastTalkedToBy(Myself))~ EXIT
+++ @11 EXIT
 END
 
 IF WEIGHT #-1 ~ReputationLT(LastTalkedToBy,5)~ THEN BEGIN a3
-SAY ~You have some nerve showing your face around here. Your reputation precedes you, <CHARNAME>. In the name of the Flaming Fist, you are sentenced to death!~
+SAY @12
 IF ~~ DO ~Enemy()~ EXIT
 END

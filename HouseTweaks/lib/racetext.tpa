@@ -1,373 +1,373 @@
 ACTION_IF GAME_IS ~IWDEE~ THEN BEGIN
 LAF ADD_IDS_ENTRY INT_VAR minValue = 1 maxValue = 255 preferredValue = 185 STR_VAR idsFile = "race.ids" identifier = "AASIMAR" RET value END
 
-OUTER_SET aasimar_lcase = RESOLVE_STR_REF(~aasimar~)
-OUTER_SET aasimar_ucase = RESOLVE_STR_REF(~Aasimar~)
+OUTER_SET aasimar_lcase = RESOLVE_STR_REF(@556)
+OUTER_SET aasimar_ucase = RESOLVE_STR_REF(@557)
 APPEND ~racetext.2da~ ~AASIMAR   185        %aasimar_lcase%       -1         %aasimar_ucase%          -1~ UNLESS ~AASIMAR~
 APPEND ~racefeat.2da~ ~AASIMAR   1~ UNLESS ~AASIMAR~
 
 END
 
-OUTER_SET ankheg_lcase = RESOLVE_STR_REF(~ankheg~)
-OUTER_SET ankheg_ucase = RESOLVE_STR_REF(~Ankheg~)
+OUTER_SET ankheg_lcase = RESOLVE_STR_REF(@558)
+OUTER_SET ankheg_ucase = RESOLVE_STR_REF(@73)
 APPEND ~racetext.2da~ ~ANKHEG   101        %ankheg_lcase%       -1         %ankheg_ucase%          -1~ UNLESS ~ANKHEG~
 
-OUTER_SET basilisk_lcase = RESOLVE_STR_REF(~basilisk~)
-OUTER_SET basilisk_ucase = RESOLVE_STR_REF(~Basilisk~)
+OUTER_SET basilisk_lcase = RESOLVE_STR_REF(@559)
+OUTER_SET basilisk_ucase = RESOLVE_STR_REF(@75)
 APPEND ~racetext.2da~ ~BASILISK   102        %basilisk_lcase%       -1         %basilisk_ucase%          -1~ UNLESS ~BASILISK~
 
-OUTER_SET crawler_lcase = RESOLVE_STR_REF(~carrion crawler~)
-OUTER_SET crawler_ucase = RESOLVE_STR_REF(~Carrion Crawler~)
+OUTER_SET crawler_lcase = RESOLVE_STR_REF(@560)
+OUTER_SET crawler_ucase = RESOLVE_STR_REF(@81)
 APPEND ~racetext.2da~ ~CARRIONCRAWLER   104        %crawler_lcase%       -1         %crawler_ucase%          -1~ UNLESS ~CARRIONCRAWLER~
 
-OUTER_SET dog_lcase = RESOLVE_STR_REF(~dog~)
-OUTER_SET dog_ucase = RESOLVE_STR_REF(~Dog~)
+OUTER_SET dog_lcase = RESOLVE_STR_REF(@561)
+OUTER_SET dog_ucase = RESOLVE_STR_REF(@562)
 APPEND ~racetext.2da~ ~DOG   105        %dog_lcase%       -1         %dog_ucase%          -1~ UNLESS ~DOG~
 
-OUTER_SET doppleganger_lcase = RESOLVE_STR_REF(~doppleganger~)
-OUTER_SET doppleganger_ucase = RESOLVE_STR_REF(~Doppleganger~)
+OUTER_SET doppleganger_lcase = RESOLVE_STR_REF(@563)
+OUTER_SET doppleganger_ucase = RESOLVE_STR_REF(@85)
 APPEND ~racetext.2da~ ~DOPPLEGANGER   106        %doppleganger_lcase%       -1         %doppleganger_ucase%          -1~ UNLESS ~DOPPLEGANGER~
 
-OUTER_SET ettercap_lcase = RESOLVE_STR_REF(~ettercap~)
-OUTER_SET ettercap_ucase = RESOLVE_STR_REF(~Ettercap~)
+OUTER_SET ettercap_lcase = RESOLVE_STR_REF(@564)
+OUTER_SET ettercap_ucase = RESOLVE_STR_REF(@97)
 APPEND ~racetext.2da~ ~ETTERCAP   107        %ettercap_lcase%       -1         %ettercap_ucase%          -1~ UNLESS ~ETTERCAP~
 
-OUTER_SET ghoul_lcase = RESOLVE_STR_REF(~ghoul~)
-OUTER_SET ghoul_ucase = RESOLVE_STR_REF(~Ghoul~)
+OUTER_SET ghoul_lcase = RESOLVE_STR_REF(@565)
+OUTER_SET ghoul_ucase = RESOLVE_STR_REF(@105)
 APPEND ~racetext.2da~ ~GHOUL   108        %ghoul_lcase%       -1         %ghoul_ucase%          -1~ UNLESS ~GHOUL~
 
-OUTER_SET gibberling_lcase = RESOLVE_STR_REF(~gibberling~)
-OUTER_SET gibberling_Ucase = RESOLVE_STR_REF(~Gibberling~)
+OUTER_SET gibberling_lcase = RESOLVE_STR_REF(@566)
+OUTER_SET gibberling_Ucase = RESOLVE_STR_REF(@109)
 APPEND ~racetext.2da~ ~GIBBERLING   109        %gibberling_lcase%       -1         %gibberling_Ucase%          -1~ UNLESS ~GIBBERLING~
 
-OUTER_SET gnoll_lcase = RESOLVE_STR_REF(~gnoll~)
-OUTER_SET gnoll_ucase = RESOLVE_STR_REF(~Gnoll~)
+OUTER_SET gnoll_lcase = RESOLVE_STR_REF(@567)
+OUTER_SET gnoll_ucase = RESOLVE_STR_REF(@113)
 APPEND ~racetext.2da~ ~GNOLL   110        %gnoll_lcase%       -1         %gnoll_ucase%          -1~ UNLESS ~GNOLL~
 
-OUTER_SET hobgoblin_lcase = RESOLVE_STR_REF(~hobgoblin~)
-OUTER_SET hobgoblin_ucase = RESOLVE_STR_REF(~Hobgoblin~)
+OUTER_SET hobgoblin_lcase = RESOLVE_STR_REF(@568)
+OUTER_SET hobgoblin_ucase = RESOLVE_STR_REF(@121)
 APPEND ~racetext.2da~ ~HOBGOBLIN   111        %hobgoblin_lcase%       -1         %hobgoblin_ucase%          -1~ UNLESS ~HOBGOBLIN~
 
-OUTER_SET kobold_lcase = RESOLVE_STR_REF(~kobold~)
-OUTER_SET kobold_ucase = RESOLVE_STR_REF(~Kobold~)
+OUTER_SET kobold_lcase = RESOLVE_STR_REF(@569)
+OUTER_SET kobold_ucase = RESOLVE_STR_REF(@133)
 APPEND ~racetext.2da~ ~KOBOLD   112        %kobold_lcase%       -1         %kobold_ucase%          -1~ UNLESS ~KOBOLD~
 
-OUTER_SET ogre_lcase = RESOLVE_STR_REF(~ogre~)
-OUTER_SET ogre_ucase = RESOLVE_STR_REF(~Ogre~)
+OUTER_SET ogre_lcase = RESOLVE_STR_REF(@570)
+OUTER_SET ogre_ucase = RESOLVE_STR_REF(@151)
 APPEND ~racetext.2da~ ~OGRE   113        %ogre_lcase%       -1         %ogre_ucase%          -1~ UNLESS ~OGRE~
 
-OUTER_SET skeleton_lcase = RESOLVE_STR_REF(~skeleton~)
-OUTER_SET skeleton_ucase = RESOLVE_STR_REF(~Skeleton~)
+OUTER_SET skeleton_lcase = RESOLVE_STR_REF(@571)
+OUTER_SET skeleton_ucase = RESOLVE_STR_REF(@167)
 APPEND ~racetext.2da~ ~SKELETON   115        %skeleton_lcase%       -1         %skeleton_ucase%          -1~ UNLESS ~SKELETON~
 
-OUTER_SET spider_lcase = RESOLVE_STR_REF(~spider~)
-OUTER_SET spider_ucase = RESOLVE_STR_REF(~Spider~)
+OUTER_SET spider_lcase = RESOLVE_STR_REF(@572)
+OUTER_SET spider_ucase = RESOLVE_STR_REF(@171)
 APPEND ~racetext.2da~ ~SPIDER   116        %spider_lcase%       -1         %spider_ucase%          -1~ UNLESS ~SPIDER~
 
-OUTER_SET wolf_lcase = RESOLVE_STR_REF(~wolf~)
-OUTER_SET wolf_ucase = RESOLVE_STR_REF(~Wolf~)
+OUTER_SET wolf_lcase = RESOLVE_STR_REF(@573)
+OUTER_SET wolf_ucase = RESOLVE_STR_REF(@179)
 APPEND ~racetext.2da~ ~WOLF   117        %wolf_lcase%       -1         %wolf_ucase%          -1~ UNLESS ~WOLF~
 
-OUTER_SET wyvern_lcase = RESOLVE_STR_REF(~wyvern~)
-OUTER_SET wyvern_ucase = RESOLVE_STR_REF(~Wyvern~)
+OUTER_SET wyvern_lcase = RESOLVE_STR_REF(@574)
+OUTER_SET wyvern_ucase = RESOLVE_STR_REF(@181)
 APPEND ~racetext.2da~ ~WYVERN   118        %wyvern_lcase%       -1         %wyvern_ucase%          -1~ UNLESS ~WYVERN~
 
-OUTER_SET slime_lcase = RESOLVE_STR_REF(~slime~)
-OUTER_SET slime_ucase = RESOLVE_STR_REF(~Slime~)
+OUTER_SET slime_lcase = RESOLVE_STR_REF(@575)
+OUTER_SET slime_ucase = RESOLVE_STR_REF(@169)
 APPEND ~racetext.2da~ ~SLIME   119        %slime_lcase%       -1         %slime_ucase%          -1~ UNLESS ~SLIME~
 
-OUTER_SET fairy_lcase = RESOLVE_STR_REF(~fairy~)
-OUTER_SET fairy_ucase = RESOLVE_STR_REF(~Fairy~)
+OUTER_SET fairy_lcase = RESOLVE_STR_REF(@576)
+OUTER_SET fairy_ucase = RESOLVE_STR_REF(@577)
 APPEND ~racetext.2da~ ~FAIRY   120        %fairy_lcase%       -1         %fairy_ucase%          -1~ UNLESS ~FAIRY~
 
-OUTER_SET fiend_lcase = RESOLVE_STR_REF(~fiend~)
-OUTER_SET fiend_ucase = RESOLVE_STR_REF(~Fiend~)
+OUTER_SET fiend_lcase = RESOLVE_STR_REF(@578)
+OUTER_SET fiend_ucase = RESOLVE_STR_REF(@83)
 APPEND ~racetext.2da~ ~DEMONIC   121        %fiend_lcase%       -1         %fiend_ucase%          -1~ UNLESS ~DEMONIC~
 
-OUTER_SET lycanthrope_lcase = RESOLVE_STR_REF(~lycanthrope~)
-OUTER_SET lycanthrope_ucase = RESOLVE_STR_REF(~Lycanthrope~)
+OUTER_SET lycanthrope_lcase = RESOLVE_STR_REF(@579)
+OUTER_SET lycanthrope_ucase = RESOLVE_STR_REF(@141)
 APPEND ~racetext.2da~ ~LYCANTHROPE   122        %lycanthrope_lcase%       -1         %lycanthrope_ucase%          -1~ UNLESS ~LYCANTHROPE~
 
-OUTER_SET beholder_lcase = RESOLVE_STR_REF(~beholder~)
-OUTER_SET beholder_ucase = RESOLVE_STR_REF(~Beholder~)
+OUTER_SET beholder_lcase = RESOLVE_STR_REF(@580)
+OUTER_SET beholder_ucase = RESOLVE_STR_REF(@77)
 APPEND ~racetext.2da~ ~BEHOLDER   123        %beholder_lcase%       -1         %beholder_ucase%          -1~ UNLESS ~BEHOLDER~
 
-OUTER_SET mindflayer_lcase = RESOLVE_STR_REF(~mind flayer~)
-OUTER_SET mindflayer_ucase = RESOLVE_STR_REF(~Mind Flayer~)
+OUTER_SET mindflayer_lcase = RESOLVE_STR_REF(@581)
+OUTER_SET mindflayer_ucase = RESOLVE_STR_REF(@145)
 APPEND ~racetext.2da~ ~MIND_FLAYER   124        %mindflayer_lcase%       -1         %mindflayer_ucase%          -1~ UNLESS ~MIND_FLAYER~
 
-OUTER_SET vampire_lcase = RESOLVE_STR_REF(~vampire~)
-OUTER_SET vampire_ucase = RESOLVE_STR_REF(~Vampire~)
+OUTER_SET vampire_lcase = RESOLVE_STR_REF(@582)
+OUTER_SET vampire_ucase = RESOLVE_STR_REF(@177)
 APPEND ~racetext.2da~ ~VAMPIRE   125        %vampire_lcase%       -1         %vampire_ucase%          -1~ UNLESS ~VAMPIRE~
 
-OUTER_SET vampyre_lcase = RESOLVE_STR_REF(~vampyre~)
-OUTER_SET vampyre_ucase = RESOLVE_STR_REF(~Vampyre~)
+OUTER_SET vampyre_lcase = RESOLVE_STR_REF(@583)
+OUTER_SET vampyre_ucase = RESOLVE_STR_REF(@584)
 APPEND ~racetext.2da~ ~VAMPYRE   126        %vampyre_lcase%       -1         %vampyre_ucase%          -1~ UNLESS ~VAMPYRE~
 
-OUTER_SET otyugh_lcase = RESOLVE_STR_REF(~otyugh~)
-OUTER_SET otyugh_ucase = RESOLVE_STR_REF(~Otyugh~)
+OUTER_SET otyugh_lcase = RESOLVE_STR_REF(@585)
+OUTER_SET otyugh_ucase = RESOLVE_STR_REF(@155)
 APPEND ~racetext.2da~ ~OTYUGH   127        %otyugh_lcase%       -1         %otyugh_ucase%          -1~ UNLESS ~OTYUGH~
 
-OUTER_SET rak_lcase = RESOLVE_STR_REF(~rakshasa~)
-OUTER_SET rak_ucase = RESOLVE_STR_REF(~Rakshasa~)
+OUTER_SET rak_lcase = RESOLVE_STR_REF(@586)
+OUTER_SET rak_ucase = RESOLVE_STR_REF(@157)
 APPEND ~racetext.2da~ ~RAKSHASA   128        %rak_lcase%       -1         %rak_ucase%          -1~ UNLESS ~RAKSHASA~
 
-OUTER_SET _lcase = RESOLVE_STR_REF(~troll~)
-OUTER_SET _ucase = RESOLVE_STR_REF(~Troll~)
+OUTER_SET _lcase = RESOLVE_STR_REF(@587)
+OUTER_SET _ucase = RESOLVE_STR_REF(@173)
 APPEND ~racetext.2da~ ~TROLL   129        %_lcase%       -1         %_ucase%          -1~ UNLESS ~TROLL~
 
-OUTER_SET umberhulk_lcase = RESOLVE_STR_REF(~umber hulk~)
-OUTER_SET umberhulk_ucase = RESOLVE_STR_REF(~Umber Hulk~)
+OUTER_SET umberhulk_lcase = RESOLVE_STR_REF(@588)
+OUTER_SET umberhulk_ucase = RESOLVE_STR_REF(@175)
 APPEND ~racetext.2da~ ~UMBERHULK   130        %umberhulk_lcase%       -1         %umberhulk_ucase%          -1~ UNLESS ~UMBERHULK~
 
-OUTER_SET sahuagin_lcase = RESOLVE_STR_REF(~sahuagin~)
-OUTER_SET sahuagin_ucase = RESOLVE_STR_REF(~Sahuagin~)
+OUTER_SET sahuagin_lcase = RESOLVE_STR_REF(@589)
+OUTER_SET sahuagin_ucase = RESOLVE_STR_REF(@159)
 APPEND ~racetext.2da~ ~SAHUAGIN   131        %sahuagin_lcase%       -1         %sahuagin_ucase%          -1~ UNLESS ~SAHUAGIN~
 
-OUTER_SET shadow_lcase = RESOLVE_STR_REF(~shadow~)
-OUTER_SET shadow_ucase = RESOLVE_STR_REF(~Shadow~)
+OUTER_SET shadow_lcase = RESOLVE_STR_REF(@590)
+OUTER_SET shadow_ucase = RESOLVE_STR_REF(@163)
 APPEND ~racetext.2da~ ~SHADOW   132        %shadow_lcase%       -1         %shadow_ucase%          -1~ UNLESS ~SHADOW~
 
-OUTER_SET spectre_lcase = RESOLVE_STR_REF(~spectre~)
-OUTER_SET spectre_ucase = RESOLVE_STR_REF(~Spectre~)
+OUTER_SET spectre_lcase = RESOLVE_STR_REF(@591)
+OUTER_SET spectre_ucase = RESOLVE_STR_REF(@592)
 APPEND ~racetext.2da~ ~SPECTRE   133        %spectre_lcase%       -1         %spectre_ucase%          -1~ UNLESS ~SPECTRE~
 
-OUTER_SET wraith_lcase = RESOLVE_STR_REF(~wraith~)
-OUTER_SET wraith_ucase = RESOLVE_STR_REF(~Wraith~)
+OUTER_SET wraith_lcase = RESOLVE_STR_REF(@593)
+OUTER_SET wraith_ucase = RESOLVE_STR_REF(@594)
 APPEND ~racetext.2da~ ~WRAITH   134        %wraith_lcase%       -1         %wraith_ucase%          -1~ UNLESS ~WRAITH~
 
-OUTER_SET kuotoa_lcase = RESOLVE_STR_REF(~kuo-toa~)
-OUTER_SET kuotoa_ucase = RESOLVE_STR_REF(~Kuo-toa~)
+OUTER_SET kuotoa_lcase = RESOLVE_STR_REF(@595)
+OUTER_SET kuotoa_ucase = RESOLVE_STR_REF(@135)
 APPEND ~racetext.2da~ ~KUO-TOA   135        %kuotoa_lcase%       -1         %kuotoa_ucase%          -1~ UNLESS ~KUO-TOA~
 
-OUTER_SET mist_lcase = RESOLVE_STR_REF(~mist~)
-OUTER_SET mist_ucase = RESOLVE_STR_REF(~Mist~)
+OUTER_SET mist_lcase = RESOLVE_STR_REF(@596)
+OUTER_SET mist_ucase = RESOLVE_STR_REF(@597)
 APPEND ~racetext.2da~ ~MIST   136        %mist_lcase%       -1         %mist_ucase%          -1~ UNLESS ~MIST~
 
-OUTER_SET cat_lcase = RESOLVE_STR_REF(~cat~)
-OUTER_SET cat_ucase = RESOLVE_STR_REF(~Cat~)
+OUTER_SET cat_lcase = RESOLVE_STR_REF(@598)
+OUTER_SET cat_ucase = RESOLVE_STR_REF(@599)
 APPEND ~racetext.2da~ ~CAT   137        %cat_lcase%       -1         %cat_ucase%          -1~ UNLESS ~CAT~
 
-OUTER_SET duergar_lcase = RESOLVE_STR_REF(~duergar~)
-OUTER_SET duergar_ucase = RESOLVE_STR_REF(~Duergar~)
+OUTER_SET duergar_lcase = RESOLVE_STR_REF(@600)
+OUTER_SET duergar_ucase = RESOLVE_STR_REF(@601)
 APPEND ~racetext.2da~ ~DUERGAR   138        %duergar_lcase%       -1         %duergar_ucase%          -1~ UNLESS ~DUERGAR~
 
-OUTER_SET mephit_lcase = RESOLVE_STR_REF(~mephit~)
-OUTER_SET mephit_ucase = RESOLVE_STR_REF(~Mephit~)
+OUTER_SET mephit_lcase = RESOLVE_STR_REF(@602)
+OUTER_SET mephit_ucase = RESOLVE_STR_REF(@143)
 APPEND ~racetext.2da~ ~MEPHIT   139        %mephit_lcase%       -1         %mephit_ucase%          -1~ UNLESS ~MEPHIT~
 
-OUTER_SET mimic_lcase = RESOLVE_STR_REF(~mimic~)
-OUTER_SET mimic_ucase = RESOLVE_STR_REF(~Mimic~)
+OUTER_SET mimic_lcase = RESOLVE_STR_REF(@603)
+OUTER_SET mimic_ucase = RESOLVE_STR_REF(@604)
 APPEND ~racetext.2da~ ~MIMIC   140        %mimic_lcase%       -1         %mimic_ucase%          -1~ UNLESS ~MIMIC~
 
-OUTER_SET imp_lcase = RESOLVE_STR_REF(~imp~)
-OUTER_SET imp_ucase = RESOLVE_STR_REF(~Imp~)
+OUTER_SET imp_lcase = RESOLVE_STR_REF(@605)
+OUTER_SET imp_ucase = RESOLVE_STR_REF(@131)
 APPEND ~racetext.2da~ ~IMP   141        %imp_lcase%       -1         %imp_ucase%          -1~ UNLESS ~IMP~
 
-OUTER_SET giant_lcase = RESOLVE_STR_REF(~giant~)
-OUTER_SET giant_ucase = RESOLVE_STR_REF(~Giant~)
+OUTER_SET giant_lcase = RESOLVE_STR_REF(@606)
+OUTER_SET giant_ucase = RESOLVE_STR_REF(@107)
 APPEND ~racetext.2da~ ~GIANT   142        %giant_lcase%       -1         %giant_ucase%          -1~ UNLESS ~GIANT~
 
-OUTER_SET orc_lcase = RESOLVE_STR_REF(~orc~)
-OUTER_SET orc_ucase = RESOLVE_STR_REF(~Orc~)
+OUTER_SET orc_lcase = RESOLVE_STR_REF(@607)
+OUTER_SET orc_ucase = RESOLVE_STR_REF(@153)
 APPEND ~racetext.2da~ ~ORC   143        %orc_lcase%       -1         %orc_ucase%          -1~ UNLESS ~ORC~
 
-OUTER_SET golem_lcase = RESOLVE_STR_REF(~golem~)
-OUTER_SET golem_ucase = RESOLVE_STR_REF(~Golem~)
+OUTER_SET golem_lcase = RESOLVE_STR_REF(@608)
+OUTER_SET golem_ucase = RESOLVE_STR_REF(@119)
 APPEND ~racetext.2da~ ~GOLEM   144        %golem_lcase%       -1         %golem_ucase%          -1~ UNLESS ~GOLEM~
 
-OUTER_SET elemental_lcase = RESOLVE_STR_REF(~elemental~)
-OUTER_SET elemental_ucase = RESOLVE_STR_REF(~Elemental~)
+OUTER_SET elemental_lcase = RESOLVE_STR_REF(@609)
+OUTER_SET elemental_ucase = RESOLVE_STR_REF(@93)
 APPEND ~racetext.2da~ ~ELEMENTAL   145        %elemental_lcase%       -1         %elemental_ucase%          -1~ UNLESS ~ELEMENTAL~
 
-OUTER_SET dragon_lcase = RESOLVE_STR_REF(~dragon~)
-OUTER_SET dragon_ucase = RESOLVE_STR_REF(~Dragon~)
+OUTER_SET dragon_lcase = RESOLVE_STR_REF(@610)
+OUTER_SET dragon_ucase = RESOLVE_STR_REF(@87)
 APPEND ~racetext.2da~ ~DRAGON   146        %dragon_lcase%       -1         %dragon_ucase%          -1~ UNLESS ~DRAGON~
 
-OUTER_SET genie_lcase = RESOLVE_STR_REF(~genie~)
-OUTER_SET genie_ucase = RESOLVE_STR_REF(~Genie~)
+OUTER_SET genie_lcase = RESOLVE_STR_REF(@611)
+OUTER_SET genie_ucase = RESOLVE_STR_REF(@103)
 APPEND ~racetext.2da~ ~GENIE   147        %genie_lcase%       -1         %genie_ucase%          -1~ UNLESS ~GENIE~
 
-OUTER_SET zombie_lcase = RESOLVE_STR_REF(~zombie~)
-OUTER_SET zombie_ucase = RESOLVE_STR_REF(~Zombie~)
+OUTER_SET zombie_lcase = RESOLVE_STR_REF(@612)
+OUTER_SET zombie_ucase = RESOLVE_STR_REF(@187)
 APPEND ~racetext.2da~ ~ZOMBIE   148        %zombie_lcase%       -1         %zombie_ucase%          -1~ UNLESS ~ZOMBIE~
 
-OUTER_SET statue_lcase = RESOLVE_STR_REF(~statue~)
-OUTER_SET statue_ucase = RESOLVE_STR_REF(~Statue~)
+OUTER_SET statue_lcase = RESOLVE_STR_REF(@613)
+OUTER_SET statue_ucase = RESOLVE_STR_REF(@614)
 APPEND ~racetext.2da~ ~STATUE   149        %statue_lcase%       -1         %statue_ucase%          -1~ UNLESS ~STATUE~
 
-OUTER_SET lich_lcase = RESOLVE_STR_REF(~lich~)
-OUTER_SET lich_ucase = RESOLVE_STR_REF(~Lich~)
+OUTER_SET lich_lcase = RESOLVE_STR_REF(@615)
+OUTER_SET lich_ucase = RESOLVE_STR_REF(@137)
 APPEND ~racetext.2da~ ~LICH   150        %lich_lcase%       -1         %lich_ucase%          -1~ UNLESS ~LICH~
 
-OUTER_SET rabbit_lcase = RESOLVE_STR_REF(~rabbit~)
-OUTER_SET rabbit_ucase = RESOLVE_STR_REF(~Rabbit~)
+OUTER_SET rabbit_lcase = RESOLVE_STR_REF(@616)
+OUTER_SET rabbit_ucase = RESOLVE_STR_REF(@617)
 APPEND ~racetext.2da~ ~RABBIT   151        %rabbit_lcase%       -1         %rabbit_ucase%          -1~ UNLESS ~RABBIT~
 
-OUTER_SET githyanki_lcase = RESOLVE_STR_REF(~githyanki~)
-OUTER_SET githyanki_ucase = RESOLVE_STR_REF(~Githyanki~)
+OUTER_SET githyanki_lcase = RESOLVE_STR_REF(@618)
+OUTER_SET githyanki_ucase = RESOLVE_STR_REF(@111)
 APPEND ~racetext.2da~ ~GITHYANKI   152        %githyanki_lcase%       -1         %githyanki_ucase%          -1~ UNLESS ~GITHYANKI~
 
-OUTER_SET yuanti_lcase = RESOLVE_STR_REF(~yuan-ti~)
-OUTER_SET yuanti_ucase = RESOLVE_STR_REF(~Yuan-ti~)
+OUTER_SET yuanti_lcase = RESOLVE_STR_REF(@619)
+OUTER_SET yuanti_ucase = RESOLVE_STR_REF(@185)
 APPEND ~racetext.2da~ ~YUANTI   154        %yuanti_lcase%       -1         %yuanti_ucase%          -1~ UNLESS ~YUANTI~
 
-OUTER_SET demilich_lcase = RESOLVE_STR_REF(~demilich~)
-OUTER_SET demilich_ucase = RESOLVE_STR_REF(~Demilich~)
+OUTER_SET demilich_lcase = RESOLVE_STR_REF(@620)
+OUTER_SET demilich_ucase = RESOLVE_STR_REF(@621)
 APPEND ~racetext.2da~ ~DEMILICH   155        %demilich_lcase%       -1         %demilich_ucase%          -1~ UNLESS ~DEMILICH~
 
-OUTER_SET solar_lcase = RESOLVE_STR_REF(~solar~)
-OUTER_SET solar_ucase = RESOLVE_STR_REF(~Solar~)
+OUTER_SET solar_lcase = RESOLVE_STR_REF(@622)
+OUTER_SET solar_ucase = RESOLVE_STR_REF(@623)
 APPEND ~racetext.2da~ ~SOLAR   156        %solar_lcase%       -1         %solar_ucase%          -1~ UNLESS ~SOLAR~
 
-OUTER_SET antisolar_lcase = RESOLVE_STR_REF(~anti-solar~)
-OUTER_SET antisolar_ucase = RESOLVE_STR_REF(~Anti-solar~)
+OUTER_SET antisolar_lcase = RESOLVE_STR_REF(@624)
+OUTER_SET antisolar_ucase = RESOLVE_STR_REF(@625)
 APPEND ~racetext.2da~ ~ANTISOLAR   157        %antisolar_lcase%       -1         %antisolar_ucase%          -1~ UNLESS ~ANTISOLAR~
 
-OUTER_SET planetar_lcase = RESOLVE_STR_REF(~planetar~)
-OUTER_SET planetar_ucase = RESOLVE_STR_REF(~Planetar~)
+OUTER_SET planetar_lcase = RESOLVE_STR_REF(@626)
+OUTER_SET planetar_ucase = RESOLVE_STR_REF(@627)
 APPEND ~racetext.2da~ ~PLANATAR   158        %planetar_lcase%       -1         %planetar_ucase%          -1~ UNLESS ~PLANATAR~
 
-OUTER_SET darkplanetar_lcase = RESOLVE_STR_REF(~dark planetar~)
-OUTER_SET darkplanetar_ucase = RESOLVE_STR_REF(~Dark Planetar~)
+OUTER_SET darkplanetar_lcase = RESOLVE_STR_REF(@628)
+OUTER_SET darkplanetar_ucase = RESOLVE_STR_REF(@629)
 APPEND ~racetext.2da~ ~DARKPLANATAR   159        %darkplanetar_lcase%       -1         %darkplanetar_ucase%          -1~ UNLESS ~DARKPLANATAR~
 
-OUTER_SET beetle_lcase = RESOLVE_STR_REF(~beetle~)
-OUTER_SET beetle_ucase = RESOLVE_STR_REF(~Beetle~)
+OUTER_SET beetle_lcase = RESOLVE_STR_REF(@630)
+OUTER_SET beetle_ucase = RESOLVE_STR_REF(@631)
 APPEND ~racetext.2da~ ~BEETLE   160        %beetle_lcase%       -1         %beetle_ucase%          -1~ UNLESS ~BEETLE~
 
-OUTER_SET goblin_lcase = RESOLVE_STR_REF(~goblin~)
-OUTER_SET goblin_ucase = RESOLVE_STR_REF(~Goblin~)
+OUTER_SET goblin_lcase = RESOLVE_STR_REF(@632)
+OUTER_SET goblin_ucase = RESOLVE_STR_REF(@117)
 APPEND ~racetext.2da~ ~GOBLIN   161        %goblin_lcase%       -1         %goblin_ucase%          -1~ UNLESS ~GOBLIN~
 
-OUTER_SET lizardfolk_lcase = RESOLVE_STR_REF(~lizardfolk~)
-OUTER_SET lizardfolk_ucase = RESOLVE_STR_REF(~Lizardfolk~)
+OUTER_SET lizardfolk_lcase = RESOLVE_STR_REF(@633)
+OUTER_SET lizardfolk_ucase = RESOLVE_STR_REF(@139)
 APPEND ~racetext.2da~ ~LIZARDMAN   162        %lizardfolk_lcase%       -1         %lizardfolk_ucase%          -1~ UNLESS ~LIZARDMAN~
 
-OUTER_SET myconid_lcase = RESOLVE_STR_REF(~myconid~)
-OUTER_SET myconid_ucase = RESOLVE_STR_REF(~Myconid~)
+OUTER_SET myconid_lcase = RESOLVE_STR_REF(@634)
+OUTER_SET myconid_ucase = RESOLVE_STR_REF(@149)
 APPEND ~racetext.2da~ ~MYCONID   164        %myconid_lcase%       -1         %myconid_ucase%          -1~ UNLESS ~MYCONID~
 
-OUTER_SET bugbear_lcase = RESOLVE_STR_REF(~bugbear~)
-OUTER_SET bugbear_ucase = RESOLVE_STR_REF(~Bugbear~)
+OUTER_SET bugbear_lcase = RESOLVE_STR_REF(@635)
+OUTER_SET bugbear_ucase = RESOLVE_STR_REF(@636)
 APPEND ~racetext.2da~ ~BUGBEAR   165        %bugbear_lcase%       -1         %bugbear_ucase%          -1~ UNLESS ~BUGBEAR~
 
-OUTER_SET feyr_lcase = RESOLVE_STR_REF(~feyr~)
-OUTER_SET feyr_ucase = RESOLVE_STR_REF(~Feyr~)
+OUTER_SET feyr_lcase = RESOLVE_STR_REF(@637)
+OUTER_SET feyr_ucase = RESOLVE_STR_REF(@638)
 APPEND ~racetext.2da~ ~FEYR   166        %feyr_lcase%       -1         %feyr_ucase%          -1~ UNLESS ~FEYR~
 
-OUTER_SET hookhorror_lcase = RESOLVE_STR_REF(~hook horror~)
-OUTER_SET hookhorror_ucase = RESOLVE_STR_REF(~Hook Horror~)
+OUTER_SET hookhorror_lcase = RESOLVE_STR_REF(@639)
+OUTER_SET hookhorror_ucase = RESOLVE_STR_REF(@640)
 APPEND ~racetext.2da~ ~HOOK_HORROR   167        %hookhorror_lcase%       -1         %hookhorror_ucase%          -1~ UNLESS ~HOOK_HORROR~
 
-OUTER_SET shrieker_lcase = RESOLVE_STR_REF(~shrieker~)
-OUTER_SET shrieker_ucase = RESOLVE_STR_REF(~Shrieker~)
+OUTER_SET shrieker_lcase = RESOLVE_STR_REF(@641)
+OUTER_SET shrieker_ucase = RESOLVE_STR_REF(@642)
 APPEND ~racetext.2da~ ~SHRIEKER   168        %shrieker_lcase%       -1         %shrieker_ucase%          -1~ UNLESS ~SHRIEKER~
 
-OUTER_SET salamander_lcase = RESOLVE_STR_REF(~salamander~)
-OUTER_SET salamander_ucase = RESOLVE_STR_REF(~Salamander~)
+OUTER_SET salamander_lcase = RESOLVE_STR_REF(@643)
+OUTER_SET salamander_ucase = RESOLVE_STR_REF(@161)
 APPEND ~racetext.2da~ ~SALAMANDER   169        %salamander_lcase%       -1         %salamander_ucase%          -1~ UNLESS ~SALAMANDER~
 
-OUTER_SET bird_lcase = RESOLVE_STR_REF(~bird~)
-OUTER_SET bird_ucase = RESOLVE_STR_REF(~Bird~)
+OUTER_SET bird_lcase = RESOLVE_STR_REF(@644)
+OUTER_SET bird_ucase = RESOLVE_STR_REF(@645)
 APPEND ~racetext.2da~ ~BIRD   170        %bird_lcase%       -1         %bird_ucase%          -1~ UNLESS ~BIRD~
 
-OUTER_SET minotaur_lcase = RESOLVE_STR_REF(~minotaur~)
-OUTER_SET minotaur_ucase = RESOLVE_STR_REF(~Minotaur~)
+OUTER_SET minotaur_lcase = RESOLVE_STR_REF(@646)
+OUTER_SET minotaur_ucase = RESOLVE_STR_REF(@147)
 APPEND ~racetext.2da~ ~MINOTAUR   171        %minotaur_lcase%       -1         %minotaur_ucase%          -1~ UNLESS ~MINOTAUR~
 
-OUTER_SET drider_lcase = RESOLVE_STR_REF(~drider~)
-OUTER_SET drider_ucase = RESOLVE_STR_REF(~Drider~)
+OUTER_SET drider_lcase = RESOLVE_STR_REF(@647)
+OUTER_SET drider_ucase = RESOLVE_STR_REF(@89)
 APPEND ~racetext.2da~ ~DRIDER   172        %drider_lcase%       -1         %drider_ucase%          -1~ UNLESS ~DRIDER~
 
-OUTER_SET simulacrum_lcase = RESOLVE_STR_REF(~simulacrum~)
-OUTER_SET simulacrum_ucase = RESOLVE_STR_REF(~Simulacrum~)
+OUTER_SET simulacrum_lcase = RESOLVE_STR_REF(@648)
+OUTER_SET simulacrum_ucase = RESOLVE_STR_REF(@649)
 APPEND ~racetext.2da~ ~SIMULACRUM   173        %simulacrum_lcase%       -1         %simulacrum_ucase%          -1~ UNLESS ~SIMULACRUM~
 
-OUTER_SET harpy_lcase = RESOLVE_STR_REF(~harpy~)
-OUTER_SET harpy_ucase = RESOLVE_STR_REF(~Harpy~)
+OUTER_SET harpy_lcase = RESOLVE_STR_REF(@650)
+OUTER_SET harpy_ucase = RESOLVE_STR_REF(@651)
 APPEND ~racetext.2da~ ~HARPY   174        %harpy_lcase%       -1         %harpy_ucase%          -1~ UNLESS ~HARPY~
 
-OUTER_SET spectralundead_lcase = RESOLVE_STR_REF(~spectral undead~)
-OUTER_SET spectralundead_ucase = RESOLVE_STR_REF(~Spectral Undead~)
+OUTER_SET spectralundead_lcase = RESOLVE_STR_REF(@652)
+OUTER_SET spectralundead_ucase = RESOLVE_STR_REF(@653)
 APPEND ~racetext.2da~ ~SPECTRAL_UNDEAD   175        %spectralundead_lcase%       -1         %spectralundead_ucase%          -1~ UNLESS ~SPECTRAL_UNDEAD~
 
-OUTER_SET shamblingmound_lcase = RESOLVE_STR_REF(~shambling mound~)
-OUTER_SET shamblingmound_ucase = RESOLVE_STR_REF(~Shambling Mound~)
+OUTER_SET shamblingmound_lcase = RESOLVE_STR_REF(@654)
+OUTER_SET shamblingmound_ucase = RESOLVE_STR_REF(@165)
 APPEND ~racetext.2da~ ~SHAMBLING_MOUND   176        %shamblingmound_lcase%       -1         %shamblingmound_ucase%          -1~ UNLESS ~SHAMBLING_MOUND~
 
-OUTER_SET chimera_lcase = RESOLVE_STR_REF(~chimera~)
-OUTER_SET chimera_ucase = RESOLVE_STR_REF(~Chimera~)
+OUTER_SET chimera_lcase = RESOLVE_STR_REF(@655)
+OUTER_SET chimera_ucase = RESOLVE_STR_REF(@656)
 APPEND ~racetext.2da~ ~CHIMERA   177        %chimera_lcase%       -1         %chimera_ucase%          -1~ UNLESS ~CHIMERA~
 
-OUTER_SET halfdragon_lcase = RESOLVE_STR_REF(~half-dragon~)
-OUTER_SET halfdragon_ucase = RESOLVE_STR_REF(~Half-dragon~)
+OUTER_SET halfdragon_lcase = RESOLVE_STR_REF(@657)
+OUTER_SET halfdragon_ucase = RESOLVE_STR_REF(@658)
 APPEND ~racetext.2da~ ~HALF_DRAGON   178        %halfdragon_lcase%       -1         %halfdragon_ucase%          -1~ UNLESS ~HALF_DRAGON~
 
-OUTER_SET yeti_lcase = RESOLVE_STR_REF(~yeti~)
-OUTER_SET yeti_ucase = RESOLVE_STR_REF(~Yeti~)
+OUTER_SET yeti_lcase = RESOLVE_STR_REF(@659)
+OUTER_SET yeti_ucase = RESOLVE_STR_REF(@183)
 APPEND ~racetext.2da~ ~YETI   179        %yeti_lcase%       -1         %yeti_ucase%          -1~ UNLESS ~YETI~
 
-OUTER_SET keg_lcase = RESOLVE_STR_REF(~keg~)
-OUTER_SET keg_ucase = RESOLVE_STR_REF(~Keg~)
+OUTER_SET keg_lcase = RESOLVE_STR_REF(@660)
+OUTER_SET keg_ucase = RESOLVE_STR_REF(@661)
 APPEND ~racetext.2da~ ~KEG   180        %keg_lcase%       -1         %keg_ucase%          -1~ UNLESS ~KEG~
 
-OUTER_SET wisp_lcase = RESOLVE_STR_REF(~will-o'-wisp~)
-OUTER_SET wisp_ucase = RESOLVE_STR_REF(~Will-o'-Wisp~)
+OUTER_SET wisp_lcase = RESOLVE_STR_REF(@662)
+OUTER_SET wisp_ucase = RESOLVE_STR_REF(@663)
 APPEND ~racetext.2da~ ~WILL-O-WISP   181        %wisp_lcase%       -1         %wisp_ucase%          -1~ UNLESS ~WILL-O-WISP~
 
-OUTER_SET mammal_lcase = RESOLVE_STR_REF(~mammal~)
-OUTER_SET mammal_ucase = RESOLVE_STR_REF(~Mammal~)
+OUTER_SET mammal_lcase = RESOLVE_STR_REF(@664)
+OUTER_SET mammal_ucase = RESOLVE_STR_REF(@665)
 APPEND ~racetext.2da~ ~MAMMAL   182        %mammal_lcase%       -1         %mammal_ucase%          -1~ UNLESS ~MAMMAL~
 
-OUTER_SET reptile_lcase = RESOLVE_STR_REF(~reptile~)
-OUTER_SET reptile_ucase = RESOLVE_STR_REF(~Reptile~)
+OUTER_SET reptile_lcase = RESOLVE_STR_REF(@666)
+OUTER_SET reptile_ucase = RESOLVE_STR_REF(@667)
 APPEND ~racetext.2da~ ~REPTILE   183        %reptile_lcase%       -1         %reptile_ucase%          -1~ UNLESS ~REPTILE~
 
-OUTER_SET treant_lcase = RESOLVE_STR_REF(~treant~)
-OUTER_SET treant_ucase = RESOLVE_STR_REF(~Treant~)
+OUTER_SET treant_lcase = RESOLVE_STR_REF(@668)
+OUTER_SET treant_ucase = RESOLVE_STR_REF(@669)
 APPEND ~racetext.2da~ ~TREANT   184        %treant_lcase%       -1         %treant_ucase%          -1~ UNLESS ~TREANT~
 
-OUTER_SET aasimar_lcase = RESOLVE_STR_REF(~aasimar~)
-OUTER_SET aasimar_ucase = RESOLVE_STR_REF(~Aasimar~)
+OUTER_SET aasimar_lcase = RESOLVE_STR_REF(@556)
+OUTER_SET aasimar_ucase = RESOLVE_STR_REF(@557)
 APPEND ~racetext.2da~ ~AASIMAR   185        %aasimar_lcase%       -1         %aasimar_ucase%          -1~ UNLESS ~AASIMAR~
 
-OUTER_SET ettin_lcase = RESOLVE_STR_REF(~ettin~)
-OUTER_SET ettin_ucase = RESOLVE_STR_REF(~Ettin~)
+OUTER_SET ettin_lcase = RESOLVE_STR_REF(@670)
+OUTER_SET ettin_ucase = RESOLVE_STR_REF(@99)
 APPEND ~racetext.2da~ ~ETTIN   199        %ettin_lcase%       -1         %ettin_ucase%          -1~ UNLESS ~ETTIN~
 
-OUTER_SET sword_lcase = RESOLVE_STR_REF(~sword~)
-OUTER_SET sword_ucase = RESOLVE_STR_REF(~Sword~)
+OUTER_SET sword_lcase = RESOLVE_STR_REF(@671)
+OUTER_SET sword_ucase = RESOLVE_STR_REF(@672)
 APPEND ~racetext.2da~ ~SWORD   201        %sword_lcase%       -1         %sword_ucase%          -1~ UNLESS ~WYVERN~
 
-OUTER_SET bow_lcase = RESOLVE_STR_REF(~bow~)
-OUTER_SET bow_ucase = RESOLVE_STR_REF(~Bow~)
+OUTER_SET bow_lcase = RESOLVE_STR_REF(@673)
+OUTER_SET bow_ucase = RESOLVE_STR_REF(@674)
 APPEND ~racetext.2da~ ~BOW   202        %bow_lcase%       -1         %bow_ucase%          -1~ UNLESS ~BOW~
 
-OUTER_SET crossbow_lcase = RESOLVE_STR_REF(~crossbow~)
-OUTER_SET crossbow_ucase = RESOLVE_STR_REF(~Crossbow~)
+OUTER_SET crossbow_lcase = RESOLVE_STR_REF(@675)
+OUTER_SET crossbow_ucase = RESOLVE_STR_REF(@676)
 APPEND ~racetext.2da~ ~XBOW   203        %crossbow_lcase%       -1         %crossbow_ucase%          -1~ UNLESS ~XBOW~
 
-OUTER_SET staff_lcase = RESOLVE_STR_REF(~staff~)
-OUTER_SET staff_ucase = RESOLVE_STR_REF(~Staff~)
+OUTER_SET staff_lcase = RESOLVE_STR_REF(@677)
+OUTER_SET staff_ucase = RESOLVE_STR_REF(@678)
 APPEND ~racetext.2da~ ~STAFF   204        %staff_lcase%       -1         %staff_ucase%          -1~ UNLESS ~STAFF~
 
-OUTER_SET sling_lcase = RESOLVE_STR_REF(~sling~)
-OUTER_SET sling_ucase = RESOLVE_STR_REF(~Sling~)
+OUTER_SET sling_lcase = RESOLVE_STR_REF(@679)
+OUTER_SET sling_ucase = RESOLVE_STR_REF(@680)
 APPEND ~racetext.2da~ ~SLING   205        %sling_lcase%       -1         %sling_ucase%          -1~ UNLESS ~SLING~
 
-OUTER_SET mace_lcase = RESOLVE_STR_REF(~mace~)
-OUTER_SET mace_ucase = RESOLVE_STR_REF(~Mace~)
+OUTER_SET mace_lcase = RESOLVE_STR_REF(@681)
+OUTER_SET mace_ucase = RESOLVE_STR_REF(@682)
 APPEND ~racetext.2da~ ~MACE   206        %mace_lcase%       -1         %mace_ucase%          -1~ UNLESS ~MACE~
 
-OUTER_SET dagger_lcase = RESOLVE_STR_REF(~dagger~)
-OUTER_SET dagger_ucase = RESOLVE_STR_REF(~Dagger~)
+OUTER_SET dagger_lcase = RESOLVE_STR_REF(@683)
+OUTER_SET dagger_ucase = RESOLVE_STR_REF(@684)
 APPEND ~racetext.2da~ ~DAGGER   207        %dagger_lcase%       -1         %dagger_ucase%          -1~ UNLESS ~DAGGER~
 
-OUTER_SET spear_lcase = RESOLVE_STR_REF(~spear~)
-OUTER_SET spear_ucase = RESOLVE_STR_REF(~Spear~)
+OUTER_SET spear_lcase = RESOLVE_STR_REF(@685)
+OUTER_SET spear_ucase = RESOLVE_STR_REF(@686)
 APPEND ~racetext.2da~ ~SPEAR   208        %spear_lcase%       -1         %spear_ucase%          -1~ UNLESS ~SPEAR~
 
-OUTER_SET fist_lcase = RESOLVE_STR_REF(~fist~)
-OUTER_SET fist_ucase = RESOLVE_STR_REF(~Fist~)
+OUTER_SET fist_lcase = RESOLVE_STR_REF(@687)
+OUTER_SET fist_ucase = RESOLVE_STR_REF(@688)
 APPEND ~racetext.2da~ ~FIST   209        %fist_lcase%       -1         %fist_ucase%          -1~ UNLESS ~FIST~

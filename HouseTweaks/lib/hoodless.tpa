@@ -1,8 +1,5 @@
-PRINT ~Install Hoodless Avatar for Female Dwarves?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~dwarffemale~ ~placeholder_value~
+PRINT @189
+OUTER_SPRINT ~dwarffemale~ @66
 OUTER_WHILE (!(IS_AN_INT ~dwarffemale~) OR (~dwarffemale~ > 0x2) OR (~dwarffemale~ < 0x1)) BEGIN
   ACTION_READLN ~dwarffemale~
 END
@@ -12,11 +9,8 @@ END
       ACTION_IF ("dwarffemale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Male Gnomes and Dwarves?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~dwarfmale~ ~placeholder_value~
+PRINT @190
+OUTER_SPRINT ~dwarfmale~ @66
 OUTER_WHILE (!(IS_AN_INT ~dwarfmale~) OR (~dwarfmale~ > 0x2) OR (~dwarfmale~ < 0x1)) BEGIN
   ACTION_READLN ~dwarfmale~
 END
@@ -26,11 +20,8 @@ END
       ACTION_IF ("dwarfmale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Female Elves and Half-Elves?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~elffemale~ ~placeholder_value~
+PRINT @191
+OUTER_SPRINT ~elffemale~ @66
 OUTER_WHILE (!(IS_AN_INT ~elffemale~) OR (~elffemale~ > 0x2) OR (~elffemale~ < 0x1)) BEGIN
   ACTION_READLN ~elffemale~
 END
@@ -40,11 +31,8 @@ END
       ACTION_IF ("elffemale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Male Elves and Half-Elves?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~elfmale~ ~placeholder_value~
+PRINT @192
+OUTER_SPRINT ~elfmale~ @66
 OUTER_WHILE (!(IS_AN_INT ~elfmale~) OR (~elfmale~ > 0x2) OR (~elfmale~ < 0x1)) BEGIN
   ACTION_READLN ~elfmale~
 END
@@ -54,11 +42,8 @@ END
       ACTION_IF ("elfmale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Female Halflings and Gnomes?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~halflingfemale~ ~placeholder_value~
+PRINT @193
+OUTER_SPRINT ~halflingfemale~ @66
 OUTER_WHILE (!(IS_AN_INT ~halflingfemale~) OR (~halflingfemale~ > 0x2) OR (~halflingfemale~ < 0x1)) BEGIN
   ACTION_READLN ~halflingfemale~
 END
@@ -68,11 +53,8 @@ END
       ACTION_IF ("halflingfemale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Male Halflings?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~halflingmale~ ~placeholder_value~
+PRINT @194
+OUTER_SPRINT ~halflingmale~ @66
 OUTER_WHILE (!(IS_AN_INT ~halflingmale~) OR (~halflingmale~ > 0x2) OR (~halflingmale~ < 0x1)) BEGIN
   ACTION_READLN ~halflingmale~
 END
@@ -82,11 +64,8 @@ END
       ACTION_IF ("halflingmale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Female Humans and Half-Orcs?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~humanfemale~ ~placeholder_value~
+PRINT @195
+OUTER_SPRINT ~humanfemale~ @66
 OUTER_WHILE (!(IS_AN_INT ~humanfemale~) OR (~humanfemale~ > 0x2) OR (~humanfemale~ < 0x1)) BEGIN
   ACTION_READLN ~humanfemale~
 END
@@ -96,11 +75,8 @@ END
       ACTION_IF ("humanfemale" = 2) THEN BEGIN
       END
 	  
-PRINT ~Install Hoodless Avatar for Male Humans and Half-Orcs?
-
-[1] Yes
-[2] No~
-OUTER_SPRINT ~humanmale~ ~placeholder_value~
+PRINT @196
+OUTER_SPRINT ~humanmale~ @66
 OUTER_WHILE (!(IS_AN_INT ~humanmale~) OR (~humanmale~ > 0x2) OR (~humanmale~ < 0x1)) BEGIN
   ACTION_READLN ~humanmale~
 END
