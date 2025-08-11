@@ -224,7 +224,7 @@ OUTER_SET trap_detection_probability = 100
 OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN @50 DESIGNATED 0035
+BEGIN @50 DESIGNATED 00341
 SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 2
@@ -232,7 +232,7 @@ OUTER_SET trap_detection_movement = 1
 
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN @51 DESIGNATED 0036
+BEGIN @51 DESIGNATED 00342
 SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 5
@@ -240,7 +240,7 @@ OUTER_SET trap_detection_movement = 1
 
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN @52 DESIGNATED 0037
+BEGIN @52 DESIGNATED 00343
 SUBCOMPONENT @47
 
 OUTER_SET trap_detection_probability = 100
