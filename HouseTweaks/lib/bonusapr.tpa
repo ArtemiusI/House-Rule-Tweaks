@@ -219,7 +219,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     END
   END
   
-  PATCH_IF (%kit_class% = 19) BEGIN
+  PATCH_IF (%kit_class% = 19) AND !(~%kit_clab%~ STRING_EQUAL_CASE ~CLABSO01~) BEGIN // prevent double application for Dragon Disciple
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -332,7 +332,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     END
   END
   
-  PATCH_IF (%kit_class% = 19) BEGIN
+  PATCH_IF (%kit_class% = 19) AND !(~%kit_clab%~ STRING_EQUAL_CASE ~CLABSO01~) BEGIN // prevent double application for Dragon Disciple
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
