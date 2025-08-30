@@ -1,5 +1,3 @@
-COPY ~%MOD_FOLDER%/RACEPROF~ OVERRIDE
-
 ACTION_IF FILE_EXISTS_IN_GAME ~SW1H13.ITM~ THEN BEGIN
 COPY_EXISTING ~SW1H13.ITM~ ~OVERRIDE~
 SAY DESC @553
@@ -79,34 +77,291 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
       END
     END
   END
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN // avoid crashing on empty items
-      READ_SHORT    0x31 proficiency 
-      PATCH_IF (proficiency = 90) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#LS END
-      END
-      PATCH_IF (proficiency = 91) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#SS END
-      END
-      PATCH_IF (proficiency = 92) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 4 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#AX END
-      END
-      PATCH_IF (proficiency = 96) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#DG END
-      END
-      PATCH_IF (proficiency = 97) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 4 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#HM END
-      END
-      PATCH_IF (proficiency = 104) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#LB END
-      END
-      PATCH_IF (proficiency = 105) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 2 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#SB END
-      END
-      PATCH_IF (proficiency = 106) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#DT END
-      END
-      PATCH_IF (proficiency = 107) BEGIN
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = 5 parameter2 = 4 timing = 2 STR_VAR resource = C0PRF#SL END
-      END
-    END
 BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Append to SPLPROT.2DA                                                 //
+///////////////////////////////////////////////////////////////////////////
+// Weapon Profs
+ACTION_FOR_EACH weapon_prof IN
+      89  // BASTARDSWORD
+      90  // LONGSWORD
+      91  // SHORTSWORD
+      92  // AXE
+      93  // TWOHANDEDSWORD
+      94  // KATANA
+      95  // SCIMITAR
+      96  // DAGGER
+      97  // WARHAMMER
+      115 // CLUB
+      98  // SPEAR
+      99  // HALBERD
+      100 // FLAILMORNINGSTAR
+      101 // MACE
+      102 // QUARTERSTAFF
+      103 // CROSSBOW
+      104 // LONGBOW
+      105 // SHORTBOW
+      106 // DART
+      107 // SLING
+    BEGIN
+      APPEND ~splprot.2da~ ~prof_%weapon_prof%%TAB%%weapon_prof%%TAB%-1%TAB%2~
+    END
+
+// Weapon Style Profs
+APPEND ~splprot.2da~ ~prof_111%TAB%111%TAB%2%TAB%2~ // 2HANDED
+APPEND ~splprot.2da~ ~prof_112%TAB%112%TAB%2%TAB%2~ // SWORDANDSHIELD
+APPEND ~splprot.2da~ ~prof_113%TAB%113%TAB%2%TAB%2~ // SINGLEWEAPON
+APPEND ~splprot.2da~ ~prof_114%TAB%114%TAB%3%TAB%2~ // SINGLEWEAPON
+
+// Update all imported files so they point in the correct direction.
+COPY_EXISTING ~splprot.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~
+      
+      // WEAPON PROF ----------------------------------------------------------//
+      // BASTARDSWORD
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_89~ BEGIN 
+        SET prof_89 = %row%
+      // LONGSWORD
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_90~ BEGIN
+        SET prof_90 = %row%
+      // SHORTSWORD
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_91~ BEGIN
+        SET prof_91 = %row%
+      // AXE
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_92~ BEGIN
+        SET prof_92 = %row%
+      // TWOHANDEDSWORD
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_93~ BEGIN
+        SET prof_93 = %row%
+      // KATANA
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_94~ BEGIN
+        SET prof_94 = %row%
+      // SCIMITAR
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_95~ BEGIN
+        SET prof_95 = %row%
+      // DAGGER
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_96~ BEGIN
+        SET prof_96 = %row%
+      // WARHAMMER
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_97~ BEGIN
+        SET prof_97 = %row%
+      // CLUB
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_115~ BEGIN
+        SET prof_115 = %row%
+      // SPEAR
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_98~ BEGIN
+        SET prof_98 = %row%
+      // HALBERD
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_99~ BEGIN
+        SET prof_99 = %row%
+      // FLAILMORNINGSTAR
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_100~ BEGIN
+        SET prof_100 = %row%
+      // MACE
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_101~ BEGIN
+        SET prof_101 = %row%
+      // QUARTERSTAFF
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_102~ BEGIN
+        SET prof_102 = %row%
+      // CROSSBOW
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_103~ BEGIN
+        SET prof_103 = %row%
+      // LONGBOW
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_104~ BEGIN
+        SET prof_104 = %row%
+      // SHORTBOW
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_105~ BEGIN
+        SET prof_105 = %row%
+      // DART
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_106~ BEGIN
+        SET prof_106 = %row%
+    // SLING
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_107~ BEGIN
+        SET prof_107 = %row%
+
+    // WEAPON STYLE ---------------------------------------------------------//
+    // 2HANDED
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_111~ BEGIN
+        SET prof_111 = %row%
+    // SWORDANDSHIELD
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_112~ BEGIN
+        SET prof_112 = %row%
+    // SINGLEWEAPON
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_113~ BEGIN
+        SET prof_113 = %row%
+    // 2WEAPON
+      END ELSE PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~prof_114~ BEGIN
+        SET prof_114 = %row%
+    END
+    END
+
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#LS.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_90% STR_VAR resource = C0PR#LS2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#LS2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 90 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#SS.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_91% STR_VAR resource = C0PR#SS2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#SS2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 91 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#LB.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_104% STR_VAR resource = C0PR#LB2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#LB2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 104 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#SB.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_105% STR_VAR resource = C0PR#SB2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#SB2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 105 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#AX.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_92% STR_VAR resource = C0PR#AX2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#AX2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 92 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#HM.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_97% STR_VAR resource = C0PR#HM2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#HM2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 97 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#DG.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_96% STR_VAR resource = C0PR#DG2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#DG2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 96 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#DT.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_106% STR_VAR resource = C0PR#DT2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#DT2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 106 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#SL.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_107% STR_VAR resource = C0PR#SL2 END
+    
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#SL2.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 107 END
+    
+/*
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.spl~ ~override/C0PR#LS.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %prof_90% STR_VAR resource = C0PR#LS2 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = C0PR#LS2 resource = C0PR#LS3 END
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~KIT~ ~FERALAN~) parameter2 = 9 timing = 9 STR_VAR resource = C0PR#LS4 END
+
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#LS2.SPL~
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 1 parameter1 = 203 parameter2 = 105 timing = 9 STR_VAR resource = C0PR#LS2 END
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 1 parameter1 = 207 parameter2 = 105 timing = 9 STR_VAR resource = C0PR#LS2 END
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 1 parameter1 = 209 parameter2 = 105 timing = 9 STR_VAR resource = C0PR#LS2 END
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 1 parameter1 = IDS_OF_SYMBOL (~KIT~ ~SWASHBUCKLER~) parameter2 = 109 timing = 9 STR_VAR resource = C0PR#LS2 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 90 END
+
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#LS3.SPL~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 2 parameter2 = 90 END
+
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#00.eff~ ~override/C0PR#LS4.EFF~
+    WRITE_ASCII 0x30 ~C0PR#LS4~
+
+COPY_EXISTING ~%MOD_FOLDER%/raceprof/C0PR#01.spl~ ~override/C0PR#LS4.SPL~
+    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 1 parameter1 = 0 parameter2 = 0 timing = 9 STR_VAR resource = C0PR#LS3 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 233 parameter1 = 1 parameter2 = 90 END
+*/
+COPY_EXISTING ~CHARBASE.CRE~ ~OVERRIDE/CHARBASE1.CRE~
+
+COPY_EXISTING ~CHARBASE1.CRE~ ~OVERRIDE~
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#LS END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#SS END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#LB END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#SB END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~DWARF~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#AX END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~DWARF~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#HM END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#DG END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#DT END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#SL END
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   READ_BYTE	0x272 race
+	PATCH_IF (race = 2) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#LS END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#SS END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#LB END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~ELF~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#SB END
+	END
+	PATCH_IF (race = 4) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~DWARF~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#AX END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~DWARF~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#HM END
+	END
+	PATCH_IF (race = 5) BEGIN
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#DG END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#DT END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~RACE~ ~HALFLING~)) parameter2 = 104 target = 1 timing = 1 duration = 1 STR_VAR resource = C0PR#SL END
+	END
+      BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
+      READ_ASCII DEATHVAR "dv" (32) NULL
+      PATCH_IF (~%dv%~ STR_EQ ~VICONIA~) BEGIN
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#LS END
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#SS END
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#LB END
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#SB END
+      		SET_BG2_PROFICIENCY 95 1 // SCIMITAR
+      		SET_BG2_PROFICIENCY 96 1 // DAGGER
+      		SET_BG2_PROFICIENCY 103 1 // CROSSBOW
+      	// do things here
+      END
+      BUT_ONLY
+	  
+COPY_EXISTING ~CHARBASE1.CRE~ ~HOUSETWEAKS/TEMP/CHARBASE.CRE~
+COPY_EXISTING ~HOUSETWEAKS/TEMP~ ~OVERRIDE~
+
+ACTION_IF MOD_IS_INSTALLED ~HOUSETWEAKS/HOUSETWEAKS.TP2~ ~4~ AND FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ BEGIN
+
+COPY_EXISTING ~C0PR#LS.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYLONGSWORD~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#SS.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYSHORTSWORD~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#LB.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYLONGBOW~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#SS.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYSHORTBOW~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#AX.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYAXE~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#HM.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYWARHAMMER~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#DG.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDAGGER~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#DT.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDART~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING ~C0PR#SL.SPL~ ~OVERRIDE~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYSLING~) parameter1 = 1 parameter2 = 1 END
+
+COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
+      READ_ASCII DEATHVAR "dv" (32) NULL
+      PATCH_IF (~%dv%~ STR_EQ ~VICONIA~) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYSCIMITARWAKISASHININJATO~) parameter1 = 1 parameter2 = 1 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDAGGER~) parameter1 = 1 parameter2 = 1 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYCROSSBOW~) parameter1 = 1 parameter2 = 1 END
+      	// do things here
+      END
+      BUT_ONLY
+	  
+END
