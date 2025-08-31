@@ -322,6 +322,20 @@ COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
       END
       BUT_ONLY
 	  
+COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
+      READ_ASCII DEATHVAR "dv" (32) NULL
+      PATCH_IF (~%dv%~ STR_EQ ~C0KVEL~) BEGIN
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#LS END
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#SS END
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#LB END
+		  LPF DELETE_EFFECT STR_VAR match_resource = C0PR#SB END
+      		SET_BG2_PROFICIENCY 95 1 // SCIMITAR
+      		SET_BG2_PROFICIENCY 96 1 // DAGGER
+      		SET_BG2_PROFICIENCY 103 1 // CROSSBOW
+      	// do things here
+      END
+      BUT_ONLY
+	  
 COPY_EXISTING ~CHARBASE1.CRE~ ~HOUSETWEAKS/TEMP/CHARBASE.CRE~
 COPY_EXISTING ~HOUSETWEAKS/TEMP~ ~OVERRIDE~
 
@@ -357,7 +371,17 @@ COPY_EXISTING ~C0PR#SL.SPL~ ~OVERRIDE~
 COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
       READ_ASCII DEATHVAR "dv" (32) NULL
       PATCH_IF (~%dv%~ STR_EQ ~VICONIA~) BEGIN
-      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYSCIMITARWAKISASHININJATO~) parameter1 = 1 parameter2 = 1 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDART~) parameter1 = 1 parameter2 = 1 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDAGGER~) parameter1 = 1 parameter2 = 1 END
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYCROSSBOW~) parameter1 = 1 parameter2 = 1 END
+      	// do things here
+      END
+      BUT_ONLY
+	  
+COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
+      READ_ASCII DEATHVAR "dv" (32) NULL
+      PATCH_IF (~%dv%~ STR_EQ ~C0KVEL~) BEGIN
+      LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDART~) parameter1 = 1 parameter2 = 1 END
       LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYDAGGER~) parameter1 = 1 parameter2 = 1 END
       LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~C0_PROFICIENCYCROSSBOW~) parameter1 = 1 parameter2 = 1 END
       	// do things here
