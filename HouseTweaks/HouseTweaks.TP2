@@ -1,6 +1,5 @@
 BACKUP ~weidu_external/backup/HouseTweaks~
 AUTHOR ~Artemius_I~
-VERSION @0
 ALWAYS
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
@@ -45,8 +44,15 @@ INCLUDE ~%MOD_FOLDER%/lib/raceprof.tpa~
 BEGIN @7 DESIGNATED 0007
 INCLUDE ~%MOD_FOLDER%/lib/bonusapr.tpa~
 
-//BEGIN @8 DESIGNATED 0008
-//INCLUDE ~%MOD_FOLDER%/lib/monk.tpa~
+BEGIN @695 DESIGNATED 0008
+SUBCOMPONENT @8
+OUTER_SET backstab_tweaks = 0
+INCLUDE ~%MOD_FOLDER%/lib/backstab_tweaks.tpa~
+
+BEGIN @696 DESIGNATED 0108
+SUBCOMPONENT @8
+OUTER_SET backstab_tweaks = 1
+INCLUDE ~%MOD_FOLDER%/lib/backstab_tweaks.tpa~
 
 BEGIN @9 DESIGNATED 0009
 SUBCOMPONENT @10

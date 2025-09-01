@@ -1,0 +1,33 @@
+COPY ~%MOD_FOLDER%/backstab~ ~override~
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = 0 parameter2 = 0 target = 1 timing = 9 STR_VAR resource = C0HT#BS END
+
+COPY_EXISTING ~CHARBASE.CRE~ ~OVERRIDE/CHARBASE1.CRE~
+
+COPY_EXISTING ~CHARBASE1.CRE~ ~OVERRIDE~
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = 0 parameter2 = 0 target = 1 timing = 4 duration = 1 STR_VAR resource = C0HT#BS END
+
+COPY_EXISTING ~CHARBASE1.CRE~ ~HOUSETWEAKS/TEMP/CHARBASE.CRE~
+COPY_EXISTING ~HOUSETWEAKS/TEMP~ ~OVERRIDE~
+
+ACTION_IF ("backstab_tweaks" = 0) THEN BEGIN
+
+COPY_EXISTING ~C0HT#BS.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 303 parameter2 = 4 END
+LPF DELETE_EFFECT INT_VAR match_opcode = 263 END
+LPF DELETE_EFFECT INT_VAR match_opcode = 272 END
+
+  END
+
+  
+ACTION_IF ("backstab_tweaks" = 0) THEN BEGIN
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPCL916.SPL~ BEGIN
+COPY_EXISTING ~SPCL916.SPL~ ~OVERRIDE~
+ LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = C0HT#BS1 END
+ LPF CLONE_EFFECT INT_VAR match_opcode = 303 opcode = 263 parameter1 = 2 parameter2 = 0 END
+ LPF CLONE_EFFECT INT_VAR match_opcode = 303 opcode = 318 parameter1 = 0 parameter2 = 0 STR_VAR resource = C0HT#BS1 END
+END
+
+  END

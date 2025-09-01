@@ -6,7 +6,7 @@
 @5    = ~House Tweaks: Rebalanced Weapon Styles~
 @6    = ~House Tweaks: Racial Weapon Proficiency~
 @7    = ~House Tweaks: Rebalanced Attacks Per Round Progression~
-@8    = ~House Tweaks: Monk Can Use Quarterstaves~
+@8    = ~House Tweaks: Backstab Tweaks~
 @9    = ~Constitution Bonuses for All Classes + Regeneration Changes~
 @10   = ~House Tweaks: Increased Constitution Bonuses~
 @11   = ~Regeneration Changes Only~
@@ -122,7 +122,7 @@ Elementals are sentient beings that can possess bodies made of one of the four b
 Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).~
 @97   = ~Ettercap~
 @98   = ~Ettercap
-Ettercaps are ugly bipedal creatures that get along very well with all types of giant spiders. These creatures of low intelligence are exceedingly cruel, very cunning, and are skilled in setting traps—very deadly traps—much like the spiders that often live around them.
+Ettercaps are ugly bipedal creatures that get along very well with all types of giant spiders. These creatures of low intelligence are exceedingly cruel, very cunning, and are skilled in setting trapsï¿½very deadly trapsï¿½much like the spiders that often live around them.
 
 Ettercaps stand around six feet tall, even with their stooping gait and hunched shoulders. The creatures have short, spindly legs, long arms that reach nearly to their ankles, and large pot-bellies. The hands of ettercaps have a thumb and three long fingers that end in razor sharp claws. Their bodies are covered by tufts of thick, wiry, black hair, and their skin is dark and thick. Ettercaps' heads are almost equine in shape, but they have large reptilian eyes, usually blood-red in color, and large fangs, one protruding downward from each side of the mouth. The mouth itself is large and lined with very sharp teeth.
 
@@ -221,7 +221,7 @@ Myconids are fungal creatures that live underground. They communicate telepathic
 @152  = ~Ogre
 Ogres are big, ugly, greedy humanoids that live by ambushes, raids, and theft. Ill-tempered and nasty, these monsters are often found serving as mercenaries in the ranks of orc tribes, evil clerics, or gnolls. They mingle freely with giants and trolls.
 
-Adult ogres stand nine to ten feet tall and weigh 300 to 350 pounds. Their skin colors range from a dead yellow to a dull black-brown, and (rarely) a sickly violet. Their warty bumps are often of a different color—or at least darker than their hides. Their eyes are purple with white pupils. Teeth and talons are orange or black. Ogres have long, greasy hair of blackish blue to dull dark green. Their odor is repellent, reminiscent of curdled milk. Dressing in poorly cured furs and animal hides, they care for their weapons and armor only reasonably well.
+Adult ogres stand nine to ten feet tall and weigh 300 to 350 pounds. Their skin colors range from a dead yellow to a dull black-brown, and (rarely) a sickly violet. Their warty bumps are often of a different colorï¿½or at least darker than their hides. Their eyes are purple with white pupils. Teeth and talons are orange or black. Ogres have long, greasy hair of blackish blue to dull dark green. Their odor is repellent, reminiscent of curdled milk. Dressing in poorly cured furs and animal hides, they care for their weapons and armor only reasonably well.
 
 It is common for ogres to speak orc, troll, stone giant, and gnoll, as well as their own guttural language. A typical ogre's life span is 90 years.~
 @153  = ~Orc~
@@ -432,7 +432,7 @@ Among the lowest caliber of undead creatures, zombies are mindless animated corp
 @358  = ~Greetings, adventurers.~ [FELFF01]
 @361  = ~The fair folk will inherit the earth.~ [FELFF02]
 @362  = ~Few of the fair folk concern themselves with the affairs of the state.~ [FELFF03]
-@363  = ~Ha ha ha ha ha! Haa ha ha! *burp* ...eh, sorry—'scuse me!~ [DRUNK01]
+@363  = ~Ha ha ha ha ha! Haa ha ha! *burp* ...eh, sorryï¿½'scuse me!~ [DRUNK01]
 @366  = ~Blaaarrrghghgh... *cough* Corn? When did I eats corn...?~ [DRUNK02]
 @367  = ~W-whoa... Why're the streets so wobbly?~ [DRUNK03]
 @368  = ~I needs some ale. *burp* Eh...~ [DRUNK04]
@@ -921,3 +921,5 @@ Bonus spell slots for Shamans:
 
 Minimum: <MINIMUM>
 Maximum: <MAXIMUM>~
+@695  = ~Backstab from any direction~
+@696  = ~Backstab from any direction + Backstab from out of stealth at -2 modifier when attacking from behind~
