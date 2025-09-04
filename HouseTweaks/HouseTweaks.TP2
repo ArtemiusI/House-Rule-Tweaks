@@ -12,6 +12,11 @@ LANGUAGE
   ~english~
   ~%MOD_FOLDER%/tra/english/setup.tra~
 
+/*
+BEGIN ~House Tweaks: Use Magic Device Skill~ DESIGNATED 0043
+INCLUDE ~%MOD_FOLDER%/lib/use_magic_device.tpa~
+*/
+
 BEGIN @1 DESIGNATED 0001
 COPY ~%MOD_FOLDER%/2da/haterace.2da~ ~override~
 INCLUDE ~%MOD_FOLDER%/lib/haterace.tpa~
@@ -319,3 +324,15 @@ INCLUDE ~%MOD_FOLDER%/lib/turnundead.tpa~
 
 BEGIN @59 DESIGNATED 0041
 INCLUDE ~%MOD_FOLDER%/lib/trap_activation.tpa~
+
+BEGIN ~House Tweaks: Set Traps in Enemy Range~ DESIGNATED 0042
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~ 
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 262 parameter1 = 0 parameter2 = 1 timing = 10 duration = 1 probability = 100 silent = 1 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 67 parameter1 = 0 parameter2 = 1 timing = 1 probability = 100 silent = 1 STR_VAR resource = C0TRAPEY END
+      BUT_ONLY
+
+COPY ~%MOD_FOLDER%/SPELLS/C0TRAPEY.CRE~ ~OVERRIDE~
+WRITE_ASCII 0x248 ~C0TRAPEY~  #8  // override
+WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
+COMPILE	~%MOD_FOLDER%/SCRIPTS/C0TRAPEY.BAF~
