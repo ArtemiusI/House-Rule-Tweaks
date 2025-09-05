@@ -124,3 +124,17 @@ COPY_EXISTING ~weapprof.2da~  ~override~
   PRETTY_PRINT_2DA
   BUT_ONLY
   
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+
+COPY_EXISTING ~C0PR#CL.spl~ ~override/C0PR#CL.SPL~
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~CLERIC_ALL~) parameter2 = 105 STR_VAR resource = C0PR#103 END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#115 END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#103 END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#115 END // CLUB
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#103 END // XBOW
+
+  END ELSE BEGIN
+
+  END
+  

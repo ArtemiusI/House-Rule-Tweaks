@@ -343,9 +343,7 @@ COPY_EXISTING ~%MOD_FOLDER%/eeex/profs/C0PR#CL.spl~ ~override/C0PR#CL.SPL~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~DRUID_ALL~) parameter2 = 105 STR_VAR resource = C0PR#107 END
 
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#96 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#115 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#102 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#103 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#106 END
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MAGE~) parameter2 = 105 STR_VAR resource = C0PR#107 END
 
@@ -361,12 +359,10 @@ COPY_EXISTING ~%MOD_FOLDER%/eeex/profs/C0PR#CL.spl~ ~override/C0PR#CL.SPL~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~THIEF~) parameter2 = 105 STR_VAR resource = C0PR#106 END // DART
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~THIEF~) parameter2 = 105 STR_VAR resource = C0PR#107 END // SLING
 
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#96 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#115 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#102 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#103 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#106 END
-    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#107 END
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#96 END // DAGGER
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#102 END // STAFF
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#106 END // DART
+    LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~SORCERER~) parameter2 = 105 STR_VAR resource = C0PR#107 END // SLING
 
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MONK~) parameter2 = 105 STR_VAR resource = C0PR#90 END // LONG SWORD
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 1 parameter1 = IDS_OF_SYMBOL (~CLASS~ ~MONK~) parameter2 = 105 STR_VAR resource = C0PR#91 END // SHORT SWORD
@@ -572,8 +568,9 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
       READ_BYTE    0x1F row2
       READ_BYTE    0x20 row3
       READ_BYTE    0x21 row4
+      READ_SHORT    0x1C type //reads the byte containing item type
       READ_SHORT    0x31 proficiency 
-      PATCH_IF ((proficiency = 92) OR (proficiency = 89) OR (proficiency = 115) OR (proficiency = 103) OR (proficiency = 96) OR (proficiency = 106) OR (proficiency = 100) OR (proficiency = 99) OR (proficiency = 94) OR (proficiency = 104) OR (proficiency = 90) OR (proficiency = 101) OR (proficiency = 102) OR (proficiency = 95) OR (proficiency = 105) OR (proficiency = 91) OR (proficiency = 93) OR (proficiency = 97) OR (proficiency = 98)) BEGIN
+      PATCH_IF ((proficiency = 92) OR (proficiency = 89) OR (proficiency = 115) OR (proficiency = 103) OR (proficiency = 96) OR (proficiency = 106) OR (proficiency = 100) OR (proficiency = 99) OR (proficiency = 94) OR (proficiency = 104) OR (proficiency = 90) OR (proficiency = 101) OR (proficiency = 102) OR (proficiency = 95) OR (proficiency = 105) OR (proficiency = 91) OR (proficiency = 93) OR (proficiency = 97) OR (proficiency = 98) OR (type = 31) OR (type = 5) OR (type = 14)) BEGIN
         WRITE_BYTE    0x1E (row1 BAND 0b00111111) 
         WRITE_BYTE    0x1F (row2 BAND 0b00000000)
         WRITE_BYTE    0x20 (row3 BAND 0b10000000)
@@ -583,6 +580,12 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //copies all item files
 			INT_VAR
 				match_opcode = 319
 				match_parameter1 = 11
+				match_parameter2 = 5
+		END
+		LPF DELETE_EFFECT
+			INT_VAR
+				match_opcode = 319
+				match_parameter1 = 21
 				match_parameter2 = 5
 		END
     END
@@ -664,5 +667,5 @@ COPY_EXISTING ~CHARBASE.CRE~ ~OVERRIDE/CHARBASE1.CRE~
 COPY_EXISTING ~CHARBASE1.CRE~ ~OVERRIDE~
    LPF ADD_CRE_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = 0 parameter2 = 0 target = 1 timing = 4 duration = 1 STR_VAR resource = C0PR#CL END
 
-COPY_EXISTING ~CHARBASE1.CRE~ ~HOUSETWEAKS/TEMP/CHARBASE.CRE~
-COPY_EXISTING ~HOUSETWEAKS/TEMP~ ~OVERRIDE~
+COPY_EXISTING ~CHARBASE1.CRE~ ~weidu_external/backup/ArtisansKitpack/temp/CHARBASE.CRE~
+COPY_EXISTING ~weidu_external/backup/ArtisansKitpack/temp~ ~OVERRIDE~
