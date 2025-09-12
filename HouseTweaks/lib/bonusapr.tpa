@@ -6,6 +6,7 @@ COPY ~%MOD_FOLDER%/bonusapr~ ~override~
 // benefits of your overhaul                                             //
 ///////////////////////////////////////////////////////////////////////////
 
+// give regular fighter protection from this effect (for multiclasses)
 ACTION_IF FILE_EXISTS_IN_GAME ~CLABFI01.2DA~ BEGIN
 COPY_EXISTING ~CLABFI01.2DA~ OVERRIDE
   // Borrowed from Rogue Rebalancing
@@ -15,6 +16,27 @@ COPY_EXISTING ~CLABFI01.2DA~ OVERRIDE
 BUT_ONLY
 END
 
+// give regular ranger protection from this effect (for multiclasses)
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABRN01.2DA~ BEGIN
+COPY_EXISTING ~CLABRN01.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
+  PRETTY_PRINT_2DA
+BUT_ONLY
+END
+
+// give regular paladin protection from this effect (for multiclasses)
+ACTION_IF FILE_EXISTS_IN_GAME ~CLABPA01.2DA~ BEGIN
+COPY_EXISTING ~CLABPA01.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
+  PRETTY_PRINT_2DA
+BUT_ONLY
+END
+
+// give regular ranger (different spelling - incorrect?) protection from this effect (for multiclasses)
 ACTION_IF FILE_EXISTS_IN_GAME ~CLABRA01.2DA~ BEGIN
 COPY_EXISTING ~CLABRA01.2DA~ OVERRIDE
   // Borrowed from Rogue Rebalancing
@@ -104,6 +126,18 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
   END
+
+  PATCH_IF (%kit_class% = 2) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
+  END
   
   PATCH_IF (%kit_class% = 3) BEGIN
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
@@ -149,6 +183,18 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     END
   END
 
+  PATCH_IF (%kit_class% = 6) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
+  END
+
   PATCH_IF (%kit_class% = 11) BEGIN
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
@@ -160,8 +206,20 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
       END
     END
   END
+
+  PATCH_IF (%kit_class% = 12) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+    END
+  END
   
-  PATCH_IF (%kit_class% = 19) BEGIN
+  PATCH_IF (%kit_class% = 19) AND !(~%kit_clab%~ STRING_EQUAL_CASE ~CLABSO01~) BEGIN // prevent double application for Dragon Disciple
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -274,7 +332,7 @@ COPY_EXISTING ~KITLIST.2DA~ ~override~
     END
   END
   
-  PATCH_IF (%kit_class% = 19) BEGIN
+  PATCH_IF (%kit_class% = 19) AND !(~%kit_clab%~ STRING_EQUAL_CASE ~CLABSO01~) BEGIN // prevent double application for Dragon Disciple
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
