@@ -106,6 +106,65 @@ Mages may use Clubs and Light Crossbows, and may become Proficient in Two-Handed
 *Modifies the weapon style proficiencies to be more diverse and useful.*
 
 This component rebalances the bonuses granted by the weapon styles, giving each style its own niche. Additionally, it unlocks Grandmastery of Weapon Styles to appropriate classes and kits.
+
+TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+>
+>Non-proficient (0 slots): The wielder incurs a penalty of 2 to Speed Factor.
+>
+>Proficient (1 slot): The wielder is no longer penalized and gains a +2 bonus to damage rolls.
+>
+>Specialized (2 slots): The wielder gains a further +2 to damage rolls and a -1 bonus to Speed Factor.
+>
+>Master (3 slots): The wielder gains gains a further +2 to damage rolls a critical hit threat range of 19-20.
+>
+>High Master (4 slots): The wielder gains a further +2 to damage rolls and -1 to Speed Factor.
+>
+>Grand Master (5 slots): The wielder gains a further +2 to damage rolls, -1 to Speed Factor and a critical hit threat range of 18-20.
+
+SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+>
+>Non-proficient (0 slots): The wielder incurs a penalty of 1 to THAC0 and Speed Factor.
+>
+>Proficient (1 slot): The wielder gains a -1 bonus to Armor Class and an additional -1 against missile weapons.
+>
+>Specialized (2 slots): The wielder is no longer penalized and gains a -2 bonus to Armor Class and an additional -2 against missile weapons.
+>
+>Master (3 slots): The wielder gains a further -1 bonus to Armor Class and an additional -1 against missile weapons.
+>
+>High Master (4 slots): The wielder gains a further -1 bonus to Armor Class and an additional -1 against missile weapons.
+>
+>Grand Master (5 slots): The wielder gains a further -2 bonus to Armor Class and an additional -1 against missile weapons.
+>
+>NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.
+
+SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+>
+>Non-proficient (0 slots): The wielder receives no bonus nor penalty.
+>
+>Proficient (1 slot): The wielder gains a -1 bonus to Armor Class vs. melee attacks, -1 bonus to Speed Factor, and a critical hit threat range of 19-20.
+>
+>Specialized (2 slots): The wielder gains a +1 bonus to THAC0 and damage rolls, a further -1 bonus to Armor Class vs. melee attacks, Speed Factor, and a critical hit threat range of 18-20.
+>
+>Master (3 slots): The wielder gains a further +1 bonus to THAC0, Speed Factor, and a critical hit threat range of 17-20.
+>
+>High Master (4 slots): The wielder gains a further +1 bonus to THAC0, damage rolls and Speed Factor.
+>
+>Grand Master (5 slots): The wielder gains a further +1 bonus to THAC0, dmaage rolls, Armor Class vs. melee weapons, Speed Factor and a critical hit threat range of 15-20.
+
+TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. Those who master the technique of dual-wielding even receive exclusive bonuses according to their degree of mastery.
+>
+>Non-proficient (0 slots): The wielder incurs a THAC0 penalty of 4 to the main hand weapon, 8 to the off-hand weapon, and a penalty of 2 to Armor Class vs. melee weapons.
+>
+>Proficient (1 slot): The wielder's penalties are reduced to 4 to the main hand weapon, 4 to the off-hand weapon, and a penalty of 1 to Armor Class vs. melee weapons.
+>
+>Specialized (2 slots): The wielder's penalties are reduced to 2 to the main hand weapon, 4 to the off-hand weapon, and they no longer suffer a penalty to Armor Class.
+>
+>Master (3 slots): The wielder's penalties are reduced to 0 to the main hand weapon and 2 to the off-hand weapon.
+>
+>High Master (4 slots): The wielder gains a -2 bonus to Speed Factor and Armor Class vs. melee weapons.
+>
+>Grand Master (5 slots): The wielder no longer suffers a THAC0 penalty to the off-hand weapon, and they gain a +2 bonus to damage rolls to the off-hand weapon, a -2 bonus to Speed Factor, and a critical hit threat range of 19-20.
+
 ## Racial Weapon Proficiency
 *Allows for certain races to proficiently wield certain weapon types regardless of class... with some technical concessions.*
 
@@ -142,6 +201,109 @@ As an addendum: Dragon Disciples will absolutely LOVE this change.
 *Grants bonus spell slots based on stats for the Mage, Sorcerer, Ranger, Paladin, Bard and Shaman.*
 
 This component makes the mental ability scores of Intelligence, Wisdom and Charisma more persistently valuable to spellcasters, giving them extra spell slots per ability point.
+
+Bonus spell slots for Mages:
+
+>17: +1 Level 1, 2
+>
+>18: +1 Level 1, 2, 3, 4, 5
+>
+>19: +1 Level 3, 4, 6
+>
+>20: +1 Level 1, 2, 7
+>
+>21: +1 Level 3, 4, 5, 6, 8
+>
+>22: +1 Level 1, 2, 5, 7, 9
+>
+>23: +1 Level 1, 3, 6, 8
+>
+>24: +1 Level 2, 3, 4, 5, 6, 7, 9
+>
+>25: +1 Level 4, 5, 7, 8, 9
+
+Bonus spell slots for Rangers and Paladins:
+
+>14-15: +1 Level 1
+>
+>16-17: +1 Level 2
+>
+>18: +1 Level 3
+>
+>19: +1 Level 1, 4
+>
+>20: +1 Level 2
+>
+>21: +1 Level 3
+>
+>22: +1 Level 4
+>
+>23-24: +1 Level 1, 2
+>
+>25: +1 Level 3, 4
+
+CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability is important to the Bard, Paladin, Sorcerer and Shaman.
+
+Bonus spell slots for Sorcerers:
+
+>17: +1 Level 1, 2
+>
+>18: +1 Level 1, 2, 3, 4, 5
+>
+>19: +1 Level 3, 4, 6
+>
+>20: +1 Level 1, 2, 7
+>
+>21: +1 Level 3, 4, 5, 6, 8
+>
+>22: +1 Level 1, 2, 5, 7, 9
+>
+>23: +1 Level 1, 3, 6, 8
+>
+>24: +1 Level 2, 3, 4, 5, 6, 7, 9
+>
+>25: +1 Level 4, 5, 7, 8, 9
+
+Bonus spell slots for Bards:
+
+>17: +1 Level 1, 2
+>
+>18: +1 Level 1, 2, 3
+>
+>19: +1 Level 4
+>
+>20: +1 Level 1, 5
+>
+>21: +1 Level 2, 3
+>
+>22: +1 Level 3, 4, 6
+>
+>23: +1 Level 4, 5
+>
+>24: +1 Level 5, 6
+>
+>25: +1 Level 6
+
+Bonus spell slots for Shamans:
+>
+>17: +1 Level 1, 2
+>
+>18: +1 Level 1, 2, 3, 4, 5
+>
+>19: +1 Level 3, 4, 6
+>
+>20: +1 Level 1, 2, 7
+>
+>21: +1 Level 3, 4, 5, 6
+>
+>22: +1 Level 1, 2, 5, 7
+>
+>23: +1 Level 1, 3, 6
+>
+>24: +1 Level 2, 3, 4, 5, 6, 7
+>
+>25: +1 Level 4, 5, 7
+
 ## Warrior HLAs
 *Modifies the HLAs Resist Magic, Critical Strike, War Cry*
 
