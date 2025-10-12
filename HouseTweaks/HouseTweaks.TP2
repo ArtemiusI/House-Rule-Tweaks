@@ -220,8 +220,16 @@ BEGIN @43 DESIGNATED 0030
 INCLUDE ~%MOD_FOLDER%/lib/frozen_stone_death.tpa~
 
 BEGIN @44 DESIGNATED 0031
-REQUIRE_PREDICATE (!GAME_IS ~iwdee~) @45
-INCLUDE ~%MOD_FOLDER%/lib/disintegrate.tpa~
+
+COPY_EXISTING_REGEXP GLOB ~.+\.ITM~ ~override~
+	LPF CLONE_EFFECT INT_VAR match_opcode = 5 match_parameter2 = 1 parameter2 = 1 silent = 1 STR_VAR resource = C0SSKINV END
+
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~.+\.SPL~ ~override~
+	LPF CLONE_EFFECT INT_VAR match_opcode = 5 match_parameter2 = 1 parameter2 = 1 silent = 1 STR_VAR resource = C0SSKINV END
+
+BUT_ONLY
 
 BEGIN @46 DESIGNATED 0032
 SUBCOMPONENT @47
