@@ -332,13 +332,51 @@ INCLUDE ~%MOD_FOLDER%/lib/turnundead.tpa~
 BEGIN @59 DESIGNATED 0041
 INCLUDE ~%MOD_FOLDER%/lib/trap_activation.tpa~
 
-BEGIN ~House Tweaks: Set Traps in Enemy Range~ DESIGNATED 0042
+BEGIN ~No restrictions~ DESIGNATED 0042
+SUBCOMPONENT ~House Tweaks: Set Traps in Enemy Range~
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~ 
-    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 262 parameter1 = 0 parameter2 = 1 timing = 10 duration = 1 probability = 100 silent = 1 END
     LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 67 parameter1 = 0 parameter2 = 1 timing = 1 probability = 100 silent = 1 STR_VAR resource = C0TRAPEY END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 262 parameter1 = 0 parameter2 = 1 timing = 0 duration = 2 probability = 100 silent = 1 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 165 parameter1 = 0 parameter2 = 0 timing = 0 duration = 1 probability = 100 silent = 1 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 252 timing = 4 duration = 1 silent = 1 END
       BUT_ONLY
 
+COPY ~%MOD_FOLDER%/SPELLS/C0TRAPEY.CRE~ ~OVERRIDE~
+WRITE_ASCII 0x248 ~C0TRAPEY~  #8  // override
+WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
+COMPILE	~%MOD_FOLDER%/SCRIPTS/C0TRAPEY.BAF~
+
+BEGIN ~Set Traps in enemy range if invisible, does not break stealth~ DESIGNATED 0043
+SUBCOMPONENT ~House Tweaks: Set Traps in Enemy Range~
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~ 
+  READ_BYTE 0x19 breakinvis
+PATCH_IF (SOURCE_SIZE > 0x72) BEGIN
+    READ_LONG  0x64 abilities_off
+    READ_SHORT 0x68 num_abilities
+    READ_LONG  0x6a effects_off
+    FOR (i = 0; i < num_abilities; i += 1) BEGIN
+      READ_SHORT (abilities_off + 0x28*i + 0x1e) num_features
+      READ_SHORT (abilities_off + 0x28*i + 0x20) features_ind
+      SET missing_effect = 1
+      FOR (j = 0; j < num_features; j += 1) BEGIN
+        READ_SHORT (effects_off + 0x30*(features_ind + j)) opcode
+  PATCH_IF (opcode = 252) BEGIN
+    WRITE_BYTE 0x19 (breakinvis BAND 0b11111101)
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 318 parameter1 = 16 parameter2 = 139 timing = 10 duration = 1 probability = 100 silent = 1 STR_VAR resource = C0TRAPEY END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 177 parameter1 = 0 parameter2 = 2 timing = 1 probability = 100 silent = 1 STR_VAR resource = C0TRAPE2 END 
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 177 parameter1 = 0 parameter2 = 2 timing = 0 duration = 2 probability = 100 silent = 1 STR_VAR resource = C0TRAPEY END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 165 parameter1 = 0 parameter2 = 0 timing = 0 duration = 1 probability = 100 silent = 1 END
+    LPF ALTER_EFFECT INT_VAR match_opcode = 252 timing = 4 duration = 1 silent = 1 END
+    END
+    END
+    END
+    END
+      BUT_ONLY
+
+COPY ~%MOD_FOLDER%/SPELLS/C0TRAPEY.EFF~ ~OVERRIDE~
+COPY ~%MOD_FOLDER%/SPELLS/C0TRAPE2.EFF~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/SPELLS/C0TRAPEY.CRE~ ~OVERRIDE~
 WRITE_ASCII 0x248 ~C0TRAPEY~  #8  // override
 WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
