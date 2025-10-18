@@ -336,7 +336,7 @@ BEGIN ~No restrictions~ DESIGNATED 0042
 SUBCOMPONENT ~House Tweaks: Set Traps in Enemy Range~
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~ 
-    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 67 parameter1 = 0 parameter2 = 1 timing = 1 probability = 100 silent = 1 STR_VAR resource = C0TRAPEY END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 177 parameter1 = 0 parameter2 = 2 timing = 1 probability = 100 silent = 1 STR_VAR resource = C0TRAPE2 END 
     LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 262 parameter1 = 0 parameter2 = 1 timing = 0 duration = 2 probability = 100 silent = 1 END
     LPF CLONE_EFFECT INT_VAR match_opcode = 252 insert_point = 0 opcode = 165 parameter1 = 0 parameter2 = 0 timing = 0 duration = 1 probability = 100 silent = 1 END
     LPF ALTER_EFFECT INT_VAR match_opcode = 252 timing = 4 duration = 1 silent = 1 END
