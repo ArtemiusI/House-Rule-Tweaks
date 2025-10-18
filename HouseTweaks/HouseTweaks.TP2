@@ -342,6 +342,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.spl$~ ~override~
     LPF ALTER_EFFECT INT_VAR match_opcode = 252 timing = 4 duration = 1 silent = 1 END
       BUT_ONLY
 
+COPY ~%MOD_FOLDER%/SPELLS/C0TRAPE2.EFF~ ~OVERRIDE~
 COPY ~%MOD_FOLDER%/SPELLS/C0TRAPEY.CRE~ ~OVERRIDE~
 WRITE_ASCII 0x248 ~C0TRAPEY~  #8  // override
 WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
