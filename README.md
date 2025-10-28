@@ -185,8 +185,12 @@ To enforce this new system, class restrictions have been unlocked from all weapo
 *Gives all classes attacks per round progression scaling with base THAC0.*
 
 In vanilla, attacks per round, as well as specialization in most cases, are restricted, purely to warrior classes, limiting the viability of other classes in direct combat roles without dipping into a warrior class via multi-class or dual-class. This component aims to somewhat change that. Similar to how base attack bonus in 3e determines number of attacks per round, this component allows all classes to gain bonus attacks per round determined by their base THAC0 stat, which is the same as that of warriors at base THAC0 values 14 and 8.
-## Monk Can Use Quarterstaves
-*Gives monks the ability to use and be proficient in quarterstaves.*
+## Backstab Tweaks
+*Add the ability to backstab from any direction and/or backstab at a lower modifier from out of stealth.*
+This component has two options:
+
+- Allow playable characters to backstab from any direction while invisible
+- The above + backstab from behind at a lower (-2 penalty) modifier from out of stealth
 
 This component enables quarterstaff and two-handed weapon style proficiency for monks, complete with semi-proper animations.
 ## Constitution Bonuses for All Classes + Regeneration Changes
@@ -388,15 +392,15 @@ Many players like to switch party members in and out for more interactions or to
 
 The Blade of Aihonen is an iconic weapon in the game with a tie to the plot. However, not all protagonists or parties may choose to be proficient in longswords. This component can change the blade into either a bastard sword or two-handed sword.
 
-## Frozen and Petrified Creatures Drop Items on Death
-*Allows you to loot petrified and frozen enemies.*
+## Frozen, Disintegrated and Petrified Creatures Drop Items when Shattered
+*Allows you to loot petrified, frozen and disintegrated enemies.*
 
-This tweak makes all creatures in the game drop their inventory on frozen or petrified death, to try and provide a workaround for losing valuable loot. This method may not be 100% foolproof due to a brief delay between a target being affected by status and the background effect forcing them to drop their inventory, so be wary of destroying petrified bodies too quickly.
+This tweak makes all creatures in the game drop their inventory on frozen, disintegrated or petrified death, to try and provide a workaround for losing valuable loot. As of a recently improved method of forcing drops, dropped items now work more reliable without a delay.
 
-## IWD-style Disintegrate
-*Uses the IWD mechanics for disintegration effects.*
+## Low-level Charm spells e.g. Charm Person (or Mammal) no longer turn targets hostile after expiring
+*Make low-level charm spells no longer turn their targets hostile.*
 
-This tweak alters all disintegration effects in Baldur's Gate to use the same mechanic as in Icewind Dale, which does not destroy equipment.
+Charm dialogue, especially in BG1, can be very entertaining. Unfortunately, since most charm effects are treated as hostile, targets will turn against you once their effects wear off, meaning most of this dialogue goes unnoticed. This component makes the weaker Charm spells, such as Charm Person, count as non-hostile, keeping NPCs friendly.
 
 ## Passive Trap Detection
 *Search for traps passively at a percentage chance while the detection mode is off.*
@@ -437,3 +441,10 @@ This component all traps in the game to not activate if the target fulfills cert
 1. Target is a bounty hunter
 2. Target is incorporeal (spectre, wraith or shadow race, accounting for certain mod NPCs)
 3. Target has 150 or more points in either Find Traps or Set Traps
+
+## Set Traps in Enemy Range
+*Allow you to set traps while an enemy is in sight.*
+
+This component uses some special effects to allow the thief traps to be set while they can see an enemy. This should compatible with mod-added traps, so long as it is installed after them. There are two subcomponents:
+1. No restrictions
+2. Traps may only be set in enemy range if the user is invisible
