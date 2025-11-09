@@ -1,14 +1,9 @@
 COPY ~%MOD_FOLDER%/trap_detection~ ~override~
 
-ACTION_IF ("trap_detection_movement" = 1) THEN BEGIN	
-COPY ~%MOD_FOLDER%/trap_detection/movement~ ~override~
-
-ADD_PROJECTILE ~%MOD_FOLDER%/trap_detection/movement/c0d_detp.pro~ ~Trap Detection~
+ADD_PROJECTILE ~%MOD_FOLDER%/spells/C0FINDTR.pro~
 
 COPY_EXISTING ~C0D_DET3.SPL~ ~OVERRIDE~
-LPF ALTER_SPELL_HEADER INT_VAR projectile = c0d_detp END
-
-END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = C0FINDTR END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~CLABTH01.2DA~ BEGIN
 COPY_EXISTING ~CLABTH01.2DA~ OVERRIDE
