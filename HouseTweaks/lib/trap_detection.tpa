@@ -187,3 +187,30 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 probability2 = 0 END
 END
 
 ////
+
+ACTION_IF ("trap_detection_probability" = 105) THEN BEGIN	
+	
+COPY_EXISTING ~c0d_det2.spl~ ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = splprot_findtrapsgt probability2 = 95 END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 110 probability1 = 94 probability2 = 90 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 115 probability1 = 89 probability2 = 85 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 120 probability1 = 84 probability2 = 80 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 125 probability1 = 79 probability2 = 75 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 130 probability1 = 74 probability2 = 70 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 135 probability1 = 69 probability2 = 65 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 140 probability1 = 64 probability2 = 60 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 145 probability1 = 59 probability2 = 55 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 150 probability1 = 54 probability2 = 50 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 155 probability1 = 49 probability2 = 45 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 160 probability1 = 44 probability2 = 40 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 165 probability1 = 39 probability2 = 35 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 170 probability1 = 34 probability2 = 30 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 175 probability1 = 29 probability2 = 25 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 180 probability1 = 24 probability2 = 20 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 185 probability1 = 19 probability2 = 15 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 190 probability1 = 14 probability2 = 10 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 195 probability1 = 9 probability2 = 5 STR_VAR insert = first END
+LPF CLONE_EFFECT INT_VAR header = 0 match_opcode = 326 match_parameter1 = 5 parameter1 = 200 probability1 = 4 probability2 = 0 STR_VAR insert = first END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter1 = 105 END
+
+END

@@ -1,5 +1,6 @@
 IF
   HasItem("ohhcloak",Myself)
+  !HasItem("ohhkork",Myself)
   !HasItemEquiped("ohhcloak",Myself)
   AreaType(OUTDOOR)
   TimeGT(DAWN_START)
@@ -18,84 +19,4 @@ IF
 THEN
   RESPONSE #100
 	XEquipItem("ohhkork",Myself,SLOT_CLOAK,EQUIP)
-END
-
-IF
-  HasItemEquiped("ohhcloak",Myself)
-  AreaType(OUTDOOR)
-  TimeGT(DAWN_START)
-  TimeLT(DUSK_END)
-  Global("StatDown","GLOBAL",0)
-THEN
-  RESPONSE #100
-	SetGlobal("StatDown","GLOBAL",1)
-	CreateVisualEffectObject("spdispma",Myself)
-    ApplySpellRES("ohhcloak",Myself)
-	Continue()
-END
-
-IF
-  HasItemEquiped("ohhcloak",Myself)
-  OR(3)
-  !AreaType(OUTDOOR)
-  !TimeGT(DAWN_START)
-  !TimeLT(DUSK_END)
-  Global("StatDown","GLOBAL",1)
-THEN
-  RESPONSE #100
-	SetGlobal("StatDown","GLOBAL",0)
-	CreateVisualEffectObject("spdispma",Myself)
-    ApplySpellRES("ohhcloa2",Myself)
-	Continue()
-END
-
-IF
-  !HasItemEquiped("ohhcloak",Myself)
-  Global("StatDown","GLOBAL",1)
-THEN
-  RESPONSE #100
-	SetGlobal("StatDown","GLOBAL",0)
-	CreateVisualEffectObject("spdispma",Myself)
-    ApplySpellRES("ohhcloa2",Myself)
-	Continue()
-END
-
-IF
-  HasItemEquiped("ohhkork",Myself)
-  AreaType(OUTDOOR)
-  TimeGT(DAWN_START)
-  TimeLT(DUSK_END)
-  Global("StatDown2","GLOBAL",0)
-THEN
-  RESPONSE #100
-	SetGlobal("StatDown2","GLOBAL",1)
-	CreateVisualEffectObject("spdispma",Myself)
-    ApplySpellRES("ohhkork",Myself)
-	Continue()
-END
-
-IF
-  HasItemEquiped("ohhkork",Myself)
-  OR(3)
-  !AreaType(OUTDOOR)
-  !TimeGT(DAWN_START)
-  !TimeLT(DUSK_END)
-  Global("StatDown2","GLOBAL",1)
-THEN
-  RESPONSE #100
-	SetGlobal("StatDown2","GLOBAL",0)
-	CreateVisualEffectObject("spdispma",Myself)
-    ApplySpellRES("ohhkork2",Myself)
-  Continue()
-END
-
-IF
-  !HasItemEquiped("ohhkork",Myself)
-  Global("StatDown2","GLOBAL",1)
-THEN
-  RESPONSE #100
-	SetGlobal("StatDown2","GLOBAL",0)
-	CreateVisualEffectObject("spdispma",Myself)
-    ApplySpellRES("ohhkork2",Myself)
-	Continue()
 END

@@ -1,0 +1,8 @@
+IF
+	Global("JosterLeave","GLOBAL",1)
+	Global("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",0)
+		ActionOverride("joster",DestroySelf())
+END

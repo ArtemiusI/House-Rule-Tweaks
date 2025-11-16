@@ -115,14 +115,27 @@ WRITE_ASCII SCRIPT_RACE ~~ #8
 
 BEGIN @27 DESIGNATED 0017
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @26
+
+//outdoor
+	
+APPEND ~splprot.2da~ ~C0SADAY 0x106 1 9~ UNLESS ~C0SADAY~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0SADAY~ BEGIN
+	    SET C0SADAY = %row%
+	  END
+	END
+
 EXTEND_TOP ~hexxat.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
 EXTEND_TOP ~hexxa25.bcs~ ~%MOD_FOLDER%/scripts/hexxat.baf~
-COPY ~%MOD_FOLDER%/items/hexxat/ohhcloak.itm~ ~override~
-COPY ~%MOD_FOLDER%/items/hexxat/ohhcloak.spl~ ~override~
-COPY ~%MOD_FOLDER%/items/hexxat/ohhcloa2.spl~ ~override~
-COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.itm~ ~override~
-COPY ~%MOD_FOLDER%/items/hexxat/ohhkork.spl~ ~override~
-COPY ~%MOD_FOLDER%/items/hexxat/ohhkork2.spl~ ~override~
+COPY ~%MOD_FOLDER%/items/hexxat~ ~override~
+COPY_EXISTING ~OHHCLOA1.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = C0SADAY END
+COPY_EXISTING ~OHHKORK1.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 318 parameter2 = C0SADAY END
 
 BEGIN @28 DESIGNATED 0018
 REQUIRE_PREDICATE (GAME_IS ~bg2ee~) @26
@@ -252,28 +265,11 @@ OUTER_SET trap_detection_probability = 100
 OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
-BEGIN @50 DESIGNATED 00341
+BEGIN ~5% chance per 5 points in Detect Traps above 100, check once per second~ DESIGNATED 00341
 SUBCOMPONENT @47
 
-OUTER_SET trap_detection_probability = 2
-OUTER_SET trap_detection_movement = 1
-
-INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
-
-BEGIN @51 DESIGNATED 00342
-SUBCOMPONENT @47
-
-OUTER_SET trap_detection_probability = 5
-OUTER_SET trap_detection_movement = 1
-
-INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
-
-BEGIN @52 DESIGNATED 00343
-SUBCOMPONENT @47
-
-OUTER_SET trap_detection_probability = 100
-OUTER_SET trap_detection_movement = 1
-
+OUTER_SET trap_detection_probability = 105
+OUTER_SET trap_detection_movement = 0
 INCLUDE ~%MOD_FOLDER%/lib/trap_detection.tpa~
 
 BEGIN @53 DESIGNATED 0035
@@ -382,3 +378,9 @@ COPY ~%MOD_FOLDER%/SPELLS/C0TRAPEY.CRE~ ~OVERRIDE~
 WRITE_ASCII 0x248 ~C0TRAPEY~  #8  // override
 WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
 COMPILE	~%MOD_FOLDER%/SCRIPTS/C0TRAPEY.BAF~
+
+BEGIN ~Thief Stronghold Tweak: Ask Jariel to pay your quota in your stead~ DESIGNATED 0044
+
+COMPILE	~%MOD_FOLDER%/Dialog/bg2/thief_stronghold.d~
+EXTEND_TOP ~ar0322.bcs~ ~%MOD_FOLDER%/scripts/ar0322.baf~
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/thief_stronghold.baf~

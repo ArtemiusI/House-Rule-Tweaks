@@ -49,10 +49,10 @@ With a War Cry, the warrior lets out an invigorating roar, healing <PRO_HISHER> 
 @43   = ~House Tweaks: Frozen, Disintegrated and Petrified Creatures Drop Items when Shattered~
 @44   = ~House Tweaks: Low-level Charm spells e.g. Charm Person (or Mammal) no longer turn targets hostile after expiring~
 @45   = ~This component is redundant on IWD:EE.~
-@46   = ~2% chance per 5 points in Detect Traps, check once per round~
+@46   = ~2% chance per 5 points in Detect Traps, check once per second~
 @47   = ~House Tweaks: Passive Trap Detection~
-@48   = ~5% chance per 5 points in Detect Traps, check once per round~
-@49   = ~100% chance of trap detection, check once per round~
+@48   = ~5% chance per 5 points in Detect Traps, check once per second~
+@49   = ~100% chance of trap detection, check once per second~
 @50   = ~2% chance per 5 points in Detect Traps, constant check while moving (experimental)~
 @51   = ~5% chance per 5 points in Detect Traps, constant check while moving (experimental)~
 @52   = ~100% chance of trap detection, constant check while moving (experimental)~

@@ -333,3 +333,28 @@ Grand Master (5 slots): The wielder no longer suffers a THAC0 penalty to the off
 	END
   BUT_ONLY
 	END
+  
+// DWARVEN DEFENDER - 2 WEAPON STYLE
+ACTION_CLEAR_ARRAY weapprof_cols_berserkerminsc
+        
+COPY_EXISTING ~weapprof.2da~  ~override~
+  COUNT_2DA_COLS col_count
+  SET col_check = col_count - 1
+  FOR (column = 0; column < col_check; ++column) BEGIN
+    READ_2DA_ENTRY 0 column col_check name
+    PATCH_IF (("C0TBM" STRING_COMPARE_CASE "%name%" = 0)) BEGIN
+      SET column += 1 // row with names has an empty entry for the first column
+      DEFINE_ASSOCIATIVE_ARRAY weapprof_cols_berserkerminsc BEGIN ~%column%~ => ~%column%~ END
+    END
+  END
+  PATCH_PHP_EACH weapprof_cols_berserkerminsc AS column => foo BEGIN
+    FOR (row = 8; row < 32; ++row) BEGIN
+      READ_2DA_ENTRY row column col_count stars
+      PATCH_IF (stars < 5) BEGIN
+        SET_2DA_ENTRY 28 column col_count 3
+      END
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+  

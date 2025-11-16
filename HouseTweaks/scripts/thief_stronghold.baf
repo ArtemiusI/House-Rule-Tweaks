@@ -1,0 +1,229 @@
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("PGQuota","GLOBAL",2)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",500)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 500 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("PGQuota","GLOBAL",3)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",1000)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 1000 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("PGQuota","GLOBAL",4)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",1000)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 1000 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("PGQuota","GLOBAL",5)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",350)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 350 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	GlobalGT("PGQuota","GLOBAL",5)
+	RandomNumGT(100,20)
+	RandomNumLT(100,71)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",500)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 500 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	GlobalGT("PGQuota","GLOBAL",5)
+	RandomNumGT(100,70)
+	RandomNumLT(100,91)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",900)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 900 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	GlobalGT("PGQuota","GLOBAL",5)
+	RandomNumLT(100,21)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",300)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 300 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	GlobalGT("PGQuota","GLOBAL",5)
+	RandomNumGT(100,90)
+	Global("RandomCost","GLOBAL",0)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",1000)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 1000 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("RandomCost","GLOBAL",1)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",500)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 500 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("RandomCost","GLOBAL",1)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",900)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 900 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("RandomCost","GLOBAL",1)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",300)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 300 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
+
+IF
+    GlobalTimerExpired("JosterPaid","GLOBAL")
+    !Global("JosterLeave","GLOBAL",1)
+	Global("RandomCost","GLOBAL",1)
+	GlobalGT("C0ThiefStrongholdQuotaStorage","GLOBAL",1000)
+    Global("PGFailed","GLOBAL",0)
+    !Global("Chapter","GLOBAL",4)
+    !Global("Chapter","GLOBAL",5)
+    !Global("Chapter","GLOBAL",7)
+THEN
+    RESPONSE #100
+		DisplayStringHead(Player1,~Jariel has paid the quartermaster 1000 gold in your absence.~)
+        IncrementGlobal("PGQuota","GLOBAL",1)
+		SetGlobal("JosterLeave","GLOBAL",1)
+		SetGlobal("C0ThiefStrongholdQuotaPaid","GLOBAL",1)
+		EraseJournalEntry(55541)
+END
