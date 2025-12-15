@@ -3,7 +3,6 @@
 IF
 	Global("ElgeaFree","GLOBAL",1)
 	Global("C0SpawnWelther","GLOBAL",0)
-	GlobalTimerExpired("C0ElgeaRewardTimer","GLOBAL")
 THEN
   RESPONSE #100
 	SetGlobal("C0SpawnWelther","GLOBAL",1)
