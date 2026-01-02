@@ -265,3 +265,16 @@ ADD_STORE_ITEM ~C0XPBK04~ #0 #0 #0 ~IDENTIFIED~ #3
 ADD_STORE_ITEM ~C0XPBK05~ #0 #0 #0 ~IDENTIFIED~ #2
 END
 END
+
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/dualclass.baf~ EVAL
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bdbaldur.bcs~ THEN BEGIN
+EXTEND_TOP ~bdbaldur.bcs~ ~%MOD_FOLDER%/scripts/dualclass.baf~ EVAL
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
+EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/dualclass.baf~ EVAL
+END
