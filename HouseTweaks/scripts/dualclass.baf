@@ -1,3 +1,80 @@
+IF
+	!OriginalClass(Player1,FIGHTER)
+	!OriginalClass(Player1,MAGE)
+	!OriginalClass(Player1,CLERIC)
+	!OriginalClass(Player1,THIEF)
+	!OriginalClass(Player1,DRUID)
+	!OriginalClass(Player1,RANGER)
+	TriggerOverride(Player1,Global("C0IsDualClass","LOCALS",0))
+THEN
+	RESPONSE #100
+		ActionOverride(Player1,SetGlobal("C0IsDualClass","LOCALS",1))
+END
+
+IF
+	!OriginalClass(Player2,FIGHTER)
+	!OriginalClass(Player2,MAGE)
+	!OriginalClass(Player2,CLERIC)
+	!OriginalClass(Player2,THIEF)
+	!OriginalClass(Player2,DRUID)
+	!OriginalClass(Player2,RANGER)
+	TriggerOverride(Player2,Global("C0IsDualClass","LOCALS",0))
+THEN
+	RESPONSE #100
+		ActionOverride(Player2,SetGlobal("C0IsDualClass","LOCALS",1))
+END
+
+IF
+	!OriginalClass(Player3,FIGHTER)
+	!OriginalClass(Player3,MAGE)
+	!OriginalClass(Player3,CLERIC)
+	!OriginalClass(Player3,THIEF)
+	!OriginalClass(Player3,DRUID)
+	!OriginalClass(Player3,RANGER)
+	TriggerOverride(Player3,Global("C0IsDualClass","LOCALS",0))
+THEN
+	RESPONSE #100
+		ActionOverride(Player3,SetGlobal("C0IsDualClass","LOCALS",1))
+END
+
+IF
+	!OriginalClass(Player4,FIGHTER)
+	!OriginalClass(Player4,MAGE)
+	!OriginalClass(Player4,CLERIC)
+	!OriginalClass(Player4,THIEF)
+	!OriginalClass(Player4,DRUID)
+	!OriginalClass(Player4,RANGER)
+	TriggerOverride(Player4,Global("C0IsDualClass","LOCALS",0))
+THEN
+	RESPONSE #100
+		ActionOverride(Player4,SetGlobal("C0IsDualClass","LOCALS",1))
+END
+
+IF
+	!OriginalClass(Player5,FIGHTER)
+	!OriginalClass(Player5,MAGE)
+	!OriginalClass(Player5,CLERIC)
+	!OriginalClass(Player5,THIEF)
+	!OriginalClass(Player5,DRUID)
+	!OriginalClass(Player5,RANGER)
+	TriggerOverride(Player5,Global("C0IsDualClass","LOCALS",0))
+THEN
+	RESPONSE #100
+		ActionOverride(Player5,SetGlobal("C0IsDualClass","LOCALS",1))
+END
+
+IF
+	!OriginalClass(Player6,FIGHTER)
+	!OriginalClass(Player6,MAGE)
+	!OriginalClass(Player6,CLERIC)
+	!OriginalClass(Player6,THIEF)
+	!OriginalClass(Player6,DRUID)
+	!OriginalClass(Player6,RANGER)
+	TriggerOverride(Player6,Global("C0IsDualClass","LOCALS",0))
+THEN
+	RESPONSE #100
+		ActionOverride(Player6,SetGlobal("C0IsDualClass","LOCALS",1))
+END
 
 IF
 	OR(6)
@@ -7,10 +84,10 @@ IF
 	OriginalClass(Player1,THIEF)
 	OriginalClass(Player1,DRUID)
 	OriginalClass(Player1,RANGER)
-	TriggerOverride(Player1,Global("C0IsDualClass","LOCALS",0))
+	TriggerOverride(Player1,Global("C0IsDualClass","LOCALS",1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player1,SetGlobal("C0IsDualClass","LOCALS",1))
+		ActionOverride(Player1,SetGlobal("C0IsDualClass","LOCALS",2))
 		ApplySpellRES("C0XPBK0X",Player1)
 END
 
@@ -22,10 +99,10 @@ IF
 	OriginalClass(Player2,THIEF)
 	OriginalClass(Player2,DRUID)
 	OriginalClass(Player2,RANGER)
-	TriggerOverride(Player2,Global("C0IsDualClass","LOCALS",0))
+	TriggerOverride(Player2,Global("C0IsDualClass","LOCALS",1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player2,SetGlobal("C0IsDualClass","LOCALS",1))
+		ActionOverride(Player2,SetGlobal("C0IsDualClass","LOCALS",2))
 		ApplySpellRES("C0XPBK0X",Player2)
 END
 
@@ -37,10 +114,10 @@ IF
 	OriginalClass(Player3,THIEF)
 	OriginalClass(Player3,DRUID)
 	OriginalClass(Player3,RANGER)
-	TriggerOverride(Player3,Global("C0IsDualClass","LOCALS",0))
+	TriggerOverride(Player3,Global("C0IsDualClass","LOCALS",1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player3,SetGlobal("C0IsDualClass","LOCALS",1))
+		ActionOverride(Player3,SetGlobal("C0IsDualClass","LOCALS",2))
 		ApplySpellRES("C0XPBK0X",Player3)
 END
 
@@ -52,10 +129,10 @@ IF
 	OriginalClass(Player4,THIEF)
 	OriginalClass(Player4,DRUID)
 	OriginalClass(Player4,RANGER)
-	TriggerOverride(Player4,Global("C0IsDualClass","LOCALS",0))
+	TriggerOverride(Player4,Global("C0IsDualClass","LOCALS",1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player4,SetGlobal("C0IsDualClass","LOCALS",1))
+		ActionOverride(Player4,SetGlobal("C0IsDualClass","LOCALS",2))
 		ApplySpellRES("C0XPBK0X",Player4)
 END
 
@@ -67,10 +144,10 @@ IF
 	OriginalClass(Player5,THIEF)
 	OriginalClass(Player5,DRUID)
 	OriginalClass(Player5,RANGER)
-	TriggerOverride(Player5,Global("C0IsDualClass","LOCALS",0))
+	TriggerOverride(Player5,Global("C0IsDualClass","LOCALS",1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player5,SetGlobal("C0IsDualClass","LOCALS",1))
+		ActionOverride(Player5,SetGlobal("C0IsDualClass","LOCALS",2))
 		ApplySpellRES("C0XPBK0X",Player5)
 END
 
@@ -82,9 +159,9 @@ IF
 	OriginalClass(Player6,THIEF)
 	OriginalClass(Player6,DRUID)
 	OriginalClass(Player6,RANGER)
-	TriggerOverride(Player6,Global("C0IsDualClass","LOCALS",0))
+	TriggerOverride(Player6,Global("C0IsDualClass","LOCALS",1))
 THEN
 	RESPONSE #100
-		ActionOverride(Player6,SetGlobal("C0IsDualClass","LOCALS",1))
+		ActionOverride(Player6,SetGlobal("C0IsDualClass","LOCALS",2))
 		ApplySpellRES("C0XPBK0X",Player6)
 END
