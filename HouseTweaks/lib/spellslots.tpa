@@ -83,5 +83,10 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBO
 
 ACTION_IF FILE_EXISTS_IN_GAME ~C0AURACL.2DA~ THEN BEGIN
 COPY_EXISTING ~C0PASSEF.SPL~ ~OVERRIDE~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~KIT~ ~C0AURA~)) parameter2 = 109 target = 3 timing = 1 STR_VAR resource = C0SLMAGE END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 power = 100 parameter1 = (IDS_OF_SYMBOL (~KIT~ ~C0AURA~)) parameter2 = 109 target = 3 timing = 1 STR_VAR resource = C0SLARTI END
+
+COPY_EXISTING ~C0SLBARD.SPL~ ~OVERRIDE/C0SLARTI.SPL~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_special = 0 parameter2 = 129 silent = 1 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_special = 1 parameter2 = C0HTINT silent = 1 END
+
 END

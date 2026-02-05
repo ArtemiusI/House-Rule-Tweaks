@@ -835,15 +835,15 @@ Weight: 4~
 
 Bonus spell slots for Mages:
 
-17: +1 Level 1, 2
-18: +1 Level 1, 2, 3, 4, 5
-19: +1 Level 3, 4, 6
-20: +1 Level 1, 2, 7
-21: +1 Level 3, 4, 5, 6, 8
-22: +1 Level 1, 2, 5, 7, 9
-23: +1 Level 1, 3, 6, 8
-24: +1 Level 2, 3, 4, 5, 6, 7, 9
-25: +1 Level 4, 5, 7, 8, 9
+17: 1|1|–|–|–|–|–|–|–
+18: 2|2|1|1|–|–|–|–|–
+19: 2|2|2|2|1|1|–|–|–
+20: 3|3|2|2|1|1|1|–|–
+21: 3|3|2|2|2|2|1|1|–
+22: 3|3|3|3|3|3|2|1|1
+23: 3|3|3|3|3|3|3|2|1
+24: 4|4|4|4|3|3|3|3|1
+25: 4|4|4|4|4|4|4|3|2
 
 Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of <PRO_HISHER> class.
 
