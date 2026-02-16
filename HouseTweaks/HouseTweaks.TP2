@@ -380,6 +380,7 @@ WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
 COMPILE	~%MOD_FOLDER%/SCRIPTS/C0TRAPEY.BAF~
 
 BEGIN ~Thief Stronghold Tweak: Ask Jariel to pay your quota in your stead~ DESIGNATED 0044
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @26
 
 COMPILE	~%MOD_FOLDER%/Dialog/bg2/thief_stronghold.d~
 EXTEND_TOP ~ar0322.bcs~ ~%MOD_FOLDER%/scripts/ar0322.baf~
