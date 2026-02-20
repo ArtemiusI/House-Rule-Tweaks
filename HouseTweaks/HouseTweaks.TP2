@@ -58,6 +58,13 @@ SUBCOMPONENT @8
 OUTER_SET backstab_tweaks = 1
 INCLUDE ~%MOD_FOLDER%/lib/backstab_tweaks.tpa~
 
+BEGIN ~House Tweaks: Rebalanced Strength Bonuses~ DESIGNATED 0013
+COPY ~%MOD_FOLDER%/2da/strmod.2da~ ~override~
+COPY ~%MOD_FOLDER%/2da/strmodex.2da~ ~override~
+
+BEGIN ~House Tweaks: Rebalanced Dexterity Bonuses~ DESIGNATED 0045
+COPY ~%MOD_FOLDER%/2da/dexmod.2da~ ~override~
+
 BEGIN @9 DESIGNATED 0009
 SUBCOMPONENT @10
 COPY ~%MOD_FOLDER%/2da/hpconbon.2da~ ~override~
@@ -72,18 +79,6 @@ COPY ~%MOD_FOLDER%/2da/hpconbon_hp.2da~ ~override/hpconbon.2da~
 
 BEGIN @13 DESIGNATED 0012
 INCLUDE ~%MOD_FOLDER%/lib/spellslots.tpa~
-
-BEGIN @14 DESIGNATED 0013
-COPY ~%MOD_FOLDER%/hlas/fighter~ ~override~
-COPY ~%MOD_FOLDER%/hlas/fighter/spcl904.spl~ ~override~
-SAY NAME1 @15
-SAY UNIDENTIFIED_DESC @16
-COPY ~%MOD_FOLDER%/hlas/fighter/spcl905.spl~ ~override~
-SAY NAME1 @17
-SAY UNIDENTIFIED_DESC @18
-COPY ~%MOD_FOLDER%/hlas/fighter/spcl908.spl~ ~override~
-SAY NAME1 @19
-SAY UNIDENTIFIED_DESC @20
 
 BEGIN @21 DESIGNATED 0014
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @22

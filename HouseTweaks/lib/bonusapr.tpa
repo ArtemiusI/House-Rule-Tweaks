@@ -1,294 +1,33 @@
 COPY ~%MOD_FOLDER%/bonusapr~ ~override~
 
+// THAC0
+APPEND ~splprot.2da~ ~C0HT_THAC0_LTEQUALS%TAB%7%TAB%-1%TAB%0~ UNLESS ~C0HT_THAC0_LTEQUALS~
+COPY_EXISTING ~splprot.2da~ ~override~
+	COUNT_2DA_COLS cols // amount of columns
+	READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+	FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+	  READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+	  PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~C0HT_THAC0_LTEQUALS~ BEGIN
+	    SET C0HT_THAC0_LTEQUALS = %row%
+	  END
+	END
+
+COPY_EXISTING ~C0APR__.SPL~ ~OVERRIDE~
+LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = C0HT_THAC0_LTEQUALS END
+
 ///////////////////////////////////////////////////////////////////////////
 // Set Abilities for all Fighter Kits                                    //
 // This allows all previously installed fighter kits to receive the      //
 // benefits of your overhaul                                             //
 ///////////////////////////////////////////////////////////////////////////
 
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABFI01.2DA~ BEGIN
-COPY_EXISTING ~CLABFI01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABRA01.2DA~ BEGIN
-COPY_EXISTING ~CLABRA01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 f_MaxLevel = 7 STR_VAR f_Entry = AP_C0APF14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APF08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
 ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA01.2DA~) BEGIN
-	COPY ~%MOD_FOLDER%/2da/CLABMA01.2DA~ ~override~
+	COPY ~%MOD_FOLDER%/2da/blankclab.2DA~ ~override/CLABMA01.2DA~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA01.2DA~ BEGIN
-COPY_EXISTING ~CLABMA01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABSO01.2DA~) BEGIN
+	COPY ~%MOD_FOLDER%/2da/blankclab.2DA~ ~override/CLABSO01.2DA~
 END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABSO01.2DA~ BEGIN
-COPY_EXISTING ~CLABSO01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABDR01.2DA~ BEGIN
-COPY_EXISTING ~CLABDR01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABPR01.2DA~ BEGIN
-COPY_EXISTING ~CLABPR01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABSH01.2DA~ BEGIN
-COPY_EXISTING ~CLABSH01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABTH01.2DA~ BEGIN
-COPY_EXISTING ~CLABTH01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABBA01.2DA~ BEGIN
-COPY_EXISTING ~CLABBA01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-COPY_EXISTING ~KITLIST.2DA~ ~override~
-  READ_2DA_ENTRIES_NOW ~fig_kitlist~ 10
-  FOR (row = 1; row < fig_kitlist; row += 1) BEGIN
-  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 5 kit_clab
-  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 1 kit_label
-  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 8 kit_class
-  
-  PATCH_IF (%kit_class% = 1) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF (%kit_class% = 3) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF (%kit_class% = 4) BEGIN
-    PATCH_IF (FILE_EXISTS_IN_GAME ~%kit_clab%.2da~) BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF FILE_EXISTS_IN_GAME ~C0AURACL.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~C0AURACL.2DA~ override
-      REPLACE_TEXTUALLY ~AP_C0APR14~ ~****     ~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  
-  PATCH_IF (%kit_class% = 5) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 f_MaxLevel = 13 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-
-  PATCH_IF (%kit_class% = 11) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF (%kit_class% = 19) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF (%kit_class% = 21) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 10 f_MaxLevel = 10 STR_VAR f_Entry = AP_C0APR14 END // 14 THAC0
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 19 f_MaxLevel = 19 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  END
-  
-ACTION_IF MOD_IS_INSTALLED ~CDTWEAKS/SETUP-CDTWEAKS.TP2~ ~2240~ THEN BEGIN //Unnerfed THAC0 Table
-
-ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA01.2DA~) BEGIN
-	COPY ~%MOD_FOLDER%/2da/CLABMA01.2DA~ ~override~
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABMA01.2DA~ BEGIN
-COPY_EXISTING ~CLABMA01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 37 f_MaxLevel = 37 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABSO01.2DA~ BEGIN
-COPY_EXISTING ~CLABSO01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 37 f_MaxLevel = 37 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABTH01.2DA~ BEGIN
-COPY_EXISTING ~CLABTH01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 25 f_MaxLevel = 25 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~CLABBA01.2DA~ BEGIN
-COPY_EXISTING ~CLABBA01.2DA~ OVERRIDE
-  // Borrowed from Rogue Rebalancing
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 25 f_MaxLevel = 25 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-  PRETTY_PRINT_2DA
-BUT_ONLY
-END
-
-COPY_EXISTING ~KITLIST.2DA~ ~override~
-  READ_2DA_ENTRIES_NOW ~fig_kitlist~ 10
-  FOR (row = 1; row < fig_kitlist; row += 1) BEGIN
-  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 5 kit_clab
-  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 1 kit_label
-  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 8 kit_class
-  
-  PATCH_IF (%kit_class% = 1) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 37 f_MaxLevel = 37 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF (%kit_class% = 4) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 25 f_MaxLevel = 25 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF FILE_EXISTS_IN_GAME ~C0AURACL.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~C0AURACL.2DA~ override
-      REPLACE_TEXTUALLY ~AP_C0APR08~ ~****     ~
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 37 f_MaxLevel = 37 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  
-  PATCH_IF (%kit_class% = 5) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 25 f_MaxLevel = 25 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  PATCH_IF (%kit_class% = 19) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
-      INNER_ACTION BEGIN
-      COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 37 f_MaxLevel = 37 STR_VAR f_Entry = AP_C0APR08 END // 8 THAC0
-        PRETTY_PRINT_2DA
-      BUT_ONLY
-      END
-    END
-  END
-  
-  END
-  
-END
-
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA02.2DA~ BEGIN
 COPY_EXISTING ~CLABMA01.2DA~ ~OVERRIDE/CLABMA02.2DA~
@@ -322,16 +61,79 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~CLABMA09.2DA~ BEGIN
 COPY_EXISTING ~CLABMA01.2DA~ ~OVERRIDE/CLABMA09.2DA~
 END
 
+ACTION_FOR_EACH base_clab IN clabba01 clabdr01 clabfi01 clabmo01 clabpa01 clabpr01 clabrn01 clabth01 clabma01 clabso01 BEGIN
+COPY_EXISTING ~%base_clab%.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+  REPLACE_TEXTUALLY ~AP_C0APR__~ ~****      ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_C0APR__ END
+  PRETTY_PRINT_2DA
+END
+
+ACTION_FOR_EACH war_clab IN clabfi01 clabmo01 clabpa01 clabrn01 BEGIN
+COPY_EXISTING ~%war_clab%.2DA~ OVERRIDE
+  // Borrowed from Rogue Rebalancing
+  REPLACE_TEXTUALLY ~AP_C0APF_1~ ~****      ~
+  REPLACE_TEXTUALLY ~AP_C0APF_2~ ~****      ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 STR_VAR f_Entry = AP_C0APF_1 END 
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 STR_VAR f_Entry = AP_C0APF_2 END 
+  PRETTY_PRINT_2DA
+END
+
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~fig_kitlist~ 10
+  FOR (row = 1; row < fig_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 8 kit_class
+  
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        REPLACE_TEXTUALLY ~AP_C0APR__~ ~****      ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_C0APR__ END 
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+  END
+  
+PATCH_IF (kit_class = 2) OR (kit_class = 6) OR (kit_class = 12) OR (kit_class = 20) BEGIN
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        REPLACE_TEXTUALLY ~AP_C0APF_1~ ~****      ~
+        REPLACE_TEXTUALLY ~AP_C0APF_2~ ~****      ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 7 STR_VAR f_Entry = AP_C0APF_1 END 
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 13 STR_VAR f_Entry = AP_C0APF_2 END 
+        PRETTY_PRINT_2DA
+      BUT_ONLY
+      END
+  END
+END
+  
+  END
+  
+COPY_EXISTING ~KITLIST.2DA~ ~override~
+  READ_2DA_ENTRIES_NOW ~fig_kitlist~ 10
+  FOR (row = 1; row < fig_kitlist; row += 1) BEGIN
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 5 kit_clab
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 1 kit_label
+  READ_2DA_ENTRY_FORMER ~fig_kitlist~ row 8 kit_class
+  
+    PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
+      INNER_ACTION BEGIN
+      COPY_EXISTING ~%kit_clab%.2DA~ override
+        REPLACE_TEXTUALLY ~AP_C0APR__~ ~****      ~
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_C0APR__ END 
+        PRETTY_PRINT_2DA
+      END
+  END
+END
+
+
 COPY_EXISTING_REGEXP GLOB ~^.+\.cre$~ ~override~ 
-   READ_BYTE	0x52 thac0
    READ_BYTE	0x273 class
    PATCH_IF ((class = 1) OR (class = 3) OR (class = 4) OR (class = 5) OR (class = 11) OR (class = 13) OR (class = 14) OR (class = 15) OR (class = 19) OR (class = 21)) BEGIN
-	PATCH_IF (thac0 < 15) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR14 END
-	END
-	PATCH_IF (thac0 < 9) BEGIN
-   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR08 END
-	END
+   LPF ADD_CRE_EFFECT INT_VAR opcode = 326 target = 1 STR_VAR resource = C0APR__ END
    END
       BUT_ONLY
 	  
