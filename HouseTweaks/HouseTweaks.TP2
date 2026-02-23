@@ -381,7 +381,7 @@ COMPILE	~%MOD_FOLDER%/Dialog/bg2/thief_stronghold.d~
 EXTEND_TOP ~ar0322.bcs~ ~%MOD_FOLDER%/scripts/ar0322.baf~
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/thief_stronghold.baf~
 
-BEGIN ~House Tweaks: Rest on Travel (Experimental)~ DESIGNATED 0045
+BEGIN ~House Tweaks: Rest on Travel (Experimental)~ DESIGNATED 0046
 
 COPY ~%MOD_FOLDER%/travel_rest~ ~OVERRIDE~
 ACTION_FOR_EACH baldur_script IN baldur bdbaldur baldur25 BEGIN
