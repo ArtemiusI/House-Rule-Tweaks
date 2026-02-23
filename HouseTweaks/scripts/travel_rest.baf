@@ -1,0 +1,37 @@
+IF
+    PartyRested()
+THEN
+    RESPONSE #100
+        SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
+END
+
+IF
+    Global("TravelRest","MYAREA",0)
+    Global("TravelRestReset","GLOBAL",0)
+    GlobalTimerExpired("TravelRestTimer","GLOBAL")
+THEN
+    RESPONSE #100
+        ActionOverride(Player1,ApplySpellRES("c0rest_t",Player1))  // No such index
+        SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
+        SetGlobal("TravelRest","MYAREA",1)
+        SetGlobal("TravelRestReset","GLOBAL",1)
+END
+
+IF
+    Global("TravelRest","MYAREA",1)
+    Global("TravelRestReset","GLOBAL",1)
+    GlobalTimerExpired("TravelRestTimer","GLOBAL")
+THEN
+    RESPONSE #100
+        ActionOverride(Player1,ApplySpellRES("c0rest_t",Player1))  // No such index
+        SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
+        SetGlobal("TravelRest","MYAREA",0)
+        SetGlobal("TravelRestReset","GLOBAL",0)
+END
+
+IF
+    !GlobalTimerExpired("TravelRestTimer","GLOBAL")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
+END

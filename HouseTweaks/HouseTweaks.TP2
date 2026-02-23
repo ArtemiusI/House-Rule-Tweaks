@@ -374,9 +374,18 @@ WRITE_ASCII 0x248 ~C0TRAPEY~  #8  // override
 WRITE_ASCII 0x2cc ~C0TRAPEY~ #8  // dialogue
 COMPILE	~%MOD_FOLDER%/SCRIPTS/C0TRAPEY.BAF~
 
-BEGIN ~Thief Stronghold Tweak: Ask Jariel to pay your quota in your stead~ DESIGNATED 0044
+BEGIN ~House Tweaks: Thief Stronghold—Ask Jariel to pay your quota in your stead~ DESIGNATED 0044
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @26
 
 COMPILE	~%MOD_FOLDER%/Dialog/bg2/thief_stronghold.d~
 EXTEND_TOP ~ar0322.bcs~ ~%MOD_FOLDER%/scripts/ar0322.baf~
 EXTEND_TOP ~baldur.bcs~ ~%MOD_FOLDER%/scripts/thief_stronghold.baf~
+
+BEGIN ~House Tweaks: Rest on Travel (Experimental)~ DESIGNATED 0045
+
+COPY ~%MOD_FOLDER%/travel_rest~ ~OVERRIDE~
+ACTION_FOR_EACH baldur_script IN baldur bdbaldur baldur25 BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%baldur_script%.bcs~ BEGIN
+EXTEND_TOP ~%baldur_script%.bcs~ ~%MOD_FOLDER%/scripts/travel_rest.baf~
+END
+END
