@@ -3,6 +3,7 @@ IF
 THEN
     RESPONSE #100
         SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
+        Continue()
 END
 
 IF
@@ -15,6 +16,7 @@ THEN
         SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
         SetGlobal("TravelRest","MYAREA",1)
         SetGlobal("TravelRestReset","GLOBAL",1)
+        Continue()
 END
 
 IF
@@ -27,6 +29,7 @@ THEN
         SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
         SetGlobal("TravelRest","MYAREA",0)
         SetGlobal("TravelRestReset","GLOBAL",0)
+        Continue()
 END
 
 IF
@@ -34,4 +37,5 @@ IF
 THEN
     RESPONSE #100
         SetGlobalTimer("TravelRestTimer","GLOBAL",ONE_HOUR)
+        Continue()
 END
