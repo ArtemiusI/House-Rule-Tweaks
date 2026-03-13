@@ -11,6 +11,11 @@ LANGUAGE
   ~English~ 
   ~english~
   ~%MOD_FOLDER%/tra/english/setup.tra~
+  
+LANGUAGE 
+  ~Spanish~ 
+  ~spanish~
+  ~%MOD_FOLDER%/tra/spanish/setup.tra~
 
 /*
 BEGIN ~House Tweaks: Use Magic Device Skill~ DESIGNATED 0043

@@ -1,0 +1,925 @@
+@0    = ~2.9~
+@1    = ~House Tweaks: Enemigos raciales ampliados~
+@2    = ~House Tweaks: Cambio de forma ampliado~
+@3    = ~House Tweaks: Bonificaciones raciales ampliadas~
+@4    = ~House Tweaks: Pericias reequilibradas~
+@5    = ~House Tweaks: Estilos de arma reequilibrados~
+@6    = ~House Tweaks: Pericia racial con armas~
+@7    = ~House Tweaks: Progresión de ataques por asalto reequilibrada~
+@8    = ~House Tweaks: Ajustes al ataque por la espalda~
+@9    = ~Bonificaciones de Constitución para todas las clases + cambios en regeneración~
+@10   = ~House Tweaks: Bonificaciones de Constitución reequilibradas~
+@11   = ~Solo cambios en regeneración~
+@12   = ~Solo bonificaciones de Constitución para todas las clases~
+@13   = ~House Tweaks: Espacios de conjuro adicionales según INT/SAB/CAR~
+@14   = ~House Tweaks: Habilidades de alto nivel para guerreros~
+@15   = ~Resistir magia~
+@16   = ~Resistir magia
+Esta habilidad permite al guerrero recurrir temporalmente a una gran fortaleza interior y resistir los efectos de la magia malévola. Durante 5 asaltos, el guerrero obtiene un bonificador de +10 a todas las tiradas de salvación. Además, absorbe el equivalente a 20 niveles de conjuros lanzados sobre <PRO_HIMHER>. El bonificador a las tiradas de salvación siempre dura toda la duración del efecto.~
+@17   = ~Golpe crítico~
+@18   = ~Golpe crítico
+El profundo conocimiento que un guerrero de alto nivel posee sobre los puntos vitales de sus enemigos le permite, una vez al día, concentrar <PRO_HISHER> siguiente ataque para golpear una zona vital. Con esta habilidad, el siguiente ataque del guerrero es un 20 natural: un golpe crítico que inflige 4x daño (2x contra enemigos inmunes a golpes críticos).
+
+Requiere: Ataque poderoso~
+@19   = ~Grito de guerra~
+@20   = ~Grito de guerra
+Con un grito de guerra, el guerrero lanza un rugido vigorizante que restaura por completo los puntos de golpe de <PRO_HISHER>, además de eliminar la fatiga y restaurar niveles drenados.~
+@21   = ~House Tweaks: Diálogos mejorados (BG:EE)~
+@22   = ~Este componente debe instalarse en BG:EE.~
+@23   = ~Oficial Zelas~
+@24   = ~House Tweaks: Ratas no tan indestructibles~
+@25   = ~House Tweaks: Recompensas de rol para personajes de alineamiento bueno (BG2:EE)~
+@26   = ~Este componente debe instalarse en BG2:EE.~
+@27   = ~House Tweaks: La capa de Dragomir solo reduce atributos a la luz del día~
+@28   = ~House Tweaks: Otorgar bonificaciones de atributos a los PNJ de EE en BG2 (excepto Hexxat)~
+@29   = ~House Tweaks: Objetos de trama útiles~
+@30   = ~House Tweaks: Inconsciencia de los trolls más rápida~
+@31   = ~House Tweaks: Restaurar el efecto de sonido al aumentar reputación en BG2~
+@32   = ~La reputación del grupo ha aumentado~ [REPUP]
+@33   = ~House Tweaks: Corrección de textos de raza~
+@34   = ~House Tweaks: Avatares de ladrón sin capucha~
+@35   = ~House Tweaks: Conjuntos de voz para PNJ de Icewind Dale~
+@36   = ~Este componente debe instalarse en IWD:EE.~
+@37   = ~House Tweaks: Bonificaciones de reputación para Icewind Dale~
+@38   = ~House Tweaks: Ajustes de voces para Anomen y Sarevok (BG2:EE)~
+@39   = ~House Tweaks: Libros de experiencia~
+@40   = ~Espada bastarda~
+@41   = ~House Tweaks: Restaurar ajuste de la Hoja de Aihonen~
+@42   = ~Espada a dos manos~
+@43   = ~House Tweaks: Las criaturas congeladas, desintegradas o petrificadas dejan objetos al hacerse añicos~
+@44   = ~House Tweaks: Los conjuros de encantamiento de bajo nivel (p. ej. Encantar persona o mamífero) ya no vuelven hostiles a los objetivos al expirar~
+@45   = ~Este componente es redundante en IWD:EE.~
+@46   = ~2% de probabilidad por cada 5 puntos en Detectar trampas; comprobación una vez por segundo~
+@47   = ~House Tweaks: Detección pasiva de trampas~
+@48   = ~5% de probabilidad por cada 5 puntos en Detectar trampas; comprobación una vez por segundo~
+@49   = ~100% de probabilidad de detectar trampas; comprobación una vez por segundo~
+@50   = ~2% de probabilidad por cada 5 puntos en Detectar trampas; comprobación constante al moverse (experimental)~
+@51   = ~5% de probabilidad por cada 5 puntos en Detectar trampas; comprobación constante al moverse (experimental)~
+@52   = ~100% de probabilidad de detectar trampas; comprobación constante al moverse (experimental)~
+@53   = ~House Tweaks: Eliminar todas las frases de voz de «Ocultarse en las sombras»~
+@54   = ~House Tweaks: Eliminar todas las frases de voz de «Colocar trampas»~
+@55   = ~House Tweaks: Hacer invisibles los cascos en avatares de mago~
+@56   = ~House Tweaks: Ataque por la espalda con cualquier arma~
+@57   = ~House Tweaks: Las armaduras de ankheg y escama de dragón cuentan como armadura media~
+@58   = ~House Tweaks: Bonificador de Carisma a niveles de expulsar muertos vivientes~
+@59   = ~House Tweaks: Ajustes de activación de trampas~
+@60   = ~"%insert%" is not a legal BAF file, INSERT_SCRIPT_BLOCK will fail~
+@61   = ~%internal_insert_data%%WNL%~
+@63   = ~internal error in ALTER_SCRIPT suite~
+@64   = ~%new_script%%data%~
+@65   = ~¿Dar bonificaciones de atributos a Rasaad? (+1 FUE, DES, CON)
+1) Sí
+2) No~
+@66   = ~placeholder_value~
+@67   = ~¿Dar bonificaciones de atributos a Dorn? (+1 DES, +2 CON)
+1) Sí
+2) No~
+@68   = ~¿Dar bonificaciones de atributos a Neera? (+2 CON, +1 INT)
+1) Sí
+2) No~
+@69   = ~fl#row%newrow%~
+@71   = ~%newrow% ****~
+@72   = ~%newrow% %f_Entry%~
+@73   = ~Ankheg~
+@74   = ~Ankheg
+Los ankheg son enormes monstruos insectoides que excavan bajo tierra. Aunque no son activamente maliciosos y se valoran por su capacidad para airear el suelo con sus túneles, son criaturas peligrosas debido a sus resistentes caparazones quitinosos (que los armeros expertos pueden tratar para crear armaduras de placas), sus afiladas garras y su saliva ácida proyectada a distancia.~
+@75   = ~Basilisco~
+@76   = ~Basilisco
+Los basiliscos son enormes criaturas reptilianas de ocho patas. Aunque su mordedura es altamente venenosa, su rasgo más temible es su capacidad para petrificar instantáneamente a cualquier ser vivo con su mirada. Las zonas donde los basiliscos abundan se reconocen fácilmente por las estatuas de piedra de sus víctimas que dejan tras de sí.~
+@77   = ~Espectador~
+@78   = ~Espectador
+Una gran esfera flotante con un ojo central, una gran boca y numerosos ojos menores que brotan de tallos sobre su grotesca forma. Verdaderamente alienígenas, los parientes de los espectadores presentan muchas variantes, aunque todos deben evitarse. Los espectadores se encuentran con mayor frecuencia bajo tierra y constituyen una de las especies dominantes de la Infraoscuridad.~
+@79   = ~Oso~
+@80   = ~Oso
+Los osos son mamíferos omnívoros y depredadores que suelen encontrarse en bosques y cuevas. Increíblemente fuertes y rápidos para su tamaño, hibernan durante el invierno y buscan alimento en verano, y atacarán a los viajeros desafortunados que se acerquen demasiado.~
+@81   = ~Carroñero reptante~
+@82   = ~Carroñero reptante
+El carroñero reptante es un carroñero de las zonas subterráneas que se alimenta principalmente de cadáveres. Sin embargo, cuando escasea ese alimento o se siente amenazado, atacará y matará a criaturas vivas.
+
+El carroñero reptante parece una mezcla entre un enorme gusano cortador verde y un cefalópodo. Como tantos otros monstruos híbridos, es posible que el carroñero reptante sea el resultado de experimentos genéticos realizados por algún mago loco y malvado.
+
+La cabeza de la criatura está cubierta por un duro pellejo, pero el resto del cuerpo no está bien protegido. El monstruo va acompañado por un hedor rancio y fétido que a menudo delata su presencia antes de que se acerque.~
+@83   = ~Infernal~
+@84   = ~Infernal
+Los infernales son peligrosos seres extraplanares procedentes de los Planos Inferiores. Nacidos del mal puro y la malevolencia, su poder, intelecto y encanto sobrenatural los convierten en enemigos formidables para cualquier ser. Los baatezu, tanar'ri y yugoloths son criaturas que entran dentro de la categoría de infernales.~
+@85   = ~Doppelganger~
+@86   = ~Doppelganger
+Los doppelganger son criaturas humanoides con la capacidad de cambiar de forma. Son astutos por naturaleza y capaces de imitar casi a la perfección a un objetivo elegido tras observarlo durante el tiempo suficiente. Cuando son descubiertos, su resistente piel y sus afiladas garras les proporcionan un medio de defensa en su forma natural.~
+@87   = ~Dragón~
+@88   = ~Dragón
+Los dragones son una antigua raza reptiliana alada. Son conocidos y temidos por su tamaño, su fuerza física y sus habilidades mágicas. Los dragones más antiguos se encuentran entre las criaturas más poderosas del mundo. Los dragones cromáticos suelen ser de naturaleza malvada, mientras que los dragones metálicos tienden hacia el bien.~
+@89   = ~Drider~
+@90   = ~Drider
+Los drider fueron en su día drow, transformados permanentemente en una forma aberrante compuesta por el torso superior de un elfo oscuro y el cuerpo inferior de una araña. Esta transformación suele ser un castigo: los drider existen en un estado perpetuo de agonía que termina por volverlos locos. Son criaturas sanguinarias y crueles.~
+@91   = ~Enano~
+@92   = ~Enano
+Los enanos son bajos y robustos, fácilmente identificables por su tamaño y complexión. Tienen mejillas rojizas, ojos oscuros y cabello oscuro. Los enanos suelen ser serios y taciturnos. Son trabajadores incansables y apenas aprecian la mayoría de las bromas. Disfrutan de la cerveza, la ale y el hidromiel, pero sobre todo aman el oro. Existen cuatro divisiones raciales de enanos en los Reinos: enanos escudo, enanos dorados, enanos salvajes y duergar.~
+@93   = ~Elemental~
+@94   = ~Elemental
+Los elementales son seres conscientes que pueden poseer cuerpos formados por uno de los cuatro elementos básicos que componen el Plano Material Primario: aire, tierra, fuego y agua.~
+@95   = ~Elfo~
+@96   = ~Elfo
+Los elfos suelen ser más bajos y esbeltos que los humanos. Sus rasgos son finos y delicados, y hablan con tonos melodiosos. A menudo se les considera frívolos y distantes. Se interesan por la belleza natural, el baile, los juegos y otras actividades similares. Su humor es ingenioso, al igual que sus canciones y su poesía. Existen seis divisiones raciales de elfos en los Reinos: elfos dorados, elfos lunares, elfos salvajes, elfos marinos, elfos oscuros (drow) y elfos alados (avariel).~
+@97   = ~Ettercap~
+@98   = ~Ettercap
+Los ettercap son criaturas bípedas y repulsivas que se llevan muy bien con todo tipo de arañas gigantes. Estas criaturas de baja inteligencia son extremadamente crueles, muy astutas y expertas en colocar trampas —trampas muy mortales— al igual que las arañas con las que suelen convivir.
+
+Los ettercap miden alrededor de seis pies de altura, incluso con su postura encorvada y sus hombros hundidos. Tienen piernas cortas y delgadas, largos brazos que casi llegan hasta los tobillos y grandes vientres abultados. Sus manos poseen un pulgar y tres largos dedos que terminan en garras afiladas como cuchillas. Sus cuerpos están cubiertos de mechones de pelo negro, grueso y áspero, y su piel es oscura y resistente. La cabeza de un ettercap tiene una forma casi equina, pero poseen grandes ojos reptilianos, normalmente de color rojo sangre, y grandes colmillos, uno sobresaliendo hacia abajo a cada lado de la boca. La boca es grande y está llena de dientes muy afilados.
+
+Los ettercap no tienen un lenguaje formal. Se comunican mediante una combinación de chillidos agudos, chirridos y acciones violentas.~
+@99   = ~Etin~
+@100  = ~Etin
+Los etin son gigantes de dos cabezas. Cada cabeza es capaz de pensar de manera independiente y controla uno de los brazos. Considerados los más torpes entre los gigantes, los etin habitan cavernas oscuras y túneles subterráneos, y son despreciados por sus primos de una sola cabeza.~
+@101  = ~Hada~
+@102  = ~Hada
+El término «pueblo feérico» engloba muchas clases de pequeñas criaturas generalmente benévolas. La imagen más asociada al término es la de una pequeña criatura alada y traviesa, aunque su carácter puede variar tanto como el de cualquier otra raza.~
+@103  = ~Genio~
+@104  = ~Genio
+Los genios proceden de los planos elementales, aunque a veces se encuentran en el Plano Material Primario y ocasionalmente son invocados para realizar algún servicio para un poderoso mago o sacerdote. La reacción del genio ante semejante indignidad puede variar según su tipo.~
+@105  = ~Necrófago~
+@106  = ~Necrófago
+Los necrófagos son criaturas no muertas que en otro tiempo fueron humanas y que ahora se alimentan de la carne de los cadáveres. Aunque la transformación ha destruido y enloquecido sus mentes, conservan una terrible astucia que les permite cazar a sus presas con gran eficacia.
+
+Los necrófagos aún recuerdan vagamente su origen humano, pero han quedado horriblemente deformados por su transformación. La lengua se vuelve larga y resistente para lamer la médula de los huesos rotos, los dientes se alargan y se afilan, y las uñas crecen fuertes y puntiagudas como garras.~
+@107  = ~Gigante~
+@108  = ~Gigante
+Los gigantes son enormes criaturas humanoides dotadas de una fuerza tremenda. Entre las variedades de gigantes se encuentran los gigantes de las colinas, de las nubes, de fuego, de escarcha, de piedra y de tormenta. La mayoría de las razas de gigantes son tan inteligentes como otros humanoides y pueden ser de alineamiento bueno o malvado.~
+@109  = ~Farfullero~
+@110  = ~Farfullero
+Llegan gritando, parloteando y aullando desde la noche. Docenas, quizá cientos de humanoides desnudos y encorvados avanzan sin cesar. No piensan en la seguridad, la sutileza ni la estrategia, y su ataque en masa deja pocas esperanzas a quienes intentan detenerlos. Después de matar, los gibberling se dispersan de nuevo en la noche, aparentemente al azar.
+
+La primera impresión de los farfulleros es la de una masa retorcida de pelo y carne en la oscuridad iluminada por la luna. En realidad se trata de un enjambre de humanoides pálidos y encorvados, con orejas caninas puntiagudas y melenas negras que rodean sus horribles rostros sonrientes. Sus ojos negros brillan con un fulgor maniaco.~
+@111  = ~Githyanki~
+@112  = ~Githyanki
+Los «seguidores de Gith» fueron en su origen seres humanos que ahora habitan el Plano Astral. Son altos y delgados, con piel amarillenta y rostros hundidos. Los githyanki son agresivos y militaristas, y dominan tanto las armas como la magia. Debido a su historia de esclavitud a manos de los desuellamentes, los githyanki poseen habilidades psiónicas. Las espadas de plata son el arma sagrada de los githyanki, reservadas para los más poderosos de su orden, y si una cae en manos de alguien que no sea githyanki, lo perseguirán sin piedad hasta recuperarla.~
+@113  = ~Gnoll~
+@114  = ~Gnoll
+Los gnolls son humanoides grandes y malvados, de aspecto similar a hienas, que vagan en bandas poco organizadas.
+
+Aunque el cuerpo de un gnoll tiene la forma del de un humano grande, los detalles son los de una hiena. Se mantienen erguidos sobre dos patas y tienen manos capaces de manipular objetos tan bien como las de cualquier humano. Poseen piel de color gris verdoso, más oscura cerca del hocico, y una corta melena que va del gris rojizo al amarillo apagado.~
+@115  = ~Gnomo~
+@116  = ~Gnomo
+Parientes de los enanos, los gnomos son notablemente más pequeños que sus lejanos primos. Los gnomos, como les gusta señalar con orgullo, también son menos rechonchos que los enanos. La mayoría tiene piel morena oscura o marrón, cabello blanco y narices bastante grandes. Los gnomos poseen un sentido del humor vivaz y astuto, especialmente para las bromas pesadas. Aman la naturaleza tanto como las gemas y la joyería. Dentro de los Reinos existen dos divisiones raciales de gnomos: los gnomos de las rocas y los gnomos de las profundidades (svirfneblin).~
+@117  = ~Goblin~
+@118  = ~Goblin
+Los goblins son pequeñas criaturas pertenecientes a la raza goblinoide, con rostros planos, narices anchas, orejas puntiagudas y afilados colmillos. Aunque individualmente son débiles, los goblins pueden resultar peligrosos debido a su rápida tasa de reproducción y su tendencia a agruparse en tribus. Debido a su pequeño tamaño, son criaturas sigilosas y escurridizas, y pueden llegar a ser sorprendentemente astutas.~
+@119  = ~Gólem~
+@120  = ~Gólem
+«Gólem» es un término amplio que engloba muchos tipos de constructos mágicos. La mayoría son humanoides, aunque pueden ser de tamaño inhumano, y casi todos requieren medios mágicos para ser destruidos.~
+@121  = ~Gran trasgo~
+@122  = ~Gran trasgo
+Los grandes trasgos son una feroz raza humanoide que libra una guerra perpetua contra otras razas humanoides. Son inteligentes, organizados y agresivos.
+
+Un gran trasgo típico es un humanoide robusto de al menos seis pies de altura. Su piel peluda varía del marrón rojizo oscuro al gris oscuro. Sus rostros muestran piel roja oscura o rojo anaranjada. Los machos grandes tienen narices azules o rojas. Los ojos de los grandes trasgos son amarillentos o marrón oscuro, mientras que sus dientes son amarillos. Sus vestimentas tienden a ser de colores vivos, a menudo rojo sangre intenso. Cualquier pieza de cuero está siempre teñida de negro. El armamento de los grandes trasgos se mantiene bien pulido y reparado.
+
+Los grandes trasgos tienen su propio idioma y a menudo hablan con orcos, goblins y simios carnívoros.~
+@123  = ~Humano~
+@124  = ~Humano
+Los humanos son la raza predominante en Faerûn. Gobiernan la mayoría de los imperios y reinos importantes de los Reinos Olvidados. Son la raza más sociable y tolerante, quizás solo superada por los medianos.~
+@125  = ~Semielfo~
+@126  = ~Semielfo
+Los semielfos son una mezcla de sangre humana y élfica. Son gente de buen aspecto, con rasgos heredados de ambas razas parentales. Un semielfo posee la curiosidad, inventiva y ambición de sus ancestros humanos, así como los sentidos refinados, el amor por la naturaleza y el gusto artístico de sus ancestros élficos.~
+@127  = ~Mediano~
+@128  = ~Mediano
+Los medianos son personas bajas, generalmente algo regordetas, muy parecidas a pequeños humanos. Sus rostros son redondos y anchos, y a menudo bastante sonrojados. Su cabello suele ser rizado, y la parte superior de sus pies está cubierta de pelo áspero. En general prefieren las comodidades del hogar a las peligrosas aventuras. Disfrutan de la buena vida, del humor tosco y de las historias contadas junto al fuego. Dentro de los Reinos existen tres divisiones raciales de medianos: piesligeros, altomonteses y fornidos.~
+@129  = ~Semiorco~
+@130  = ~Semiorco
+Los semiorcos nacen de la unión entre humanos y orcos. Son tan altos como los humanos, pero algo más pesados debido a su complexión musculosa. Su pigmentación verdosa, frente inclinada, mandíbula prominente, dientes salientes y vello corporal áspero hacen evidente su linaje. En las tierras de Amn, los semiorcos son tolerados, ya que a diferencia del norte, los habitantes de Amn no han tenido siglos de guerra contra los orcos. Los semiorcos son conocidos por su gran fuerza.~
+@131  = ~Diablillo~
+@132  = ~Diablillo
+Los diablillos son diminutas criaturas de naturaleza maligna que vagan por el mundo y ocasionalmente actúan como familiares de magos y sacerdotes malvados. Solo las armas mágicas o de plata pueden dañarlos, y además se regeneran.~
+@133  = ~Kobold~
+@134  = ~Kobold
+Los kobolds son una raza cobarde y sádica de pequeños humanoides que disputan con vigor a humanos y semihumanos el espacio vital y la comida. Sienten especial aversión por los gnomos y los atacan en cuanto los ven.
+
+Apenas alcanzando los tres pies de altura, los kobolds tienen piel escamosa que varía del marrón oxidado oscuro al negro oxidado. Huelen a perros mojados y agua estancada. Sus ojos brillan como dos chispas rojas, y poseen dos pequeños cuernos de color beige a blanco. Debido a su gusto por vestir harapos rojos y naranjas, sus colas de rata no prensiles y su lenguaje (que suena como pequeños perros ladrando), estas criaturas suelen no tomarse en serio. Esto suele ser un error fatal, pues lo que les falta en tamaño y fuerza lo compensan con ferocidad y tenacidad.~
+@135  = ~Kuo-toa~
+@136  = ~Kuo-toa
+Los kuo-toa son una antigua raza de hombres pez que habita bajo tierra y siente un profundo odio hacia los habitantes de la superficie y la luz del sol. La locura es común entre esta especie.~
+@137  = ~Liche~
+@138  = ~Liche
+El liche es potencialmente la forma de no muerto más poderosa conocida, y resulta difícil, si no imposible, destruirlo. Además de poseer el poder de un mago no muerto, almacenan su fuerza vital en un lugar seguro separado de su forma física. Destruir su cuerpo carece de sentido a menos que también se encuentre el recipiente que contiene su esencia.~
+@139  = ~Hombre lagarto~
+@140  = ~Hombre lagarto
+Los hombres lagarto son criaturas acuáticas que combinan rasgos reptilianos y humanoides. Poseen piel escamosa y colorida y cuerpos poderosos. Aunque son territoriales y salvajes, los hombres lagarto son criaturas inteligentes y no inherentemente malvadas. Son excelentes nadadores y habitan en marismas, pantanos y selvas en tribus poco organizadas.~
+@141  = ~Licántropo~
+@142  = ~Licántropo
+El hombre lobo es el licántropo clásico: una persona que se transforma en animal, aunque el término también puede referirse a animales que se transforman en personas. La licantropía puede ser una maldición o una condición hereditaria.~
+@143  = ~Mefit~
+@144  = ~Mefit
+Los mefit son pequeños y desagradables mensajeros creados por poderosas criaturas de los planos inferiores, y son malvados y maliciosos por naturaleza. Se conocen seis tipos de mefit: fuego, hielo, lava, niebla, humo y vapor.~
+@145  = ~Azotamentes~
+@146  = ~Azotamentes
+También llamados ilítidos, los azotamentes devoradores de cerebros son criaturas horriblemente alienígenas del Underdark. Malvados sin posibilidad de redención, te considerarán un esclavo o simplemente comida, si es que llegan a considerarte en absoluto.~
+@147  = ~Minotauro~
+@148  = ~Minotauro
+Los minotauros son grandes humanoides monstruosos con cuerpos musculosos y cabeza de toro. No son especialmente inteligentes, pero poseen sentidos agudos y astucia, prefiriendo cazar a viajeros que se pierden en sus hogares laberínticos. En raras ocasiones, minotauros de mayor inteligencia se convierten en aventureros o mercenarios, aunque su apariencia intimidante suele mantener a la gente civilizada a distancia.~
+@149  = ~Micónido~
+@150  = ~Micónido
+Los micónidos son criaturas fúngicas que viven bajo tierra. Se comunican telepáticamente mediante el uso de esporas que producen dentro de sus cuerpos, las cuales también pueden confundir a sus enemigos. A pesar de su apariencia, no son criaturas violentas a menos que se les provoque.~
+@151  = ~Ogro~
+@152  = ~Ogro
+Los ogros son grandes, feos y codiciosos humanoides que viven mediante emboscadas, saqueos y robos. Malhumorados y desagradables, estos monstruos suelen encontrarse sirviendo como mercenarios en las filas de tribus orcas, clérigos malvados o gnolls. Se mezclan libremente con gigantes y troles.
+
+Los ogros adultos miden entre nueve y diez pies de altura y pesan entre 300 y 350 libras. El color de su piel varía del amarillo mortecino al marrón negruzco apagado, y en raras ocasiones a un violeta enfermizo. Sus verrugas suelen ser de otro color, o al menos más oscuras que su piel. Sus ojos son púrpuras con pupilas blancas. Sus dientes y garras son naranjas o negros. Los ogros tienen el cabello largo y grasiento, de color azul negruzco a verde oscuro apagado. Su olor es repulsivo, parecido al de la leche agria. Visten pieles y cueros de animales mal curtidos, y solo cuidan sus armas y armaduras de manera básica.
+
+Es común que los ogros hablen orco, trol, gigante de las piedras y gnoll, además de su propio lenguaje gutural. La esperanza de vida de un ogro típico es de 90 años.~
+@153  = ~Orco~
+@154  = ~Orco
+Los orcos son enemigos hereditarios de los goblins y los grandes trasgos, con quienes a menudo compiten por los recursos. Carnívoros razonablemente inteligentes, los orcos están constantemente en guerra contra otras razas para mantener a sus tribus. Estas guerras eliminan a los depredadores más débiles de sus tribus y reúnen recursos para la siguiente generación. Los orcos tienen fama de ser guerreros extremadamente poderosos. Algunos magos han intentado crear variantes orcas para aprovechar la ferocidad y fuerza naturales de esta raza.~
+@155  = ~Otyugh~
+@156  = ~Otyugh
+Enormes criaturas infestadas de enfermedades, los otyugh se alimentan de la suciedad y los desechos que otras bestias que habitan en mazmorras dejan o descartan. Esto también puede incluir aventureros si no se tiene cuidado.~
+@157  = ~Rakshasa~
+@158  = ~Rakshasa
+Los rakshasa son una raza de espíritus malévolos que cazan y atormentan a la humanidad. Viven para el combate, y sus talentos con la ilusión los convierten en enemigos mortales.~
+@159  = ~Sahuagin~
+@160  = ~Sahuagin
+Los sahuagin son una raza depredadora y cruel de hombres pez que viven en aguas costeras cálidas. Están altamente organizados y disfrutan enormemente asaltando comunidades costeras por comida y diversión.~
+@161  = ~Salamandra~
+@162  = ~Salamandra
+Las salamandras son criaturas elementales reptilianas con cuerpos vagamente humanoides. Son inteligentes, codiciosas y crueles, y viven en sociedades feudales organizadas gobernadas por una «realeza». Son hábiles herreros y empuñan enormes lanzas que a menudo están imbuidas con sus propios elementos. Los tipos de salamandra más comunes son las de fuego y las de escarcha.~
+@163  = ~Sombra~
+@164  = ~Sombra
+Las sombras son criaturas no muertas y malévolas que drenan la fuerza de sus víctimas con su toque helado. Quienes sufren este destino pueden acabar convirtiéndose en una sombra si el contacto continúa.~
+@165  = ~Montículo reptante~
+@166  = ~Montículo reptante
+El montículo reptante es una enorme masa de plantas animadas con una forma vagamente humanoide. Son extremadamente poderosos y a menudo son invocados por druidas experimentados para actuar como defensores de la naturaleza. Sus cuerpos, compuestos de vegetación en descomposición, son extremadamente difíciles de dañar.~
+@167  = ~Esqueleto~
+@168  = ~Esqueleto
+Todos los esqueletos son monstruos no muertos animados mediante magia, creados como guardianes o guerreros por poderosos magos y sacerdotes malvados.
+
+Los esqueletos parecen no tener ligamentos ni musculatura que les permita moverse. En su lugar, los huesos se mantienen unidos mágicamente durante el lanzamiento de un conjuro de Animar muertos. Los esqueletos no tienen ojos ni órganos internos.
+
+Los esqueletos pueden crearse a partir de los huesos de humanos y semihumanos, animales de tamaño humano o menor, o humanoides gigantes como los bugbears y los gigantes.~
+@169  = ~Limo~
+@170  = ~Limo
+Una criatura sin soporte visible dentro de su cuerpo gelatinoso. El toque ácido de estas criaturas puede variar según el tipo, pero todas son carroñeras mortales.~
+@171  = ~Araña~
+@172  = ~Araña
+Las arañas son depredadores agresivos que habitan tanto sobre la superficie como bajo tierra. La mayoría son venenosas y muerden a sus presas antes de devorarlas, ya que las víctimas inconscientes son más fáciles de transportar hasta su guarida.
+
+Las arañas tienen ocho patas y ocho ojos. Normalmente se dividen en dos categorías: las tejedoras de telarañas, que tienen abdómenes abultados y patas largas y delgadas; y las arañas cazadoras, que poseen cuerpos más pequeños, cabezas y colmillos más grandes, y cuerpos y patas peludos.
+
+La mayoría de las arañas gigantes son simplemente versiones mucho más grandes de las arañas tejedoras comunes.~
+@173  = ~Trol~
+@174  = ~Trol
+Los troles son horribles carnívoros conocidos sobre todo por lo difícil que resulta matarlos. Todos los troles se regeneran, y la mayoría solo puede ser destruida mediante el uso del fuego.~
+@175  = ~Hulk Umbrío~
+@176  = ~Hulk Umbrío
+Los hulks umbríos son criaturas subterráneas tremendamente fuertes que pueden excavar a través de roca sólida en busca de presas. Son físicamente lentos, pero pueden provocar confusión en sus objetivos con una sola mirada.~
+@177  = ~Vampiro~
+@178  = ~Vampiro
+El vampiro es una poderosa criatura no muerta que se alimenta de los vivos para cumplir sus propios y retorcidos objetivos. El vampirismo puede infectar a miembros de muchas especies diferentes, aunque los efectos suelen ser impredecibles.~
+@179  = ~Lobo~
+@180  = ~Lobo
+Los lobos son cánidos carnívoros que forman temibles manadas cazadoras. Fuertes y rápidos, los lobos resultan especialmente peligrosos cuando trabajan juntos en grupo, abrumando a sus presas con garras y colmillos.~
+@181  = ~Guiverno~
+@182  = ~Guiverno
+El guiverno es un gran lagarto alado. Aunque físicamente son más débiles y menos inteligentes que sus primos los dragones, pueden ser criaturas temibles gracias a su rapidez en vuelo y a sus colas con aguijón, que rezuman un veneno mortal de acción rápida.~
+@183  = ~Yeti~
+@184  = ~Yeti
+Originario de las regiones montañosas del norte, el yeti es una bestia carnívora enorme con un pelaje espeso y enmarañado que lo camufla y lo mantiene abrigado en las frías regiones donde habita.~
+@185  = ~Yuan-ti~
+@186  = ~Yuan-ti
+Los yuan-ti son astutos hombres serpiente con distintos grados de rasgos humanoides. Extremadamente peligrosos debido a su inteligencia y su capacidad para disfrazarse como humanos, los yuan-ti son seres ambiciosos y sedientos de poder, y muchos de ellos dominan la magia.~
+@187  = ~Zombi~
+@188  = ~Zombi
+Entre las criaturas no muertas de menor categoría, los zombis son cadáveres animados sin mente que existen en un estado de hambre perpetua, avanzando torpemente hacia cualquier ser vivo con un único propósito. A pesar de ser lentos y débiles, resultan más peligrosos cuando se reúnen en grandes hordas.~
+@189  = ~¿Instalar avatar sin capucha para enanas?
+
+[1] Sí
+[2] No~
+@190  = ~¿Instalar avatar sin capucha para gnomos y enanos masculinos?
+
+[1] Sí
+[2] No~
+@191  = ~¿Instalar avatar sin capucha para elfas y semielfas?
+
+[1] Sí
+[2] No~
+@192  = ~¿Instalar avatar sin capucha para elfos y semielfos?
+
+[1] Sí
+[2] No~
+@193  = ~¿Instalar avatar sin capucha para medianas y gnomos?
+
+[1] Sí
+[2] No~
+@194  = ~¿Instalar avatar sin capucha para medianos?
+
+[1] Sí
+[2] No~
+@195  = ~¿Instalar avatar sin capucha para humanas y semiorcas?
+
+[1] Sí
+[2] No~
+@196  = ~¿Instalar avatar sin capucha para humanos y semiorcos?
+
+[1] Sí
+[2] No~
+@197  = ~Eres bienvenido ante mis ojos.~ [GGFEM01]
+@198  = ~¡Este es tu fin!~ [GGFEM02]
+@199  = ~¡Has cometido un error fatal de juicio!~ [GGFEM03]
+@202  = ~¡Abandona tus antiguas creencias y sálvate!~ [FANATM02]
+@203  = ~¡Muerte al incrédulo!~ [FANATM05]
+@206  = ~¡No! ¡Mi... mi dios me salvará!~ [FANATM08]
+@207  = ~¡Arrodíllate y arrepiéntete!~ [FANATM01]
+@208  = ~Soy uno de los pocos elegidos.~ [FANATM03]
+@209  = ~¿Por qué persistes con tus falsos dioses?~ [FANATM04]
+@210  = ~He visto más que suficiente de ti.~ [HVILLF03]
+@211  = ~¡Te veré muerto!~ [HVILLF05]
+@214  = ~Hay muchas formas de tratar con alguien como tú.~ [HVILLF01]
+@215  = ~No vivirás para ver el final del día.~ [HVILLF02]
+@216  = ~Recibirás lo que te mereces muy pronto.~ [HVILLF04]
+@217  = ~Que los dioses te miren con bondad.~ [GPRIM03]
+@218  = ~¡La justicia será rápida y definitiva!~ [GPRIM05]
+@221  = ~¡Que los dioses me protejan!~ [GPRIM08]
+@222  = ~Te doy la bienvenida con los brazos abiertos.~ [GPRIM01]
+@223  = ~Confío en que estés aquí con buenas intenciones.~ [GPRIM02]
+@224  = ~Todos los fieles son bienvenidos aquí.~ [GPRIM04]
+@225  = ~Sois gente bastante extraña para andar vagando por aquí.~ [HALFL02]
+@226  = ~Se acercan tiempos difíciles, eso creo.~ [HALFL01]
+@229  = ~Últimamente han estado pasando cosas raras.~ [HALFL03]
+@230  = ~Ojalá tuviera mi vieja pipa de tabaco.~ [HALFL04]
+@231  = ~Prepárate para ser destripado, necio.~ [HVILLM01]
+@232  = ~¡En otro momento, en otro lugar!~ [HVILLM08]
+@233  = ~¡Te clavaré una hoja en las entrañas!~ [HVILLM05]
+@236  = ~¿Te apetece bailar?~ [HVILLM02]
+@237  = ~Este será un proceso lento y doloroso.~ [HVILLM03]
+@238  = ~Sufrirás... oh, sí.~ [HVILLM04]
+@239  = ~¿Y quién podrías ser tú?~ [PEASF301]
+@242  = ~¿Qué espera encontrar aquí alguien de tu calaña?~ [PEASF305]
+@243  = ~Bueno, desde luego no me gusta tu aspecto.~ [PEASF306]
+@244  = ~*suspiro* Soy una mujer sencilla.~ [PEASF205]
+@247  = ~*suspiro* Ha sido un año duro, pero las cosas mejorarán.~ [PEASF203]
+@248  = ~Tengo muchas cosas que hacer antes de que se ponga el sol, y muchas bocas que alimentar.~ [PEASF204]
+@249  = ~¡Oye, ¿no tienes nada mejor que hacer?!~ [PEASF206]
+@250  = ~¡Identifícate!~ [SOLM01]
+@251  = ~¡Pondré a prueba tu temple con acero frío!~ [SOLM05]
+@254  = ~No interrumpas mis deberes.~ [SOLM02]
+@255  = ~¡Alégrate, amigo!~ [PEASM201]
+@258  = ~Saludos y buenos negocios.~ [PEASM202]
+@259  = ~Oh, un vagabundo. Sí, justo lo que necesitábamos: más de estos.~ [NOBFE206]
+@262  = ~Soy una dama de refinamiento y estoy segura de que me tratarás como tal.~ [NOBFE201]
+@263  = ~¿Eres un extraño en este lugar? No creo haberte visto por las calles hasta ahora.~ [NOBFE202]
+@264  = ~Quédate donde estás, campesino.~ [NOBFE203]
+@265  = ~Está prácticamente por debajo de mí dirigirme a ti. ¡Hmph!~ [NOBFE204]
+@266  = ~Por la paciencia de Sune, ni uno más.~ [NOBMA205]
+@269  = ~¿Confío en que todo esté bien?~ [NOBMA201]
+@270  = ~Pareces bastante digno.~ [NOBMA202]
+@271  = ~No toleraré groserías, campesino.~ [NOBMA203]
+@272  = ~Confío en que seas consciente de con quién estás tratando.~ [NOBMA204]
+@273  = ~¡Ja ja ja ja ja ja!~ [DAVAE04]
+@274  = ~¡Morid, insolentes cachorros!~ [DAVAE03]
+@275  = ~¡Vuestros esfuerzos son inútiles!~ [DAVAE05]
+@276  = ~¡Temblad ante el poder de mi hechicería!~ [DAVAE06]
+@277  = ~¡Vuestras débiles habilidades no son rival para mi magia!~ [DAVAE07]
+@280  = ~Entrometidos necios, vuestra victoria será breve.~ [DAVAE02]
+@281  = ~Pareces buena gente.~ [PEASF01]
+@282  = ~¡Que alguien me ayude!~ [PEASF09]
+@285  = ~Doy gracias a los dioses cada día por las cosas buenas de mi vida.~ [PEASF02]
+@286  = ~Disculpa, solo tengo mis asuntos sencillos...~ [PEASF03]
+@287  = ~No soy nadie importante...~ [PEASF04]
+@288  = ~Buen día.~ [GNMAL02]
+@289  = ~¡La justicia será rápida y definitiva!~ [GNMAL03]
+@292  = ~Eres bienvenido aquí.~ [GNMAL01]
+@293  = ~Mmmm, ¿sí?~ [GNOMEM03]
+@294  = ~¡Atrás! ¡Tus rótulas están a mi merced!~ [GNOMEM05]
+@297  = ~¡AIII! ¡CORRED! ¡CORRED!~ [GNOMEM08]
+@298  = ~Tú... no le harías daño a un gnomo, ¿verdad?~ [GNOMEM02]
+@300  = ~¿Quién eres?~ [CHILM01]
+@301  = ~¡No me hagas daño!~ [CHILM07]
+@304  = ~¡No eres de por aquí! ¡Lo sé!~ [CHILM02]
+@305  = ~¡Vaya, un aventurero!~ [CHILM03]
+@306  = ~Yo no hice nada.~ [CHILM04]
+@307  = ~Eres más que bienvenido ante mis ojos.~ [GPRIF01]
+@308  = ~¡Eres una afrenta a todo en lo que creo!~ [GPRIF05]
+@311  = ~¡Demonio! ¡Demonio!~ [GPRIF08]
+@312  = ~Tienes mis saludos, fiel.~ [GPRIF02]
+@313  = ~Mi dios me protege y vela por todos nosotros.~ [GPRIF03]
+@314  = ~Estoy aquí para servir.~ [GPRIF04]
+@315  = ~Oh... hola.~ [PEASM303]
+@318  = ~¡Debo huir!~ [PEASM309]
+@319  = ~¿Acaso parezco tener tiempo para charlas?~ [PEASM304]
+@320  = ~Hoy en día un tipo no puede andar cinco pasos sin que alguien lo moleste.~ [PEASM305]
+@321  = ~Di lo que tengas que decir y sigue tu camino.~ [PEASM306]
+@322  = ~¡Tienes ropas bastante finas! ¿Por qué me estás molestando?~ [PEASF06]
+@323  = ~¡Yo... no tengo nada que quieras!~ [PEASM05]
+@326  = ~¡Aaah! ¡Corred!~ [PEASM09]
+@327  = ~Claro, puedo intercambiar unas palabras.~ [PEASM03]
+@328  = ~¡Hmph! Como si no tuviera nada mejor que hacer.~ [PEASM04]
+@329  = ~Nada es peor que un kobold tramposo.~ [PEASM06]
+@330  = ~Eh... hola.~ [CHILF03]
+@333  = ~¡Aaah!~ [CHILF07]
+@334  = ~¡Eres un extraño!~ [CHILF01]
+@335  = ~No te conozco de nada. No vives aquí.~ [CHILF02]
+@336  = ~No debo hablar con extraños.~ [CHILF04]
+@337  = ~¿Es esto importante?~ [PEASM203]
+@339  = ~Mientras no seas el recaudador de impuestos...~ [PEASM204]
+@340  = ~Buenos negocios para ti.~ [PEASM01]
+@341  = ~Ahh, hace un día bastante agradable, ¿verdad?~ [PEASM02]
+@342  = ~¿Hmm?~ [GENMG03]
+@344  = ~¿Sí?~ [GENFG01]
+@346  = ~¿Necesitas algo, forastero?~ [GENMG04]
+@349  = ~¡'Hola, amigo!~ [GENMG13]
+@350  = ~¡Inclínate ante los dioses y ruega por misericordia!~ [EPRIM03]
+@353  = ~¡Misericordia! ¡Ten misericordia!~ [EPRIM08]
+@354  = ~Saludos. Tu poder impresiona.~ [EPRIM01]
+@355  = ~¿Qué quieres entre los fieles?~ [EPRIM02]
+@356  = ~¡Los dioses no perdonan, necio!~ [EPRIM04]
+@357  = ~¿Sí?~ [GENMG01]
+@358  = ~Saludos, aventureros.~ [FELFF01]
+@361  = ~El pueblo bello heredará la tierra.~ [FELFF02]
+@362  = ~Pocos del pueblo bello se preocupan por los asuntos del estado.~ [FELFF03]
+@363  = ~¡Ja ja ja ja ja! ¡Jaa ja ja! *eructo* ...eh, perdón... ¡disculpa!~ [DRUNK01]
+@366  = ~Blaaarrrghghgh... *tos* ¿Maíz? ¿Cuándo comí maíz...?~ [DRUNK02]
+@367  = ~E-eeh... ¿Por qué las calles se tambalean?~ [DRUNK03]
+@368  = ~Necesito cerveza. *eructo* Eh...~ [DRUNK04]
+@369  = ~Confío en que todo esté bien.~ [GDWARF01]
+@370  = ~¡Cuidado, o pronto estarás colgando de la lengua!~ [GDWARF03]
+@371  = ~¡Pondré a prueba tu temple con acero frío!~ [GDWARF04]
+@374  = ~No tengo tiempo para hablar con alguien como tú.~ [GDWARF02]
+@375  = ~Mantente atrás o lo lamentarás.~ [RUFFIA01]
+@376  = ~¡Muy bien! ¡Tú y yo! ¡Vamos!~ [RUFFIA05]
+@379  = ~Puedo romper un brazo o una pierna por un par de cobres.~ [RUFFIA02]
+@380  = ~Ahhh, largo de aquí.~ [RUFFIA03]
+@381  = ~Eres duro como el hierro, sí señor.~ [RUFFIA04]
+@382  = ~Habla, si quieres.~ [STHMA02]
+@383  = ~¡Ruega por la muerte y lo haré rápido!~ [STHMA05]
+@386  = ~Debo... volver a las sombras.~ [STHMA09]
+@387  = ~¡Explica tus intenciones, y que sean buenas!~ [STHMA01]
+@388  = ~¿Hay algo que busques?~ [STHMA03]
+@389  = ~No cuestiones a las madres matronas.~ [DRMEN101]
+@390  = ~¡Los drow gobiernan supremos!~ [DRMEN107]
+@393  = ~El camino hacia la supremacía para un varón yace en el lecho o en los libros de los magos.~ [DRMEN102]
+@394  = ~Apartarse de la Casa y de la Reina es caminar hacia la tumba.~ [DRMEN103]
+@395  = ~¡A tus órdenes!~ [DRMEN104]
+@396  = ~¡Por destino y poder, gobernaremos supremos!~ [DRMEN101]
+@397  = ~¡En nombre de Lolth, luchamos!~ [DRSOL107]
+@400  = ~¡Por destino y poder, gobernaremos supremos!~ [DRSOL101]
+@401  = ~¡A tus órdenes!~ [DRSOL102]
+@402  = ~¡Victoria para la Reina Araña!~ [DRSOL103]
+@403  = ~¡El mejor habitante de la superficie es uno muerto!~ [DRSOL104]
+@404  = ~¡No me toques! Podría contagiarme de algo.~ [NOBLE04]
+@407  = ~Un hombre no debería hablar con sus superiores a menos que se le dirija la palabra primero.~ [NOBLE01]
+@408  = ~No tengo tiempo para charlas.~ [NOBLE02]
+@409  = ~Fuera de aquí, mendigo.~ [NOBLE03]
+@410  = ~Hola.~ [GENFG12]
+@411  = ~Hola.~ [GENMG08]
+@412  = ~Hola.~ [GENMG05]
+@416  = ~Se avecinan tiempos difíciles.~ [ELFFF02]
+@419  = ~El Pueblo Bello rara vez tiene tiempo para charlas triviales.~ [ELFFF01]
+@420  = ~Pronto todos estaremos juntos en Evermeet.~ [ELFFF03]
+@421  = ~Helm lo ve todo. ¡Recuerda eso y serás juzgado!~ [HELMP01]
+@424  = ~El Vigilante conoce todos tus pecados.~ [HELMP02]
+@425  = ~¿Tienes algo en mente?~ [GENMG11]
+@426  = ~Tengo una hoja con tu nombre grabado.~ [GENMT03]
+@427  = ~Si empiezas a correr, quizá llegues a casa con vida.~ [GENMT08]
+@428  = ~¿Has dicho algo?~ [GENMG07]
+@429  = ~Hola, amigo.~ [GENMG06]
+@430  = ~¿Necesitas algo?~ [GENFG07]
+@431  = ~Es un placer conocerte.~ [DWRFF01]
+@434  = ~Un buen martillo robusto arregla a la mayoría de los bandidos.~ [DWRFF02]
+@435  = ~Nada supera la solidez de los muros de piedra.~ [DWRFF03]
+@436  = ~Nunca tuvimos ratas, no señor.~ [INNKE02]
+@439  = ~No seréis mercenarios, ¿verdad? Odio a esa escoria codiciosa.~ [INNKE04]
+@440  = ~¡Me encanta el dinero! Sí, señor.~ [MERCH04]
+@441  = ~¿Sí, amigo?~ [GENMG12]
+@442  = ~Este es un tiempo oscuro para todos, pero aún hay esperanza.~ [DEMIN01]
+@443  = ~¡Por el corazón de todos nosotros!~ [DEMIN03]
+@446  = ~¿Qué ocurre ahora?~ [GGMAL01]
+@447  = ~¡Borraré tu sucia estirpe de los Reinos!~ [GGMAL03]
+@448  = ~No mereces menos que la muerte... y tampoco más.~ [GGMAL04]
+@451  = ~¡Hablemos y terminemos con esto!~ [GGMAL02]
+@452  = ~Confío en que todo esté bien.~ [GNMAL201]
+@453  = ~¡Atrás, o afronta las consecuencias!~ [GNMAL202]
+@454  = ~¡Fuera de aquí!~ [GNMAL203]
+@457  = ~¡No eres nada ante mi dios!~ [FANATF01]
+@458  = ~¡Eres polvo ante el Dios Verdadero!~ [FANATF05]
+@462  = ~Reza y ven con nosotros para demostrar tu valía.~ [FANATF02]
+@463  = ~Seremos salvados al Final.~ [FANATF03]
+@464  = ~¡Soy uno con el poderoso!~ [FANATF04]
+@465  = ~Los Seldarine velan por nosotros... La victoria será nuestra hoy.~ [ELSOL104]
+@468  = ~¿Sí, amigo?~ [GENFG05]
+@469  = ~Este lugar será tu tumba.~ [UNEARM01]
+@470  = ~Será un placer arrancarte el corazón.~ [UNEARM05]
+@473  = ~No deberías haber venido a este lugar.~ [UNEARM02]
+@474  = ~Sufrirás antes de morir, te lo prometo.~ [UNEARM03]
+@475  = ~Este es tu final.~ [UNEARM04]
+@477  = ~¡Una eternidad de tortura para ti, necio!~ [DEMONV05]
+@480  = ~¿Qué asuntos podría tener con un mortal?~ [DEMONV02]
+@481  = ~Ven entonces... sí, hablemos.~ [DEMONV03]
+@482  = ~Si demuestras ser útil, quizá vivas.~ [DEMONV04]
+@483  = ~Tu vida no significa nada para mí.~ [GENFT06]
+@484  = ~Como siempre, el placer es mío.~ [GNFEM01]
+@485  = ~Pagarás por esto, y pagarás caro.~ [GNFEM03]
+@486  = ~¡Sufre!~ [GNFEM04]
+@489  = ~No me enfades.~ [GNFEM02]
+@490  = ~¡Habla, habla!~ [GENMG09]
+@491  = ~Necesito un buen trago de fuerte cerveza enana.~ [DWARF02]
+@492  = ~¡Por el martillo de Moradin!~ [DWARF01]
+@493  = ~Mi temperamento ya es bastante malo sin que me molestes.~ [DWARF03]
+@494  = ~Tu parloteo empieza a ponerme de los nervios.~ [DWARF04]
+@495  = ~¿Puedo ayudarte?~ [GENFG06]
+@496  = ~Oh, estoy tan cansado.~ [MINER01]
+@499  = ~Déjanos en paz... queda mucho trabajo por hacer.~ [MINER02]
+@500  = ~*tos* *tos*... *tos* Creo que estoy tosiendo sangre.~ [MINER03]
+@501  = ~Hace MUY oscuro aquí abajo.~ [MINER04]
+@502  = ~Me gusta tu aspecto. ¡Bienvenido!~ [EPRIF01]
+@503  = ~Tu muerte será lenta y dolorosa.~ [EPRIF05]
+@506  = ~¿Por qué interrumpes mis meditaciones?~ [EPRIF02]
+@507  = ~Quizá los dioses tengan necesidad de ti.~ [EPRIF03]
+@508  = ~¡Complace a los dioses o muere como un gusano!~ [EPRIF04]
+@509  = ~¡Aquí encontrarás tu muerte, necio!~ [UNEARF01]
+@510  = ~¡Ha llegado la hora de que pagues!~ [UNEARF05]
+@511  = ~Este es tu final, te lo aseguro.~ [UNEARF02]
+@512  = ~La muerte será solo el comienzo para ti...~ [UNEARF03]
+@513  = ~Disfrutaré destripándote como al perro que eres...~ [UNEARF04]
+@516  = ~Quién eres, no lo sé.~ [GNOME03]
+@519  = ~No estoy feliz. No, no lo estoy.~ [GNOME01]
+@520  = ~Habla, hombrecillo. ¡Habla rápido!~ [HUMAN03]
+@521  = ~¡RAAAHHHHR! ¡Tú morir! ¡Tú morir!~ [HUMAN05]
+@522  = ~¡Te aplastaré, insignificante!~ [HUMAN06]
+@525  = ~¿Eh? ¿Qué quieres?~ [HUMAN01]
+@526  = ~¡Yo vigilarte!~ [HUMAN02]
+@527  = ~¡Tú y mi gente no llevarse bien!~ [HUMAN04]
+@528  = ~¿Qué quieres?~ [GENMG10]
+@529  = ~Tengo cerveza barata para ti.~ [BARTN02]
+@532  = ~Urgh... tengo que dejar de beberme mi propia cerveza.~ [BARTN03]
+@533  = ~Tengo unas camareras bien guapas, ¿verdad? Je je je...~ [BARTN04]
+@534  = ~¿Quieres un whisky?~ [BARTN01]
+@535  = ~No se encontró un espacio de animación de criatura libre.~ 
+@536  = ~%class%~
+@537  = ~%label%~
+@538  = ~– Solo puede usar armas disponibles para la clase Ladrón (excepto a dos manos).~
+@539  = ~– Solo puede usar armas disponibles para la clase Ladrón (excepto arcos y ballestas).~
+@540  = ~%monk_text%~
+@541  = ~Esta piedra guardiana crea una auténtica zona de oscuridad y parece absorber la propia luz del espacio que la rodea. La forma de la piedra es difícil de distinguir, envuelta como está en sombras. Cuando se alza sobre la cabeza, flota alrededor del cráneo del portador y distorsiona su imagen, haciendo que sea más difícil acertarle.
+
+ESTADÍSTICAS:
+
+Habilidades al equiparse:
+- Clase de Armadura: +2, +4 contra ataques de proyectiles
+- Salvación contra Muerte: +2
+- Salvación contra Aliento: +2
+- Salvación contra Varita: +2
+- Protege contra golpes críticos
+
+Peso: 1~
+@542  = ~Los tres símbolos sagrados conectados forman este disco: el Símbolo de Amaunator. En él aún perduran restos del poder del dios perdido, y puede usarse para invocar un rayo solar una vez al día.
+
+ESTADÍSTICAS:
+
+Habilidades con cargas:
+- Rayo solar una vez al día
+
+Peso: 1~
+@543  = ~Esta es la máscara reconstruida del rey Strohm III. Cuando te la colocas en el rostro, todo el mundo se tiñe de extraños colores. Aunque al principio resulta desorientador, llevar la máscara permite al portador discernir la verdad de todas las cosas una vez al día.
+
+ESTADÍSTICAS:
+
+Habilidades con cargas:
+- Visión verdadera una vez al día
+
+Habilidades al equiparse:
+- Clase de Armadura: +1
+
+Peso: 1~
+@544  = ~HUMANOS: Los humanos son la raza predominante en Faerûn. Gobiernan la mayoría de los grandes imperios y reinos de los Reinos. Son la raza más sociable y tolerante, quizá solo superada por los medianos. Los humanos son los más adaptables de las razas comunes y, por ello, pueden avanzar en cualquier clase y también son la única raza que puede ser clase dual. Los humanos no pueden ser multiclase.
+
+Los humanos tienen los siguientes rasgos:
+– Aprendizaje rápido: los humanos obtienen un bonificador del +5% a la experiencia obtenida de todas las fuentes.
+– Habilidad natural: los humanos reciben un bonificador adicional del +5% a todas las habilidades de ladrón y un bonificador de +2 a las tiradas mínimas de todas las características.~
+@545  = ~Los humanos no pueden ser multiclase.~
+@546  = ~%text%~
+@547  = ~ELFOS: Los elfos suelen ser más bajos y esbeltos que los humanos. Sus rasgos son finos y delicados, y hablan con tonos melodiosos. A menudo se les considera frívolos y distantes. Se preocupan por la belleza natural, el baile, el juego y otras actividades similares. Su humor es ingenioso, al igual que sus canciones y su poesía. En los Reinos existen seis divisiones raciales de elfos: elfos dorados, elfos lunares, elfos salvajes, elfos marinos, elfos oscuros (drow) y elfos alados (avariel).
+
+Los elfos tienen los siguientes rasgos:
+– Resistencia a los encantamientos: los elfos obtienen un bonificador de +2 a las tiradas de salvación contra conjuros de Encantamiento y un 90% de resistencia contra la magia de encanto y sueño.
+– Infravisión.
+– Afinidad élfica con las armas: los elfos obtienen un bonificador de +2 al ataque con arcos, espadas cortas y espadas largas.
+– Habilidades de ladrón: los elfos obtienen un bonificador del +15% a Moverse sigilosamente, +10% a Encontrar trampas y Ocultarse en las sombras, y +5% a Hurtar bolsillos y Detectar ilusiones.
+– +1 Destreza, -1 Constitución.~
+@548  = ~SEMIELFOS: Los semielfos son una mezcla de sangre humana y élfica. Son individuos de aspecto agraciado, con buenos rasgos heredados de ambas razas. Un semielfo posee la curiosidad, inventiva y ambición de sus antepasados humanos, así como los sentidos refinados, el amor por la naturaleza y el gusto artístico de sus antepasados élficos.
+
+Los semielfos tienen los siguientes rasgos:
+– Resistencia menor a los encantamientos: los semielfos obtienen un bonificador de +1 a las tiradas de salvación contra conjuros de Encantamiento y un 30% de resistencia contra la magia de encanto y sueño.
+– Infravisión.
+– Habilidades de ladrón: los semielfos obtienen un bonificador del +15% a Hurtar bolsillos, +10% a Ocultarse en las sombras y +5% a Encontrar trampas.
+– Afables: los semielfos obtienen un bonificador de +4 a las tiradas mínimas de Carisma.~
+@549  = ~ENANOS: Los enanos son bajos y robustos, fácilmente reconocibles por su tamaño y complexión. Tienen mejillas sonrosadas, ojos oscuros y cabello oscuro. Los enanos suelen ser sombríos y taciturnos. Son trabajadores incansables y se preocupan poco por el humor. Disfrutan de la cerveza, la ale y el hidromiel, pero por encima de todo aman el oro. En los Reinos existen cuatro divisiones raciales de enanos: enanos escudo, enanos dorados, enanos salvajes y duergar.
+
+Los enanos tienen los siguientes rasgos:
+– Resistencia enana: los enanos obtienen un bonificador de +1 a las tiradas de salvación contra Parálisis/Veneno/Muerte, contra Vara/Bastón/Varita y contra Conjuros, con bonificadores adicionales según su Constitución.
+– Infravisión.
+– Afinidad enana con las armas: los enanos obtienen un bonificador de +2 al ataque con hachas y martillos de guerra.
+– Baja estatura: los enanos obtienen un bonificador de +2 a la Clase de Armadura y a las tiradas de salvación contra criaturas gigantes, pero sufren una penalización de -2 al ataque con todas las armas cuerpo a cuerpo de dos manos.
+– Habilidades de ladrón: los enanos obtienen un bonificador del +20% a Encontrar trampas, +10% a Abrir cerraduras y Colocar trampas, y +5% a Detectar ilusiones.
+– +1 Constitución, -1 Destreza, -1 Carisma.~
+@550  = ~MEDIANOS: Los medianos son personas bajas, generalmente regordetas, muy parecidas a pequeños humanos. Sus rostros son redondos y anchos, y a menudo bastante sonrosados. Su cabello suele ser rizado y la parte superior de sus pies está cubierta de un vello áspero. En general prefieren las comodidades del hogar antes que las peligrosas aventuras. Disfrutan de la buena vida, el humor rudo y las historias tradicionales. En los Reinos existen tres divisiones raciales de medianos: piesligeros, altos y fornidos.
+
+Los medianos tienen los siguientes rasgos:
+– Resistencia mediana: los medianos obtienen un bonificador de +1 a las tiradas de salvación contra Parálisis/Veneno/Muerte, contra Vara/Bastón/Varita y contra Conjuros, con bonificadores adicionales según su Constitución.
+– Afinidad mediana con las armas: los medianos obtienen un bonificador de +2 al ataque con hondas, dardos y dagas.
+– Baja estatura: los medianos obtienen un bonificador de +2 a la Clase de Armadura y a las tiradas de salvación contra criaturas gigantes, pero sufren una penalización de -2 al ataque con todas las armas cuerpo a cuerpo de dos manos.
+– Habilidades de ladrón: los medianos obtienen un bonificador del +15% a Hurtar bolsillos, Abrir cerraduras y Ocultarse en las sombras, +10% a Encontrar trampas y Moverse sigilosamente, y +5% a Colocar trampas.
+– +1 Destreza, -1 Fuerza.~
+@551  = ~GNOMOS: Parientes de los enanos, los gnomos son notablemente más pequeños que sus lejanos primos. Los gnomos, como ellos mismos sostienen con orgullo, también son menos rechonchos que los enanos. La mayoría tiene la piel morena o tostada, cabello blanco y narices bastante grandes. Los gnomos poseen un sentido del humor vivaz y pícaro, especialmente para las bromas pesadas. Aman la naturaleza, algo que solo se ve igualado por su amor por las gemas y las joyas. En los Reinos existen dos divisiones raciales de gnomos: gnomos de las rocas y gnomos de las profundidades (svirfneblin).
+
+Los gnomos tienen los siguientes rasgos:
+– Resistencia gnómica: los gnomos obtienen un bonificador de +1 a las tiradas de salvación contra Vara/Bastón/Varita y contra Conjuros, con bonificadores adicionales según su Constitución.
+– Infravisión.
+– Especialización en conjuros (Ilusión): los magos gnomos siempre se especializan en la escuela de Ilusión, incluso cuando tienen multiclase. Además reciben un bonificador adicional de +2 a las tiradas de salvación contra Ilusiones.
+– Baja estatura: los gnomos obtienen un bonificador de +2 a la Clase de Armadura y a las tiradas de salvación contra criaturas gigantes, pero sufren una penalización de -2 al ataque con todas las armas cuerpo a cuerpo de dos manos.
+– Habilidades de ladrón: los gnomos obtienen un bonificador del +15% a Detectar ilusiones, +10% a Abrir cerraduras y Encontrar trampas, y +5% a Ocultarse en las sombras, Moverse sigilosamente y Colocar trampas.
+– +1 Inteligencia, -1 Sabiduría.~
+@552  = ~SEMIORCOS: Los semiorcos nacen de la unión entre humanos y orcos. Son tan altos como los humanos, aunque algo más pesados debido a su musculatura. Su piel verdosa, frente inclinada, mandíbula prominente, dientes sobresalientes y vello corporal áspero hacen evidente su linaje. En las tierras de Amn los semiorcos son tolerados, pues a diferencia del norte la gente de Amn no ha tenido siglos de guerras contra los orcos. Los semiorcos son conocidos por su gran fuerza.
+
+Los semiorcos tienen los siguientes rasgos:
+– Infravisión.
+– Gran fortaleza: los semiorcos obtienen un bonificador de +2 a las tiradas de salvación contra Parálisis/Veneno/Muerte.
+– Afinidad orca con las armas: los semiorcos obtienen un bonificador de +2 al ataque con armas cuerpo a cuerpo de dos manos.
+– +1 Fuerza, +1 Constitución, -1 Inteligencia, -1 Carisma.~
+@553  = ~Esta poderosa arma fue creada por los herreros del antiguo Myth Drannor. Las Espadas Lunares se utilizan en el largo proceso de selección de un gobernante para la isla de Evermeet. Una Espada Lunar elige a su dueño, y en el caso de esta espada ha elegido al elfo Xan. Solo Xan puede usar esta hoja; cualquiera que lo intente descubrirá que es incapaz de levantarla. Esta Espada Lunar en particular otorga resistencia al fuego y un bonificador a la Clase de Armadura de su portador.
+
+ESTADÍSTICAS:
+
+Habilidades al equipar:
+– Clase de Armadura: +1
+– Resistencia al Fuego: +50%
+– Xan obtiene un punto adicional de pericia en Espadas largas mientras empuña esta arma
+
+GAC0: +3
+Daño: 1d8+3 (cortante)
+Factor de velocidad: 2
+Tipo de pericia: Espada larga
+Tipo: Una mano
+
+Peso: 3~
+@554  = ~Esta poderosa arma fue creada por los herreros del antiguo Myth Drannor. Las Espadas Lunares se utilizan en el largo proceso de selección de un gobernante para la isla de Evermeet. Una Espada Lunar elige a su dueño, y en el caso de esta espada ha elegido al elfo Xan. Solo Xan puede usar esta hoja; cualquiera que lo intente descubrirá que es incapaz de levantarla. Esta Espada Lunar en particular otorga resistencia al fuego y un bonificador a la Clase de Armadura de su portador. Ahora también protege a su portador contra el silencio y le concede invisibilidad.
+
+ESTADÍSTICAS:
+
+Habilidades al equipar:
+– Clase de Armadura: +1
+– Resistencia al Fuego: +50%
+– Invisibilidad
+– Vocalizar
+– Xan obtiene un punto adicional de pericia en Espadas largas mientras empuña esta arma
+
+GAC0: +4
+Daño: 1d8+4 (cortante)
+Factor de velocidad: 2
+Tipo de pericia: Espada larga
+Tipo: Una mano
+
+Peso: 4~
+@555  = ~Esta poderosa arma fue creada por los herreros del antiguo Myth Drannor. Las Espadas Lunares se utilizan en el largo proceso de selección de un gobernante para la isla de Evermeet. Una Espada Lunar elige a su dueño, y en el caso de esta espada ha elegido al elfo Xan. Solo Xan puede usar esta hoja; cualquiera que lo intente descubrirá que es incapaz de levantarla. Esta Espada Lunar en particular otorga resistencia al fuego y un bonificador a la Clase de Armadura de su portador. Ahora también protege a su portador contra el silencio y le concede una ventaja adicional en combate.
+
+ESTADÍSTICAS:
+
+Habilidades al equipar:
+– Clase de Armadura: +1
+– Resistencia al Fuego: +50%
+– Vocalizar
+– Xan obtiene un punto adicional de pericia en Espadas largas mientras empuña esta arma
+
+Habilidades de combate:
+– 1 ataque adicional por asalto
+
+GAC0: +4
+Daño: 1d8+4 (cortante)
+Factor de velocidad: 0
+Tipo de pericia: Espada larga
+Tipo: Una mano
+
+Peso: 4~
+@556  = ~aasimar~
+@557  = ~Aasimar~
+@558  = ~ankheg~
+@559  = ~basilisco~
+@560  = ~carroñero reptante~
+@561  = ~perro~
+@562  = ~Perro~
+@563  = ~doppelganger~
+@564  = ~ettercap~
+@565  = ~necrófago~
+@566  = ~farfullero~
+@567  = ~gnoll~
+@568  = ~gran trasgo~
+@569  = ~kobold~
+@570  = ~ogro~
+@571  = ~esqueleto~
+@572  = ~araña~
+@573  = ~lobo~
+@574  = ~guiverno~
+@575  = ~limo~
+@576  = ~hada~
+@577  = ~Hada~
+@578  = ~demonio~
+@579  = ~licántropo~
+@580  = ~espectador~
+@581  = ~azotamentes~
+@582  = ~vampiro~
+@583  = ~vampiro~
+@584  = ~Vampiro~
+@585  = ~otyugh~
+@586  = ~rakshasa~
+@587  = ~trol~
+@588  = ~hulk umbrío~
+@589  = ~sahuagin~
+@590  = ~sombra~
+@591  = ~espectro~
+@592  = ~Espectro~
+@593  = ~aparición~
+@594  = ~Aparición~
+@595  = ~kuo-toa~
+@596  = ~niebla~
+@597  = ~Niebla~
+@598  = ~gato~
+@599  = ~Gato~
+@600  = ~duergar~
+@601  = ~Duergar~
+@602  = ~mefito~
+@603  = ~mímico~
+@604  = ~Mímico~
+@605  = ~diablillo~
+@606  = ~gigante~
+@607  = ~orco~
+@608  = ~gólem~
+@609  = ~elemental~
+@610  = ~dragón~
+@611  = ~genio~
+@612  = ~zombi~
+@613  = ~estatua~
+@614  = ~Estatua~
+@615  = ~lich~
+@616  = ~conejo~
+@617  = ~Conejo~
+@618  = ~githyanki~
+@619  = ~yuan-ti~
+@620  = ~semilich~
+@621  = ~Semilich~
+@622  = ~solar~
+@623  = ~Solar~
+@624  = ~antisolar~
+@625  = ~Antisolar~
+@626  = ~planetar~
+@627  = ~Planetar~
+@628  = ~planetar oscuro~
+@629  = ~Planetar oscuro~
+@630  = ~escarabajo~
+@631  = ~Escarabajo~
+@632  = ~trasgo~
+@633  = ~hombre lagarto~
+@634  = ~micónido~
+@635  = ~ogroide~
+@636  = ~Ogroide~
+@637  = ~feyr~
+@638  = ~Feyr~
+@639  = ~horror ganchudo~
+@640  = ~Horror ganchudo~
+@641  = ~chillador~
+@642  = ~Chillador~
+@643  = ~salamandra~
+@644  = ~pájaro~
+@645  = ~Pájaro~
+@646  = ~minotauro~
+@647  = ~drider~
+@648  = ~simulacro~
+@649  = ~Simulacro~
+@650  = ~arpía~
+@651  = ~Arpía~
+@652  = ~no muerto espectral~
+@653  = ~No muerto espectral~
+@654  = ~montículo movedizo~
+@655  = ~quimera~
+@656  = ~Quimera~
+@657  = ~semidragón~
+@658  = ~Semidragón~
+@659  = ~yeti~
+@660  = ~barril~
+@661  = ~Barril~
+@662  = ~fuego fatuo~
+@663  = ~Fuego fatuo~
+@664  = ~mamífero~
+@665  = ~Mamífero~
+@666  = ~reptil~
+@667  = ~Reptil~
+@668  = ~ént~
+@669  = ~Ént~
+@670  = ~ettin~
+@671  = ~espada~
+@672  = ~Espada~
+@673  = ~arco~
+@674  = ~Arco~
+@675  = ~ballesta~
+@676  = ~Ballesta~
+@677  = ~bastón~
+@678  = ~Bastón~
+@679  = ~honda~
+@680  = ~Honda~
+@681  = ~maza~
+@682  = ~Maza~
+@683  = ~daga~
+@684  = ~Daga~
+@685  = ~lanza~
+@686  = ~Lanza~
+@687  = ~puño~
+@688  = ~Puño~
+@689  = ~WARNING %SOURCE_FILESPEC% - pattern not found:%LNL%%pattern%~
+@690  = ~WARNING %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s) instead of %num%:%LNL%%pattern%~
+@691  = ~Patching %SOURCE_FILESPEC% - pattern replaced %num_matches% time(s):%LNL%%pattern% => %string%~
+@692  = ~INTELIGENCIA: La Inteligencia mide la memoria, el razonamiento y la capacidad de aprendizaje de un personaje. Es el atributo principal del mago.
+
+Espacios de conjuro adicionales para Magos:
+
+17: 1|1|–|–|–|–|–|–|–
+18: 2|2|1|1|–|–|–|–|–
+19: 2|2|2|2|1|1|–|–|–
+20: 3|3|2|2|1|1|1|–|–
+21: 3|3|2|2|2|2|1|1|–
+22: 3|3|3|3|3|3|2|1|1
+23: 3|3|3|3|3|3|3|2|1
+24: 4|4|4|4|3|3|3|3|1
+25: 4|4|4|4|4|4|4|3|2
+
+Nota: Un personaje con una puntuación de Inteligencia de 8 o menos es analfabeto y no puede usar pergaminos ni la mayoría de varitas independientemente de la clase que tenga <PRO_HISHER>.
+
+Mínimo: <MINIMUM>
+Máximo: <MAXIMUM>~
+@693  = ~SABIDURÍA: La Sabiduría mide la iluminación, el juicio y el sentido común de un personaje. Es el atributo principal de los lanzadores de conjuros divinos.
+
+Espacios de conjuro adicionales para Clérigos y Druidas:
+
+13: +1 Nivel 1
+14: +1 Nivel 1
+15: +1 Nivel 2
+16: +1 Nivel 2
+17: +1 Nivel 3
+18: +1 Nivel 4
+19: +1 Nivel 1, 4
+20: +1 Nivel 2, 4
+21: +1 Nivel 3, 5
+22: +1 Nivel 4, 5
+23: +2 Nivel 5
+24: +2 Nivel 6
+25: +1 Nivel 6, 7
+
+Espacios de conjuro adicionales para Exploradores y Paladines:
+
+14-15: +1 Nivel 1
+16-17: +1 Nivel 2
+18: +1 Nivel 3
+19: +1 Nivel 1, 4
+20: +1 Nivel 2
+21: +1 Nivel 3
+22: +1 Nivel 4
+23-24: +1 Nivel 1, 2
+25: +1 Nivel 3, 4
+
+Mínimo: <MINIMUM>
+Máximo: <MAXIMUM>~
+@694  = ~CARISMA: El Carisma mide la capacidad de persuasión de un personaje, su magnetismo personal y su habilidad para liderar. Este atributo es importante para el Bardo, el Paladín, el Hechicero y el Chamán.
+
+Espacios de conjuro adicionales para Hechiceros:
+
+17: +1 Nivel 1, 2
+18: +1 Nivel 1, 2, 3, 4, 5
+19: +1 Nivel 3, 4, 6
+20: +1 Nivel 1, 2, 7
+21: +1 Nivel 3, 4, 5, 6, 8
+22: +1 Nivel 1, 2, 5, 7, 9
+23: +1 Nivel 1, 3, 6, 8
+24: +1 Nivel 2, 3, 4, 5, 6, 7, 9
+25: +1 Nivel 4, 5, 7, 8, 9
+
+Espacios de conjuro adicionales para Bardos:
+
+17: +1 Nivel 1, 2
+18: +1 Nivel 1, 2, 3
+19: +1 Nivel 4
+20: +1 Nivel 1, 5
+21: +1 Nivel 2, 3
+22: +1 Nivel 3, 4, 6
+23: +1 Nivel 4, 5
+24: +1 Nivel 5, 6
+25: +1 Nivel 6
+
+Espacios de conjuro adicionales para Chamanes:
+
+17: +1 Nivel 1, 2
+18: +1 Nivel 1, 2, 3, 4, 5
+19: +1 Nivel 3, 4, 6
+20: +1 Nivel 1, 2, 7
+21: +1 Nivel 3, 4, 5, 6
+22: +1 Nivel 1, 2, 5, 7
+23: +1 Nivel 1, 3, 6
+24: +1 Nivel 2, 3, 4, 5, 6, 7
+25: +1 Nivel 4, 5, 7
+
+Mínimo: <MINIMUM>
+Máximo: <MAXIMUM>~
+@695  = ~Puñalada por la espalda desde cualquier dirección~
+@696  = ~Puñalada por la espalda desde cualquier dirección + Puñalada por la espalda al salir del sigilo con un modificador de -2 al atacar por la espalda~
